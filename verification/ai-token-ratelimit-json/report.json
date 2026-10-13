@@ -1,0 +1,848 @@
+{
+  "baseline_revision": "c74d7e2ddf69c38687f61dfbc2d560a9ae838b26",
+  "fixed_revision": "8f7276835290c926428733637db1cb856c97f673",
+  "go": "go version go1.24.4 darwin/amd64",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "redis_image": "public.ecr.aws/docker/library/redis@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08",
+  "envoy_workers": 1,
+  "envoy_version": "envoy  version: 919836551144ad42c41bbe25597d74c1b9cb8421/1.36.10/Clean/RELEASE/BoringSSL",
+  "redis_version": "Redis server v=7.4.5 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=14ef7c78d3983ab",
+  "fixed_main_go_sha256": "9a7c36ebf45ecf752b5c1b32c2d4c8321f88a862cf54f9df9ae32a84e641823c",
+  "wasm_sha256": {
+    "base": "d23a30ffaff5bcad56eb4771a7c483ad4d7b1c5c9e635bca9e84ff6554f6a158",
+    "fixed": "748c52c62741223446efec020ca204484be4e86b70e9a01a4ba0f456529f341d"
+  },
+  "bootstrap_sha256": "7c4e4e89261d813b66c915563ffec0ad0994617beb179e64ebfd2a3e5cbf379b",
+  "new_model_calls": 0,
+  "controlled_fixture": true,
+  "results": [
+    {
+      "variant": "base",
+      "case": "usage-key",
+      "repetition": 1,
+      "observation": "base-usage-key-1",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [
+        {
+          "context_id": 4,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 66,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:05.684][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 23, 0)",
+        "base-1  | [2026-10-13 12:26:05.885][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 66, 0)",
+        "base-1  | [2026-10-13 12:26:05.886][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "usage-key",
+      "repetition": 2,
+      "observation": "base-usage-key-2",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [
+        {
+          "context_id": 5,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 66,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:07.803][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 23, 0)",
+        "base-1  | [2026-10-13 12:26:08.007][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 66, 0)",
+        "base-1  | [2026-10-13 12:26:08.008][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "usage-key",
+      "repetition": 3,
+      "observation": "base-usage-key-3",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [
+        {
+          "context_id": 6,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 66,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:09.869][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 23, 0)",
+        "base-1  | [2026-10-13 12:26:10.072][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 66, 0)",
+        "base-1  | [2026-10-13 12:26:10.073][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "pretty-json",
+      "repetition": 1,
+      "observation": "base-pretty-json-1",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": 20,
+      "user_tokens": 20,
+      "shared_increment": 20,
+      "callback_arguments": [
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 7,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:11.701][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 0)",
+        "base-1  | [2026-10-13 12:26:11.701][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "pretty-json",
+      "repetition": 2,
+      "observation": "base-pretty-json-2",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": 20,
+      "user_tokens": 20,
+      "shared_increment": 20,
+      "callback_arguments": [
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 8,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:13.332][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 0)",
+        "base-1  | [2026-10-13 12:26:13.332][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "pretty-json",
+      "repetition": 3,
+      "observation": "base-pretty-json-3",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": 20,
+      "user_tokens": 20,
+      "shared_increment": 20,
+      "callback_arguments": [
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 9,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:14.960][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 0)",
+        "base-1  | [2026-10-13 12:26:14.960][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "sse",
+      "repetition": 1,
+      "observation": "base-sse-1",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 10,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 10,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:16.664][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 144, 0)",
+        "base-1  | [2026-10-13 12:26:16.664][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "sse",
+      "repetition": 2,
+      "observation": "base-sse-2",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 11,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 11,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:18.385][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 144, 0)",
+        "base-1  | [2026-10-13 12:26:18.385][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "sse",
+      "repetition": 3,
+      "observation": "base-sse-3",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 12,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 12,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:20.284][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 144, 0)",
+        "base-1  | [2026-10-13 12:26:20.285][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "large-json",
+      "repetition": 1,
+      "observation": "base-large-json-1",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [
+        {
+          "context_id": 13,
+          "body_bytes": 448519,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 1048576,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 600141,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:22.182][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 448519, 0)",
+        "base-1  | [2026-10-13 12:26:22.186][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 1048576, 0)",
+        "base-1  | [2026-10-13 12:26:22.194][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 600141, 0)",
+        "base-1  | [2026-10-13 12:26:22.238][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "large-json",
+      "repetition": 2,
+      "observation": "base-large-json-2",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [
+        {
+          "context_id": 14,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 1048576,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 1030197,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:28.762][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 18463, 0)",
+        "base-1  | [2026-10-13 12:26:28.763][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 1048576, 0)",
+        "base-1  | [2026-10-13 12:26:28.768][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 1030197, 0)",
+        "base-1  | [2026-10-13 12:26:28.825][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 0, 1)"
+      ]
+    },
+    {
+      "variant": "base",
+      "case": "large-json",
+      "repetition": 3,
+      "observation": "base-large-json-3",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [
+        {
+          "context_id": 15,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 1048576,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 1030197,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-13 12:26:35.175][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 18463, 0)",
+        "base-1  | [2026-10-13 12:26:35.176][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 1048576, 0)",
+        "base-1  | [2026-10-13 12:26:35.181][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 1030197, 0)",
+        "base-1  | [2026-10-13 12:26:35.240][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 0, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "usage-key",
+      "repetition": 1,
+      "observation": "fixed-usage-key-1",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 4,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:42.392][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 23, 0)",
+        "fixed-1  | [2026-10-13 12:26:42.593][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 89, 0)",
+        "fixed-1  | [2026-10-13 12:26:42.593][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 89, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "usage-key",
+      "repetition": 2,
+      "observation": "fixed-usage-key-2",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 5,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:44.500][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 23, 0)",
+        "fixed-1  | [2026-10-13 12:26:44.700][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 89, 0)",
+        "fixed-1  | [2026-10-13 12:26:44.700][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 89, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "usage-key",
+      "repetition": 3,
+      "observation": "fixed-usage-key-3",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 6,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:46.623][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 23, 0)",
+        "fixed-1  | [2026-10-13 12:26:46.823][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 89, 0)",
+        "fixed-1  | [2026-10-13 12:26:46.823][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 89, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "pretty-json",
+      "repetition": 1,
+      "observation": "fixed-pretty-json-1",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": null,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:48.446][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 0)",
+        "fixed-1  | [2026-10-13 12:26:48.446][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "pretty-json",
+      "repetition": 2,
+      "observation": "fixed-pretty-json-2",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": null,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:50.223][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 0)",
+        "fixed-1  | [2026-10-13 12:26:50.224][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "pretty-json",
+      "repetition": 3,
+      "observation": "fixed-pretty-json-3",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": null,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:51.959][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 0)",
+        "fixed-1  | [2026-10-13 12:26:51.959][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "sse",
+      "repetition": 1,
+      "observation": "fixed-sse-1",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 10,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 10,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:53.640][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 144, 0)",
+        "fixed-1  | [2026-10-13 12:26:53.641][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 0, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "sse",
+      "repetition": 2,
+      "observation": "fixed-sse-2",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 11,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 11,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:55.294][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 144, 0)",
+        "fixed-1  | [2026-10-13 12:26:55.294][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 0, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "sse",
+      "repetition": 3,
+      "observation": "fixed-sse-3",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 12,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 12,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:56.983][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 144, 0)",
+        "fixed-1  | [2026-10-13 12:26:56.984][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 0, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "large-json",
+      "repetition": 1,
+      "observation": "fixed-large-json-1",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 13,
+          "body_bytes": 47423,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 1095999,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:26:59.197][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 47423, 0)",
+        "fixed-1  | [2026-10-13 12:26:59.198][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 1095999, 0)",
+        "fixed-1  | [2026-10-13 12:26:59.199][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 2097236, 0)",
+        "fixed-1  | [2026-10-13 12:26:59.199][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 2097236, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "large-json",
+      "repetition": 2,
+      "observation": "fixed-large-json-2",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 14,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 1067039,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:27:01.150][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 18463, 0)",
+        "fixed-1  | [2026-10-13 12:27:01.151][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 1067039, 0)",
+        "fixed-1  | [2026-10-13 12:27:01.151][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 2097236, 0)",
+        "fixed-1  | [2026-10-13 12:27:01.151][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 2097236, 1)"
+      ]
+    },
+    {
+      "variant": "fixed",
+      "case": "large-json",
+      "repetition": 3,
+      "observation": "fixed-large-json-3",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 15,
+          "body_bytes": 3983,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 1052559,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-13 12:27:02.972][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 3983, 0)",
+        "fixed-1  | [2026-10-13 12:27:02.973][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 1052559, 0)",
+        "fixed-1  | [2026-10-13 12:27:02.973][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 2097236, 0)",
+        "fixed-1  | [2026-10-13 12:27:02.973][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 2097236, 1)"
+      ]
+    }
+  ]
+}
