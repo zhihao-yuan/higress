@@ -1,0 +1,1568 @@
+{
+  "baseline_revision": "8e41342a18e870fa6de564bb2edd468a36002baa",
+  "fixed_revision": "741af109421800bf6c86e74204cef020616f8701",
+  "go": "go version go1.24.4 darwin/amd64",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "redis_image": "public.ecr.aws/docker/library/redis@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08",
+  "envoy_workers": 1,
+  "envoy_version": "envoy  version: 919836551144ad42c41bbe25597d74c1b9cb8421/1.36.10/Clean/RELEASE/BoringSSL",
+  "redis_version": "Redis server v=7.4.5 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=14ef7c78d3983ab",
+  "fixed_main_go_sha256": "2f001e919874aeaf684210187ceec3c60d8c609565c8779a695dbfab9e35cf21",
+  "wasm_sha256": {
+    "base": "4d449a1541c345c1abcf8a9e74c9f5a77c66ce8303877f6d39d3540485db151a",
+    "fixed": "97946d02f04066b845c6a1b1614e2e5d95143bf15358c206e4353b43368a18e5"
+  },
+  "bootstrap_sha256": "7c4e4e89261d813b66c915563ffec0ad0994617beb179e64ebfd2a3e5cbf379b",
+  "new_model_calls": 0,
+  "controlled_fixture": true,
+  "results": [
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 4,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:10.491][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [5a8ea21a-f3c5-4b95-a6f7-01e37f266344] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "usage-key",
+      "repetition": 1,
+      "observation": "base-usage-key-1",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 4,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:10.491][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 23, 0)",
+        "base-1  | [2026-10-14 06:41:10.692][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 89, 0)",
+        "base-1  | [2026-10-14 06:41:10.693][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 89, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 5,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:12.756][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [69315f29-a021-4e71-9115-0dd62a9c4471] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "usage-key",
+      "repetition": 2,
+      "observation": "base-usage-key-2",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 5,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:12.756][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 23, 0)",
+        "base-1  | [2026-10-14 06:41:12.957][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 89, 0)",
+        "base-1  | [2026-10-14 06:41:12.958][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 89, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 6,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:14.932][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [34519ae4-d8c1-41e6-ab20-30b7f1dcdec9] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "usage-key",
+      "repetition": 3,
+      "observation": "base-usage-key-3",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 6,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:14.932][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 23, 0)",
+        "base-1  | [2026-10-14 06:41:15.135][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 89, 0)",
+        "base-1  | [2026-10-14 06:41:15.136][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 89, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 7,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:16.921][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [181f921d-afa0-4776-b4bc-b8b42b55abd3] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "pretty-json",
+      "repetition": 1,
+      "observation": "base-pretty-json-1",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": 50,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:16.921][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 0)",
+        "base-1  | [2026-10-14 06:41:16.921][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 8,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:18.529][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [7f9c6259-227a-462b-b999-53668e391401] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "pretty-json",
+      "repetition": 2,
+      "observation": "base-pretty-json-2",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": 50,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:18.529][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 0)",
+        "base-1  | [2026-10-14 06:41:18.530][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 9,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:20.311][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [8f0d8223-0d22-424b-bd3d-38b5e32a1c95] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "pretty-json",
+      "repetition": 3,
+      "observation": "base-pretty-json-3",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": 50,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:20.311][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 0)",
+        "base-1  | [2026-10-14 06:41:20.311][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 10,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "base",
+      "case": "sse",
+      "repetition": 1,
+      "observation": "base-sse-1",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 10,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 10,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:22.125][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 144, 0)",
+        "base-1  | [2026-10-14 06:41:22.125][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 0, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 11,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "base",
+      "case": "sse",
+      "repetition": 2,
+      "observation": "base-sse-2",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 11,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 11,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:23.961][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 144, 0)",
+        "base-1  | [2026-10-14 06:41:23.961][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 0, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 12,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "base",
+      "case": "sse",
+      "repetition": 3,
+      "observation": "base-sse-3",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 12,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 12,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:25.762][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 144, 0)",
+        "base-1  | [2026-10-14 06:41:25.763][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 0, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 13,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:27.817][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [bcfd9f69-0880-4133-b7ad-f619441d1de5] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "large-json",
+      "repetition": 1,
+      "observation": "base-large-json-1",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 13,
+          "body_bytes": 87967,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 1136543,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:27.817][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 87967, 0)",
+        "base-1  | [2026-10-14 06:41:27.818][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 1136543, 0)",
+        "base-1  | [2026-10-14 06:41:27.819][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 2097236, 0)",
+        "base-1  | [2026-10-14 06:41:27.819][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 2097236, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 14,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:29.778][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [7d4f8fbc-6aff-4703-968e-0508e359a60a] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "large-json",
+      "repetition": 2,
+      "observation": "base-large-json-2",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 14,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 1067039,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:29.778][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 18463, 0)",
+        "base-1  | [2026-10-14 06:41:29.779][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 1067039, 0)",
+        "base-1  | [2026-10-14 06:41:29.779][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 2097236, 0)",
+        "base-1  | [2026-10-14 06:41:29.779][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 2097236, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 15,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:31.694][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [59a63548-8693-4d65-94a3-55d7c2f2d0a6] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "large-json",
+      "repetition": 3,
+      "observation": "base-large-json-3",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": 25,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 15,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 1067039,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "base-1  | [2026-10-14 06:41:31.694][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 18463, 0)",
+        "base-1  | [2026-10-14 06:41:31.695][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 1067039, 0)",
+        "base-1  | [2026-10-14 06:41:31.695][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 2097236, 0)",
+        "base-1  | [2026-10-14 06:41:31.695][20][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 2097236, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 16,
+          "header_count": 7,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:33.508][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [1684070c-6bea-4ea2-ac41-f97f710c619f] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "no-content",
+      "repetition": 1,
+      "observation": "base-no-content-1",
+      "http_status": 204,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 17,
+          "header_count": 7,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:35.284][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [06a680c6-d6ad-4461-8b5c-5c8aa0f74e0f] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "no-content",
+      "repetition": 2,
+      "observation": "base-no-content-2",
+      "http_status": 204,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 18,
+          "header_count": 7,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:37.099][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [6bfe05d6-e578-4b6d-9b9f-7896c636a9ed] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "no-content",
+      "repetition": 3,
+      "observation": "base-no-content-3",
+      "http_status": 204,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 19,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:39.083][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [c06e89df-05a9-4314-940e-a889f0690820] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "empty-json",
+      "repetition": 1,
+      "observation": "base-empty-json-1",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 20,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:41.004][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [bc20a223-6781-45d3-b658-b586eb1f9771] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "empty-json",
+      "repetition": 2,
+      "observation": "base-empty-json-2",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 21,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:42.821][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [a32bf08b-c0da-409f-8ca6-491ed8ce50b7] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "empty-json",
+      "repetition": 3,
+      "observation": "base-empty-json-3",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 22,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:44.644][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [f82ab221-39fa-4d22-9962-14faf703ad01] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "head",
+      "repetition": 1,
+      "observation": "base-head-1",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 23,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:47.160][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [a1ab9f7a-a119-4314-ad00-934ad740d2d0] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "head",
+      "repetition": 2,
+      "observation": "base-head-2",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 24,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "base-1  | [2026-10-14 06:41:49.847][20][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [bec1559e-ef7d-4f25-8720-575345a9d2bb] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "base",
+      "case": "head",
+      "repetition": 3,
+      "observation": "base-head-3",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": 0,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 4,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:41:52.522][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [50452ab0-b440-45aa-bac5-2ea299411e31] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "usage-key",
+      "repetition": 1,
+      "observation": "fixed-usage-key-1",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 4,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 4,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:41:52.522][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 23, 0)",
+        "fixed-1  | [2026-10-14 06:41:52.722][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 89, 0)",
+        "fixed-1  | [2026-10-14 06:41:52.722][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(4, 89, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 5,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:41:54.791][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [097b4de1-ff4c-4594-8fa4-044b866c9bc7] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "usage-key",
+      "repetition": 2,
+      "observation": "fixed-usage-key-2",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 5,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 5,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:41:54.791][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 23, 0)",
+        "fixed-1  | [2026-10-14 06:41:54.993][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 89, 0)",
+        "fixed-1  | [2026-10-14 06:41:54.993][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(5, 89, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 6,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:41:56.989][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [9d452ccc-de87-4e2d-96ff-7ccad816e5ae] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "usage-key",
+      "repetition": 3,
+      "observation": "fixed-usage-key-3",
+      "http_status": 200,
+      "body_bytes": 89,
+      "body_sha256": "486a5e8fbe46e159ff1681047614416cf8e8edc970ac60e2bc89687ee76f8bc7",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 6,
+          "body_bytes": 23,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 89,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 6,
+          "body_bytes": 89,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:41:56.990][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 23, 0)",
+        "fixed-1  | [2026-10-14 06:41:57.191][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 89, 0)",
+        "fixed-1  | [2026-10-14 06:41:57.192][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(6, 89, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 7,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:41:59.487][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [dd32ff97-64db-4106-b795-24044535145a] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "pretty-json",
+      "repetition": 1,
+      "observation": "fixed-pretty-json-1",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": null,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 7,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:41:59.487][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 0)",
+        "fixed-1  | [2026-10-14 06:41:59.487][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(7, 120, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 8,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:42:01.224][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [565a9524-05d0-4ad8-94d6-ad488e8141d0] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "pretty-json",
+      "repetition": 2,
+      "observation": "fixed-pretty-json-2",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": null,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 8,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:01.224][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 0)",
+        "fixed-1  | [2026-10-14 06:42:01.224][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(8, 120, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 9,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:42:02.861][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [cbab9760-bbdb-4c73-9302-512504aedce7] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "pretty-json",
+      "repetition": 3,
+      "observation": "fixed-pretty-json-3",
+      "http_status": 200,
+      "body_bytes": 120,
+      "body_sha256": "1b75353456b24dbb8fe7486fdf1d94844c877660250d564f02420e8b19b32697",
+      "body_unchanged": true,
+      "expected_tokens": 50,
+      "expected_baseline_observation": null,
+      "user_tokens": 50,
+      "shared_increment": 50,
+      "callback_arguments": [
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 9,
+          "body_bytes": 120,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:02.861][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 0)",
+        "fixed-1  | [2026-10-14 06:42:02.861][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(9, 120, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 10,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "sse",
+      "repetition": 1,
+      "observation": "fixed-sse-1",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 10,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 10,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:04.549][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 144, 0)",
+        "fixed-1  | [2026-10-14 06:42:04.549][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(10, 0, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 11,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "sse",
+      "repetition": 2,
+      "observation": "fixed-sse-2",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 11,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 11,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:07.153][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 144, 0)",
+        "fixed-1  | [2026-10-14 06:42:07.153][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(11, 0, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 12,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "sse",
+      "repetition": 3,
+      "observation": "fixed-sse-3",
+      "http_status": 200,
+      "body_bytes": 144,
+      "body_sha256": "29e444a15d15ae81780fca1d601e1a1527bbc39885a967a88440dc5386a4f1a8",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 12,
+          "body_bytes": 144,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 12,
+          "body_bytes": 0,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:09.962][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 144, 0)",
+        "fixed-1  | [2026-10-14 06:42:09.966][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(12, 0, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 13,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:42:11.876][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [2feab759-1928-493c-8b01-0c85689c5376] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "large-json",
+      "repetition": 1,
+      "observation": "fixed-large-json-1",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 13,
+          "body_bytes": 240007,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 1288583,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 13,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:11.876][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 240007, 0)",
+        "fixed-1  | [2026-10-14 06:42:11.877][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 1288583, 0)",
+        "fixed-1  | [2026-10-14 06:42:11.877][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 2097236, 0)",
+        "fixed-1  | [2026-10-14 06:42:11.877][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(13, 2097236, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 14,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:42:14.026][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [41f60fe3-7eff-4e59-85fd-d76f67966878] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "large-json",
+      "repetition": 2,
+      "observation": "fixed-large-json-2",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 14,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 1067039,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 14,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:14.026][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 18463, 0)",
+        "fixed-1  | [2026-10-14 06:42:14.027][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 1067039, 0)",
+        "fixed-1  | [2026-10-14 06:42:14.028][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 2097236, 0)",
+        "fixed-1  | [2026-10-14 06:42:14.028][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(14, 2097236, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 15,
+          "header_count": 8,
+          "end_of_stream": false
+        }
+      ],
+      "buffer_limit_set_calls": 1,
+      "buffer_limit_trace": [
+        "fixed-1  | [2026-10-14 06:42:17.184][21][debug][wasm] [external/envoy/source/extensions/common/wasm/context.cc:1538] wasm log ai-token-ratelimit: [ai-token-ratelimit] [nil] [a37938f0-9c43-4e39-9f36-7316fe5a900b] SetResponseBodyBufferLimit: 104857600"
+      ],
+      "variant": "fixed",
+      "case": "large-json",
+      "repetition": 3,
+      "observation": "fixed-large-json-3",
+      "http_status": 200,
+      "body_bytes": 2097236,
+      "body_sha256": "495328f257f0fabe96ceebb1bed1c36f759fd609561f3204d03424bd39a7b345",
+      "body_unchanged": true,
+      "expected_tokens": 25,
+      "expected_baseline_observation": null,
+      "user_tokens": 25,
+      "shared_increment": 25,
+      "callback_arguments": [
+        {
+          "context_id": 15,
+          "body_bytes": 18463,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 1067039,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 2097236,
+          "end_of_stream": false
+        },
+        {
+          "context_id": 15,
+          "body_bytes": 2097236,
+          "end_of_stream": true
+        }
+      ],
+      "callback_trace": [
+        "fixed-1  | [2026-10-14 06:42:17.184][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 18463, 0)",
+        "fixed-1  | [2026-10-14 06:42:17.185][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 1067039, 0)",
+        "fixed-1  | [2026-10-14 06:42:17.186][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 2097236, 0)",
+        "fixed-1  | [2026-10-14 06:42:17.186][21][trace][wasm] [external/envoy/source/extensions/common/wasm/wasm_vm.cc:46] [host->vm] proxy_on_response_body(15, 2097236, 1)"
+      ]
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 16,
+          "header_count": 7,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "no-content",
+      "repetition": 1,
+      "observation": "fixed-no-content-1",
+      "http_status": 204,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 17,
+          "header_count": 7,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "no-content",
+      "repetition": 2,
+      "observation": "fixed-no-content-2",
+      "http_status": 204,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 18,
+          "header_count": 7,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "no-content",
+      "repetition": 3,
+      "observation": "fixed-no-content-3",
+      "http_status": 204,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 19,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "empty-json",
+      "repetition": 1,
+      "observation": "fixed-empty-json-1",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 20,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "empty-json",
+      "repetition": 2,
+      "observation": "fixed-empty-json-2",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 21,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "empty-json",
+      "repetition": 3,
+      "observation": "fixed-empty-json-3",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 22,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "head",
+      "repetition": 1,
+      "observation": "fixed-head-1",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 23,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "head",
+      "repetition": 2,
+      "observation": "fixed-head-2",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    },
+    {
+      "response_header_callbacks": [
+        {
+          "context_id": 24,
+          "header_count": 8,
+          "end_of_stream": true
+        }
+      ],
+      "buffer_limit_set_calls": 0,
+      "buffer_limit_trace": [],
+      "variant": "fixed",
+      "case": "head",
+      "repetition": 3,
+      "observation": "fixed-head-3",
+      "http_status": 200,
+      "body_bytes": 0,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "body_unchanged": true,
+      "expected_tokens": 0,
+      "expected_baseline_observation": null,
+      "user_tokens": 0,
+      "shared_increment": 0,
+      "callback_arguments": [],
+      "callback_trace": []
+    }
+  ]
+}
