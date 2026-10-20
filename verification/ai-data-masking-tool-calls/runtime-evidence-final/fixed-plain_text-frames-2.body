@@ -1,0 +1,12 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"role": "assistant", "content": ""}, "finish_reason": null}]}
+
+data: {"choices":[{"delta":{"content":"ch"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"content":"ecking For DEMO_SECRET find demo info"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}]}
+
+data: {"id": "public-fixture", "choices": [], "usage": {"prompt_tokens": 12, "completion_tokens": 8, "total_tokens": 20}}
+
+data: [DONE]
+

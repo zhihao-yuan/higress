@@ -1,0 +1,40 @@
+{
+  "model": "dsv4",
+  "messages": [
+    {
+      "role": "system",
+      "content": "这是网关工具协议连通性测试，测试标签 DEMO_SECRET。请先调用 read 工具读取 README.md。本轮只返回工具调用，不直接生成报告。"
+    },
+    {
+      "role": "user",
+      "content": "帮我输出一份项目验收报告，先读取 README.md。"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "read",
+        "description": "Read a project demonstration file",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      }
+    }
+  ],
+  "tool_choice": "required",
+  "stream": false,
+  "max_tokens": 1024,
+  "temperature": 0,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  }
+}

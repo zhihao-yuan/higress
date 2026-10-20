@@ -1,0 +1,20 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"role": "assistant", "content": ""}, "finish_reason": null}]}
+
+data: {"choices":[{"delta":{"content":"checking For DEMO_SECRET find demo info"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{"name":"read"},"id":"call_public_read","index":0,"type":"function"}]},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": "{\"path\""}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": ":\"MASKE"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": "D_TOKEN"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": "\"}"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "tool_calls"}]}
+
+data: {"id": "public-fixture", "choices": [], "usage": {"prompt_tokens": 12, "completion_tokens": 8, "total_tokens": 20}}
+
+data: [DONE]
+

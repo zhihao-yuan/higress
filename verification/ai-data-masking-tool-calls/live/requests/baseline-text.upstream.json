@@ -1,0 +1,18 @@
+{
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "max_tokens": 512,
+  "messages": [
+    {
+      "content": "请简短回复测试连接成功，并在回复中原样包含测试标签 MASKED_TOKEN。",
+      "role": "user"
+    }
+  ],
+  "model": "dsv4",
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  },
+  "temperature": 0
+}

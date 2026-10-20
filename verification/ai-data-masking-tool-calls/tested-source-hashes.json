@@ -1,0 +1,12 @@
+{
+  "source_files": {
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_win_openai.rs": "152c216c40bf68b295e3b2d0f9f013b100dc484e136e41e9c0d3678b745de366",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs": "13f6dd1c38133719b988ed8477a7c23457847c3999fd0bc9c461af829bffca6c",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/lib.rs": "d2c8efe4490d6675811c7d6733f3566f823e5601b8455ec02398e57219c37a50",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/number_merge.rs": "a3f7ba931d229719418da806e9d1b28fc0db67c4379e2cefd39ab03113a04876"
+  },
+  "wasm": {
+    "baseline.wasm": "6798495acea60881c23d3b88b61868d43daf422d6b06c912f336bae2c82d6484",
+    "fixed.wasm": "08490515334f7975f54042a246e96d2b8e7bc5bf68aa52e90cf7e6b2254737ce"
+  }
+}

@@ -1,0 +1,12 @@
+data: {"id":"chatcmpl-c18b1eee-6403-4841-b5e9-7d612f5bc0ac","object":"chat.completion.chunk","created":1792480641,"model":"dsv4","choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}],"prompt_token_ids":null,"prompt_text":null}
+
+data: {"id":"chatcmpl-c18b1eee-6403-4841-b5e9-7d612f5bc0ac","object":"chat.completion.chunk","created":1792480641,"model":"dsv4","choices":[{"index":0,"delta":{"content":"测试"},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-c18b1eee-6403-4841-b5e9-7d612f5bc0ac","object":"chat.completion.chunk","created":1792480641,"model":"dsv4","choices":[{"index":0,"delta":{"content":"连接成功。DEM"},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-c18b1eee-6403-4841-b5e9-7d612f5bc0ac","object":"chat.completion.chunk","created":1792480641,"model":"dsv4","choices":[{"index":0,"delta":{"content":"O_SECRET"},"logprobs":null,"finish_reason":"stop","stop_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-c18b1eee-6403-4841-b5e9-7d612f5bc0ac","object":"chat.completion.chunk","created":1792480641,"model":"dsv4","choices":[],"usage":{"prompt_tokens":23,"total_tokens":32,"completion_tokens":9},"system_fingerprint":"vllm-0.26.0-tp8-ep-2ddfc0d7"}
+
+data: [DONE]
+

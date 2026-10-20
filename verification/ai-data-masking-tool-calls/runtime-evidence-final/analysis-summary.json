@@ -1,0 +1,20 @@
+{
+  "bypass": {
+    "requests": 82,
+    "stream_tool_requests": 56,
+    "tool_loss_requests": 0,
+    "all_asserted_fields_equal": 82
+  },
+  "baseline": {
+    "requests": 82,
+    "stream_tool_requests": 56,
+    "tool_loss_requests": 46,
+    "all_asserted_fields_equal": 12
+  },
+  "fixed": {
+    "requests": 82,
+    "stream_tool_requests": 56,
+    "tool_loss_requests": 0,
+    "all_asserted_fields_equal": 82
+  }
+}
