@@ -1,0 +1,4 @@
+data: {"choices":[{"custom_choice":null,"delta":{"content":"checking For DEMO_SECRET find demo info public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding publi","custom_delta":null,"refusal":"fixture-refusal","role":"assistant","tool_calls":[{"function":{"arguments":"{\"path\":\"README.md\"}","name":"read"},"id":"call_public_read","index":0,"type":"function"}]},"finish_reason":null,"index":0,"logprobs":{"tokens":[]}}],"custom_top":{"tag":"keep"},"id":"public-fixture","object":"chat.completion.chunk","usage":null}
+
+data: {"choices":[{"delta":{"content":"c padding public padding"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk","usage":{"total_tokens":20}}
+

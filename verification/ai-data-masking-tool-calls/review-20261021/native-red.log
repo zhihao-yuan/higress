@@ -1,0 +1,307 @@
+    Updating crates.io index
+    Updating git repository `https://github.com/higress-group/proxy-wasm-rust-sdk`
+ Downloading crates ...
+  Downloaded crypto-common v0.1.6
+  Downloaded fxhash v0.2.1
+  Downloaded cfg-if v1.0.0
+  Downloaded cpufeatures v0.2.17
+  Downloaded cedarwood v0.4.6
+  Downloaded fnv v1.0.7
+  Downloaded include-flate-codegen v0.2.0
+  Downloaded downcast-rs v1.2.1
+  Downloaded zerofrom v0.1.5
+  Downloaded zerofrom-derive v0.1.5
+  Downloaded utf8_iter v1.0.4
+  Downloaded generic-array v0.14.7
+  Downloaded yoke v0.7.5
+  Downloaded zerovec-derive v0.10.3
+  Downloaded typenum v1.17.0
+  Downloaded url v2.5.4
+  Downloaded libflate_lz77 v2.1.0
+  Downloaded zerovec v0.10.4
+  Downloaded zerocopy v0.7.35
+  Downloaded stable_deref_trait v1.2.0
+  Downloaded thiserror v2.0.11
+  Downloaded synstructure v0.13.1
+  Downloaded num-integer v0.1.46
+  Downloaded once_cell v1.20.2
+  Downloaded icu_locid_transform_data v1.5.0
+  Downloaded smallvec v1.13.2
+  Downloaded rand_core v0.6.4
+  Downloaded serde_derive v1.0.217
+  Downloaded rle-decode-fast v1.0.3
+  Downloaded pest_meta v2.7.15
+  Downloaded serde v1.0.217
+  Downloaded icu_collections v1.5.0
+  Downloaded memchr v2.7.4
+  Downloaded pest v2.7.15
+  Downloaded idna v1.0.3
+  Downloaded serde_json v1.0.138
+  Downloaded aho-corasick v1.1.3
+  Downloaded hashbrown v0.14.5
+  Downloaded jieba-macros v0.7.1
+  Downloaded icu_properties_data v1.5.0
+  Downloaded regex v1.11.1
+  Downloaded redis v0.28.2
+  Downloaded syn v2.0.98
+  Downloaded regex-syntax v0.8.5
+  Downloaded fancy-regex v0.19.0
+  Downloaded num-bigint v0.4.6
+  Downloaded combine v4.6.7
+  Downloaded cc v1.2.12
+  Downloaded http v1.2.0
+  Downloaded arc-swap v1.7.1
+  Downloaded ahash v0.8.11
+  Downloaded rand v0.8.5
+  Downloaded num-traits v0.2.19
+  Downloaded bytes v1.10.0
+  Downloaded icu_normalizer_data v1.5.0
+  Downloaded icu_normalizer v1.5.0
+  Downloaded icu_locid v1.5.0
+  Downloaded proc-macro2 v1.0.93
+  Downloaded pest_derive v2.7.15
+  Downloaded jsonpath-rust v0.7.5
+  Downloaded icu_provider v1.5.0
+  Downloaded regex-automata v0.4.18
+  Downloaded onig_sys v69.8.1
+  Downloaded icu_properties v1.5.1
+  Downloaded allocator-api2 v0.2.21
+  Downloaded ryu v1.0.19
+  Downloaded core2 v0.4.0
+  Downloaded byteorder v1.5.0
+  Downloaded log v0.4.25
+  Downloaded libflate v2.1.0
+  Downloaded crc32fast v1.4.2
+  Downloaded bitflags v1.3.2
+  Downloaded autocfg v1.4.0
+  Downloaded pest_generator v2.7.15
+  Downloaded onig v6.4.0
+  Downloaded litemap v0.7.4
+  Downloaded rust-embed v8.5.0
+  Downloaded icu_locid_transform v1.5.0
+  Downloaded grok v2.0.0
+  Downloaded glob v0.3.2
+  Downloaded displaydoc v0.2.5
+  Downloaded digest v0.10.7
+  Downloaded dary_heap v0.3.7
+  Downloaded block-buffer v0.10.4
+  Downloaded bit-vec v0.8.0
+  Downloaded include-flate v0.3.0
+  Downloaded bit-set v0.8.0
+  Downloaded adler32 v1.2.0
+  Downloaded siphasher v1.0.1
+  Downloaded shlex v1.3.0
+  Downloaded sha2 v0.10.8
+  Downloaded same-file v1.0.6
+  Downloaded rust-embed-utils v8.5.0
+  Downloaded rust-embed-impl v8.5.0
+  Downloaded quote v1.0.38
+  Downloaded pkg-config v0.3.31
+  Downloaded phf v0.11.3
+  Downloaded percent-encoding v2.3.1
+  Downloaded phf_codegen v0.11.3
+  Downloaded lazy_static v1.5.0
+  Downloaded unicode-ident v1.0.16
+  Downloaded phf_shared v0.11.3
+  Downloaded multimap v0.10.0
+  Downloaded itoa v1.0.14
+  Downloaded icu_provider_macros v1.5.0
+  Downloaded writeable v0.5.5
+  Downloaded walkdir v2.5.0
+  Downloaded thiserror-impl v2.0.11
+  Downloaded phf_generator v0.11.3
+  Downloaded version_check v0.9.5
+  Downloaded ucd-trie v0.1.7
+  Downloaded tinystr v0.7.6
+  Downloaded hmac-sha256 v1.1.12
+  Downloaded utf16_iter v1.0.5
+  Downloaded yoke-derive v0.7.5
+  Downloaded idna_adapter v1.2.0
+  Downloaded form_urlencoded v1.2.1
+  Downloaded write16 v1.0.0
+  Downloaded jieba-rs v0.7.2
+   Compiling proc-macro2 v1.0.93
+   Compiling unicode-ident v1.0.16
+   Compiling version_check v0.9.5
+   Compiling memchr v2.7.4
+   Compiling once_cell v1.20.2
+   Compiling stable_deref_trait v1.2.0
+   Compiling cfg-if v1.0.0
+   Compiling writeable v0.5.5
+   Compiling litemap v0.7.4
+   Compiling typenum v1.17.0
+   Compiling zerocopy v0.7.35
+   Compiling icu_locid_transform_data v1.5.0
+   Compiling smallvec v1.13.2
+   Compiling allocator-api2 v0.2.21
+   Compiling siphasher v1.0.1
+   Compiling ahash v0.8.11
+   Compiling generic-array v0.14.7
+   Compiling icu_properties_data v1.5.0
+   Compiling thiserror v2.0.11
+   Compiling autocfg v1.4.0
+   Compiling icu_normalizer_data v1.5.0
+   Compiling shlex v1.3.0
+   Compiling serde v1.0.217
+   Compiling utf16_iter v1.0.5
+   Compiling utf8_iter v1.0.4
+   Compiling num-traits v0.2.19
+   Compiling write16 v1.0.0
+   Compiling cc v1.2.12
+   Compiling core2 v0.4.0
+   Compiling hashbrown v0.14.5
+   Compiling aho-corasick v1.1.3
+   Compiling quote v1.0.38
+   Compiling syn v2.0.98
+   Compiling rand_core v0.6.4
+   Compiling itoa v1.0.14
+   Compiling rle-decode-fast v1.0.3
+   Compiling ucd-trie v0.1.7
+   Compiling regex-syntax v0.8.5
+   Compiling pkg-config v0.3.31
+   Compiling libflate_lz77 v2.1.0
+   Compiling rand v0.8.5
+   Compiling phf_shared v0.11.3
+   Compiling crc32fast v1.4.2
+   Compiling adler32 v1.2.0
+   Compiling dary_heap v0.3.7
+   Compiling percent-encoding v2.3.1
+   Compiling cpufeatures v0.2.17
+   Compiling serde_json v1.0.138
+   Compiling same-file v1.0.6
+   Compiling onig_sys v69.8.1
+   Compiling ryu v1.0.19
+   Compiling bytes v1.10.0
+   Compiling walkdir v2.5.0
+   Compiling regex-automata v0.4.18
+   Compiling libflate v2.1.0
+   Compiling form_urlencoded v1.2.1
+   Compiling phf_generator v0.11.3
+   Compiling num-integer v0.1.46
+   Compiling glob v0.3.2
+   Compiling lazy_static v1.5.0
+   Compiling proxy-wasm v0.2.2 (https://github.com/higress-group/proxy-wasm-rust-sdk?branch=main#8c902102)
+   Compiling num-bigint v0.4.6
+   Compiling synstructure v0.13.1
+   Compiling grok v2.0.0
+   Compiling phf_codegen v0.11.3
+   Compiling combine v4.6.7
+   Compiling bit-vec v0.8.0
+   Compiling bitflags v1.3.2
+   Compiling arc-swap v1.7.1
+   Compiling log v0.4.25
+   Compiling fnv v1.0.7
+   Compiling downcast-rs v1.2.1
+   Compiling byteorder v1.5.0
+   Compiling regex v1.11.1
+   Compiling fxhash v0.2.1
+   Compiling http v1.2.0
+   Compiling bit-set v0.8.0
+   Compiling phf v0.11.3
+   Compiling jieba-macros v0.7.1
+   Compiling cedarwood v0.4.6
+   Compiling fancy-regex v0.19.0
+   Compiling hmac-sha256 v1.1.12
+   Compiling zerofrom-derive v0.1.5
+   Compiling yoke-derive v0.7.5
+   Compiling zerovec-derive v0.10.3
+   Compiling displaydoc v0.2.5
+   Compiling icu_provider_macros v1.5.0
+   Compiling thiserror-impl v2.0.11
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+   Compiling serde_derive v1.0.217
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.8
+   Compiling rust-embed-utils v8.5.0
+   Compiling include-flate-codegen v0.2.0
+   Compiling onig v6.4.0
+   Compiling rust-embed-impl v8.5.0
+   Compiling zerofrom v0.1.5
+   Compiling yoke v0.7.5
+   Compiling zerovec v0.10.4
+   Compiling include-flate v0.3.0
+   Compiling jieba-rs v0.7.2
+   Compiling tinystr v0.7.6
+   Compiling icu_collections v1.5.0
+   Compiling icu_locid v1.5.0
+   Compiling icu_provider v1.5.0
+   Compiling pest v2.7.15
+   Compiling icu_locid_transform v1.5.0
+   Compiling rust-embed v8.5.0
+   Compiling icu_properties v1.5.1
+   Compiling pest_meta v2.7.15
+   Compiling pest_generator v2.7.15
+   Compiling icu_normalizer v1.5.0
+   Compiling pest_derive v2.7.15
+   Compiling idna_adapter v1.2.0
+   Compiling idna v1.0.3
+   Compiling url v2.5.4
+   Compiling redis v0.28.2
+   Compiling multimap v0.10.0
+   Compiling higress-wasm-rust v0.1.0 (/workspace)
+   Compiling jsonpath-rust v0.7.5
+   Compiling ai-data-masking v0.1.0 (/workspace/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 44s
+     Running unittests src/lib.rs (/evidence/build/target/debug/deps/ai_data_masking-d30bb00ee48c45bb)
+
+running 14 tests
+test ai_data_masking::tests::general_restore_limit_is_explicit ... ok
+test msg_win_openai::tests::test_preserve_empty_terminal_and_usage_events ... FAILED
+test ai_data_masking::tests::hash_and_general_matches_use_global_leftmost_longest_order ... ok
+test ai_data_masking::tests::regex_runtime_error_is_returned_without_retrying ... ok
+test ai_data_masking::tests::repeated_hash_keeps_restore_mapping ... ok
+test ai_data_masking::tests::replacement_expands_captures_for_each_match_context ... ok
+test msg_win_openai::tests::test_preserve_error_without_synthesizing_completion ... FAILED
+test msg_win_openai::tests::test_msg ... ok
+test msg_win_openai::tests::test_restore_text_without_changing_tool_arguments ... FAILED
+test msg_window::tests::test_msg_window ... ok
+test msg_win_openai::tests::test_preserve_tool_calls_after_buffered_text ... FAILED
+test ai_data_masking::tests::restores_more_than_five_thousand_unique_values ... ok
+test msg_win_openai::tests::test_preserve_multiple_choices_and_long_arguments ... FAILED
+test ai_data_masking::tests::masks_forty_five_thousand_unique_values_without_per_word_replacement ... ok
+
+failures:
+
+---- msg_win_openai::tests::test_preserve_empty_terminal_and_usage_events stdout ----
+thread 'msg_win_openai::tests::test_preserve_empty_terminal_and_usage_events' panicked at src/msg_win_openai.rs:459:17:
+assertion `left == right` failed
+  left: ""
+ right: "Thinking."
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- msg_win_openai::tests::test_preserve_error_without_synthesizing_completion stdout ----
+thread 'msg_win_openai::tests::test_preserve_error_without_synthesizing_completion' panicked at src/msg_win_openai.rs:528:13:
+assertion `left == right` failed
+  left: ""
+ right: "data: {\"error\":{\"message\":\"upstream failure\",\"type\":\"server_error\"}}\n\n"
+
+---- msg_win_openai::tests::test_restore_text_without_changing_tool_arguments stdout ----
+thread 'msg_win_openai::tests::test_restore_text_without_changing_tool_arguments' panicked at src/msg_win_openai.rs:490:13:
+assertion `left == right` failed
+  left: []
+ right: [Array [Object {"function": Object {"arguments": String("{\"path\":\"MASKED\"}"), "name": String("read")}, "id": String("call_read"), "index": Number(0), "type": String("function")}]]
+
+---- msg_win_openai::tests::test_preserve_tool_calls_after_buffered_text stdout ----
+thread 'msg_win_openai::tests::test_preserve_tool_calls_after_buffered_text' panicked at src/msg_win_openai.rs:417:13:
+assertion `left == right` failed: fragment size 1
+  left: []
+ right: [Array [Object {"function": Object {"arguments": String(""), "name": String("read")}, "id": String("call_read"), "index": Number(0), "type": String("function")}], Array [Object {"function": Object {"arguments": String(""), "name": String("search")}, "id": String("call_search"), "index": Number(1), "type": String("function")}], Array [Object {"function": Object {"arguments": String("{\"path\":")}, "index": Number(0)}], Array [Object {"function": Object {"arguments": String("{\"query\":")}, "index": Number(1)}], Array [Object {"function": Object {"arguments": String("\"README.md\"}")}, "index": Number(0)}], Array [Object {"function": Object {"arguments": String("\"demo\"}")}, "index": Number(1)}]]
+
+---- msg_win_openai::tests::test_preserve_multiple_choices_and_long_arguments stdout ----
+thread 'msg_win_openai::tests::test_preserve_multiple_choices_and_long_arguments' panicked at src/msg_win_openai.rs:519:13:
+assertion `left == right` failed: fragment size 1
+  left: [Object {"delta": Object {}, "finish_reason": Null, "index": Number(0)}, Object {"delta": Object {}, "finish_reason": Null, "index": Number(1)}]
+ right: [Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String(""), "name": String("write")}, "id": String("call_write"), "index": Number(0), "type": String("function")}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("{}"), "name": String("read")}, "id": String("call_read"), "index": Number(0), "type": String("function")}]}, "index": Number(0)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("{\"content\":\"report detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nrepor")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("t detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport ")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport de")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("tail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport deta")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("il\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\n")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("report detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nre")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("port detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nrepo")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("rt detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String(" detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport d")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("etail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport det")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("ail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detai")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("l\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nr")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("eport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nrep")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("ort detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nrepor")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("t detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport ")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport de")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("tail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport deta")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("il\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\n")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("report detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nre")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("port detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nrepo")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("rt detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String(" detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport d")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("etail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport det")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("ail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detai")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("l\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nr")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {"tool_calls": Array [Object {"function": Object {"arguments": String("eport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\nreport detail\\n\"}")}, "index": Number(0)}]}, "index": Number(1)}, Object {"delta": Object {}, "finish_reason": String("tool_calls"), "index": Number(1)}, Object {"delta": Object {}, "finish_reason": String("tool_calls"), "index": Number(0)}]
+
+
+failures:
+    msg_win_openai::tests::test_preserve_empty_terminal_and_usage_events
+    msg_win_openai::tests::test_preserve_error_without_synthesizing_completion
+    msg_win_openai::tests::test_preserve_multiple_choices_and_long_arguments
+    msg_win_openai::tests::test_preserve_tool_calls_after_buffered_text
+    msg_win_openai::tests::test_restore_text_without_changing_tool_arguments
+
+test result: FAILED. 9 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.55s
+
+error: test failed, to rerun pass `--lib`

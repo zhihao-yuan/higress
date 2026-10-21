@@ -1,0 +1,40 @@
+{
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "content": "这是网关工具协议连通性测试，测试标签 MASKED_TOKEN。请先调用 read 工具读取 README.md。本轮只返回工具调用，不直接生成报告。",
+      "role": "system"
+    },
+    {
+      "content": "帮我输出一份项目验收报告，先读取 README.md。",
+      "role": "user"
+    }
+  ],
+  "model": "dsv4",
+  "stream": false,
+  "temperature": 0,
+  "tool_choice": "required",
+  "tools": [
+    {
+      "function": {
+        "description": "Read a project demonstration file",
+        "name": "read",
+        "parameters": {
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    }
+  ]
+}

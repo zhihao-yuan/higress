@@ -1,0 +1,64 @@
+   Compiling ai-data-masking v0.1.0 (/workspace/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 47.01s
+     Running unittests src/lib.rs (/target-cache/debug/deps/ai_data_masking-d30bb00ee48c45bb)
+
+running 21 tests
+test ai_data_masking::tests::general_restore_limit_is_explicit ... ok
+test msg_win_openai::tests::test_check_final_event_before_flushing_text ... ok
+test ai_data_masking::tests::hash_and_general_matches_use_global_leftmost_longest_order ... ok
+test ai_data_masking::tests::replacement_expands_captures_for_each_match_context ... ok
+test ai_data_masking::tests::regex_runtime_error_is_returned_without_retrying ... ok
+test msg_win_openai::tests::test_preserve_error_without_synthesizing_completion ... ok
+test msg_win_openai::tests::test_preserve_non_data_event_and_error_after_text ... ok
+test ai_data_masking::tests::repeated_hash_keeps_restore_mapping ... ok
+test msg_win_openai::tests::test_preserve_empty_terminal_and_usage_events ... ok
+test msg_win_openai::tests::test_preserve_tool_calls_after_buffered_text ... ok
+test msg_win_openai::tests::test_restore_text_without_changing_tool_arguments ... ok
+test msg_win_openai::tests::test_protocol_barrier_keeps_other_choice_buffered ... FAILED
+test msg_win_openai::tests::test_synthesize_done_after_all_choices_and_usage ... FAILED
+test msg_win_openai::tests::test_role_is_emitted_once_when_text_is_split ... FAILED
+test msg_win_openai::tests::test_msg ... ok
+test msg_window::tests::test_msg_window ... ok
+test msg_win_openai::tests::test_unfinished_choice_does_not_synthesize_done ... ok
+test ai_data_masking::tests::restores_more_than_five_thousand_unique_values ... ok
+test msg_win_openai::tests::test_text_frames_do_not_duplicate_protocol_fields ... FAILED
+test msg_win_openai::tests::test_preserve_multiple_choices_and_long_arguments ... ok
+test ai_data_masking::tests::masks_forty_five_thousand_unique_values_without_per_word_replacement ... ok
+
+failures:
+
+---- msg_win_openai::tests::test_protocol_barrier_keeps_other_choice_buffered stdout ----
+thread 'msg_win_openai::tests::test_protocol_barrier_keeps_other_choice_buffered' panicked at src/msg_win_openai.rs:703:13:
+assertion `left == right` failed: fragment size 1
+  left: "MASKED"
+ right: "original"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- msg_win_openai::tests::test_synthesize_done_after_all_choices_and_usage stdout ----
+thread 'msg_win_openai::tests::test_synthesize_done_after_all_choices_and_usage' panicked at src/msg_win_openai.rs:777:13:
+assertion `left == right` failed
+  left: 0
+ right: 1
+
+---- msg_win_openai::tests::test_role_is_emitted_once_when_text_is_split stdout ----
+thread 'msg_win_openai::tests::test_role_is_emitted_once_when_text_is_split' panicked at src/msg_win_openai.rs:762:13:
+assertion `left == right` failed: fragment size 1
+  left: 2
+ right: 1
+
+---- msg_win_openai::tests::test_text_frames_do_not_duplicate_protocol_fields stdout ----
+thread 'msg_win_openai::tests::test_text_frames_do_not_duplicate_protocol_fields' panicked at src/msg_win_openai.rs:717:13:
+assertion `left == right` failed
+  left: 2
+ right: 1
+
+
+failures:
+    msg_win_openai::tests::test_protocol_barrier_keeps_other_choice_buffered
+    msg_win_openai::tests::test_role_is_emitted_once_when_text_is_split
+    msg_win_openai::tests::test_synthesize_done_after_all_choices_and_usage
+    msg_win_openai::tests::test_text_frames_do_not_duplicate_protocol_fields
+
+test result: FAILED. 17 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.84s
+
+error: test failed, to rerun pass `--lib`

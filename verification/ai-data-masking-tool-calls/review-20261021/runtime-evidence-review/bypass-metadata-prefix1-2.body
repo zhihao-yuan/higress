@@ -1,0 +1,8 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"role": "assistant", "content": "checking For DEMO_SECRET find demo info public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding public padding", "tool_calls": [{"index": 0, "id": "call_public_read", "type": "function", "function": {"name": "read", "arguments": "{\"path\":\"README.md\"}"}}], "refusal": "fixture-refusal", "custom_delta": null}, "logprobs": {"tokens": []}, "custom_choice": null}], "custom_top": {"tag": "keep"}}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "tool_calls"}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [], "usage": {"total_tokens": 20}}
+
+data: [DONE]
+

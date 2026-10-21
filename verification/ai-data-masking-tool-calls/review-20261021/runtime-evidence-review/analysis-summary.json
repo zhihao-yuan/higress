@@ -1,0 +1,20 @@
+{
+  "bypass": {
+    "requests": 122,
+    "stream_tool_requests": 80,
+    "tool_delta_mismatches": 0,
+    "all_fields_passed": 122
+  },
+  "baseline": {
+    "requests": 122,
+    "stream_tool_requests": 80,
+    "tool_delta_mismatches": 71,
+    "all_fields_passed": 8
+  },
+  "fixed": {
+    "requests": 122,
+    "stream_tool_requests": 80,
+    "tool_delta_mismatches": 0,
+    "all_fields_passed": 122
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "model": "dsv4",
+  "messages": [
+    {
+      "role": "user",
+      "content": "请简短回复测试连接成功，并在回复中原样包含测试标签 DEMO_SECRET。"
+    }
+  ],
+  "stream": true,
+  "max_tokens": 512,
+  "temperature": 0,
+  "stream_options": {
+    "include_usage": true
+  },
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  }
+}
