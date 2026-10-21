@@ -1,0 +1,9 @@
+{
+  "requests": 48,
+  "fixed_cases": 16,
+  "pre_review_same_choice_denial_bypasses": 8,
+  "status": "passed",
+  "tools_executed": false,
+  "real_model_calls": 0,
+  "note": "Checks actual deny-word log and absence of the forbidden text; synthetic denial termination is outside this PR."
+}

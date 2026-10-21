@@ -1,0 +1,93 @@
+[
+  {
+    "name": "format-final",
+    "command": [
+      "docker",
+      "exec",
+      "--workdir",
+      "/workspace/plugins/wasm-rust/extensions/ai-data-masking",
+      "higress-masking-review2-20261021-builder",
+      "cargo",
+      "fmt",
+      "--all",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 11.60883092880249
+  },
+  {
+    "name": "native-final",
+    "command": [
+      "docker",
+      "exec",
+      "--workdir",
+      "/workspace/plugins/wasm-rust/extensions/ai-data-masking",
+      "higress-masking-review2-20261021-builder",
+      "cargo",
+      "test",
+      "--offline",
+      "--locked"
+    ],
+    "exit_code": 0,
+    "seconds": 56.97051477432251
+  },
+  {
+    "name": "clippy-final",
+    "command": [
+      "docker",
+      "exec",
+      "--workdir",
+      "/workspace/plugins/wasm-rust/extensions/ai-data-masking",
+      "higress-masking-review2-20261021-builder",
+      "cargo",
+      "clippy",
+      "--offline",
+      "--locked",
+      "--all-features",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0,
+    "seconds": 38.824126958847046
+  },
+  {
+    "name": "wasm-build-final",
+    "command": [
+      "docker",
+      "exec",
+      "--workdir",
+      "/workspace/plugins/wasm-rust/extensions/ai-data-masking",
+      "higress-masking-review2-20261021-builder",
+      "cargo",
+      "build",
+      "--offline",
+      "--locked",
+      "--release",
+      "--target",
+      "wasm32-wasip1"
+    ],
+    "exit_code": 0,
+    "seconds": 126.5329532623291
+  },
+  {
+    "name": "make-test-final",
+    "command": [
+      "docker",
+      "exec",
+      "--workdir",
+      "/workspace/plugins/wasm-rust/extensions/ai-data-masking",
+      "higress-masking-review2-20261021-builder",
+      "env",
+      "CARGO_NET_OFFLINE=true",
+      "make",
+      "-C",
+      "/workspace/plugins/wasm-rust",
+      "PLUGIN_NAME=ai-data-masking",
+      "test"
+    ],
+    "exit_code": 0,
+    "seconds": 11.442547082901001
+  }
+]

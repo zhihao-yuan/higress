@@ -1,0 +1,31 @@
+{
+  "model": "public-fixture",
+  "stream": true,
+  "messages": [
+    {
+      "role": "user",
+      "content": "For DEMO_SECRET find demo info"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "read",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      }
+    }
+  ],
+  "tool_choice": "auto",
+  "parallel_tool_calls": true
+}

@@ -1,0 +1,8 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "checking For DEMO_SECRET find demo info"}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}]}
+
+: keepalive
+
+data: {"error": {"message": "synthetic late failure"}}
+

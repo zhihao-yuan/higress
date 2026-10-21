@@ -1,0 +1,10 @@
+data: {"id":"chatcmpl-d9d831ef-ba1a-4069-9a52-0d21b12e52a0","object":"chat.completion.chunk","created":1792585121,"model":"dsv4","choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}],"prompt_token_ids":null,"prompt_text":null}
+
+data: {"choices":[{"delta":{"content":"测试连接成功 DEMO_SECRET"},"finish_reason":null,"index":0}],"created":1792585121,"id":"chatcmpl-d9d831ef-ba1a-4069-9a52-0d21b12e52a0","model":"dsv4","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{},"finish_reason":"stop","index":0,"stop_reason":null}],"created":1792585121,"id":"chatcmpl-d9d831ef-ba1a-4069-9a52-0d21b12e52a0","model":"dsv4","object":"chat.completion.chunk"}
+
+data: {"id":"chatcmpl-d9d831ef-ba1a-4069-9a52-0d21b12e52a0","object":"chat.completion.chunk","created":1792585121,"model":"dsv4","choices":[],"usage":{"prompt_tokens":23,"total_tokens":31,"completion_tokens":8},"system_fingerprint":"vllm-0.26.0-tp8-ep-2ddfc0d7"}
+
+data: [DONE]
+

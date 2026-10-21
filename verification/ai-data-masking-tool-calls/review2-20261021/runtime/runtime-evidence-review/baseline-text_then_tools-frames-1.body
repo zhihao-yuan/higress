@@ -1,0 +1,6 @@
+data: {"choices":[{"delta":{"content":"ch"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk","usage":null}
+
+data: {"choices":[{"delta":{"content":"ecking For DE","tool_calls":[{"function":{"arguments":"E.md\"}"},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk","usage":null}
+
+data: {"choices":[{"delta":{"content":"MO_SECRET find demo info"},"finish_reason":null,"index":0}],"id":"public-fixture","usage":{"completion_tokens":8,"prompt_tokens":12,"total_tokens":20}}
+

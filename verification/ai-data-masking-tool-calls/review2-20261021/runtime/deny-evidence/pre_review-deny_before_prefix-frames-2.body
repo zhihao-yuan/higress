@@ -1,0 +1,8 @@
+data: {"choices":[{"delta":{"content":"x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x FORBIDDEN y y y y y y y y y"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "id": "call_public_read", "type": "function", "function": {"name": "read", "arguments": "{\"path\":\"README.md\"}"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "tool_calls"}]}
+
+data: [DONE]
+

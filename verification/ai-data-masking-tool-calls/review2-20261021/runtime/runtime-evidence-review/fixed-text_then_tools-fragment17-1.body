@@ -1,0 +1,30 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"role": "assistant", "content": ""}, "finish_reason": null}]}
+
+data: {"choices":[{"delta":{"content":"ch"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"content":"eck"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"content":"ing"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"content":" Fo"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"content":"r D"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"choices":[{"delta":{"content":"E"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "id": "call_public_read", "type": "function", "function": {"name": "read"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": "{\"path\""}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": ":\"READM"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "function": {"arguments": "E.md\"}"}}]}, "finish_reason": null}]}
+
+data: {"choices":[{"delta":{"content":"MO_SECRET find demo info"},"finish_reason":null,"index":0}],"id":"public-fixture","object":"chat.completion.chunk"}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "tool_calls"}]}
+
+data: {"id": "public-fixture", "choices": [], "usage": {"prompt_tokens": 12, "completion_tokens": 8, "total_tokens": 20}}
+
+data: [DONE]
+

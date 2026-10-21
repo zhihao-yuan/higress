@@ -1,0 +1,14 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "Checking tools."}}, {"index": 1, "delta": {"content": "checking For MAS"}}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "id": "call_public_read", "type": "function", "function": {"name": "read", "arguments": "{\"path\":\"README.md\"}"}}]}}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "tool_calls"}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 1, "delta": {"content": "KED_TOKEN find demo info"}}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 1, "delta": {}, "finish_reason": "stop"}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [], "usage": {"total_tokens": 20}}
+
+data: [DONE]
+

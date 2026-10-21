@@ -1,0 +1,12 @@
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "DEMO"}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"tool_calls": [{"index": 0, "id": "call_public_read", "type": "function", "function": {"name": "read", "arguments": "{\"path\":\"MASKED_TOKEN\"}"}}]}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {"content": "_SECRET"}, "finish_reason": null}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [{"index": 0, "delta": {}, "finish_reason": "tool_calls"}]}
+
+data: {"id": "public-fixture", "object": "chat.completion.chunk", "choices": [], "usage": {"total_tokens": 20}}
+
+data: [DONE]
+

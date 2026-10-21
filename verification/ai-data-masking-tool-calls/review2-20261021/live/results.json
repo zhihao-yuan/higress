@@ -1,0 +1,288 @@
+[
+  {
+    "case": "direct-tools",
+    "variant": "direct",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:05.175919+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": false,
+    "upstream_tool_deltas": null,
+    "downstream_tool_deltas": 3,
+    "valid_downstream_calls": 1,
+    "upstream_finish": null,
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": null,
+    "downstream_done": 1,
+    "body_sha256": "e84c8b421f9c8c94b9a2c7f686ec308ab6d4e64e3f4308a452213257e53568e7"
+  },
+  {
+    "case": "direct-text",
+    "variant": "direct",
+    "kind": "text",
+    "utc": "2026-10-21T12:18:05.673298+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": false,
+    "upstream_tool_deltas": null,
+    "downstream_tool_deltas": 0,
+    "valid_downstream_calls": 0,
+    "upstream_finish": null,
+    "downstream_finish": [
+      "stop"
+    ],
+    "upstream_done": null,
+    "downstream_done": 1,
+    "body_sha256": "c2d193796143fecefd784007d845948a6856fe7388f0c4451276c22f3cd820e9"
+  },
+  {
+    "case": "bypass-tools-1",
+    "variant": "bypass",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:07.629965+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 3,
+    "downstream_tool_deltas": 3,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 1,
+    "body_sha256": "ad1ac319f2d58155e675fa3cd57a95b34876105722c5cbe9a68508a4163ca1d5"
+  },
+  {
+    "case": "bypass-tools-2",
+    "variant": "bypass",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:08.432804+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 3,
+    "downstream_tool_deltas": 3,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 1,
+    "body_sha256": "9e40403ea94a10270bb7c6afed3baef2f5910336b6a70e8f306427c95a1cb641"
+  },
+  {
+    "case": "bypass-text",
+    "variant": "bypass",
+    "kind": "text",
+    "utc": "2026-10-21T12:18:08.877012+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 0,
+    "downstream_tool_deltas": 0,
+    "valid_downstream_calls": 0,
+    "upstream_finish": [
+      "stop"
+    ],
+    "downstream_finish": [
+      "stop"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 1,
+    "body_sha256": "373d4d0b85ffef45865d4ec4b40f8d8eabfe917f42fc62da08c5a97fd9a02299"
+  },
+  {
+    "case": "bypass-tools-json",
+    "variant": "bypass",
+    "kind": "tools-json",
+    "utc": "2026-10-21T12:18:09.615671+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 1,
+    "downstream_tool_deltas": 1,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 0,
+    "downstream_done": 0,
+    "body_sha256": "b763d0f1586a50e8e8e9d12c6f5aac7c646461f71df0e50730e0bd4de7dc5c40"
+  },
+  {
+    "case": "baseline-tools-1",
+    "variant": "baseline",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:17.421742+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 3,
+    "downstream_tool_deltas": 0,
+    "valid_downstream_calls": 0,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [],
+    "upstream_done": 1,
+    "downstream_done": 0,
+    "body_sha256": "7a7c62ad02b0bbb35d2766e6984af07d74e6945c51e892c96bfb808ce367d6aa"
+  },
+  {
+    "case": "baseline-tools-2",
+    "variant": "baseline",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:18.228776+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 3,
+    "downstream_tool_deltas": 0,
+    "valid_downstream_calls": 0,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [],
+    "upstream_done": 1,
+    "downstream_done": 0,
+    "body_sha256": "1b628d2816588a08330a2ee35e1e87562bb0713397ef895347b23006305b2ab2"
+  },
+  {
+    "case": "baseline-text",
+    "variant": "baseline",
+    "kind": "text",
+    "utc": "2026-10-21T12:18:18.762617+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 0,
+    "downstream_tool_deltas": 0,
+    "valid_downstream_calls": 0,
+    "upstream_finish": [
+      "stop"
+    ],
+    "downstream_finish": [
+      "stop"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 0,
+    "body_sha256": "e743292322eea0c016e10c984c6f1cb5e1163ac09d183f5487a3987306fddf3e"
+  },
+  {
+    "case": "baseline-tools-json",
+    "variant": "baseline",
+    "kind": "tools-json",
+    "utc": "2026-10-21T12:18:19.504862+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 1,
+    "downstream_tool_deltas": 1,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 0,
+    "downstream_done": 0,
+    "body_sha256": "5a6cb3107030c2b4b1202e3c6b464eb55ab7b38d21c37ca91d924ca84bbfb689"
+  },
+  {
+    "case": "fixed-tools-1",
+    "variant": "fixed",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:25.387693+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 3,
+    "downstream_tool_deltas": 3,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 1,
+    "body_sha256": "ddf7a7005cd09c0a5ecca96e1f4b507c7bee36e546d52a17a1d7978e645fd4bc"
+  },
+  {
+    "case": "fixed-tools-2",
+    "variant": "fixed",
+    "kind": "tools",
+    "utc": "2026-10-21T12:18:26.201215+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 3,
+    "downstream_tool_deltas": 3,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 1,
+    "body_sha256": "82c68ede39a65fc4a0cb3881851a3eec9f870b55c7d00e0d3ac73f026ed6a327"
+  },
+  {
+    "case": "fixed-text",
+    "variant": "fixed",
+    "kind": "text",
+    "utc": "2026-10-21T12:18:26.681874+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 0,
+    "downstream_tool_deltas": 0,
+    "valid_downstream_calls": 0,
+    "upstream_finish": [
+      "stop"
+    ],
+    "downstream_finish": [
+      "stop"
+    ],
+    "upstream_done": 1,
+    "downstream_done": 1,
+    "body_sha256": "ca71c567dca9c975cf8eda3aa7dd9d0fa7899293bbe4c4a631530705587088ca"
+  },
+  {
+    "case": "fixed-tools-json",
+    "variant": "fixed",
+    "kind": "tools-json",
+    "utc": "2026-10-21T12:18:27.447547+00:00",
+    "http": "200",
+    "real_model_request": true,
+    "same_request_native_tap": true,
+    "upstream_tool_deltas": 1,
+    "downstream_tool_deltas": 1,
+    "valid_downstream_calls": 1,
+    "upstream_finish": [
+      "tool_calls"
+    ],
+    "downstream_finish": [
+      "tool_calls"
+    ],
+    "upstream_done": 0,
+    "downstream_done": 0,
+    "body_sha256": "838aa51ec1eb5075a5aaec545965e884581f7c614ce8fe1193b97b70faec948f"
+  }
+]

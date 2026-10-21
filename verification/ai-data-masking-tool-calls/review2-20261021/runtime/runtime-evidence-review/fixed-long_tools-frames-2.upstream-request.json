@@ -1,0 +1,52 @@
+{
+  "messages": [
+    {
+      "content": "For MASKED_TOKEN find demo info",
+      "role": "user"
+    }
+  ],
+  "model": "public-fixture",
+  "parallel_tool_calls": true,
+  "stream": true,
+  "tool_choice": "auto",
+  "tools": [
+    {
+      "function": {
+        "name": "write",
+        "parameters": {
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    },
+    {
+      "function": {
+        "name": "search",
+        "parameters": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "function"
+    }
+  ]
+}
