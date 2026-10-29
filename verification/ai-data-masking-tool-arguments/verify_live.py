@@ -158,6 +158,8 @@ def main():
                 'utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'max_tokens': body.get('max_tokens'),
                 'live_model_request': not args.fixture})
             lab.save('ledger.json', ledger)
+            lab.manifest['model_requests'] = sum(row['live_model_request'] for row in ledger)
+            lab.save('manifest.json', lab.manifest)
             raw = json.dumps(body, ensure_ascii=False).encode()
             (lab.cases / (case + '.request')).write_bytes(raw)
             result = lab.command(['curl', '-sS', '-N', '--connect-timeout', '5', '--max-time', '120', url + '/v1/chat/completions',
