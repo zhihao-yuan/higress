@@ -120,6 +120,21 @@ fn payload(raw: &[u8]) -> Vec<u8> {
     result
 }
 
+fn line_ending_prefix(bytes: &[u8]) -> Option<&[u8]> {
+    bytes
+        .strip_suffix(b"\r\n")
+        .or_else(|| bytes.strip_suffix(b"\n"))
+        .or_else(|| bytes.strip_suffix(b"\r"))
+}
+
+fn ensure_event_boundary(raw: &mut Vec<u8>) {
+    let terminated = line_ending_prefix(raw)
+        .is_some_and(|before| before.is_empty() || line_ending_prefix(before).is_some());
+    if !terminated {
+        raw.extend_from_slice(b"\n\n");
+    }
+}
+
 fn render_event(raw: &[u8], value: &Value) -> Vec<u8> {
     let mut event = Vec::new();
     for line in raw.split(|byte| *byte == b'\r' || *byte == b'\n') {
@@ -431,7 +446,9 @@ impl ToolStream {
         log: &Log,
     ) -> Result<Vec<StreamAction>, &'static str> {
         let mut actions = Vec::new();
-        for raw in self.parser.push(data, end) {
+        for mut raw in self.parser.push(data, end) {
+            // A flushed HTTP tail must end before any buffered args we append.
+            ensure_event_boundary(&mut raw);
             let data = payload(&raw);
             if data.iter().all(u8::is_ascii_whitespace) {
                 actions.push(StreamAction::Event { raw, payload: data });

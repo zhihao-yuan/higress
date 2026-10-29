@@ -3543,4 +3543,47 @@ mod tests {
         .unwrap();
         assert_eq!(args["email"], "SECRET");
     }
+
+    #[test]
+    fn unterminated_usage_event_is_separated_from_http_end_tool_arguments() {
+        crate::test_host::reset();
+        let config=serde_json::from_value(json!({"tool_arguments":{"restore":true,"restore_allowlist":[{"tool":"lookup","paths":["/email"]}]},"replace_roles":[{"regex":"SECRET","type":"replace","value":"MASK","restore":true}]})).unwrap();
+        let mut plugin = AiDataMasking::new();
+        plugin.on_config(Rc::new(config));
+        plugin.on_http_request_complete_body(
+            &json!({"stream":true,"messages":[{"content":"SECRET"}]})
+                .to_string()
+                .into_bytes(),
+        );
+        let first = json!({"choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"name":"lookup","arguments":"{\"email\":\"MASK\"}"}}]}}]});
+        let wire =
+            format!("data: {first}\n\ndata: {{\"choices\":[],\"usage\":{{\"total_tokens\":2}}}}");
+        crate::test_host::reset();
+        crate::test_host::response_input(wire.as_bytes());
+        plugin.on_http_response_body(wire.len(), true);
+        let body = String::from_utf8(crate::test_host::take_response_body().unwrap()).unwrap();
+        let events: Vec<Value> = body
+            .split("\n\n")
+            .filter(|event| !event.is_empty())
+            .map(|event| {
+                serde_json::from_str(event.strip_prefix("data: ").unwrap())
+                    .expect("each output SSE event must be valid JSON")
+            })
+            .collect();
+        assert_eq!(
+            events
+                .iter()
+                .filter(|event| event.get("usage").is_some())
+                .count(),
+            1
+        );
+        let arguments: Vec<_> = events
+            .iter()
+            .filter_map(|event| {
+                event["choices"][0]["delta"]["tool_calls"][0]["function"]["arguments"].as_str()
+            })
+            .collect();
+        assert_eq!(arguments, vec!["{\"email\":\"SECRET\"}"]);
+        assert!(!body.contains("[DONE]"));
+    }
 }
