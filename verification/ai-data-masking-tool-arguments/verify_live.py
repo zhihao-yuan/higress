@@ -119,7 +119,9 @@ def compare(request, upstream_request, upstream, downstream, mode, stream):
     if mode == 'bypass':
         assert upstream == downstream, 'Bypass changed response bytes'
     covered = bool(original['arguments']) and not original['errors'] and {'email', 'other'} <= echo_fields
-    covered = covered and any(reason == 'tool_calls' for _, reason in original['finish']) and (not stream or original['done'] == 1)
+    # The approved completion contract accepts every present, non-null reason,
+    # including stop and the empty string. Target fields still must be observed.
+    covered = covered and bool(original['finish']) and (not stream or original['done'] == 1)
     return {'coverage': 'covered' if covered else 'uncovered', 'placeholder_fields_observed': observed_targets,
         'requested_echo_fields_observed': sorted(echo_fields),
         'upstream_calls': len(original['arguments']), 'downstream_calls': len(actual['arguments']),
@@ -130,6 +132,7 @@ def main():
     parser = arguments(__doc__)
     parser.add_argument('--model', default='dsv4')
     parser.add_argument('--fixture', action='store_true', help='Tap harness check only; zero live requests')
+    parser.add_argument('--fixture-finish-reason', default='tool_calls')
     args = parser.parse_args()
     ledger, results = [], []
     plan = [('direct', True), ('bypass', True), ('bypass', False), ('baseline', True), ('baseline', False),
@@ -144,7 +147,7 @@ def main():
             model_budget={'health_calls': 0 if args.fixture else 1, 'health_max_tokens': 4,
                 'formal_calls': 0 if args.fixture else len(plan), 'formal_max_tokens_per_call': 256,
                 'maximum_requested_tokens': 0 if args.fixture else 4 + len(plan) * 256, 'automatic_retries': 0},
-            planned_cases=plan, tools_executed=0, tap_capture_limit_bytes=TAP_LIMIT,
+            planned_cases=plan, fixture_finish_reason=args.fixture_finish_reason if args.fixture else None, tools_executed=0, tap_capture_limit_bytes=TAP_LIMIT,
             limitations=['Live targets absent from model output are uncovered, not passed.',
                 'Different generations are not byte-level A/B comparisons.', 'Raw output requires review before publication.'])
         lab.save('manifest.json', lab.manifest)
@@ -194,7 +197,7 @@ def main():
                 try:
                     if args.fixture:
                         token = 'DEMO_SECRET' if mode == 'bypass' else 'MASKED_TOKEN'
-                        lab.save('cases/' + case + '.fixture.json', {'calls': [{'name': request['tool_choice']['function']['name'], 'arguments': json.dumps({'email': token, 'other': token})}], 'content': 'checking ' + token})
+                        lab.save('cases/' + case + '.fixture.json', {'calls': [{'name': request['tool_choice']['function']['name'], 'arguments': json.dumps({'email': token, 'other': token})}], 'content': 'checking ' + token, 'finish_reason': args.fixture_finish_reason})
                     previous = set(tap.glob('trace*'))
                     body = dispatch(case, request, 'http://127.0.0.1:' + str(gateway.port), 'formal')
                     trace = trace_after(tap, previous)

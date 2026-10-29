@@ -41,6 +41,18 @@ python3 -u verification/ai-data-masking-tool-arguments/run_verification.py \
 
 只使用合成秘密，只声明工具、不执行工具。没有生成目标参数的请求记为未覆盖。不同模型生成之间不做逐字节 A/B。Tap 上限为每方向 1 MiB，检查截断标志和实际长度。原始模型证据可能包含服务端信息，公开前需人工审查。
 
+完成判断遵循已批准的设计：`finish_reason` 存在且非 null 即可，包含 `stop` 和空字符串；不能只认 `tool_calls`。目标工具名、参数字段和占位值仍需实际观察到。可用 `live --fixture --fixture-finish-reason stop` 做零模型调用的整组检查。
+
+如果修正了验证脚本的判断，可单独复核既有真实抓包：
+
+```sh
+python3 verification/ai-data-masking-tool-arguments/reanalyze_live.py \
+  --input /absolute/path/original-live-run \
+  --output /absolute/path/new-analysis
+```
+
+复核会先检查原目录的完整性，再从 Tap 重新提取同一请求的正文并核对请求标识。原始结果和分类保持不动，新目录保存修正后的分析、输入 hash 和脚本快照；不联网、不回放响应，也不增加模型调用。分析目录依赖原始抓包，二者均需保留。
+
 故障探针必须独立构建：
 
 ```sh
