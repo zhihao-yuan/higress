@@ -1,0 +1,72 @@
+panic: test timed out after 10m0s
+	running tests:
+		TestKling (16s)
+		TestKling/wasm#01 (5s)
+
+goroutine 658 [running]:
+testing.(*M).startAlarm.func1()
+	<GOROOT>/src/testing/testing.go:2961 +0x34a
+created by time.goFunc
+	<GOROOT>/src/time/sleep.go:182 +0x2d
+
+goroutine 1 [chan receive]:
+testing.(*T).Run(0x28ba1d688908, {0xdbaddd3?, 0x28ba1d571aa0?}, 0xe0b1668)
+	<GOROOT>/src/testing/testing.go:2268 +0x4f2
+testing.runTests.func1(0x28ba1d688908)
+	<GOROOT>/src/testing/testing.go:2744 +0x37
+testing.tRunner(0x28ba1d688908, 0x28ba1d571bc8)
+	<GOROOT>/src/testing/testing.go:2195 +0xea
+testing.runTests({0xdbd8363, 0x3e}, {0xdbd8363, 0x3e}, 0x28ba1d619b90, {0xe10f630, 0x2b, 0x2b}, {0xc2b3319d9e598be8, 0x8bb32a4956, ...})
+	<GOROOT>/src/testing/testing.go:2742 +0x510
+testing.(*M).Run(0x28ba1d6ccbe0)
+	<GOROOT>/src/testing/testing.go:2602 +0x6af
+main.main()
+	_testmain.go:130 +0x9b
+
+goroutine 549 [chan receive]:
+testing.(*T).Run(0x28ba25793448, {0xdbab9a9?, 0x28ba23464150?}, 0x28ba1db48240)
+	<GOROOT>/src/testing/testing.go:2268 +0x4f2
+github.com/higress-group/wasm-go/pkg/test.RunTestWithPath(0x28ba25793448, {0x28ba1d72be00, 0x7d}, 0xe0b2140)
+	<GOMODCACHE>/github.com/higress-group/wasm-go@v1.0.10-0.20260120033417-1c84f010156d/pkg/test/test.go:165 +0x105
+github.com/higress-group/wasm-go/pkg/test.RunTest(0x28ba25793448, 0xe0b2140)
+	<GOMODCACHE>/github.com/higress-group/wasm-go@v1.0.10-0.20260120033417-1c84f010156d/pkg/test/test.go:184 +0x32
+github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/test.RunKlingOnHttpRequestBodyTests(...)
+	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/test/kling.go:269
+github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy.TestKling(0x28ba25793448)
+	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/main_test.go:361 +0x49
+testing.tRunner(0x28ba25793448, 0xe0b1668)
+	<GOROOT>/src/testing/testing.go:2195 +0xea
+created by testing.(*T).Run in goroutine 1
+	<GOROOT>/src/testing/testing.go:2260 +0x4d4
+
+goroutine 657 [runnable]:
+github.com/tetratelabs/wazero/internal/engine/wazevo/ssa.(*builder).resolveArgumentAlias(0x28ba2412db88, 0x28ba237a4230)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/ssa/builder.go:660 +0x1b4
+github.com/tetratelabs/wazero/internal/engine/wazevo/ssa.passRedundantPhiEliminationOpt(0x28ba2412db88)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/ssa/pass.go:136 +0x255
+github.com/tetratelabs/wazero/internal/engine/wazevo/ssa.(*builder).runPreBlockLayoutPasses(0x28ba2412db88)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/ssa/pass.go:25 +0x2f
+github.com/tetratelabs/wazero/internal/engine/wazevo/ssa.(*builder).RunPasses(0x28ba2412db88)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/ssa/pass.go:16 +0x18
+github.com/tetratelabs/wazero/internal/engine/wazevo.(*engine).compileLocalWasmFunction(0xe0b0a38?, {0xe0ae750, 0xe13a3a0}, 0x28ba206850e0?, 0x448?, 0x28ba20cc5b08, {0xe0b0fa8, 0x28ba2412db88}, {0xe0b0970, 0x28ba206850e0}, ...)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/engine.go:359 +0x137
+github.com/tetratelabs/wazero/internal/engine/wazevo.(*engine).compileModule(0x28ba1d6918c0, {0xe0ae750, 0xe13a3a0}, 0x28ba21076540, {0x0, 0x0, 0x0}, 0x0)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/engine.go:247 +0x551
+github.com/tetratelabs/wazero/internal/engine/wazevo.(*engine).CompileModule(0x28ba1d6918c0, {0xe0ae750, 0xe13a3a0}, 0x28ba21076540, {0x0, 0x0, 0x0}, 0x0)
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/internal/engine/wazevo/engine.go:135 +0xae
+github.com/tetratelabs/wazero.(*runtime).CompileModule(0x28ba216bcc60, {0xe0ae750, 0xe13a3a0}, {0x28ba29746000, 0xa56fe5, 0xa56fe6})
+	<GOMODCACHE>/github.com/tetratelabs/wazero@v1.7.2/runtime.go:237 +0x20e
+github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.NewWasmVMContext({0x28ba29746000, 0xa56fe5, 0xa56fe6})
+	<GOMODCACHE>/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20251103120604-77e9cce339d2/proxywasm/proxytest/wasmwrapper.go:98 +0xe2
+github.com/higress-group/wasm-go/pkg/test.RunTestWithPath.func2(0x28ba23b1cd88)
+	<GOMODCACHE>/github.com/higress-group/wasm-go@v1.0.10-0.20260120033417-1c84f010156d/pkg/test/test.go:171 +0x10e
+testing.tRunner(0x28ba23b1cd88, 0x28ba1db48240)
+	<GOROOT>/src/testing/testing.go:2195 +0xea
+created by testing.(*T).Run in goroutine 549
+	<GOROOT>/src/testing/testing.go:2260 +0x4d4
+FAIL	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy	600.079s
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/config	0.047s
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/provider	0.232s
+?   	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/test	[no test files]
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/util	0.047s
+FAIL

@@ -1,0 +1,19 @@
+{
+  "baseline_revision": "bfcd87d1a22fedae9efaa1d901caadd1a9ffcf6d",
+  "fixed_revision": "94f2b327e087d68bdced11bc74d3a8231f97e1da",
+  "go": "1.27.3",
+  "wasm_sha256": {
+    "baseline": "e3368808ed58314451308814abb949df9808d789f9d4b97d38dd1dea86ce8ee3",
+    "fixed": "c2ad71b1416563ed8d94697d50662ad14d6a646f7913d1e5cdd46ea898e02d72"
+  },
+  "image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "real_model": false,
+  "baseline_source_unchanged": true,
+  "successful_comparison_requests": 6,
+  "sanitization": "Local checkout, module-cache and Go installation prefixes in text logs replaced. The full-module log retains its timeout section; original full log remains local.",
+  "environment": {
+    "host": "macOS 15.6.1 x86_64",
+    "gateway": "linux/amd64",
+    "workers": 1
+  }
+}

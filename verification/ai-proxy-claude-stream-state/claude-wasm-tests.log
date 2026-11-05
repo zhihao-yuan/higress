@@ -1,0 +1,542 @@
+=== RUN   TestClaude
+=== RUN   TestClaude/go
+=== RUN   TestClaude/go/claude_standard_config
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-api-key-123"],"type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+=== RUN   TestClaude/go/claude_code_mode_config
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+=== RUN   TestClaude/go/claude_config_without_token_fails
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_error_log: [ai-proxy] [nil] [nil] global rule config is invalid: no apiToken found in provider config
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_warn_log: [ai-proxy] [nil] [nil] parse rule config failed: parse config failed, no valid rules; global config parse error:no apiToken found in provider config
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_error_log: [ai-proxy] [nil] [nil] plugin start failed
+[WASM_PATH] Using environment variable WASM_FILE_PATH: <evidence>/fixed.wasm
+=== RUN   TestClaude/go#01
+    test.go:158: go mode test start
+=== RUN   TestClaude/go#01/claude_standard_mode_uses_x-api-key
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-api-key-123"],"type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-api-key-123 to send request
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestClaude/go#01/claude_code_mode_uses_bearer_authorization
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestClaude/go#01/claude_code_mode_adds_beta_query_param
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestClaude/go#01/claude_code_mode_with_custom_version
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-789"],"claudeCodeMode":true,"claudeVersion":"2024-01-01","type":"claude"}}
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-789 to send request
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:40:56 [foreign call] funcname: get_log_level
+2026/11/05 17:40:56 [foreign call] param: 
+2026/11/05 17:40:56 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== NAME  TestClaude/go#01
+    test.go:162: go mode test end
+=== RUN   TestClaude/wasm
+    test.go:166: wasm mode test start
+=== RUN   TestClaude/wasm/claude_standard_mode_uses_x-api-key
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-api-key-123"],"type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-api-key-123 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestClaude/wasm/claude_code_mode_uses_bearer_authorization
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestClaude/wasm/claude_code_mode_adds_beta_query_param
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestClaude/wasm/claude_code_mode_with_custom_version
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-789"],"claudeCodeMode":true,"claudeVersion":"2024-01-01","type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-789 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== NAME  TestClaude/wasm
+    test.go:177: wasm mode test end
+[WASM_PATH] Using environment variable WASM_FILE_PATH: <evidence>/fixed.wasm
+=== RUN   TestClaude/go#02
+    test.go:158: go mode test start
+=== RUN   TestClaude/go#02/claude_standard_mode_does_not_inject_defaults
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-api-key-123"],"type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-api-key-123 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] newBody={
+				"model": "claude-sonnet-4-5-20250929",
+				"max_tokens": 8192,
+				"stream": true,
+				"messages": [
+					{"role": "user", "content": "Hello"}
+				]
+			,"stream_options":{"include_usage":true}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [developerRole] converted developer role to system for provider: claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] request body: {"model":"claude-sonnet-4-5-20250929","messages":[{"role":"user","content":"Hello"}],"max_tokens":8192,"stream":true}
+=== RUN   TestClaude/go#02/claude_code_mode_injects_default_system_prompt
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] newBody={
+				"model": "claude-sonnet-4-5-20250929",
+				"max_tokens": 8192,
+				"stream": true,
+				"messages": [
+					{"role": "user", "content": "List files"}
+				]
+			,"stream_options":{"include_usage":true}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [developerRole] converted developer role to system for provider: claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] request body: {"model":"claude-sonnet-4-5-20250929","messages":[{"role":"user","content":"List files"}],"system":[{"type":"text","text":"You are Claude Code, Anthropic's official CLI for Claude.","cache_control":{"type":"ephemeral"}}],"max_tokens":8192,"stream":true}
+=== RUN   TestClaude/go#02/claude_code_mode_preserves_existing_system_prompt
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] provider=claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] newBody={
+				"model": "claude-sonnet-4-5-20250929",
+				"max_tokens": 8192,
+				"messages": [
+					{"role": "system", "content": "You are a custom assistant."},
+					{"role": "user", "content": "Hello"}
+				]
+			}
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [developerRole] converted developer role to system for provider: claude
+2026/11/05 17:41:04 [foreign call] funcname: get_log_level
+2026/11/05 17:41:04 [foreign call] param: 
+2026/11/05 17:41:04 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] request body: {"model":"claude-sonnet-4-5-20250929","messages":[{"role":"user","content":"Hello"}],"system":[{"type":"text","text":"You are a custom assistant.","cache_control":{"type":"ephemeral"}}],"max_tokens":8192}
+=== NAME  TestClaude/go#02
+    test.go:162: go mode test end
+=== RUN   TestClaude/wasm#01
+    test.go:166: wasm mode test start
+=== RUN   TestClaude/wasm#01/claude_standard_mode_does_not_inject_defaults
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-api-key-123"],"type":"claude"}}
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-api-key-123 to send request
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] provider=claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] newBody={
+				"model": "claude-sonnet-4-5-20250929",
+				"max_tokens": 8192,
+				"stream": true,
+				"messages": [
+					{"role": "user", "content": "Hello"}
+				]
+			,"stream_options":{"include_usage":true}}
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [developerRole] converted developer role to system for provider: claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] request body: {"model":"claude-sonnet-4-5-20250929","messages":[{"role":"user","content":"Hello"}],"max_tokens":8192,"stream":true}
+=== RUN   TestClaude/wasm#01/claude_code_mode_injects_default_system_prompt
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] provider=claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] newBody={
+				"model": "claude-sonnet-4-5-20250929",
+				"max_tokens": 8192,
+				"stream": true,
+				"messages": [
+					{"role": "user", "content": "List files"}
+				]
+			,"stream_options":{"include_usage":true}}
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [developerRole] converted developer role to system for provider: claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] request body: {"model":"claude-sonnet-4-5-20250929","messages":[{"role":"user","content":"List files"}],"system":[{"type":"text","text":"You are Claude Code, Anthropic's official CLI for Claude.","cache_control":{"type":"ephemeral"}}],"max_tokens":8192,"stream":true}
+=== RUN   TestClaude/wasm#01/claude_code_mode_preserves_existing_system_prompt
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [nil] loading global config: {"provider":{"apiTokens":["sk-ant-oat01-oauth-token-456"],"claudeCodeMode":true,"type":"claude"}}
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [nil] ai-proxy plugin configuration is updated, reset shared data
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_info_log: [ai-proxy] [nil] [nil] plugin start successfully
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Failed to get VM memory: error status returned by host: not found
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestHeader] provider=claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] Use apiToken sk-ant-oat01-oauth-token-456 to send request
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [OverwriteRequestPath] originPath=/v1/chat/completions, mappedPath=/v1/messages
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] provider=claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [onHttpRequestBody] newBody={
+				"model": "claude-sonnet-4-5-20250929",
+				"max_tokens": 8192,
+				"messages": [
+					{"role": "system", "content": "You are a custom assistant."},
+					{"role": "user", "content": "Hello"}
+				]
+			}
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] [developerRole] converted developer role to system for provider: claude
+2026/11/05 17:41:14 [foreign call] funcname: get_log_level
+2026/11/05 17:41:14 [foreign call] param: 
+2026/11/05 17:41:14 proxy_debug_log: [ai-proxy] [nil] [test-request-id-default] request body: {"model":"claude-sonnet-4-5-20250929","messages":[{"role":"user","content":"Hello"}],"system":[{"type":"text","text":"You are a custom assistant.","cache_control":{"type":"ephemeral"}}],"max_tokens":8192}
+=== NAME  TestClaude/wasm#01
+    test.go:177: wasm mode test end
+--- PASS: TestClaude (18.63s)
+    --- PASS: TestClaude/go (0.00s)
+        --- PASS: TestClaude/go/claude_standard_config (0.00s)
+        --- PASS: TestClaude/go/claude_code_mode_config (0.00s)
+        --- PASS: TestClaude/go/claude_config_without_token_fails (0.00s)
+    --- PASS: TestClaude/go#01 (0.00s)
+        --- PASS: TestClaude/go#01/claude_standard_mode_uses_x-api-key (0.00s)
+        --- PASS: TestClaude/go#01/claude_code_mode_uses_bearer_authorization (0.00s)
+        --- PASS: TestClaude/go#01/claude_code_mode_adds_beta_query_param (0.00s)
+        --- PASS: TestClaude/go#01/claude_code_mode_with_custom_version (0.00s)
+    --- PASS: TestClaude/wasm (8.39s)
+        --- PASS: TestClaude/wasm/claude_standard_mode_uses_x-api-key (0.00s)
+        --- PASS: TestClaude/wasm/claude_code_mode_uses_bearer_authorization (0.00s)
+        --- PASS: TestClaude/wasm/claude_code_mode_adds_beta_query_param (0.00s)
+        --- PASS: TestClaude/wasm/claude_code_mode_with_custom_version (0.00s)
+    --- PASS: TestClaude/go#02 (0.00s)
+        --- PASS: TestClaude/go#02/claude_standard_mode_does_not_inject_defaults (0.00s)
+        --- PASS: TestClaude/go#02/claude_code_mode_injects_default_system_prompt (0.00s)
+        --- PASS: TestClaude/go#02/claude_code_mode_preserves_existing_system_prompt (0.00s)
+    --- PASS: TestClaude/wasm#01 (10.24s)
+        --- PASS: TestClaude/wasm#01/claude_standard_mode_does_not_inject_defaults (0.00s)
+        --- PASS: TestClaude/wasm#01/claude_code_mode_injects_default_system_prompt (0.01s)
+        --- PASS: TestClaude/wasm#01/claude_code_mode_preserves_existing_system_prompt (0.00s)
+PASS
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy	18.674s

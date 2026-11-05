@@ -1,0 +1,8 @@
+=== RUN   TestClaudeProvider_InterleavedStreams
+--- PASS: TestClaudeProvider_InterleavedStreams (0.00s)
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams
+--- PASS: TestClaudeProvider_InterleavedFragmentedStreams (0.10s)
+=== RUN   TestClaudeProvider_StreamStateInitialization
+--- PASS: TestClaudeProvider_StreamStateInitialization (0.00s)
+PASS
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/provider	0.146s

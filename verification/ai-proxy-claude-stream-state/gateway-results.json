@@ -1,0 +1,142 @@
+[
+  {
+    "case": "baseline-control",
+    "role": "a",
+    "status": 200,
+    "ids": [
+      "msg_a"
+    ],
+    "service_tiers": [
+      "standard"
+    ],
+    "usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "expected_usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "payload_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "baseline-parallel",
+    "role": "a",
+    "status": 200,
+    "ids": [
+      "msg_a",
+      "msg_b"
+    ],
+    "service_tiers": [
+      "priority",
+      "standard"
+    ],
+    "usage": {
+      "prompt_tokens": 200,
+      "completion_tokens": 3,
+      "total_tokens": 203
+    },
+    "expected_usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "payload_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-parallel",
+    "role": "b",
+    "status": 200,
+    "ids": [
+      "msg_b"
+    ],
+    "service_tiers": [
+      "priority"
+    ],
+    "usage": {
+      "prompt_tokens": 200,
+      "completion_tokens": 8,
+      "total_tokens": 208
+    },
+    "expected_usage": {
+      "prompt_tokens": 200,
+      "completion_tokens": 5,
+      "total_tokens": 205
+    },
+    "payload_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "fixed-control",
+    "role": "a",
+    "status": 200,
+    "ids": [
+      "msg_a"
+    ],
+    "service_tiers": [
+      "standard"
+    ],
+    "usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "expected_usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "payload_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-parallel",
+    "role": "a",
+    "status": 200,
+    "ids": [
+      "msg_a"
+    ],
+    "service_tiers": [
+      "standard"
+    ],
+    "usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "expected_usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 3,
+      "total_tokens": 13
+    },
+    "payload_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-parallel",
+    "role": "b",
+    "status": 200,
+    "ids": [
+      "msg_b"
+    ],
+    "service_tiers": [
+      "priority"
+    ],
+    "usage": {
+      "prompt_tokens": 200,
+      "completion_tokens": 5,
+      "total_tokens": 205
+    },
+    "expected_usage": {
+      "prompt_tokens": 200,
+      "completion_tokens": 5,
+      "total_tokens": 205
+    },
+    "payload_preserved": true,
+    "correct": true
+  }
+]

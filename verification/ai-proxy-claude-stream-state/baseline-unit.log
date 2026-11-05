@@ -1,0 +1,81 @@
+=== RUN   TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:22: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:22
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:23: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:23
+        	Error:      	Not equal: 
+        	            	expected: "standard"
+        	            	actual  : "priority"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-standard
+        	            	+priority
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:29: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:29
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:30: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:30
+        	Error:      	Not equal: 
+        	            	expected: "standard"
+        	            	actual  : "priority"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-standard
+        	            	+priority
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:32: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:32
+        	Error:      	Not equal: 
+        	            	expected: 10
+        	            	actual  : 200
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:34: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:34
+        	Error:      	Not equal: 
+        	            	expected: 13
+        	            	actual  : 203
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:43: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:43
+        	Error:      	Not equal: 
+        	            	expected: 5
+        	            	actual  : 8
+        	Test:       	TestClaudeProvider_InterleavedStreams
+    claude_stream_test.go:44: 
+        	Error Trace:	/path/to/higress/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:44
+        	Error:      	Not equal: 
+        	            	expected: 205
+        	            	actual  : 208
+        	Test:       	TestClaudeProvider_InterleavedStreams
+--- FAIL: TestClaudeProvider_InterleavedStreams (0.00s)
+FAIL
+FAIL	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/provider	0.027s
+FAIL
