@@ -1,0 +1,45 @@
+{
+  "path": "/v1/publishers/anthropic/models/claude-fixture:streamRawPredict?key=fixture-placeholder",
+  "headers": [
+    [
+      "host",
+      "aiplatform.googleapis.com"
+    ],
+    [
+      "x-forwarded-proto",
+      "http"
+    ],
+    [
+      "content-length",
+      "124"
+    ],
+    [
+      "x-request-id",
+      "a56f73f1-0f69-4967-8d27-5db9fa3113bc"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "x-observation-id",
+      "fixed-vertex-pair3-b"
+    ],
+    [
+      "x-envoy-original-path",
+      "/v1/chat/completions"
+    ],
+    [
+      "x-envoy-original-host",
+      "127.0.0.1:52539"
+    ],
+    [
+      "x-envoy-expected-rq-timeout-ms",
+      "120000"
+    ],
+    [
+      "req-start-time",
+      "1794208404092"
+    ]
+  ]
+}

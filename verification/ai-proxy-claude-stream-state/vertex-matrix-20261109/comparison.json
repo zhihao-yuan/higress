@@ -1,0 +1,66 @@
+[
+  {
+    "provider": "claude",
+    "version": "baseline",
+    "pairs": 3,
+    "a_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "b_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "correct_streams": 0
+  },
+  {
+    "provider": "claude",
+    "version": "fixed",
+    "pairs": 3,
+    "a_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "b_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "correct_streams": 6
+  },
+  {
+    "provider": "vertex",
+    "version": "baseline",
+    "pairs": 3,
+    "a_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "b_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "correct_streams": 0
+  },
+  {
+    "provider": "vertex",
+    "version": "fixed",
+    "pairs": 3,
+    "a_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "b_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "correct_streams": 6
+  }
+]

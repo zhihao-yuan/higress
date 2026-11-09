@@ -1,0 +1,167 @@
+[
+  {
+    "sequence": 0,
+    "time_ns": 1054475637931375,
+    "side": "upstream.send",
+    "role": "a",
+    "index": 0,
+    "event": "message_start"
+  },
+  {
+    "sequence": 1,
+    "time_ns": 1054475640018701,
+    "side": "downstream.receive",
+    "role": "a",
+    "index": 0,
+    "id": "msg_a",
+    "service_tier": "standard"
+  },
+  {
+    "sequence": 2,
+    "time_ns": 1054475647732448,
+    "side": "upstream.send",
+    "role": "b",
+    "index": 0,
+    "event": "message_start"
+  },
+  {
+    "sequence": 3,
+    "time_ns": 1054475651251472,
+    "side": "downstream.receive",
+    "role": "b",
+    "index": 0,
+    "id": "msg_b",
+    "service_tier": "priority"
+  },
+  {
+    "sequence": 4,
+    "time_ns": 1054475651353263,
+    "side": "upstream.send",
+    "role": "a",
+    "index": 1,
+    "event": "content_block_delta"
+  },
+  {
+    "sequence": 5,
+    "time_ns": 1054475651427809,
+    "side": "upstream.send",
+    "role": "a",
+    "index": 2,
+    "event": "message_delta"
+  },
+  {
+    "sequence": 6,
+    "time_ns": 1054475651481768,
+    "side": "upstream.send",
+    "role": "a",
+    "index": 3,
+    "event": "message_stop"
+  },
+  {
+    "sequence": 7,
+    "time_ns": 1054475654539934,
+    "side": "downstream.receive",
+    "role": "a",
+    "index": 1,
+    "id": "msg_a",
+    "service_tier": "standard"
+  },
+  {
+    "sequence": 8,
+    "time_ns": 1054475654980948,
+    "side": "downstream.receive",
+    "role": "a",
+    "index": 2,
+    "id": "msg_a",
+    "service_tier": "standard"
+  },
+  {
+    "sequence": 9,
+    "time_ns": 1054475655483953,
+    "side": "downstream.receive",
+    "role": "a",
+    "index": 3,
+    "id": "msg_a",
+    "service_tier": "standard"
+  },
+  {
+    "sequence": 10,
+    "time_ns": 1054475655543835,
+    "side": "client.complete",
+    "role": "a"
+  },
+  {
+    "sequence": 11,
+    "time_ns": 1054475655605363,
+    "side": "upstream.send",
+    "role": "b",
+    "index": 1,
+    "event": "content_block_start"
+  },
+  {
+    "sequence": 12,
+    "time_ns": 1054475655769535,
+    "side": "upstream.send",
+    "role": "b",
+    "index": 2,
+    "event": "content_block_delta"
+  },
+  {
+    "sequence": 13,
+    "time_ns": 1054475655816403,
+    "side": "upstream.send",
+    "role": "b",
+    "index": 3,
+    "event": "message_delta"
+  },
+  {
+    "sequence": 14,
+    "time_ns": 1054475655842751,
+    "side": "upstream.send",
+    "role": "b",
+    "index": 4,
+    "event": "message_stop"
+  },
+  {
+    "sequence": 15,
+    "time_ns": 1054475658993391,
+    "side": "downstream.receive",
+    "role": "b",
+    "index": 1,
+    "id": "msg_b",
+    "service_tier": "priority"
+  },
+  {
+    "sequence": 16,
+    "time_ns": 1054475659752227,
+    "side": "downstream.receive",
+    "role": "b",
+    "index": 2,
+    "id": "msg_b",
+    "service_tier": "priority"
+  },
+  {
+    "sequence": 17,
+    "time_ns": 1054475660330309,
+    "side": "downstream.receive",
+    "role": "b",
+    "index": 3,
+    "id": "msg_b",
+    "service_tier": "priority"
+  },
+  {
+    "sequence": 18,
+    "time_ns": 1054475660886155,
+    "side": "downstream.receive",
+    "role": "b",
+    "index": 4,
+    "id": "msg_b",
+    "service_tier": "priority"
+  },
+  {
+    "sequence": 19,
+    "time_ns": 1054475660940337,
+    "side": "client.complete",
+    "role": "b"
+  }
+]

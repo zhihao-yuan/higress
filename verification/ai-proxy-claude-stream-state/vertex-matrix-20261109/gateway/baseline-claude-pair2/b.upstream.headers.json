@@ -1,0 +1,57 @@
+{
+  "path": "/v1/messages",
+  "headers": [
+    [
+      "host",
+      "api.anthropic.com"
+    ],
+    [
+      "anthropic-version",
+      "2023-06-01"
+    ],
+    [
+      "x-api-key",
+      "fixture-placeholder"
+    ],
+    [
+      "content-type",
+      "application/json"
+    ],
+    [
+      "x-observation-id",
+      "baseline-claude-pair2-b"
+    ],
+    [
+      "x-forwarded-proto",
+      "http"
+    ],
+    [
+      "x-request-id",
+      "1c0c2592-63ac-41b1-b628-cc9524cde717"
+    ],
+    [
+      "accept",
+      "text/event-stream"
+    ],
+    [
+      "x-envoy-original-host",
+      "127.0.0.1:52227"
+    ],
+    [
+      "x-envoy-original-path",
+      "/v1/chat/completions"
+    ],
+    [
+      "x-envoy-expected-rq-timeout-ms",
+      "120000"
+    ],
+    [
+      "req-start-time",
+      "1794208361247"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ]
+  ]
+}

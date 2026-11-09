@@ -1,0 +1,8 @@
+data: {"type":"message_start","message":{"id":"msg_a","role":"assistant","content":[],"model":"claude-fixture","usage":{"input_tokens":955,"output_tokens":0,"service_tier":"standard"}}}
+
+data: {"type":"content_block_delta","index":0,"delta":{"type":"text_delta","text":"answer a"}}
+
+data: {"type":"message_delta","delta":{"stop_reason":"end_turn"},"usage":{"output_tokens":256}}
+
+data: {"type":"message_stop"}
+

@@ -1,0 +1,1626 @@
+[
+  {
+    "case": "baseline-claude-control",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "175fc83533f2ad9c3c72e159b85a2bffe8bb84290048994660c9c71cd7a6f748",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "baseline-claude-pair1",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "ab99c0e3452ff51ec73cdbcb00aeb1636754b9e78b1458f110ee033bbe1d152c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": false,
+      "completion_tokens": true,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-claude-pair1",
+    "provider": "claude",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "46aa6c1817a3ee70fe93d6e8dd904183f0c59e236006e90c76e47e2cb1f5bc20",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": false,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-claude-pair2",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "ab99c0e3452ff51ec73cdbcb00aeb1636754b9e78b1458f110ee033bbe1d152c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": false,
+      "completion_tokens": true,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-claude-pair2",
+    "provider": "claude",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "46aa6c1817a3ee70fe93d6e8dd904183f0c59e236006e90c76e47e2cb1f5bc20",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": false,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-claude-pair3",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "ab99c0e3452ff51ec73cdbcb00aeb1636754b9e78b1458f110ee033bbe1d152c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": false,
+      "completion_tokens": true,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-claude-pair3",
+    "provider": "claude",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "46aa6c1817a3ee70fe93d6e8dd904183f0c59e236006e90c76e47e2cb1f5bc20",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": false,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-vertex-control",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "9902abb3239c8148a9499c09e95c693bd2e812c2614247e99f7399833ff32b8c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "baseline-vertex-pair1",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "d22d235cf5fb55815f1f3e5acae1094dba1ff7674207836bdb35b8d754bd345b",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": false,
+      "completion_tokens": true,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-vertex-pair1",
+    "provider": "vertex",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "2dfa4498ad1192a2dbead1640f189d4bc9753156337f256cfdc85e5791ed942c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": false,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-vertex-pair2",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "d22d235cf5fb55815f1f3e5acae1094dba1ff7674207836bdb35b8d754bd345b",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": false,
+      "completion_tokens": true,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-vertex-pair2",
+    "provider": "vertex",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "2dfa4498ad1192a2dbead1640f189d4bc9753156337f256cfdc85e5791ed942c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": false,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-vertex-pair3",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "d22d235cf5fb55815f1f3e5acae1094dba1ff7674207836bdb35b8d754bd345b",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": false,
+        "service_tier": "priority",
+        "tier_ok": false
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 256,
+      "total_tokens": 301
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": false,
+      "completion_tokens": true,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "baseline-vertex-pair3",
+    "provider": "vertex",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "2dfa4498ad1192a2dbead1640f189d4bc9753156337f256cfdc85e5791ed942c",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 766,
+      "total_tokens": 811
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": false,
+      "total_tokens": false
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": false
+  },
+  {
+    "case": "fixed-claude-control",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "7777ef99bad7fb71245360e70b477d44a7d6e93e652854fc58c5886f1fae4cd2",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-claude-pair1",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "7777ef99bad7fb71245360e70b477d44a7d6e93e652854fc58c5886f1fae4cd2",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-claude-pair1",
+    "provider": "claude",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "0ceea4c137cd2460b25afbb5e3d7d5cda2b3d3d1b7c7fe9f2b5ed3c784d27e93",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-claude-pair2",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "7777ef99bad7fb71245360e70b477d44a7d6e93e652854fc58c5886f1fae4cd2",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-claude-pair2",
+    "provider": "claude",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "0ceea4c137cd2460b25afbb5e3d7d5cda2b3d3d1b7c7fe9f2b5ed3c784d27e93",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-claude-pair3",
+    "provider": "claude",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "7777ef99bad7fb71245360e70b477d44a7d6e93e652854fc58c5886f1fae4cd2",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-claude-pair3",
+    "provider": "claude",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "0ceea4c137cd2460b25afbb5e3d7d5cda2b3d3d1b7c7fe9f2b5ed3c784d27e93",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-control",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "9e29c42822f58bd8f6d3cff4bb1d78f327ea1d57f899f944b4ac9eee75fabcbd",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-pair1",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "24eb07da6068aab4846b1770e0a139002da402821f06f0832a3d025370a9259b",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-pair1",
+    "provider": "vertex",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "9a500d464c5cfbae44fb74894314d4b144e01f95aa8718e10a16074148dc5c02",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-pair2",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "24eb07da6068aab4846b1770e0a139002da402821f06f0832a3d025370a9259b",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-pair2",
+    "provider": "vertex",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "9a500d464c5cfbae44fb74894314d4b144e01f95aa8718e10a16074148dc5c02",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-pair3",
+    "provider": "vertex",
+    "role": "a",
+    "status": 200,
+    "response_sha256": "24eb07da6068aab4846b1770e0a139002da402821f06f0832a3d025370a9259b",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_a",
+        "id_ok": true,
+        "service_tier": "standard",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "expected_usage": {
+      "prompt_tokens": 955,
+      "completion_tokens": 256,
+      "total_tokens": 1211
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  },
+  {
+    "case": "fixed-vertex-pair3",
+    "provider": "vertex",
+    "role": "b",
+    "status": 200,
+    "response_sha256": "9a500d464c5cfbae44fb74894314d4b144e01f95aa8718e10a16074148dc5c02",
+    "chunks": [
+      {
+        "index": 0,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 1,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 2,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 3,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      },
+      {
+        "index": 4,
+        "id": "msg_b",
+        "id_ok": true,
+        "service_tier": "priority",
+        "tier_ok": true
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "expected_usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 510,
+      "total_tokens": 555
+    },
+    "usage_checks": {
+      "prompt_tokens": true,
+      "completion_tokens": true,
+      "total_tokens": true
+    },
+    "payload_preserved": true,
+    "finish_reason_preserved": true,
+    "correct": true
+  }
+]

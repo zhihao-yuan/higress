@@ -1,0 +1,36 @@
+=== RUN   TestClaudeProvider_InterleavedStreams
+=== RUN   TestClaudeProvider_InterleavedStreams/claude
+=== RUN   TestClaudeProvider_InterleavedStreams/claude/a_finishes_first
+=== RUN   TestClaudeProvider_InterleavedStreams/claude/b_finishes_first
+=== RUN   TestClaudeProvider_InterleavedStreams/vertex
+=== RUN   TestClaudeProvider_InterleavedStreams/vertex/a_finishes_first
+=== RUN   TestClaudeProvider_InterleavedStreams/vertex/b_finishes_first
+--- PASS: TestClaudeProvider_InterleavedStreams (0.00s)
+    --- PASS: TestClaudeProvider_InterleavedStreams/claude (0.00s)
+        --- PASS: TestClaudeProvider_InterleavedStreams/claude/a_finishes_first (0.00s)
+        --- PASS: TestClaudeProvider_InterleavedStreams/claude/b_finishes_first (0.00s)
+    --- PASS: TestClaudeProvider_InterleavedStreams/vertex (0.00s)
+        --- PASS: TestClaudeProvider_InterleavedStreams/vertex/a_finishes_first (0.00s)
+        --- PASS: TestClaudeProvider_InterleavedStreams/vertex/b_finishes_first (0.00s)
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/claude
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/claude/split_a
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/claude/split_b
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/vertex
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_a
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_b
+--- PASS: TestClaudeProvider_InterleavedFragmentedStreams (1.24s)
+    --- PASS: TestClaudeProvider_InterleavedFragmentedStreams/claude (0.44s)
+        --- PASS: TestClaudeProvider_InterleavedFragmentedStreams/claude/split_a (0.20s)
+        --- PASS: TestClaudeProvider_InterleavedFragmentedStreams/claude/split_b (0.25s)
+    --- PASS: TestClaudeProvider_InterleavedFragmentedStreams/vertex (0.80s)
+        --- PASS: TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_a (0.25s)
+        --- PASS: TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_b (0.55s)
+=== RUN   TestClaudeProvider_StreamStateInitialization
+=== RUN   TestClaudeProvider_StreamStateInitialization/claude
+=== RUN   TestClaudeProvider_StreamStateInitialization/vertex
+--- PASS: TestClaudeProvider_StreamStateInitialization (0.00s)
+    --- PASS: TestClaudeProvider_StreamStateInitialization/claude (0.00s)
+    --- PASS: TestClaudeProvider_StreamStateInitialization/vertex (0.00s)
+PASS
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/provider	1.464s

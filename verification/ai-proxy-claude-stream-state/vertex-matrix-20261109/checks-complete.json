@@ -1,0 +1,180 @@
+{
+  "complete": true,
+  "results": [
+    {
+      "label": "baseline-regression",
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "./provider",
+        "-run",
+        "^TestClaudeProvider_(Interleaved|StreamState)",
+        "-count=1",
+        "-v"
+      ],
+      "cwd": "baseline-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 1,
+      "seconds": 10.39,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off"
+      }
+    },
+    {
+      "label": "baseline-build",
+      "command": [
+        "go",
+        "build",
+        "-mod=readonly",
+        "-buildvcs=false",
+        "-buildmode=c-shared",
+        "-o",
+        "<evidence>/baseline.wasm",
+        "."
+      ],
+      "cwd": "baseline-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 0,
+      "seconds": 9.531,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off",
+        "GOOS": "wasip1",
+        "GOARCH": "wasm"
+      }
+    },
+    {
+      "label": "baseline-vet",
+      "command": [
+        "go",
+        "vet",
+        "-mod=readonly",
+        "./..."
+      ],
+      "cwd": "baseline-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 1,
+      "seconds": 9.746,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off"
+      }
+    },
+    {
+      "label": "fixed-regression",
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "./provider",
+        "-run",
+        "^TestClaudeProvider_(Interleaved|StreamState)",
+        "-count=1",
+        "-v"
+      ],
+      "cwd": "fixed-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 0,
+      "seconds": 13.399,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off"
+      }
+    },
+    {
+      "label": "fixed-build",
+      "command": [
+        "go",
+        "build",
+        "-mod=readonly",
+        "-buildvcs=false",
+        "-buildmode=c-shared",
+        "-o",
+        "<evidence>/fixed.wasm",
+        "."
+      ],
+      "cwd": "fixed-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 0,
+      "seconds": 8.643,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off",
+        "GOOS": "wasip1",
+        "GOARCH": "wasm"
+      }
+    },
+    {
+      "label": "fixed-vet",
+      "command": [
+        "go",
+        "vet",
+        "-mod=readonly",
+        "./..."
+      ],
+      "cwd": "fixed-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 1,
+      "seconds": 9.285,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off"
+      }
+    },
+    {
+      "label": "provider-config",
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "./provider",
+        "./config"
+      ],
+      "cwd": "fixed-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 0,
+      "seconds": 6.802,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off"
+      }
+    },
+    {
+      "label": "claude-vertex-wasm",
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        ".",
+        "-run",
+        "^Test(Claude|Vertex)$",
+        "-count=1",
+        "-timeout=10m",
+        "-v"
+      ],
+      "cwd": "fixed-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 0,
+      "seconds": 295.594,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off",
+        "WASM_FILE_PATH": "<evidence>/fixed.wasm"
+      }
+    },
+    {
+      "label": "all-tests",
+      "command": [
+        "go",
+        "test",
+        "-mod=readonly",
+        "./...",
+        "-timeout=30m",
+        "-count=1",
+        "-v"
+      ],
+      "cwd": "fixed-pinned-source/plugins/wasm-go/extensions/ai-proxy",
+      "exit_code": 0,
+      "seconds": 835.457,
+      "environment": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off",
+        "WASM_FILE_PATH": "<evidence>/fixed.wasm"
+      }
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+=== RUN   TestClaudeProvider_InterleavedStreams
+=== RUN   TestClaudeProvider_InterleavedStreams/claude
+=== RUN   TestClaudeProvider_InterleavedStreams/claude/a_finishes_first
+    claude_stream_test.go:43: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:43
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedStreams/claude/a_finishes_first
+        	Messages:   	chunk 1
+=== RUN   TestClaudeProvider_InterleavedStreams/claude/b_finishes_first
+    claude_stream_test.go:43: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:43
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedStreams/claude/b_finishes_first
+        	Messages:   	chunk 1
+=== RUN   TestClaudeProvider_InterleavedStreams/vertex
+=== RUN   TestClaudeProvider_InterleavedStreams/vertex/a_finishes_first
+    claude_stream_test.go:43: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:43
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedStreams/vertex/a_finishes_first
+        	Messages:   	chunk 1
+=== RUN   TestClaudeProvider_InterleavedStreams/vertex/b_finishes_first
+    claude_stream_test.go:43: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:43
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedStreams/vertex/b_finishes_first
+        	Messages:   	chunk 1
+--- FAIL: TestClaudeProvider_InterleavedStreams (0.00s)
+    --- FAIL: TestClaudeProvider_InterleavedStreams/claude (0.00s)
+        --- FAIL: TestClaudeProvider_InterleavedStreams/claude/a_finishes_first (0.00s)
+        --- FAIL: TestClaudeProvider_InterleavedStreams/claude/b_finishes_first (0.00s)
+    --- FAIL: TestClaudeProvider_InterleavedStreams/vertex (0.00s)
+        --- FAIL: TestClaudeProvider_InterleavedStreams/vertex/a_finishes_first (0.00s)
+        --- FAIL: TestClaudeProvider_InterleavedStreams/vertex/b_finishes_first (0.00s)
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/claude
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/claude/split_a
+    claude_stream_test.go:70: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:70
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedFragmentedStreams/claude/split_a
+        	Messages:   	chunk 1
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/claude/split_b
+    claude_stream_test.go:70: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:70
+        	Error:      	Not equal: 
+        	            	expected: "msg_b"
+        	            	actual  : "msg_a"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_b
+        	            	+msg_a
+        	Test:       	TestClaudeProvider_InterleavedFragmentedStreams/claude/split_b
+        	Messages:   	chunk 1
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/vertex
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_a
+    claude_stream_test.go:70: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:70
+        	Error:      	Not equal: 
+        	            	expected: "msg_a"
+        	            	actual  : "msg_b"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_a
+        	            	+msg_b
+        	Test:       	TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_a
+        	Messages:   	chunk 1
+=== RUN   TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_b
+    claude_stream_test.go:70: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:191
+        	            				<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:70
+        	Error:      	Not equal: 
+        	            	expected: "msg_b"
+        	            	actual  : "msg_a"
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-msg_b
+        	            	+msg_a
+        	Test:       	TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_b
+        	Messages:   	chunk 1
+--- FAIL: TestClaudeProvider_InterleavedFragmentedStreams (0.20s)
+    --- FAIL: TestClaudeProvider_InterleavedFragmentedStreams/claude (0.09s)
+        --- FAIL: TestClaudeProvider_InterleavedFragmentedStreams/claude/split_a (0.04s)
+        --- FAIL: TestClaudeProvider_InterleavedFragmentedStreams/claude/split_b (0.05s)
+    --- FAIL: TestClaudeProvider_InterleavedFragmentedStreams/vertex (0.10s)
+        --- FAIL: TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_a (0.05s)
+        --- FAIL: TestClaudeProvider_InterleavedFragmentedStreams/vertex/split_b (0.05s)
+=== RUN   TestClaudeProvider_StreamStateInitialization
+=== RUN   TestClaudeProvider_StreamStateInitialization/claude
+    claude_stream_test.go:91: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:91
+        	Error:      	Should be empty, but was msg_a
+        	Test:       	TestClaudeProvider_StreamStateInitialization/claude
+    claude_stream_test.go:92: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:92
+        	Error:      	Should be empty, but was standard
+        	Test:       	TestClaudeProvider_StreamStateInitialization/claude
+    claude_stream_test.go:93: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:93
+        	Error:      	Not equal: 
+        	            	expected: &provider.usage{PromptTokens:0, CompletionTokens:0, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	actual  : &provider.usage{PromptTokens:10, CompletionTokens:1, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,4 +1,4 @@
+        	            	 (*provider.usage)({
+        	            	- PromptTokens: (int) 0,
+        	            	- CompletionTokens: (int) 0,
+        	            	+ PromptTokens: (int) 10,
+        	            	+ CompletionTokens: (int) 1,
+        	            	  TotalTokens: (int) 0,
+        	Test:       	TestClaudeProvider_StreamStateInitialization/claude
+    claude_stream_test.go:106: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:106
+        	Error:      	Should be empty, but was msg_a
+        	Test:       	TestClaudeProvider_StreamStateInitialization/claude
+    claude_stream_test.go:107: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:107
+        	Error:      	Should be empty, but was standard
+        	Test:       	TestClaudeProvider_StreamStateInitialization/claude
+    claude_stream_test.go:108: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:108
+        	Error:      	Not equal: 
+        	            	expected: &provider.usage{PromptTokens:0, CompletionTokens:0, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	actual  : &provider.usage{PromptTokens:10, CompletionTokens:1, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,4 +1,4 @@
+        	            	 (*provider.usage)({
+        	            	- PromptTokens: (int) 0,
+        	            	- CompletionTokens: (int) 0,
+        	            	+ PromptTokens: (int) 10,
+        	            	+ CompletionTokens: (int) 1,
+        	            	  TotalTokens: (int) 0,
+        	Test:       	TestClaudeProvider_StreamStateInitialization/claude
+=== RUN   TestClaudeProvider_StreamStateInitialization/vertex
+    claude_stream_test.go:91: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:91
+        	Error:      	Should be empty, but was msg_a
+        	Test:       	TestClaudeProvider_StreamStateInitialization/vertex
+    claude_stream_test.go:92: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:92
+        	Error:      	Should be empty, but was standard
+        	Test:       	TestClaudeProvider_StreamStateInitialization/vertex
+    claude_stream_test.go:93: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:93
+        	Error:      	Not equal: 
+        	            	expected: &provider.usage{PromptTokens:0, CompletionTokens:0, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	actual  : &provider.usage{PromptTokens:10, CompletionTokens:1, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,4 +1,4 @@
+        	            	 (*provider.usage)({
+        	            	- PromptTokens: (int) 0,
+        	            	- CompletionTokens: (int) 0,
+        	            	+ PromptTokens: (int) 10,
+        	            	+ CompletionTokens: (int) 1,
+        	            	  TotalTokens: (int) 0,
+        	Test:       	TestClaudeProvider_StreamStateInitialization/vertex
+    claude_stream_test.go:106: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:106
+        	Error:      	Should be empty, but was msg_a
+        	Test:       	TestClaudeProvider_StreamStateInitialization/vertex
+    claude_stream_test.go:107: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:107
+        	Error:      	Should be empty, but was standard
+        	Test:       	TestClaudeProvider_StreamStateInitialization/vertex
+    claude_stream_test.go:108: 
+        	Error Trace:	<baseline-source>/plugins/wasm-go/extensions/ai-proxy/provider/claude_stream_test.go:108
+        	Error:      	Not equal: 
+        	            	expected: &provider.usage{PromptTokens:0, CompletionTokens:0, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	actual  : &provider.usage{PromptTokens:10, CompletionTokens:1, TotalTokens:0, CompletionTokensDetails:(*provider.completionTokensDetails)(nil), PromptTokensDetails:(*provider.promptTokensDetails)(nil)}
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1,4 +1,4 @@
+        	            	 (*provider.usage)({
+        	            	- PromptTokens: (int) 0,
+        	            	- CompletionTokens: (int) 0,
+        	            	+ PromptTokens: (int) 10,
+        	            	+ CompletionTokens: (int) 1,
+        	            	  TotalTokens: (int) 0,
+        	Test:       	TestClaudeProvider_StreamStateInitialization/vertex
+--- FAIL: TestClaudeProvider_StreamStateInitialization (0.00s)
+    --- FAIL: TestClaudeProvider_StreamStateInitialization/claude (0.00s)
+    --- FAIL: TestClaudeProvider_StreamStateInitialization/vertex (0.00s)
+FAIL
+FAIL	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-proxy/provider	0.342s
+FAIL
