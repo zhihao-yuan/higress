@@ -1,0 +1,24 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"public-call-0","type":"function","function":{"name":"loo"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"name":"kup"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"{ \"emai"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"l\":\"DEM"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"O_SECRE"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"T\", \"n\""}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":":1e2 }"}}]},"finish_reason":null}]}
+
+data: {"choices":[{"delta":{"content":"checking MASKED_TOKEN"},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: {"choices":[],"usage":{"total_tokens":20},"custom":"once"}
+
+data: [DONE]
+

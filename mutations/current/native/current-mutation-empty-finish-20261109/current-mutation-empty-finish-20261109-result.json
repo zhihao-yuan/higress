@@ -1,0 +1,24 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "higress5213-builder",
+    "sh",
+    "-ec",
+    "cd /src/extensions/ai-data-masking; CARGO_TARGET_DIR=/src/target/p2-final cargo test --locked --offline terminal_tool_frame_flushes_checked_text_before_arguments_and_finish"
+  ],
+  "exit_code": 101,
+  "elapsed_seconds": 38.10070490837097,
+  "source_files_sha256": {
+    "plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs": "0e934fbc6f5ac771173b06f34f742854dec22ce9439716a6880dff0eca086ad7",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/deny_word.rs": "3e63c8d41f5c7ced55916f0201e84c8eab25c937189e83d435687518aabcb60f",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs": "51a2d0c102e793f86e45095db4a2f31a4bfcdfc2cf995864d5c306311ff36989",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/lib.rs": "e3ed803dab621a7a5d7ea594c3c73585fc686713b5c8d6769bd39ad118be5889",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs": "44467e602df713b6bf1ed2d48268524c5cfdcfc785435e55355081ed7f9d980a",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs": "064bd52c6fde00b2ba663c7bb6edeef7205afa419f72c9433b2c6da4c09dac68",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_win_openai.rs": "5e24f7d0c12249b0f9fac55c2e4d806bdbecaf989261766f23fcbd4ec307d7b3",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_window.rs": "d55ec34567c83ada93566ef5a9cf17000ea2b91962e75428c11445fd867654d2",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs": "f12d4073dc0334ebb3d3476ccdb58198c6b74396a9f5cb3cb0e5624977f2a496"
+  },
+  "source_diff_sha256": "91faa7cc2a2a15e9a375c69711e3387a25ca96d09c4d7af6d73768cdb03bff91"
+}

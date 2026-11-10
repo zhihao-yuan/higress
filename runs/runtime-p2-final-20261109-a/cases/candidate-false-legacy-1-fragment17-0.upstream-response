@@ -1,0 +1,38 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"content":"checking MAS"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"name":"lookup"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"content":"KED_TOKEN"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"{ \"emai"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"l\":\"MAS"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"KED_TOK"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"EN\", \"o"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"ther\":\""}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"MASKED_"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"TOKEN\","}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":" \"n\":1e"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"2, \"u\":"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"\"\\u4f60"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"\\u597D\""}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":" }"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: {"choices":[],"usage":{"total_tokens":20},"custom":"once"}
+
+data: [DONE]
+

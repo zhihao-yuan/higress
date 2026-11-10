@@ -1,0 +1,40 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"choices":[{"delta":{"content":"checking MAS"},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"public-call-0","type":"function","function":{"name":"loo"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"name":"kup"}}]},"finish_reason":null}]}
+
+data: {"choices":[{"delta":{"content":"KED_TOKEN"},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"{ \"emai"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"l\":\"MAS"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"KED_TOK"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"EN\", \"o"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"ther\":\""}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"MASKED_"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"TOKEN\","}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":" \"n\":1e"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"2, \"u\":"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\"\\u4f60"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\u597D\""}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":" }"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: {"choices":[],"usage":{"total_tokens":20},"custom":"once"}
+
+data: [DONE]
+

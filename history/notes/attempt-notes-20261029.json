@@ -1,0 +1,20 @@
+{
+  "limits-20261029-full-a": {
+    "classification": "superseded provenance precaution",
+    "reason": "Fixture was mounted from a live source directory while an unused gate branch was edited. No behavioral failure observed, but do not use this as the final immutable-fixture evidence.",
+    "replacement": "limits-20261029-full-b"
+  },
+  "configuration-20261029-a": {
+    "classification": "harness filesystem notification issue",
+    "reason": "Host-side Docker Desktop move did not trigger a second subscription update; update_attempt stayed 1. Subsequent updates execute atomic moves inside the gateway container."
+  },
+  "configuration-20261029-b": {
+    "classification": "incorrect config_dump oracle",
+    "reason": "The bad resource was rejected (update_rejected=1, config_fail=1), but config_dump showed last received bad-2. Accepted-version stat remained good-1. Later C/D verified actual request behavior and good-3 replacement."
+  },
+  "capacity-20261029-a": {
+    "classification": "incomplete; one unresolved upstream reset before headers",
+    "reason": "near-total-c1-candidate-off-run-0 received HTTP503/UC. Fixture recorded request but no response; Wasm crash/fail-open counters remained zero. Fixture exception logs were not retained in this first attempt, so the cause is not established. Not a successful capacity group.",
+    "followup": "capacity-diagnostic-20261029-a: same group, 32/32 passed with fixture logs/observed fixture hashes. Added atomic JSON publication and observed-input hash checks for the full rerun; this does not prove the original reset cause."
+  }
+}

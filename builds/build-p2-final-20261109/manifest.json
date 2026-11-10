@@ -1,0 +1,36 @@
+{
+  "source_revision": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
+  "archive_sha256": "500c502bf6c761623e3a300e9968098e0086e12b5d503848697c7008a75780d7",
+  "lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+  "command": [
+    "docker",
+    "exec",
+    "-w",
+    "/src/target/p2-final-20261109-source/plugins/wasm-rust/extensions/ai-data-masking",
+    "-e",
+    "CARGO_TARGET_DIR=/src/target/p2-20261109-artifacts",
+    "higress5213-builder",
+    "cargo",
+    "build",
+    "--locked",
+    "--offline",
+    "--release",
+    "--target",
+    "wasm32-wasip1"
+  ],
+  "source_files_sha256": {
+    "ai_data_masking.rs": "0e934fbc6f5ac771173b06f34f742854dec22ce9439716a6880dff0eca086ad7",
+    "deny_word.rs": "3e63c8d41f5c7ced55916f0201e84c8eab25c937189e83d435687518aabcb60f",
+    "tool_raw.rs": "51a2d0c102e793f86e45095db4a2f31a4bfcdfc2cf995864d5c306311ff36989",
+    "lib.rs": "e3ed803dab621a7a5d7ea594c3c73585fc686713b5c8d6769bd39ad118be5889",
+    "tool_stream.rs": "db2003e53a803be74f42533a78d50399130404a4dd2c0901ace6d79947f27c00",
+    "tool_arguments.rs": "064bd52c6fde00b2ba663c7bb6edeef7205afa419f72c9433b2c6da4c09dac68",
+    "msg_win_openai.rs": "5e24f7d0c12249b0f9fac55c2e4d806bdbecaf989261766f23fcbd4ec307d7b3",
+    "msg_window.rs": "d55ec34567c83ada93566ef5a9cf17000ea2b91962e75428c11445fd867654d2",
+    "tool_config.rs": "f12d4073dc0334ebb3d3476ccdb58198c6b74396a9f5cb3cb0e5624977f2a496"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 129.59718704223633,
+  "wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+  "wasm_bytes": 7273867
+}

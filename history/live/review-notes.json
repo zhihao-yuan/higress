@@ -1,0 +1,42 @@
+{
+  "kind": "sanitized real-model run",
+  "original_checksum_manifest_sha256": "eab09b08a30263e6800c4bb0300ce9f27fda0dcc1ac87804335eb46016e2b932",
+  "removed_files": [
+    "models.json",
+    "listing.json"
+  ],
+  "changed_files": [
+    "cases/0-direct-1.headers",
+    "cases/1-bypass-1.headers",
+    "cases/10-restore-other-path-1.headers",
+    "cases/11-check-1.headers",
+    "cases/12-check-0.headers",
+    "cases/13-check-restore-1.headers",
+    "cases/2-bypass-0.headers",
+    "cases/3-baseline-1.headers",
+    "cases/4-baseline-0.headers",
+    "cases/5-off-1.headers",
+    "cases/6-off-0.headers",
+    "cases/7-restore-1.headers",
+    "cases/8-restore-0.headers",
+    "cases/9-restore-other-tool-1.headers",
+    "cases/health.headers",
+    "commands.json",
+    "tap-1-bypass-1/trace_15119176045773127374.json",
+    "tap-10-restore-other-path-1/trace_11621018802993015190.json",
+    "tap-11-check-1/trace_11020862845346536350.json",
+    "tap-12-check-0/trace_11563116769563364258.json",
+    "tap-13-check-restore-1/trace_8490094292795935009.json",
+    "tap-2-bypass-0/trace_16700007145444062517.json",
+    "tap-3-baseline-1/trace_3696407393753263728.json",
+    "tap-4-baseline-0/trace_5589187580128399113.json",
+    "tap-5-off-1/trace_12144256908632019333.json",
+    "tap-6-off-0/trace_13456236486398575571.json",
+    "tap-7-restore-1/trace_5888045332377888089.json",
+    "tap-8-restore-0/trace_10592515719741458129.json",
+    "tap-9-restore-other-tool-1/trace_5591318977865633592.json"
+  ],
+  "preserved": "Exact synthetic prompt and model tool response bodies, ledger, Wasm, script snapshots, Tap body bytes and truncation flags",
+  "redacted": "Local paths and Docker peer IPs; model listing unrelated to selected model; transport headers other than content type, framing, status and test case ID",
+  "known_oracle_issue": "Original run results treated stop as uncovered. Use the separate offline reanalysis with the approved non-null finish predicate."
+}

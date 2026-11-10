@@ -1,0 +1,22 @@
+{"label": "current-mutation-atomic-global-config-20261110", "exit_code": 101, "elapsed_seconds": 33.760199785232544}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 33.41s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::tool_configuration_update_is_all_or_nothing ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::tool_configuration_update_is_all_or_nothing stdout ----
+thread 'ai_data_masking::tests::tool_configuration_update_is_all_or_nothing' panicked at src/ai_data_masking.rs:2971:9:
+a valid rule must not hide invalid global configuration
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::tool_configuration_update_is_all_or_nothing
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.02s
+
+error: test failed, to rerun pass `--lib`

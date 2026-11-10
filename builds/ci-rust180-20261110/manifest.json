@@ -1,0 +1,32 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "higress5213-builder",
+    "sh",
+    "-ec",
+    "cd /src/extensions/ai-data-masking; cargo +1.80.0 --version; rustc +1.80.0 --version; cargo +1.80.0 fmt --all --check; CARGO_TARGET_DIR=/src/target/ci-rust180-20261110 cargo +1.80.0 test --locked --offline; CARGO_TARGET_DIR=/src/target/ci-rust180-20261110 cargo +1.80.0 clippy --locked --offline --all-features --all-targets -- -D warnings; CARGO_TARGET_DIR=/src/target/ci-rust180-20261110 cargo +1.80.0 build --locked --offline --release --target wasm32-wasip1"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 331.12809205055237,
+  "source_files_sha256": {
+    "plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs": "216163ddccabadc723fec58e78ce822e8117a71eea458e21555a9337ec4cf66e",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/deny_word.rs": "3e63c8d41f5c7ced55916f0201e84c8eab25c937189e83d435687518aabcb60f",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs": "51a2d0c102e793f86e45095db4a2f31a4bfcdfc2cf995864d5c306311ff36989",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/lib.rs": "e3ed803dab621a7a5d7ea594c3c73585fc686713b5c8d6769bd39ad118be5889",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs": "db2003e53a803be74f42533a78d50399130404a4dd2c0901ace6d79947f27c00",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs": "064bd52c6fde00b2ba663c7bb6edeef7205afa419f72c9433b2c6da4c09dac68",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_win_openai.rs": "5e24f7d0c12249b0f9fac55c2e4d806bdbecaf989261766f23fcbd4ec307d7b3",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_window.rs": "d55ec34567c83ada93566ef5a9cf17000ea2b91962e75428c11445fd867654d2",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs": "f12d4073dc0334ebb3d3476ccdb58198c6b74396a9f5cb3cb0e5624977f2a496"
+  },
+  "source_diff_sha256": "9e703bd84eaceadd4075b68c95062057ac0dce1ff9827f45f07a3165469cd597",
+  "source_revision": "35c50060f6c935e76101a3460bc044141396e3b7",
+  "source_parent": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
+  "builder_base_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+  "installed_toolchain": "1.80.0-x86_64-unknown-linux-gnu",
+  "rustc": "1.80.0 (051478957 2024-07-21)",
+  "wasm_sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
+  "wasm_bytes": 7205480,
+  "lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503"
+}

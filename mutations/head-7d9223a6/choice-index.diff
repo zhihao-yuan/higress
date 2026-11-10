@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..302913b1 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -536,7 +536,7 @@ impl ToolStream {
+                     .is_some_and(|reason| !reason.is_null());
+                 let index = choice
+                     .get("index")
+-                    .and_then(Value::as_i64)
++                    .and_then(|value| value.as_i64().or_else(|| value.as_str()?.parse::<i64>().ok()))
+                     .filter(|index| *index >= 0);
+                 if let Some(index) = index {
+                     let finished = self.finish_reasons.entry(index).or_default();

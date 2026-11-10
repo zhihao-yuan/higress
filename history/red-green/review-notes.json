@@ -1,0 +1,9 @@
+{
+  "kind": "sanitized synthetic red-green evidence",
+  "source_run": "red-green-20261029-a",
+  "original_checksum_manifest_sha256": "ce818daee3157e0bbf0b2ccc172da4b32b4d4d1ab39449a54f46d05ce2127a64",
+  "changed_files": [
+    "commands.json"
+  ],
+  "redaction": "Replace local lab path in commands and logs; omit private Docker peer addresses from logs. Request, response, source, and Wasm bytes remain identical."
+}

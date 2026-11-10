@@ -1,0 +1,14 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..ca5323a9 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -452,8 +452,8 @@ impl ToolStream {
+             }
+             self.retained -= entry.name.len() + entry.id.len();
+             self.queued += entry.arguments.len();
+-            actions.push(StreamAction::FlushChoice(key.0));
+             actions.push(StreamAction::Arguments(argument_frame(key, entry)));
++            actions.push(StreamAction::FlushChoice(key.0));
+         }
+         Ok(())
+     }

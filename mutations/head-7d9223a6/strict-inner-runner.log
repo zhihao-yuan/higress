@@ -1,0 +1,23 @@
+{"label": "current-mutation-strict-inner-20261110", "exit_code": 101, "elapsed_seconds": 36.34434914588928}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 36.05s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test tool_arguments::tests::malformed_or_oversized_arguments_cannot_be_released ... FAILED
+
+failures:
+
+---- tool_arguments::tests::malformed_or_oversized_arguments_cannot_be_released stdout ----
+thread 'tool_arguments::tests::malformed_or_oversized_arguments_cannot_be_released' panicked at src/tool_arguments.rs:436:13:
+assertion failed: rewrite_json(input, None, 4096, 8192, &mut (|_| false),
+        &mut (|_| Ok(None))).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tool_arguments::tests::malformed_or_oversized_arguments_cannot_be_released
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`

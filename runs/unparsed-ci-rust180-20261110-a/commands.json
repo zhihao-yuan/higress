@@ -1,0 +1,3892 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "higress5213-ci180-20261110-a"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5098041919991374
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-fixture",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.4246022228617221
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.1529796780087054
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-inherited-limit",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-inherited-limit.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7497353397775441
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "0211bd06f6475903c84f4a180fc88a96aabe21981a05e1def481d428a948a95e",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08308793604373932
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62453/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-inherited-limit-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0742123769596219
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62453/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-inherited-limit-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05046519706957042
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62453/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-inherited-limit-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06844487902708352
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62453/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-inherited-limit-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-inherited-limit-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08440685900859535
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0211bd06f6475903c84f4a180fc88a96aabe21981a05e1def481d428a948a95e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10402617696672678
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0211bd06f6475903c84f4a180fc88a96aabe21981a05e1def481d428a948a95e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32004853594116867
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0211bd06f6475903c84f4a180fc88a96aabe21981a05e1def481d428a948a95e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23402652190998197
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0211bd06f6475903c84f4a180fc88a96aabe21981a05e1def481d428a948a95e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05117285600863397
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "0211bd06f6475903c84f4a180fc88a96aabe21981a05e1def481d428a948a95e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.48678128607571125
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-unterminated-16",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-unterminated-16.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.3217157069593668
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "1c2ba93bcd559e6b86dbd2e6516e0a63c9af3bae8de2b07e9d295a4d5b6cdcbe",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06533698504790664
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62539/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-16-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12655569287016988
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62539/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-16-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09194037294946611
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62539/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-16-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07755546690896153
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62539/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-16-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-16-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11678018514066935
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "1c2ba93bcd559e6b86dbd2e6516e0a63c9af3bae8de2b07e9d295a4d5b6cdcbe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07359486911445856
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1c2ba93bcd559e6b86dbd2e6516e0a63c9af3bae8de2b07e9d295a4d5b6cdcbe",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2121666909661144
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1c2ba93bcd559e6b86dbd2e6516e0a63c9af3bae8de2b07e9d295a4d5b6cdcbe",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21070797997526824
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1c2ba93bcd559e6b86dbd2e6516e0a63c9af3bae8de2b07e9d295a4d5b6cdcbe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05755066801793873
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "1c2ba93bcd559e6b86dbd2e6516e0a63c9af3bae8de2b07e9d295a4d5b6cdcbe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4630019988398999
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-unterminated-1029",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-unterminated-1029.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8070125970989466
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "67d47d3c551f416f336fafa56ef6644acc0852d64ac829f897cd357460e75391",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07125319610349834
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62625/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1029-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04244092805311084
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62625/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1029-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05112123000435531
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62625/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1029-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0855772658251226
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62625/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1029-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1029-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08555473480373621
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "67d47d3c551f416f336fafa56ef6644acc0852d64ac829f897cd357460e75391"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.061730904038995504
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "67d47d3c551f416f336fafa56ef6644acc0852d64ac829f897cd357460e75391",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16799810202792287
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "67d47d3c551f416f336fafa56ef6644acc0852d64ac829f897cd357460e75391",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17928735399618745
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "67d47d3c551f416f336fafa56ef6644acc0852d64ac829f897cd357460e75391"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14070533495396376
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "67d47d3c551f416f336fafa56ef6644acc0852d64ac829f897cd357460e75391"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4116247920319438
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-unterminated-1030",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-unterminated-1030.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5145764530170709
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "26d6b80c3612c5787c8a9a1f2d37265d9456ddd1593538347da59e1066c05c22",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06765909283421934
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62666/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1030-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05675792717374861
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62666/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1030-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.044674261938780546
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62666/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1030-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05101984296925366
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62666/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1030-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1030-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06622730102390051
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "26d6b80c3612c5787c8a9a1f2d37265d9456ddd1593538347da59e1066c05c22"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07164319790899754
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "26d6b80c3612c5787c8a9a1f2d37265d9456ddd1593538347da59e1066c05c22",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20943273813463748
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "26d6b80c3612c5787c8a9a1f2d37265d9456ddd1593538347da59e1066c05c22",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21051616594195366
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "26d6b80c3612c5787c8a9a1f2d37265d9456ddd1593538347da59e1066c05c22"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06979843392036855
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "26d6b80c3612c5787c8a9a1f2d37265d9456ddd1593538347da59e1066c05c22"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4508635669481009
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-unterminated-1031",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-unterminated-1031.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6122023321222514
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "f858b9bb597f72fea71b548c219ce0474b4783208b90eb3f8bd7ac1031f861ca",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07020568405278027
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62718/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1031-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0417941699270159
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62718/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1031-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0778051030356437
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62718/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1031-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07647426496259868
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62718/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-unterminated-1031-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-unterminated-1031-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08210328710265458
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "f858b9bb597f72fea71b548c219ce0474b4783208b90eb3f8bd7ac1031f861ca"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07131960499100387
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f858b9bb597f72fea71b548c219ce0474b4783208b90eb3f8bd7ac1031f861ca",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32862252788618207
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f858b9bb597f72fea71b548c219ce0474b4783208b90eb3f8bd7ac1031f861ca",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32049803412519395
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f858b9bb597f72fea71b548c219ce0474b4783208b90eb3f8bd7ac1031f861ca"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06771127111278474
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "f858b9bb597f72fea71b548c219ce0474b4783208b90eb3f8bd7ac1031f861ca"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4083474650979042
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-closed-over-limit",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-closed-over-limit.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.48153388500213623
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "a7601702d9f8c4d437d2be75040d852548fc36da0423c81523acc6a66a4c0684",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06161211896687746
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62759/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-closed-over-limit-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.047880762023851275
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62759/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-closed-over-limit-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0928799849934876
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62759/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-closed-over-limit-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08220381801947951
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62759/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-closed-over-limit-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-closed-over-limit-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15727516706101596
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "a7601702d9f8c4d437d2be75040d852548fc36da0423c81523acc6a66a4c0684"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13435842003673315
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "a7601702d9f8c4d437d2be75040d852548fc36da0423c81523acc6a66a4c0684",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18715839204378426
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "a7601702d9f8c4d437d2be75040d852548fc36da0423c81523acc6a66a4c0684",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1853047600015998
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "a7601702d9f8c4d437d2be75040d852548fc36da0423c81523acc6a66a4c0684"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05852296203374863
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "a7601702d9f8c4d437d2be75040d852548fc36da0423c81523acc6a66a4c0684"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.46072944602929056
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-oversized-then-done",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-oversized-then-done.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7803576798178256
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "aeb2c98f0c05107fd8c3eb69a34b330ea38a56ce6a32cb45451eb08b5bd3dfc0",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0695306861307472
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62804/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-oversized-then-done-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06024791207164526
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62804/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-oversized-then-done-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07040952821262181
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62804/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-oversized-then-done-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08011487103067338
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62804/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-oversized-then-done-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-oversized-then-done-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09558059298433363
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "aeb2c98f0c05107fd8c3eb69a34b330ea38a56ce6a32cb45451eb08b5bd3dfc0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09356318297795951
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "aeb2c98f0c05107fd8c3eb69a34b330ea38a56ce6a32cb45451eb08b5bd3dfc0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23407864896580577
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "aeb2c98f0c05107fd8c3eb69a34b330ea38a56ce6a32cb45451eb08b5bd3dfc0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.29474028502590954
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "aeb2c98f0c05107fd8c3eb69a34b330ea38a56ce6a32cb45451eb08b5bd3dfc0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10598470200784504
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "aeb2c98f0c05107fd8c3eb69a34b330ea38a56ce6a32cb45451eb08b5bd3dfc0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.46695810090750456
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-batched",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-batched.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5132283680140972
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "dcf5c14a30e93809ad48f23aa6af95bef45ed8bc10b3e47623fe7ea3ac3e523f",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06931790197268128
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62887/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-batched-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06379692698828876
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62887/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-batched-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06696109590120614
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62887/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-batched-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0678211678750813
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62887/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-batched-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-batched-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07493055611848831
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "dcf5c14a30e93809ad48f23aa6af95bef45ed8bc10b3e47623fe7ea3ac3e523f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07835564203560352
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "dcf5c14a30e93809ad48f23aa6af95bef45ed8bc10b3e47623fe7ea3ac3e523f",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27963159210048616
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "dcf5c14a30e93809ad48f23aa6af95bef45ed8bc10b3e47623fe7ea3ac3e523f",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2837253659963608
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "dcf5c14a30e93809ad48f23aa6af95bef45ed8bc10b3e47623fe7ea3ac3e523f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07813075184822083
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "dcf5c14a30e93809ad48f23aa6af95bef45ed8bc10b3e47623fe7ea3ac3e523f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.44119254499673843
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-baseline-undecided-prefix",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline-undecided-prefix.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.3404888750519603
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "e45849aee46ef30635921bb5aafb02ac215d78d4454557278e1c852b47bd7a0c",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07273054192773998
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62939/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-undecided-prefix-single",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04597375285811722
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62939/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-undecided-prefix-events",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11868283315561712
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62939/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-undecided-prefix-fragment17",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06002019112929702
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62939/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-undecided-prefix-prefix1",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/baseline-undecided-prefix-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07403347897343338
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "e45849aee46ef30635921bb5aafb02ac215d78d4454557278e1c852b47bd7a0c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06851927400566638
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "e45849aee46ef30635921bb5aafb02ac215d78d4454557278e1c852b47bd7a0c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20293925795704126
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "e45849aee46ef30635921bb5aafb02ac215d78d4454557278e1c852b47bd7a0c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18251072289422154
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e45849aee46ef30635921bb5aafb02ac215d78d4454557278e1c852b47bd7a0c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06331968097947538
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "e45849aee46ef30635921bb5aafb02ac215d78d4454557278e1c852b47bd7a0c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4229454470332712
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-inherited-limit",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-inherited-limit.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6465958850458264
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "94d7a2b41ccc9ba909c6f040530aeddc6d5a862defcd32fbc0a13784a6a0cfe5",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0684964619576931
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62995/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-inherited-limit-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04071107809431851
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62995/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-inherited-limit-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04794174199923873
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62995/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-inherited-limit-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15491807786747813
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62995/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-inherited-limit-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-inherited-limit-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.044601814122870564
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "94d7a2b41ccc9ba909c6f040530aeddc6d5a862defcd32fbc0a13784a6a0cfe5"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08164548291824758
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "94d7a2b41ccc9ba909c6f040530aeddc6d5a862defcd32fbc0a13784a6a0cfe5",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5891715039033443
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "94d7a2b41ccc9ba909c6f040530aeddc6d5a862defcd32fbc0a13784a6a0cfe5",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18715610494837165
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "94d7a2b41ccc9ba909c6f040530aeddc6d5a862defcd32fbc0a13784a6a0cfe5"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05900248512625694
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "94d7a2b41ccc9ba909c6f040530aeddc6d5a862defcd32fbc0a13784a6a0cfe5"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.36247860500589013
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-unterminated-16",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-unterminated-16.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6878262772224844
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "4b374e90aad081f2b8a633c03adffd1af8be81b2777aac051ba1423779014b69",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06295556481927633
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63044/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-16-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05548350792378187
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63044/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-16-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09616660885512829
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63044/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-16-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05134154809638858
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63044/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-16-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-16-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04491108888760209
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "4b374e90aad081f2b8a633c03adffd1af8be81b2777aac051ba1423779014b69"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06623626314103603
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "4b374e90aad081f2b8a633c03adffd1af8be81b2777aac051ba1423779014b69",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17815705412067473
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "4b374e90aad081f2b8a633c03adffd1af8be81b2777aac051ba1423779014b69",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18927487800829113
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "4b374e90aad081f2b8a633c03adffd1af8be81b2777aac051ba1423779014b69"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.051567272981628776
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "4b374e90aad081f2b8a633c03adffd1af8be81b2777aac051ba1423779014b69"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4010375530924648
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-unterminated-1029",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-unterminated-1029.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6041642480995506
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "220eccf4ba48473ff3d356cadfe49a50bd4fb1b54b1f7ad250681324c237ba5d",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0660286599304527
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63119/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1029-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04372326494194567
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63119/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1029-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05101084499619901
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63119/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1029-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.045223926892504096
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63119/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1029-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1029-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05120135680772364
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "220eccf4ba48473ff3d356cadfe49a50bd4fb1b54b1f7ad250681324c237ba5d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07250842498615384
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "220eccf4ba48473ff3d356cadfe49a50bd4fb1b54b1f7ad250681324c237ba5d",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.26424889289774
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "220eccf4ba48473ff3d356cadfe49a50bd4fb1b54b1f7ad250681324c237ba5d",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5077803751919419
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "220eccf4ba48473ff3d356cadfe49a50bd4fb1b54b1f7ad250681324c237ba5d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07764592720195651
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "220eccf4ba48473ff3d356cadfe49a50bd4fb1b54b1f7ad250681324c237ba5d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.49760512704961
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-unterminated-1030",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-unterminated-1030.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8115717589389533
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "826821a9f45535bc626c8b541deef8432d029376d5ccfcd9feed932335a6d28e",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07496000383980572
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63181/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1030-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04131597210653126
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63181/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1030-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0770248849876225
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63181/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1030-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08089986513368785
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63181/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1030-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1030-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0833813778590411
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "826821a9f45535bc626c8b541deef8432d029376d5ccfcd9feed932335a6d28e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05373603804036975
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "826821a9f45535bc626c8b541deef8432d029376d5ccfcd9feed932335a6d28e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16498178197070956
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "826821a9f45535bc626c8b541deef8432d029376d5ccfcd9feed932335a6d28e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16656813491135836
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "826821a9f45535bc626c8b541deef8432d029376d5ccfcd9feed932335a6d28e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.044676239136606455
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "826821a9f45535bc626c8b541deef8432d029376d5ccfcd9feed932335a6d28e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.46988716581836343
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-unterminated-1031",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-unterminated-1031.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6335330000147223
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "da6c79eb366ff84c3cd4ebf010f0837a1e4dcea8ba9299384076b49b0060255b",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12818791810423136
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63227/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1031-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09463895205408335
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63227/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1031-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06581641687080264
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63227/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1031-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05952575313858688
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63227/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-unterminated-1031-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-unterminated-1031-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06077002105303109
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "da6c79eb366ff84c3cd4ebf010f0837a1e4dcea8ba9299384076b49b0060255b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07000705483369529
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "da6c79eb366ff84c3cd4ebf010f0837a1e4dcea8ba9299384076b49b0060255b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21711411490105093
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "da6c79eb366ff84c3cd4ebf010f0837a1e4dcea8ba9299384076b49b0060255b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1797656628768891
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "da6c79eb366ff84c3cd4ebf010f0837a1e4dcea8ba9299384076b49b0060255b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06123467697761953
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "da6c79eb366ff84c3cd4ebf010f0837a1e4dcea8ba9299384076b49b0060255b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.41243081795983016
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-closed-over-limit",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-closed-over-limit.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.616815592860803
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "b8fa94259032635b31298ebdf37df75ba2928d193d3a87445cdb5a61fb583255",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07606864906847477
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63273/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-closed-over-limit-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05303129903040826
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63273/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-closed-over-limit-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05513643310405314
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63273/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-closed-over-limit-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04307383322156966
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63273/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-closed-over-limit-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-closed-over-limit-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05196443106979132
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "b8fa94259032635b31298ebdf37df75ba2928d193d3a87445cdb5a61fb583255"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06547454581595957
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "b8fa94259032635b31298ebdf37df75ba2928d193d3a87445cdb5a61fb583255",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18362562800757587
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "b8fa94259032635b31298ebdf37df75ba2928d193d3a87445cdb5a61fb583255",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2055922499857843
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "b8fa94259032635b31298ebdf37df75ba2928d193d3a87445cdb5a61fb583255"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0548877757973969
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "b8fa94259032635b31298ebdf37df75ba2928d193d3a87445cdb5a61fb583255"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.40876483800821006
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-oversized-then-done",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-oversized-then-done.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5320727538783103
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "c60ea0e7974c36bc1dc132c1d8f0ff8edf00cbf6e07170019282fc2d9567a84e",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06442835717462003
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63312/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-oversized-then-done-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04822566197253764
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63312/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-oversized-then-done-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05957843689247966
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63312/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-oversized-then-done-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05525521608069539
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63312/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-oversized-then-done-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-oversized-then-done-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0850586739834398
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "c60ea0e7974c36bc1dc132c1d8f0ff8edf00cbf6e07170019282fc2d9567a84e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06237689405679703
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "c60ea0e7974c36bc1dc132c1d8f0ff8edf00cbf6e07170019282fc2d9567a84e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18772230204194784
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "c60ea0e7974c36bc1dc132c1d8f0ff8edf00cbf6e07170019282fc2d9567a84e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17870869394391775
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "c60ea0e7974c36bc1dc132c1d8f0ff8edf00cbf6e07170019282fc2d9567a84e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05655635497532785
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "c60ea0e7974c36bc1dc132c1d8f0ff8edf00cbf6e07170019282fc2d9567a84e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.435361010953784
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-batched",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-batched.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7979646599851549
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "2ab69cb3d47b85c9d823e7f1e73e9ca6c7d9dbbf3cf840471af1f67e8b1ccadf",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09597345115616918
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63369/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-batched-single",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06465401197783649
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63369/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-batched-events",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06455009803175926
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63369/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-batched-fragment17",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09155621705576777
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63369/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-batched-prefix1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-batched-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07903701392933726
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "2ab69cb3d47b85c9d823e7f1e73e9ca6c7d9dbbf3cf840471af1f67e8b1ccadf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15590334008447826
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2ab69cb3d47b85c9d823e7f1e73e9ca6c7d9dbbf3cf840471af1f67e8b1ccadf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.26611246494576335
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2ab69cb3d47b85c9d823e7f1e73e9ca6c7d9dbbf3cf840471af1f67e8b1ccadf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.25753824110142887
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "2ab69cb3d47b85c9d823e7f1e73e9ca6c7d9dbbf3cf840471af1f67e8b1ccadf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06851872405968606
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "2ab69cb3d47b85c9d823e7f1e73e9ca6c7d9dbbf3cf840471af1f67e8b1ccadf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6291992671322078
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-ci180-20261110-a-candidate-undecided-prefix",
+      "--network",
+      "higress5213-ci180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate-undecided-prefix.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9837916849646717
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "206a2e4f7fa0a8fd8359a144a47bbddb281f671d88efec7d8f4834d2903dc2f2",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07097560493275523
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63443/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-undecided-prefix-single",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-single.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-single.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-single.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1800395839381963
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63443/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-undecided-prefix-events",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: events",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-events.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-events.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-events.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07733236183412373
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63443/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-undecided-prefix-fragment17",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: fragment17",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-fragment17.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-fragment17.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-fragment17.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08494640910066664
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:63443/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-undecided-prefix-prefix1",
+      "-H",
+      "X-Scenario: missing-content-type",
+      "-H",
+      "X-Delivery: prefix1",
+      "--data-binary",
+      "@/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-prefix1.request",
+      "-D",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-prefix1.headers",
+      "-o",
+      "/path/to/verification-lab/unparsed-ci-rust180-20261110-a/cases/candidate-undecided-prefix-prefix1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.059633072931319475
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "206a2e4f7fa0a8fd8359a144a47bbddb281f671d88efec7d8f4834d2903dc2f2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07050511194393039
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "206a2e4f7fa0a8fd8359a144a47bbddb281f671d88efec7d8f4834d2903dc2f2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17560590105131269
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "206a2e4f7fa0a8fd8359a144a47bbddb281f671d88efec7d8f4834d2903dc2f2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20377901988103986
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "206a2e4f7fa0a8fd8359a144a47bbddb281f671d88efec7d8f4834d2903dc2f2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0633221419993788
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "206a2e4f7fa0a8fd8359a144a47bbddb281f671d88efec7d8f4834d2903dc2f2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.45241169701330364
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "31adea06247ece3d1e5a1ab62e6c4803c7c1b3a60e3ee680bbd702e411b9e881"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07947478792630136
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "31adea06247ece3d1e5a1ab62e6c4803c7c1b3a60e3ee680bbd702e411b9e881"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.39266750286333263
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "higress5213-ci180-20261110-a"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.30659647611901164
+  }
+]

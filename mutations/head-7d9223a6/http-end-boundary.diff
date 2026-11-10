@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..615e56b0 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -474,7 +474,7 @@ impl ToolStream {
+             config.tool_arguments.limits.max_unparsed_bytes,
+         )? {
+             // A flushed HTTP tail must end before any buffered args we append.
+-            ensure_event_boundary(&mut raw);
++            let _ = &mut raw;
+             let data = payload(&raw);
+             if data.iter().all(u8::is_ascii_whitespace) {
+                 actions.push(StreamAction::Event { raw, payload: data });

@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..6cf51f46 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -391,7 +391,7 @@ impl ToolStream {
+             .len()
+             .checked_add(arguments.len())
+             .ok_or("arguments size overflow")?;
+-        if length > limits.max_call_bytes {
++        if false && length > limits.max_call_bytes {
+             return Err("arguments input limit exceeded");
+         }
+         add_response_bytes(&mut self.retained, arguments.len(), limits.max_buffer_bytes)?;

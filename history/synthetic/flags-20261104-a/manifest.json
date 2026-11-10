@@ -1,0 +1,36 @@
+{
+  "suite": "flag-matrix",
+  "gateway": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "fixture_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+  "baseline_source": "36f2f1ac5c7305c5a46c296c617b45d1fbacb7d3",
+  "candidate_source": "aedc63503d7ab3f42f8dd246c7e02c44fd0818bc",
+  "baseline_wasm_sha256": "4d0c11d3f03cb57a618da480f5c3238ea0eddd2df8b0e58d27416316543ddf74",
+  "candidate_wasm_sha256": "5ddb3f79f8bf08b0317d7c0251a52a6d305ff05d33c85a60fc56890dab0dcea2",
+  "scripts_sha256": {
+    "fixture.py": "a6b9ae88b09721d687898452d12c8a6265ba293622c9b537079d25c907598b04",
+    "run_verification.py": "563509de997c47539a9d696a819499d0aafc01978c1200297cec8c94ef1f810b",
+    "verify_configuration.py": "5ff9a8f72745314e2b5d63362cfa81a95303588f41303ea8e65348cce5029edb",
+    "verify_live.py": "67df1a9525ace7758d6a3a7193e481859e2955d9bfefde872f370425bbf5cb54",
+    "verify_runtime.py": "bdf38a28a5f66d8eee673e82feaabd3e238beeccc8d1a7d39ab29049f16d7e51",
+    "verify_red_green.py": "ca5988e8bef6ee0e96e68134e7f992259afe8f316b697f317e94701b6f37633b",
+    "runtime_lab.py": "a785c4977e62b0cf78d7569caa52a6bfd3628d57b4b4ac0fd404ac7b27b21a04",
+    "verify_host_failure.py": "307a8945a32c2fbaaac48cd2e82c3f10c39e18e63f7ff38e6bb19185236605c3",
+    "check_results.py": "ddc10155fd2d9d8118ea16dcaa16e31d789c8935e6ad7ca72199ca4417d8d9bd",
+    "reanalyze_live.py": "b922b3c652548b88e1c7cd7ba937ba5589548ce263897257cb73cf229299801c",
+    "build_fault_probe.py": "66c21c75e5930a894fb2e5867c68174b77ec540b4094619e128ebae926c7c6a5",
+    "verify_capacity.py": "86900f991a9a00168da6012f78b87c6e4ed394744d15d09470ec4770b7f69935",
+    "verify_limits.py": "c8edbdad98202379753f3361abea9ddf23b4bd3b0835e4c7de3e91e702ebe0b7",
+    "verify_flags.py": "9580f67fd4ce060afcef5adb6649f17c842d4a226367165fee7c6e4d37b99d67"
+  },
+  "host_platform": "macOS-15.6.1-x86_64-i386-64bit-Mach-O",
+  "host_arch": "x86_64",
+  "workers": 1,
+  "model_requests": 0,
+  "tools_executed": 0,
+  "limitations": [
+    "Synthetic upstream; no live-model evidence.",
+    "Upstream writes are not Envoy callback boundaries.",
+    "Linux/amd64 gateway on the recorded Docker host; no production capacity claim."
+  ],
+  "docker_host": "linux x86_64 cpus=8 memory=8220106752"
+}

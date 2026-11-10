@@ -1,0 +1,21 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 36.92s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test tool_arguments::tests::decoded_values_are_reencoded_without_reserializing_other_json ... FAILED
+
+failures:
+
+---- tool_arguments::tests::decoded_values_are_reencoded_without_reserializing_other_json stdout ----
+thread 'tool_arguments::tests::decoded_values_are_reencoded_without_reserializing_other_json' panicked at src/tool_arguments.rs:348:10:
+called `Result::unwrap()` on an `Err` value: "rewritten arguments JSON invalid"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tool_arguments::tests::decoded_values_are_reencoded_without_reserializing_other_json
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.02s
+
+error: test failed, to rerun pass `--lib`

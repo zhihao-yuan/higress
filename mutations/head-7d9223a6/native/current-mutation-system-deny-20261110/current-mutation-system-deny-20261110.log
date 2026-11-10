@@ -1,0 +1,23 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 39.42s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::system_deny_enters_only_the_explicit_new_check_scopes ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::system_deny_enters_only_the_explicit_new_check_scopes stdout ----
+thread 'ai_data_masking::tests::system_deny_enters_only_the_explicit_new_check_scopes' panicked at src/ai_data_masking.rs:3713:13:
+assertion `left == right` failed: flags 1
+  left: false
+ right: true
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::system_deny_enters_only_the_explicit_new_check_scopes
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 5.82s
+
+error: test failed, to rerun pass `--lib`

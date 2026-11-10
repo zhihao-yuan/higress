@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
+index 63ec8daf..ec9d8782 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
+@@ -324,7 +324,7 @@ pub(crate) fn rewrite_json(
+     let mut cursor = 0;
+     for (span, value) in changes {
+         output.extend_from_slice(&input.as_bytes()[cursor..span.start]);
+-        serde_json::to_writer(&mut output, &value).map_err(|_| "arguments encoding failed")?;
++        output.extend_from_slice(value.as_bytes());
+         cursor = span.end;
+     }
+     output.extend_from_slice(&input.as_bytes()[cursor..]);

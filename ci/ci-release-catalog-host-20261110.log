@@ -1,0 +1,11 @@
+--- FAIL: TestGoBatchBuildUsesReleaseEligibleCatalogSelection (0.04s)
+    batch_build_contract_test.go:38: list release Go batch: exit status 127
+        Build wasm-go plugins (default when PLUGIN_TYPE is unset)
+        tools/hack/build-wasm-plugins.sh: line 69: mapfile: command not found
+--- FAIL: TestGoE2EBatchIsProductionUnionManifestDependencies (0.04s)
+    batch_build_contract_test.go:83: list release Go batch: exit status 127
+        Build wasm-go plugins (default when PLUGIN_TYPE is unset)
+        tools/hack/build-wasm-plugins.sh: line 69: mapfile: command not found
+FAIL
+FAIL	github.com/higress-group/higress/tools/plugin-release	175.066s
+FAIL

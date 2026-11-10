@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "DEMO_SECRET"}, {"role": "assistant", "content": null, "tool_calls": [{"id": "call-0", "type": "function", "function": {"name": "lookup", "arguments": "{\"email\": \"DEMO_SECRET\"}"}}]}], "tools": [{"type": "function", "function": {"name": "lookup", "description": "public description"}}], "stream": false}

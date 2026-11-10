@@ -1,0 +1,77 @@
+[
+  {
+    "case": "before-bad",
+    "gateway": "dynamic",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "200",
+    "request_sha256": "e49d7322385dbfbd4055ac280863ddf71b61aa19658591f9e9bf320f6b1acf07",
+    "body_sha256": "0f6e8df4d06589d0e7cbac63776897f471d71f60aaf58fef6f7132baa7ed270e",
+    "upstream_received": false
+  },
+  {
+    "case": "after-bad",
+    "gateway": "dynamic",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "200",
+    "request_sha256": "e49d7322385dbfbd4055ac280863ddf71b61aa19658591f9e9bf320f6b1acf07",
+    "body_sha256": "0f6e8df4d06589d0e7cbac63776897f471d71f60aaf58fef6f7132baa7ed270e",
+    "upstream_received": false
+  },
+  {
+    "case": "new-good-allows-previous-word",
+    "gateway": "dynamic",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "200",
+    "request_sha256": "e49d7322385dbfbd4055ac280863ddf71b61aa19658591f9e9bf320f6b1acf07",
+    "body_sha256": "2fb8d16b280939280a2ef8bbc3ec1bdb9773e0c8d06a5b2a1afd7ba8e44ba3c6",
+    "upstream_received": true
+  },
+  {
+    "case": "new-good-blocks-new-word",
+    "gateway": "dynamic",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "200",
+    "request_sha256": "0d5c12bb63b27e16224ed9340d8b656f2428db15664d3be378119888baeb5bcd",
+    "body_sha256": "0f6e8df4d06589d0e7cbac63776897f471d71f60aaf58fef6f7132baa7ed270e",
+    "upstream_received": false
+  },
+  {
+    "case": "in-flight-old-config",
+    "http_status": 200,
+    "metadata_observed_before_update": true,
+    "old_config_denied_pending_arguments": true
+  },
+  {
+    "case": "missing-allowlist",
+    "host_behavior": "startup rejected",
+    "exit_code": 1
+  },
+  {
+    "case": "bad-pointer",
+    "host_behavior": "startup rejected",
+    "exit_code": 1
+  },
+  {
+    "case": "bad-limit",
+    "host_behavior": "startup rejected",
+    "exit_code": 1
+  },
+  {
+    "case": "bad-global-valid-rule",
+    "host_behavior": "startup rejected",
+    "exit_code": 1
+  },
+  {
+    "case": "bad-rule",
+    "host_behavior": "startup rejected",
+    "exit_code": 1
+  }
+]

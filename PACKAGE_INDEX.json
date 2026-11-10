@@ -1,0 +1,204 @@
+{
+  "prepared_date": "2026-11-10",
+  "pull_request": "https://github.com/higress-group/higress/pull/5299",
+  "code_head": "7d9223a61c1dd88a827945d8aabc8afc70e119ce",
+  "upstream_merged": "1fef633553462434ccafad94a6ef35d2b367450f",
+  "runtime_artifact": {
+    "rust": "1.80.0",
+    "sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
+    "manifest": "builds/ci-rust180-merged-20261110/manifest.json",
+    "source": "source-head",
+    "gateway_runs_original_source": "35c50060f6c935e76101a3460bc044141396e3b7",
+    "merged_binary_is_identical": true
+  },
+  "rust182_current_native_build": {
+    "sha256": "5e8ad8fe1989047094726b293a1a8767b94092d2343fae1c03023f10f6cc5232",
+    "manifest": "builds/head-7d9223a6-native-20261110/manifest.json",
+    "gateway_tested": false
+  },
+  "earlier_full_functional_matrix": {
+    "source": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
+    "rust": "1.82.0",
+    "wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+    "source_directory": "source"
+  },
+  "historical_live_and_capacity": {
+    "source": "aedc63503d7ab3f42f8dd246c7e02c44fd0818bc",
+    "wasm_sha256": "5ddb3f79f8bf08b0317d7c0251a52a6d305ff05d33c85a60fc56890dab0dcea2",
+    "health_calls": 1,
+    "formal_live_calls": 14,
+    "new_model_calls_for_this_package": 0
+  },
+  "mutations": {
+    "earlier": {
+      "source_revision": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
+      "killed": 20,
+      "survived": 0,
+      "source_restored": true
+    },
+    "head": {
+      "source_revision": "7d9223a61c1dd88a827945d8aabc8afc70e119ce",
+      "killed": 20,
+      "survived": 0,
+      "source_restored": true
+    }
+  },
+  "current_defaults": {
+    "max_call_bytes": 1048576,
+    "max_buffer_bytes": 4194304,
+    "max_calls": 128,
+    "max_unparsed_bytes": "inherits max_buffer_bytes",
+    "release_approved": false
+  },
+  "release_work_remaining": [
+    "maintainer confirmation of final defaults",
+    "full V1/V2 matrix on final module/configuration",
+    "final current-source complete capacity/configuration validation",
+    "current/final-configuration live-model verification with an agreed call plan"
+  ],
+  "runs": [
+    {
+      "directory": "runs/capacity-options-head-7d9223a6-20261110-a",
+      "baseline_source": "7d9223a61c1dd88a827945d8aabc8afc70e119ce",
+      "candidate_source": "7d9223a61c1dd88a827945d8aabc8afc70e119ce",
+      "baseline_wasm_sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
+      "candidate_wasm_sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
+      "summary": {
+        "groups": 4,
+        "formal_requests": 128,
+        "passed": 128,
+        "failed": 0,
+        "full_t5_complete": false,
+        "production_capacity_established": false,
+        "models": 0
+      },
+      "checksum_manifest_sha256": "331ef2dcd5b38b2ad87988daa5c6d90b4e3dc6d910f084c18a18125b19842999"
+    },
+    {
+      "directory": "runs/disabled-p2-final-20261109-a",
+      "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "passed": 80,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "checksum_manifest_sha256": "4ee209ab0e5484748e3fe03b33ab388a61d07ad7c3ae8439237fd6d0cb6968b7"
+    },
+    {
+      "directory": "runs/flags-p2-final-20261109-a",
+      "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "passed": 448,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "checksum_manifest_sha256": "1f77fdfdc6c1db06b7b64e23a107725b6d86210a81762c988d278b41bb8b208f"
+    },
+    {
+      "directory": "runs/legacy-p2-final-20261109-a",
+      "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "passed": 96,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "checksum_manifest_sha256": "08aad31a58f591aaee173636e9378723c3709eb9d8e207078ebd64814b14839a"
+    },
+    {
+      "directory": "runs/limits-p2-final-20261109-a",
+      "baseline_source": "8ee506a2a727cb7793bc909fc74e53c204df6218",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "4680dc6260926a59b72414d1dbe051d6b71cc0adff79d64b0f47e675a6305021",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "passed": 424,
+        "failed": 0,
+        "full_t5_complete": false,
+        "models": 0
+      },
+      "checksum_manifest_sha256": "487caa0308e5154b60b012923ab977443391b571d5586c6e116b4c97b605d0c3"
+    },
+    {
+      "directory": "runs/red-green-ci-rust180-20261110-a",
+      "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+      "candidate_source": "35c50060f6c935e76101a3460bc044141396e3b7",
+      "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+      "candidate_wasm_sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
+      "summary": {
+        "expected_baseline_assertion_failures": 8,
+        "candidate_assertions_passed": 8,
+        "models": 0,
+        "full_plan_complete": false
+      },
+      "checksum_manifest_sha256": "f1a363322aab2f099eb3ec601678075f831c2e4183d332b354a3b24ee8e994f7"
+    },
+    {
+      "directory": "runs/red-green-p2-final-20261109-a",
+      "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "expected_baseline_assertion_failures": 8,
+        "candidate_assertions_passed": 8,
+        "models": 0,
+        "full_plan_complete": false
+      },
+      "checksum_manifest_sha256": "5615256f224bd08b4cb2c5d2b7eaa71e763ab96f49d290d2010e07e955f3f9fe"
+    },
+    {
+      "directory": "runs/runtime-p2-final-20261109-a",
+      "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "passed": 1568,
+        "failed": 0,
+        "models": 0,
+        "full_plan_complete": false
+      },
+      "checksum_manifest_sha256": "9d15263a07363fdb0ce9b3c676b47f88cef19352965c9b06d6997ca55d7cae03"
+    },
+    {
+      "directory": "runs/unparsed-ci-rust180-20261110-a",
+      "baseline_source": "8ee506a2a727cb7793bc909fc74e53c204df6218",
+      "candidate_source": "35c50060f6c935e76101a3460bc044141396e3b7",
+      "baseline_wasm_sha256": "4680dc6260926a59b72414d1dbe051d6b71cc0adff79d64b0f47e675a6305021",
+      "candidate_wasm_sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
+      "summary": {
+        "passed": 72,
+        "failed": 0,
+        "baseline_scope_failures": 24,
+        "model_requests": 0
+      },
+      "checksum_manifest_sha256": "7126a6a6dfd0d936d9723ba8dd31a025003458a6df44d5d03dc5f6902bc0ac26"
+    },
+    {
+      "directory": "runs/unparsed-final-20261109-a",
+      "baseline_source": "8ee506a2a727cb7793bc909fc74e53c204df6218",
+      "candidate_source": "3f7a3a3c",
+      "baseline_wasm_sha256": "4680dc6260926a59b72414d1dbe051d6b71cc0adff79d64b0f47e675a6305021",
+      "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+      "summary": {
+        "passed": 72,
+        "failed": 0,
+        "baseline_scope_failures": 24,
+        "model_requests": 0
+      },
+      "checksum_manifest_sha256": "39fcedda6e805ee91ea7bb7024a58478bd625d2b5ee5180ceff24cce4059f23e"
+    }
+  ],
+  "ci": "ci/ci-github-green-20261110.json",
+  "privacy": "PRIVACY_REVIEW.md",
+  "offline_verification": "python3 -B verify_package.py"
+}

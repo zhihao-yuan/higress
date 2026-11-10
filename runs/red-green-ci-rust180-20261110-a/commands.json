@@ -1,0 +1,740 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "higress5213-rg180-20261110-a"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5982409040443599
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-rg180-20261110-a-fixture",
+      "--network",
+      "higress5213-rg180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.2789973029866815
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.2098321290686727
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-rg180-20261110-a-baseline",
+      "--network",
+      "higress5213-rg180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8192469058558345
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "98573d2ca63d4ff6a0fd5f50094195aebad095dceeb26cc2e47923134d497ac1",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08772624796256423
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-definition-1",
+      "-H",
+      "X-Scenario: definition-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-definition-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-definition-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-definition-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08614491391927004
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-definition-0",
+      "-H",
+      "X-Scenario: definition-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-definition-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-definition-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-definition-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04650098504498601
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-request-mask-1",
+      "-H",
+      "X-Scenario: request-arguments",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-request-mask-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-request-mask-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-request-mask-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05396992294117808
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-request-mask-0",
+      "-H",
+      "X-Scenario: request-arguments",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-request-mask-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-request-mask-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-request-mask-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0474446399603039
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-restore-1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-restore-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-restore-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-restore-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.043484393041580915
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-restore-0",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-restore-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-restore-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-restore-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.050751661881804466
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-deny-1",
+      "-H",
+      "X-Scenario: escaped-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-deny-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-deny-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-deny-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04002530104480684
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62454/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: baseline-deny-0",
+      "-H",
+      "X-Scenario: escaped-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-deny-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-deny-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/baseline-deny-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.03918191301636398
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "98573d2ca63d4ff6a0fd5f50094195aebad095dceeb26cc2e47923134d497ac1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08024003612808883
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "98573d2ca63d4ff6a0fd5f50094195aebad095dceeb26cc2e47923134d497ac1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2112166159786284
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "98573d2ca63d4ff6a0fd5f50094195aebad095dceeb26cc2e47923134d497ac1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21616931702010334
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "98573d2ca63d4ff6a0fd5f50094195aebad095dceeb26cc2e47923134d497ac1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05903800902888179
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "98573d2ca63d4ff6a0fd5f50094195aebad095dceeb26cc2e47923134d497ac1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.604330639122054
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "higress5213-rg180-20261110-a-candidate",
+      "--network",
+      "higress5213-rg180-20261110-a",
+      "-v",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/candidate.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.814783058129251
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "3e144bebf8698c9ab09ba5fd773aafff1186ec1a1b9e3fbd8010b94241cfcb54",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06361376610584557
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-definition-1",
+      "-H",
+      "X-Scenario: definition-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-definition-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-definition-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-definition-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05493505811318755
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-definition-0",
+      "-H",
+      "X-Scenario: definition-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-definition-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-definition-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-definition-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06041455897502601
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-request-mask-1",
+      "-H",
+      "X-Scenario: request-arguments",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-request-mask-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-request-mask-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-request-mask-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05889200000092387
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-request-mask-0",
+      "-H",
+      "X-Scenario: request-arguments",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-request-mask-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-request-mask-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-request-mask-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04925943887792528
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-restore-1",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-restore-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-restore-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-restore-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.051190493861213326
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-restore-0",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-restore-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-restore-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-restore-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04905987321399152
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-deny-1",
+      "-H",
+      "X-Scenario: escaped-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-deny-1.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-deny-1.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-deny-1.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07630779687315226
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:62526/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: candidate-deny-0",
+      "-H",
+      "X-Scenario: escaped-deny",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-deny-0.request",
+      "-D",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-deny-0.headers",
+      "-o",
+      "/path/to/verification-lab/red-green-ci-rust180-20261110-a/cases/candidate-deny-0.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07960781897418201
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "3e144bebf8698c9ab09ba5fd773aafff1186ec1a1b9e3fbd8010b94241cfcb54"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09686766494996846
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "3e144bebf8698c9ab09ba5fd773aafff1186ec1a1b9e3fbd8010b94241cfcb54",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21010787691920996
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "3e144bebf8698c9ab09ba5fd773aafff1186ec1a1b9e3fbd8010b94241cfcb54",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21502337395213544
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "3e144bebf8698c9ab09ba5fd773aafff1186ec1a1b9e3fbd8010b94241cfcb54"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05679689394310117
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "3e144bebf8698c9ab09ba5fd773aafff1186ec1a1b9e3fbd8010b94241cfcb54"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5091912909410894
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "525645f957e66f8fcddb27aa88c9cd5961e8b9f92a2530292a1064e064a5d6ce"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08121151896193624
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "525645f957e66f8fcddb27aa88c9cd5961e8b9f92a2530292a1064e064a5d6ce"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6673612280283123
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "higress5213-rg180-20261110-a"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3177186648827046
+  }
+]

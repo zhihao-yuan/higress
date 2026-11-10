@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 6bbe343f..5e65c34c 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -1619,7 +1619,7 @@ fn install_tool_configuration(
+     let object = value
+         .as_object()
+         .ok_or("plugin configuration must be an object")?;
+-    if object.keys().any(|key| key != "_rules_") {
++    if false && object.keys().any(|key| key != "_rules_") {
+         serde_json::from_value::<AiDataMaskingConfig>(value.clone())
+             .map_err(|_| "invalid global tool configuration")?;
+     }

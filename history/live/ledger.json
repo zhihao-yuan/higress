@@ -1,0 +1,152 @@
+[
+  {
+    "case": "health",
+    "category": "health",
+    "state": "returned",
+    "utc": "2026-10-29T06:03:43.247343+00:00",
+    "max_tokens": 4,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "0-direct-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:03:45.695707+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "1-bypass-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:03:47.353997+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "2-bypass-0",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:03:49.634716+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "3-baseline-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:03:55.845360+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "4-baseline-0",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:02.162653+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "5-off-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:07.905839+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "6-off-0",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:13.504996+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "7-restore-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:19.304407+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "8-restore-0",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:25.784606+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "9-restore-other-tool-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:31.301927+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "10-restore-other-path-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:37.276588+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "11-check-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:42.923070+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "12-check-0",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:49.091808+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  },
+  {
+    "case": "13-check-restore-1",
+    "category": "formal",
+    "state": "returned",
+    "utc": "2026-10-29T06:04:55.609056+00:00",
+    "max_tokens": 256,
+    "live_model_request": true,
+    "curl_exit": 0,
+    "http_status": "200"
+  }
+]

@@ -1,0 +1,1 @@
+{"messages":[{"content":"MASK","role":"user"}],"model":"public-fixture","stream":true,"tools":[{"function":{"description":"public fixture","name":"lookup","parameters":{"properties":{"email":{"type":"string"}},"type":"object"}},"type":"function"}]}

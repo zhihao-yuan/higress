@@ -1,0 +1,1 @@
+{"choices":[{"finish_reason":"tool_calls","index":0,"message":{"content":"checking DEMO_SECRET","function_call":{"arguments":"{ \"email\":\"DEMO_SECRET\", \"other\":\"MASKED_TOKEN\", \"n\":1e2, \"u\":\"\\u4f60\\u597D\" }","name":"lookup"},"role":"assistant"}}],"id":"public-fixture","usage":{"total_tokens":20}}

@@ -1,0 +1,33 @@
+{
+  "suite": "configuration",
+  "gateway": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "fixture_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+  "baseline_source": "36f2f1ac5c7305c5a46c296c617b45d1fbacb7d3",
+  "candidate_source": "aedc63503d7ab3f42f8dd246c7e02c44fd0818bc",
+  "baseline_wasm_sha256": "4d0c11d3f03cb57a618da480f5c3238ea0eddd2df8b0e58d27416316543ddf74",
+  "candidate_wasm_sha256": "5ddb3f79f8bf08b0317d7c0251a52a6d305ff05d33c85a60fc56890dab0dcea2",
+  "scripts_sha256": {
+    "fixture.py": "a6b9ae88b09721d687898452d12c8a6265ba293622c9b537079d25c907598b04",
+    "run_verification.py": "57a1f5355a0c374d85febc7b1c3f5b2d774ab39746894dcc7c4c6eda56e8419e",
+    "verify_configuration.py": "5ff9a8f72745314e2b5d63362cfa81a95303588f41303ea8e65348cce5029edb",
+    "verify_live.py": "a0bf9d5042c51811f101d6d4806afcf8bcf3663967dc7ffe7255fc50899ab8cc",
+    "verify_runtime.py": "4f13b4920c18c67ea3bb12e969e6bc4b3635eccc0e252d34b6db90df0f34b4de",
+    "runtime_lab.py": "a785c4977e62b0cf78d7569caa52a6bfd3628d57b4b4ac0fd404ac7b27b21a04",
+    "verify_host_failure.py": "307a8945a32c2fbaaac48cd2e82c3f10c39e18e63f7ff38e6bb19185236605c3",
+    "check_results.py": "f71383b6ea78c562f610cb66d99436906c8057cc2eb378771e420e341bab4f0c",
+    "build_fault_probe.py": "66c21c75e5930a894fb2e5867c68174b77ec540b4094619e128ebae926c7c6a5",
+    "verify_capacity.py": "87e0fcffd377e44021db5164474e51cde7444d5cfa28e0313797e4d235c56813",
+    "verify_limits.py": "c8edbdad98202379753f3361abea9ddf23b4bd3b0835e4c7de3e91e702ebe0b7"
+  },
+  "host_platform": "macOS-15.6.1-x86_64-i386-64bit-Mach-O",
+  "host_arch": "x86_64",
+  "workers": 1,
+  "model_requests": 0,
+  "tools_executed": 0,
+  "limitations": [
+    "Synthetic upstream; no live-model evidence.",
+    "Upstream writes are not Envoy callback boundaries.",
+    "Linux/amd64 gateway on the recorded Docker host; no production capacity claim."
+  ],
+  "docker_host": "linux x86_64 cpus=8 memory=8220102656"
+}

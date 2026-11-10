@@ -1,0 +1,28 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant","content":"checking MASKED_TOKEN"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"call-0","type":"function","function":{"name":"lookup"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":1,"id":"call-1","type":"function","function":{"name":"lookup"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":2,"id":"call-2","type":"function","function":{"name":"lookup"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":3,"id":"call-3","type":"function","function":{"name":"lookup"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":4,"id":"call-4","type":"function","function":{"name":"lookup"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"{}"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":1,"function":{"arguments":"{}"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":2,"function":{"arguments":"{}"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":3,"function":{"arguments":"{}"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":4,"function":{"arguments":"{}"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: {"choices":[],"usage":{"total_tokens":20}}
+
+data: [DONE]
+

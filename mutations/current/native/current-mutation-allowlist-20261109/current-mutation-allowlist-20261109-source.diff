@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 6bbe343f..e4640f9a 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -520,7 +520,7 @@ fn allowed_restore_paths<'a>(
+         .tool_arguments
+         .restore_allowlist
+         .iter()
+-        .find(|entry| entry.tool == name)
++        .find(|_| true)
+         .map(|entry| entry.paths.as_slice())
+ }
+ 

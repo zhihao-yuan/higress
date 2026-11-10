@@ -1,0 +1,22 @@
+{"label": "current-mutation-call-limit-20261110", "exit_code": 101, "elapsed_seconds": 38.85792899131775}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 38.52s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tool_stream::tests::stream_limits_input_rewrite_queue_and_retains_completed_call_count ... FAILED
+
+failures:
+
+---- ai_data_masking::tool_stream::tests::stream_limits_input_rewrite_queue_and_retains_completed_call_count stdout ----
+thread 'ai_data_masking::tool_stream::tests::stream_limits_input_rewrite_queue_and_retains_completed_call_count' panicked at src/tool_stream.rs:933:9:
+assertion failed: send(&mut ToolStream::default(), input, false, &config, &restore).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tool_stream::tests::stream_limits_input_rewrite_queue_and_retains_completed_call_count
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--lib`

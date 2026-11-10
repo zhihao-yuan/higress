@@ -1,0 +1,23 @@
+{
+  "input_run": "live",
+  "input_sha256sums_sha256": "5d63106148614a81019f55ffbae456a8e2278b10971aa8f3c545df272fa19546",
+  "input_integrity": {
+    "run": "live",
+    "files_verified": 171,
+    "decoded_body_hashes_verified": 27,
+    "fixture_inputs_verified": 0,
+    "recorded_failure": false,
+    "result_rows": 14,
+    "status": "integrity checked"
+  },
+  "source_manifest_sha256": "2d5d03d579b20fb4af306770403bf619430bba83a4e6bc338ed7e856af26dd00",
+  "model_calls_new": 0,
+  "model_calls_in_original_ledger": 15,
+  "original_health_calls": 1,
+  "formal_cases": 14,
+  "covered": 14,
+  "uncovered": 0,
+  "tools_executed": 0,
+  "correction": "Coverage accepts every present non-null finish_reason, per approved Design. Original run and classification are unchanged.",
+  "full_t6_complete": false
+}

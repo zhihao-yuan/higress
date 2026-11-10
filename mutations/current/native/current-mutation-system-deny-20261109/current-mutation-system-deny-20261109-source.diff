@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 6bbe343f..fc93c4d1 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -295,7 +295,7 @@ fn prepare_tool_request(
+     body: &[u8],
+     log: &Log,
+ ) -> Result<Option<PreparedToolRequest>, &'static str> {
+-    let has_deny = config.system_deny || !config.deny_words.is_empty();
++    let has_deny = !config.deny_words.is_empty();
+     let check_arguments =
+         config.tool_arguments.check && (has_deny || !config.replace_roles.is_empty());
+     let check_definitions = config.tool_definitions.check && has_deny;

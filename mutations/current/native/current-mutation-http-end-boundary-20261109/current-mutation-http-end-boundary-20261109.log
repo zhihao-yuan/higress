@@ -1,0 +1,36 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+warning: function `line_ending_prefix` is never used
+   --> src/tool_stream.rs:144:4
+    |
+144 | fn line_ending_prefix(bytes: &[u8]) -> Option<&[u8]> {
+    |    ^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: function `ensure_event_boundary` is never used
+   --> src/tool_stream.rs:151:4
+    |
+151 | fn ensure_event_boundary(raw: &mut Vec<u8>) {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: `ai-data-masking` (lib test) generated 2 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 28.17s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::unterminated_usage_event_is_separated_from_http_end_tool_arguments ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::unterminated_usage_event_is_separated_from_http_end_tool_arguments stdout ----
+thread 'ai_data_masking::tests::unterminated_usage_event_is_separated_from_http_end_tool_arguments' panicked at src/ai_data_masking.rs:3787:22:
+each output SSE event must be valid JSON: Error("trailing characters", line: 1, column: 42)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::unterminated_usage_event_is_separated_from_http_end_tool_arguments
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 4.45s
+
+error: test failed, to rerun pass `--lib`

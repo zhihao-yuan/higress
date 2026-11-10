@@ -1,0 +1,41 @@
+{"label": "current-mutation-deny-20261110", "exit_code": 101, "elapsed_seconds": 120.43965792655945}
+   Compiling icu_collections v1.5.0
+   Compiling icu_locid v1.5.0
+   Compiling pest v2.7.15
+   Compiling icu_provider v1.5.0
+   Compiling icu_locid_transform v1.5.0
+   Compiling rust-embed v8.5.0
+   Compiling icu_properties v1.5.1
+   Compiling pest_meta v2.7.15
+   Compiling pest_generator v2.7.15
+   Compiling pest_derive v2.7.15
+   Compiling icu_normalizer v1.5.0
+   Compiling idna_adapter v1.2.0
+   Compiling idna v1.0.3
+   Compiling url v2.5.4
+   Compiling redis v0.28.2
+   Compiling multimap v0.10.0
+   Compiling jsonpath-rust v0.7.5
+   Compiling higress-wasm-rust v0.1.0 (/src)
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 59s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting ... FAILED
+
+failures:
+
+---- tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting stdout ----
+thread 'tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting' panicked at src/tool_arguments.rs:363:13:
+assertion failed: rewrite_json(input, None, 4096, 8192, &mut (|value| value == "SECRET"),
+        &mut (|_| { calls += 1; Ok(Some("changed".to_string())) })).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--lib`

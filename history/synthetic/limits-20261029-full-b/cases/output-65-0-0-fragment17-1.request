@@ -1,0 +1,1 @@
+{"model": "public-fixture", "stream": false, "messages": [{"role": "user", "content": "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"}], "tools": [{"type": "function", "function": {"name": "lookup", "description": "public fixture", "parameters": {"type": "object", "properties": {"email": {"type": "string"}}}}}]}

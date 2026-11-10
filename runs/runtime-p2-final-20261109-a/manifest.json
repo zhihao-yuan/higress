@@ -1,0 +1,27 @@
+{
+  "gateway": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "fixture_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+  "baseline_source": "942b6cfa56fc0c352ad75ca07a0a7a09272f0879",
+  "candidate_source": "3f7a3a3c",
+  "baseline_wasm_sha256": "6f7c14be55be28008463e1a01439e6fbfc7c365dd1cf4310d3d0e8beaaab4b7d",
+  "candidate_wasm_sha256": "162d579bce687752d12832a13e24df70ba081d2797ee599fd2972f594f4a6c03",
+  "fixture_sha256": "b5b9c96639c2ad9c2cb9ce4940b0942927b61f64762fc4488c840bb4f7606b50",
+  "runner_sha256": "2877c4efe94477343ae3ad661c392ede0c6016a519c8344479e26f585883be53",
+  "concurrency": 1,
+  "workers": 1,
+  "model_requests": 0,
+  "tools_executed": 0,
+  "selected_variants": [
+    "bypass",
+    "baseline",
+    "candidate-off",
+    "candidate-false",
+    "candidate-false-limits",
+    "candidate-on",
+    "candidate-restore-only"
+  ],
+  "limitations": [
+    "Synthetic upstream; not live-model or capacity evidence.",
+    "Upstream write boundaries do not imply Envoy callback boundaries."
+  ]
+}

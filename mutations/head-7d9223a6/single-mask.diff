@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 69859a7d..6e51a701 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -945,7 +945,7 @@ impl LegacyRequestPlan {
+                         if let Some(text) = value.as_str() {
+                             values.push((
+                                 text.to_string(),
+-                                owned.contains(&(value as *const Value as usize)),
++                                false && owned.contains(&(value as *const Value as usize)),
+                             ));
+                         }
+                     }

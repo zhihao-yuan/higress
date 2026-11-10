@@ -1,0 +1,362 @@
+[
+  {
+    "case": "0-direct-1",
+    "mode": "direct",
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 0,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": false,
+    "body_sha256": "77665e9633192a85621c7856151b2a56ec23d0d571135c652b131b2aa466d779"
+  },
+  {
+    "case": "1-bypass-1",
+    "mode": "bypass",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 0,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 707,
+    "response_capture_bytes": 2282,
+    "body_sha256": "c988e504b909f1e06ef269405601c73b423e46b1cb251289cd75af069b0c4f9c",
+    "upstream_body_sha256": "c988e504b909f1e06ef269405601c73b423e46b1cb251289cd75af069b0c4f9c"
+  },
+  {
+    "case": "2-bypass-0",
+    "mode": "bypass",
+    "stream": false,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 0,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 0,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 665,
+    "response_capture_bytes": 878,
+    "body_sha256": "ea7e8bd06537741cb308a19161fa382c2acdd15a86dcdf6f71676183eea4d855",
+    "upstream_body_sha256": "ea7e8bd06537741cb308a19161fa382c2acdd15a86dcdf6f71676183eea4d855"
+  },
+  {
+    "case": "3-baseline-1",
+    "mode": "baseline",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 663,
+    "response_capture_bytes": 2284,
+    "body_sha256": "db972c793af77d8ac310f6b079aca955912b16640d16141a12969a4668482f26",
+    "upstream_body_sha256": "db972c793af77d8ac310f6b079aca955912b16640d16141a12969a4668482f26"
+  },
+  {
+    "case": "4-baseline-0",
+    "mode": "baseline",
+    "stream": false,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 0,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 624,
+    "response_capture_bytes": 880,
+    "body_sha256": "240543e2f857ad1559f33151dc9d9694027822c198a42b8a03bc57c55706d169",
+    "upstream_body_sha256": "48b5ed582e026f9cb3dc4b7b9d9e6d2471f9bb3a50dc5ed1d73f4186a2990b99"
+  },
+  {
+    "case": "5-off-1",
+    "mode": "off",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 663,
+    "response_capture_bytes": 2284,
+    "body_sha256": "17ee824efc43492c3e0575d3a2a03db159bc90aee974900fa67c9274ae00851c",
+    "upstream_body_sha256": "17ee824efc43492c3e0575d3a2a03db159bc90aee974900fa67c9274ae00851c"
+  },
+  {
+    "case": "6-off-0",
+    "mode": "off",
+    "stream": false,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 0,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 624,
+    "response_capture_bytes": 880,
+    "body_sha256": "bfaeda79651ce0e89e84cf1288daccaea2ee680819ee73712b16e7b312c85490",
+    "upstream_body_sha256": "575867c4cb5e0056ff6c61237ec587ba89dba6d9eb70258309dec6348114b126"
+  },
+  {
+    "case": "7-restore-1",
+    "mode": "restore",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 663,
+    "response_capture_bytes": 2284,
+    "body_sha256": "849cf1d1151aff289d495cbb860386f9498700e059680e92c6aba1be836a82cb",
+    "upstream_body_sha256": "4cfc86d663d125c5286294e527ed54a096bff678440935a5f172afe43fec85c9"
+  },
+  {
+    "case": "8-restore-0",
+    "mode": "restore",
+    "stream": false,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 0,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 624,
+    "response_capture_bytes": 880,
+    "body_sha256": "2bf3e4354a45efc78e235d3ea070177d8c658edc94e13647ab7940d7919d59cd",
+    "upstream_body_sha256": "03f8503c64683c28317fb2e86af9314fbea953bf092f8afdd96db72fcd86d154"
+  },
+  {
+    "case": "9-restore-other-tool-1",
+    "mode": "restore-other-tool",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 669,
+    "response_capture_bytes": 2012,
+    "body_sha256": "78de3de39b3b4968cd441f652cdb9f31fd06710f3b94f13aec3d531ecee33964",
+    "upstream_body_sha256": "86b8630923c4784eb362693352c8ce7ca8a92d4605071df110688200b7e0a2f3"
+  },
+  {
+    "case": "10-restore-other-path-1",
+    "mode": "restore-other-path",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 663,
+    "response_capture_bytes": 2284,
+    "body_sha256": "e0429c639ad370762bc80e5b64d57cdb2b5ceccaa9aa8167cd57526eff179b76",
+    "upstream_body_sha256": "19f6854d891b79662ad1301b2275751e6aa4df311dc7854d21dd2091d5b6e2cc"
+  },
+  {
+    "case": "11-check-1",
+    "mode": "check",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 877,
+    "response_capture_bytes": 2284,
+    "body_sha256": "b8a221c2a56a632c1d8ca86b534e68715104e1a9278ae3a6c9998c96896fed18",
+    "upstream_body_sha256": "552f2571c9f46e7f9c976fd14cbe45e974ef0329cc9187727f630f8c5718c425"
+  },
+  {
+    "case": "12-check-0",
+    "mode": "check",
+    "stream": false,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 0,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 838,
+    "response_capture_bytes": 880,
+    "body_sha256": "af35e4c5b958d6e1c92609b99276c585a58183b7942bcd8e7fa76b7afc80251b",
+    "upstream_body_sha256": "af35e4c5b958d6e1c92609b99276c585a58183b7942bcd8e7fa76b7afc80251b"
+  },
+  {
+    "case": "13-check-restore-1",
+    "mode": "check-restore",
+    "stream": true,
+    "coverage": "uncovered",
+    "placeholder_fields_observed": 2,
+    "requested_echo_fields_observed": [
+      "email",
+      "other"
+    ],
+    "upstream_calls": 1,
+    "downstream_calls": 1,
+    "done": 1,
+    "finish": [
+      [
+        0,
+        "stop"
+      ]
+    ],
+    "upstream_errors": [],
+    "same_request_tap": true,
+    "request_capture_bytes": 877,
+    "response_capture_bytes": 2284,
+    "body_sha256": "d5063bcf3cb69d29e0b86188b1634d8409a9babed140b2f25c07148c56096ba8",
+    "upstream_body_sha256": "5a699276c03a52c6e25e4eb78274c887cb73e2fcfbe2a7c6ae5fe4a9fa5cfc31"
+  }
+]

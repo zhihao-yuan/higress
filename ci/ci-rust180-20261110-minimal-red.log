@@ -1,0 +1,12 @@
+error[E0599]: no method named `is_none_or` found for enum `Option` in the current scope
+ --> /tmp/higress5213-rust180-probe.rs:1:34
+  |
+1 | fn main() { let _ = Some(1usize).is_none_or(|size| size > 16); }
+  |                                  ^^^^^^^^^^
+  |
+help: there is a method `is_none` with a similar name, but with different arguments
+ --> /rustc/051478957371ee0084a7c0913941d2a8c4757bb9/library/core/src/option.rs:653:5
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.

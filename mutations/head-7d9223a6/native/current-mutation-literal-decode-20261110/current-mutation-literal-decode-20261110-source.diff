@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
+index 63ec8daf..9bf3f7bb 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
+@@ -154,7 +154,7 @@ impl Scanner<'_> {
+             }
+         }
+         let value =
+-            serde_json::from_str(&self.input[start..self.at]).map_err(|_| "invalid JSON string")?;
++            self.input[start + 1..self.at - 1].to_string();
+         let index = self.literals.len();
+         self.literals.push(Literal {
+             span: start..self.at,

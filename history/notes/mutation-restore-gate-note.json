@@ -1,0 +1,8 @@
+{
+  "original": "mutation-b-restore-flag",
+  "observed_exit_code": 0,
+  "counted_as_killed": false,
+  "explanation": "Removing the helper-level restore flag alone does not authorize restoration: the config loader discards the inactive allowlist and the callback does not build a tool restore map. Other gates preserved the behavior. Do not claim this mutant was killed.",
+  "replacement": "mutation-c-restore-flag-activation",
+  "replacement_behavior": "Incorrectly activate restore from an allowlist while restore=false. This breaches the actual opt-in contract and is checked by the existing eight-combination callback test."
+}

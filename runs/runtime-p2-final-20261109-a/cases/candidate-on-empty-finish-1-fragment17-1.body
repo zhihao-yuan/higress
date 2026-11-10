@@ -1,0 +1,42 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"public-call-0","type":"function","function":{"name":"loo"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"name":"kup"}}]},"finish_reason":null}]}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{},"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"content":"checking DEMO_SECRET"},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{"arguments":"{ \"email\":\"DEMO_SECRET\", \"other\":\"MASKED_TOKEN\", \"n\":1e2, \"u\":\"\\u4f60\\u597D\" }"},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{},"finish_reason":"","index":0}]}
+
+data: {"choices":[],"usage":{"total_tokens":20},"custom":"once"}
+
+data: [DONE]
+

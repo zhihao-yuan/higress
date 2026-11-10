@@ -1,0 +1,302 @@
+go version go1.24.0 linux/amd64
+go: downloading github.com/tetratelabs/wazero v1.7.2
+--- FAIL: TestEmergencyAuthorizationRequiresTriggeringMaintainer (0.19s)
+    --- FAIL: TestEmergencyAuthorizationRequiresTriggeringMaintainer/maintainer-with-legacy-write (0.06s)
+        approval_chain_contract_test.go:121: authorized emergency actor was rejected: exit status 1
+            /tmp/TestEmergencyAuthorizationRequiresTriggeringMaintainermaintainer-with-legacy-write2139549198/001/bin/gh: line 11: jq: command not found
+            emergency overwrite is not authorized: release-maintainer has role_name api-error; require maintain or admin
+    --- FAIL: TestEmergencyAuthorizationRequiresTriggeringMaintainer/administrator (0.02s)
+        approval_chain_contract_test.go:121: authorized emergency actor was rejected: exit status 1
+            /tmp/TestEmergencyAuthorizationRequiresTriggeringMaintaineradministrator329004264/001/bin/gh: line 11: jq: command not found
+            emergency overwrite is not authorized: release-admin has role_name api-error; require maintain or admin
+    --- FAIL: TestEmergencyAuthorizationRequiresTriggeringMaintainer/write-collaborator (0.03s)
+        approval_chain_contract_test.go:128: authorization summary lacks "role_name=write": Emergency authorization: actor=writer role_name=api-error
+    --- FAIL: TestEmergencyAuthorizationRequiresTriggeringMaintainer/read-collaborator (0.03s)
+        approval_chain_contract_test.go:128: authorization summary lacks "role_name=read": Emergency authorization: actor=reader role_name=api-error
+    --- FAIL: TestEmergencyAuthorizationRequiresTriggeringMaintainer/missing-role-name (0.02s)
+        approval_chain_contract_test.go:128: authorization summary lacks "role_name=invalid-response": Emergency authorization: actor=malformed role_name=api-error
+--- FAIL: TestEmergencyStableOverwriteRequiresCommittedPredecessorAndHealsRetry (0.10s)
+    --- FAIL: TestEmergencyStableOverwriteRequiresCommittedPredecessorAndHealsRetry/committed-predecessor (0.02s)
+        approval_chain_contract_test.go:280: safe stable transition failed: exit status 1
+            /tmp/TestEmergencyStableOverwriteRequiresCommittedPredecessorAndHealsRetrycommitted-predecessor634891312/001/bin/oras: line 6: jq: command not found
+            emergency stable tag is absent or cannot be resolved: registry.example.invalid/plugins/demo:1.2.3
+    --- FAIL: TestEmergencyStableOverwriteRequiresCommittedPredecessorAndHealsRetry/same-run-retry-at-desired (0.02s)
+        approval_chain_contract_test.go:280: safe stable transition failed: exit status 1
+            /tmp/TestEmergencyStableOverwriteRequiresCommittedPredecessorAndHealsRetrysame-run-retry-at-desired2172680369/001/bin/oras: line 6: jq: command not found
+            emergency stable tag is absent or cannot be resolved: registry.example.invalid/plugins/demo:1.2.3
+--- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite (0.02s)
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/staged-candidate-loads (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/verifier-rejects-artifact (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/manifest-cannot-be-pulled (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/layers-cannot-be-pulled (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/malformed-digest (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/malformed-version (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/malformed-input-hash (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/malformed-source-commit (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestEmergencyPullVerificationGatesTheStableTagOverwrite/tool-not-executable (0.00s)
+        approval_chain_contract_test.go:356: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestEmergencyPublishJobReaffirmsAuthorization (0.10s)
+    --- FAIL: TestEmergencyPublishJobReaffirmsAuthorization/maintainer-rerun (0.01s)
+        approval_chain_contract_test.go:626: an authorized re-run actor was rejected: exit status 1
+            /tmp/TestEmergencyPublishJobReaffirmsAuthorizationmaintainer-rerun2992773263/001/bin/gh: line 5: jq: command not found
+            emergency overwrite is not authorized: release-maintainer has role_name api-error; require maintain or admin
+    --- FAIL: TestEmergencyPublishJobReaffirmsAuthorization/administrator-rerun (0.02s)
+        approval_chain_contract_test.go:626: an authorized re-run actor was rejected: exit status 1
+            /tmp/TestEmergencyPublishJobReaffirmsAuthorizationadministrator-rerun986533602/001/bin/gh: line 5: jq: command not found
+            emergency overwrite is not authorized: release-admin has role_name api-error; require maintain or admin
+    --- FAIL: TestEmergencyPublishJobReaffirmsAuthorization/write-collaborator-rerun (0.05s)
+        approval_chain_contract_test.go:633: publish-job authorization did not record its decision: Emergency authorization: actor=writer role_name=api-error
+    --- FAIL: TestEmergencyPublishJobReaffirmsAuthorization/read-collaborator-rerun (0.02s)
+        approval_chain_contract_test.go:633: publish-job authorization did not record its decision: Emergency authorization: actor=reader role_name=api-error
+--- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR (0.02s)
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/squash-merged-labeled-preparation-pr (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/maintainer-authored-preparation-pr (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/missing-label (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/other-label (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/merge-commit-differs (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/not-merged (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/merged-into-another-branch (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/no-associated-pr (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/duplicate-match (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/commit-not-on-main (0.01s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestPromotionAuthorizationRequiresTheLabeledMergedPreparationPR/snapshot-from-unrelated-freeze (0.00s)
+        approval_chain_contract_test.go:777: git [init -q --bare -b main]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestGoBatchBuildUsesReleaseEligibleCatalogSelection (0.04s)
+    batch_build_contract_test.go:38: list release Go batch: exit status 1
+        Build wasm-go plugins (default when PLUGIN_TYPE is unset)
+        tools/hack/build-wasm-plugins.sh: line 69: jq: command not found
+--- FAIL: TestGoE2EBatchIsProductionUnionManifestDependencies (0.02s)
+    batch_build_contract_test.go:83: list release Go batch: exit status 1
+        Build wasm-go plugins (default when PLUGIN_TYPE is unset)
+        tools/hack/build-wasm-plugins.sh: line 69: jq: command not found
+--- FAIL: TestCaptureBootstrapEvidenceDefersAlphaWithoutResolution (0.00s)
+    bootstrap_backfill_test.go:79: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestCaptureBootstrapEvidenceMarksStableAbsentForBackfill (0.00s)
+    bootstrap_backfill_test.go:103: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestCaptureBootstrapEvidenceFailsClosedForNonAlphaPrereleaseAbsent (0.00s)
+    bootstrap_backfill_test.go:118: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestCaptureBootstrapEvidenceTreatsUnauthorizedAsConfigurationError (0.00s)
+    bootstrap_backfill_test.go:129: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestBootstrapBackfillProducesMixedSnapshotVerifiedFromBothSources (0.00s)
+    bootstrap_backfill_test.go:140: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestVerifySnapshotBindsBackfillExactlyBetweenPlanAndSnapshot (0.00s)
+    bootstrap_backfill_test.go:341: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestVerifySnapshotBindsCarriedBackfillToPreviousRelease (0.00s)
+    bootstrap_backfill_test.go:422: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestBootstrapSnapshotRejectsStaleMissingEvidence (0.00s)
+    bootstrap_backfill_test.go:492: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestRenderSnapshotRejectsDeferredPlanAbuse (0.00s)
+    bootstrap_backfill_test.go:515: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestDeferredAlphaCarriesForwardOnlyStablePreviousEntry (0.00s)
+    bootstrap_backfill_test.go:554: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestVerifySnapshotAllowsNewDeferredAlphaWithoutPreviousEntry (0.00s)
+    bootstrap_backfill_test.go:658: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestVerifySnapshotRejectsTamperedPlanAndPlannedEntryIdentity (0.00s)
+    bootstrap_backfill_test.go:682: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestManagedReleasePlansNewCatalogPluginWithoutBackfill (0.00s)
+    bootstrap_backfill_test.go:747: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestBootstrapImportsResolvedPublicBaselineWithoutMutation (0.00s)
+    bootstrap_test.go:15: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestCaptureBootstrapEvidenceIsCanonicalReadOnlyAndNotSelfReferential (0.00s)
+    bootstrap_test.go:62: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestBootstrapRejectsMissingEvidenceAndPublicDigestMismatch (0.00s)
+    bootstrap_test.go:107: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestBootstrapFailsWhenPublicResolutionFails (0.00s)
+    bootstrap_test.go:134: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestPlanRequiresBootstrapSnapshot (0.00s)
+    bootstrap_test.go:146: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestBootstrapComparisonBaseIsOneTimeExactAndAnAncestor (0.00s)
+    bootstrap_test.go:153: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestCatalogRejectsReleaseEligibleVersionThatIsNotTracked (0.00s)
+    bootstrap_test.go:190: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestConsoleMarketplaceCoverageIncludesStableAndNonAlphaPrerelease (0.01s)
+    --- FAIL: TestConsoleMarketplaceCoverageIncludesStableAndNonAlphaPrerelease/1.0.0 (0.00s)
+        console_marketplace_test.go:16: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestConsoleMarketplaceCoverageIncludesStableAndNonAlphaPrerelease/1.1.0-beta.1 (0.00s)
+        console_marketplace_test.go:16: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestConsoleMarketplaceCoverageIncludesStableAndNonAlphaPrerelease/1.1.0-rc.1 (0.00s)
+        console_marketplace_test.go:16: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestConsoleMarketplaceCoverageExcludesAlphaAndReleaseIneligible (0.00s)
+    console_marketplace_test.go:25: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestConsoleMarketplaceBundleRejectsMissingMalformedAndUnsafeInputs (0.00s)
+    console_marketplace_test.go:36: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestConsoleMarketplaceRejectsDuplicateResourceDirectory (0.00s)
+    console_marketplace_test.go:73: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestConsoleMarketplaceBundleRejectsSymlinkSources (0.00s)
+    --- FAIL: TestConsoleMarketplaceBundleRejectsSymlinkSources/file (0.00s)
+        console_marketplace_test.go:100: git [init -q]: exec: "git": executable file not found in $PATH: 
+    --- FAIL: TestConsoleMarketplaceBundleRejectsSymlinkSources/directory (0.00s)
+        console_marketplace_test.go:100: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestEmergencyInputHashMatchesSnapshot (0.01s)
+    emergency_input_hash_test.go:47: inputHash: git ls-tree -r --name-only 7774663e4353652f5c3cecd7e98a1a43b05ee15c: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestFirstManagedReleasePlansExactlyFromV223DespiteMissingVersions (0.00s)
+    first_release_test.go:30: git [clone --quiet --shared --no-checkout /repo /tmp/TestFirstManagedReleasePlansExactlyFromV223DespiteMissingVersions3774538730/001]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestFirstManagedReleaseDefersNewAlphaUntilStable (0.00s)
+    first_release_test.go:152: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestMigrationExclusionSurvivesAnUnrelatedLaterRelease (0.00s)
+    migration_carry_test.go:23: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestPromotionVersionContractSkipsMigrationExcludedPlugins (0.07s)
+    migration_promotion_contract_test.go:51: decode version journal: unexpected end of JSON input
+--- FAIL: TestPromotionVersionContractFailsClosedWhenEverythingIsExcluded (0.05s)
+    migration_promotion_contract_test.go:86: decode version journal: unexpected end of JSON input
+--- FAIL: TestPromotionLatestContractSkipsMigrationExcludedPlugins (6.68s)
+    migration_promotion_contract_test.go:110: latest phase rejected a migration exclusion: exit status 127
+        bash: line 37: jq: command not found
+--- FAIL: TestPromotionLatestContractFailsClosedWhenEverythingIsExcluded (2.44s)
+    migration_promotion_contract_test.go:140: an entirely excluded batch moved latest: err=exit status 127
+        bash: line 37: jq: command not found
+--- FAIL: TestVerifySnapshotToleratesMigrationExclusion (0.00s)
+    migration_test.go:670: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestVersionRestatementCarriesForward (0.00s)
+    plan_restate_test.go:14: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestChangedPathsAndInputHash (0.00s)
+    plan_test.go:30: git [init -q]: exec: "git": executable file not found in $PATH: 
+--- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations (0.24s)
+    --- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations/build-plugin-server-from-snapshot.yaml/two-runnable (0.01s)
+        plugin_server_workflow_contract_test.go:80: valid plugin-server index rejected: exit status 127
+            environment: line 4: jq: command not found
+    --- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations/build-plugin-server-from-snapshot.yaml/paired-attestations (0.01s)
+        plugin_server_workflow_contract_test.go:80: valid plugin-server index rejected: exit status 127
+            environment: line 4: jq: command not found
+    --- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations/authorize-higress-release-tag.yaml/two-runnable (0.01s)
+        plugin_server_workflow_contract_test.go:80: valid plugin-server index rejected: exit status 127
+            environment: line 4: jq: command not found
+    --- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations/authorize-higress-release-tag.yaml/paired-attestations (0.04s)
+        plugin_server_workflow_contract_test.go:80: valid plugin-server index rejected: exit status 127
+            environment: line 4: jq: command not found
+    --- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations/dispatch-standalone-release.yaml/two-runnable (0.01s)
+        plugin_server_workflow_contract_test.go:80: valid plugin-server index rejected: exit status 127
+            environment: line 4: jq: command not found
+    --- FAIL: TestPluginServerIndexContractAcceptsOnlyTwoRunnablePlatformsAndPairedAttestations/dispatch-standalone-release.yaml/paired-attestations (0.01s)
+        plugin_server_workflow_contract_test.go:80: valid plugin-server index rejected: exit status 127
+            environment: line 4: jq: command not found
+--- FAIL: TestCandidateAndEmergencyUseIdenticalDeterministicManifestContract (0.18s)
+    plugin_server_workflow_contract_test.go:766: manifest publication contract failed: exit status 1
+        /tmp/TestCandidateAndEmergencyUseIdenticalDeterministicManifestContract1002164852/001/bin/oras: line 13: jq: command not found
+        plugin manifest push failed: registry.example.invalid/candidates/demo:content-addressed
+--- FAIL: TestPreparationReusesOnlyCandidateMatchingDeterministicBuildAndPulledBlobs (0.06s)
+    plugin_server_workflow_contract_test.go:776: valid candidate was not reused: exit status 1
+        environment: line 111: jq: command not found
+        existing candidate descriptor is malformed: registry.example.invalid:5000/candidates/demo:plan-and-input-hash
+--- FAIL: TestPreparationRejectsExistingCandidateWithDifferentOrInvalidPulledBytes (0.28s)
+    --- FAIL: TestPreparationRejectsExistingCandidateWithDifferentOrInvalidPulledBytes/valid-different-layer (0.10s)
+        plugin_server_workflow_contract_test.go:807: poisoned candidate valid-different-layer was not compared with one deterministic source build ("prepare\n"):
+            oras:manifest fetch registry.example.invalid:5000/candidates/demo:plan-and-input-hash --descriptor
+    --- FAIL: TestPreparationRejectsExistingCandidateWithDifferentOrInvalidPulledBytes/pulled-different-layer (0.07s)
+        plugin_server_workflow_contract_test.go:807: poisoned candidate pulled-different-layer was not compared with one deterministic source build ("prepare\n"):
+            oras:manifest fetch registry.example.invalid:5000/candidates/demo:plan-and-input-hash --descriptor
+    --- FAIL: TestPreparationRejectsExistingCandidateWithDifferentOrInvalidPulledBytes/pulled-config-not-empty (0.05s)
+        plugin_server_workflow_contract_test.go:807: poisoned candidate pulled-config-not-empty was not compared with one deterministic source build ("prepare\n"):
+            oras:manifest fetch registry.example.invalid:5000/candidates/demo:plan-and-input-hash --descriptor
+    --- FAIL: TestPreparationRejectsExistingCandidateWithDifferentOrInvalidPulledBytes/strict-verifier-error (0.07s)
+        plugin_server_workflow_contract_test.go:807: poisoned candidate strict-verifier-error was not compared with one deterministic source build ("prepare\n"):
+            oras:manifest fetch registry.example.invalid:5000/candidates/demo:plan-and-input-hash --descriptor
+--- FAIL: TestPreparationPushesOnceOnlyForStrictlyProvenCandidateAbsence (0.61s)
+    --- FAIL: TestPreparationPushesOnceOnlyForStrictlyProvenCandidateAbsence/absent-404 (0.16s)
+        plugin_server_workflow_contract_test.go:819: strict absence was not published: exit status 1
+    --- FAIL: TestPreparationPushesOnceOnlyForStrictlyProvenCandidateAbsence/absent-manifest (0.17s)
+        plugin_server_workflow_contract_test.go:819: strict absence was not published: exit status 1
+    --- FAIL: TestPreparationPushesOnceOnlyForStrictlyProvenCandidateAbsence/absent-name (0.13s)
+        plugin_server_workflow_contract_test.go:819: strict absence was not published: exit status 1
+    --- FAIL: TestPreparationPushesOnceOnlyForStrictlyProvenCandidateAbsence/absent-acr (0.14s)
+        plugin_server_workflow_contract_test.go:819: strict absence was not published: exit status 1
+--- FAIL: TestPreparationClassifiesRealAIHashWithoutReadingEmbedded401AsAuthorization (0.11s)
+    plugin_server_workflow_contract_test.go:912: exact ACR absence for real ai-cache candidate was not published: exit status 1
+--- FAIL: TestPreparationVersionOverridesPreserveCanonicalObjectAndRejectMalformedInputs (0.01s)
+    plugin_server_workflow_contract_test.go:1064: jq is required to execute the preparation workflow contract
+--- FAIL: TestStandaloneDispatchCanonicalEvidenceMatchesPythonReceiverBytes (0.03s)
+    --- FAIL: TestStandaloneDispatchCanonicalEvidenceMatchesPythonReceiverBytes/key-order-and-whitespace (0.01s)
+        plugin_server_workflow_contract_test.go:1562: canonical evidence contract failed: exit status 127
+            environment: line 4: python3: command not found
+    --- FAIL: TestStandaloneDispatchCanonicalEvidenceMatchesPythonReceiverBytes/non-ascii (0.01s)
+        plugin_server_workflow_contract_test.go:1562: canonical evidence contract failed: exit status 127
+            environment: line 4: python3: command not found
+    --- FAIL: TestStandaloneDispatchCanonicalEvidenceMatchesPythonReceiverBytes/embedded-newline (0.01s)
+        plugin_server_workflow_contract_test.go:1562: canonical evidence contract failed: exit status 127
+            environment: line 4: python3: command not found
+--- FAIL: TestStandaloneOSSReceiverHashesTheExactNoNewlineSenderPayload (0.01s)
+    plugin_server_workflow_contract_test.go:1601: standalone OSS canonical hash fixture failed: exit status 127
+        bash: line 7: jq: command not found
+--- FAIL: TestPreparationPRContractLabelsAndReports (0.05s)
+    --- FAIL: TestPreparationPRContractLabelsAndReports/all-green (0.02s)
+        preparation_pr_contract_test.go:167: preparation PR publication failed: exit status 127
+            bash: line 9: jq: command not found
+            bash: line 9: [: : integer expression expected
+            bash: line 19: jq: command not found
+    --- FAIL: TestPreparationPRContractLabelsAndReports/blocked-plugins-append-report (0.01s)
+        preparation_pr_contract_test.go:167: preparation PR publication failed: exit status 127
+            bash: line 9: jq: command not found
+            bash: line 9: [: : integer expression expected
+            bash: line 19: jq: command not found
+    --- FAIL: TestPreparationPRContractLabelsAndReports/existing-pr-falls-back-to-edit (0.01s)
+        preparation_pr_contract_test.go:167: preparation PR publication failed: exit status 127
+            bash: line 9: jq: command not found
+            bash: line 9: [: : integer expression expected
+            bash: line 19: jq: command not found
+--- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement (8.79s)
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/verified-bootstrap (0.73s)
+        promotion_latest_contract_test.go:82: verified bootstrap latest replacement failed: exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/verified-bootstrap-missing (0.66s)
+        promotion_latest_contract_test.go:100: verified missing bootstrap entry did not authorize its legacy latest migration: exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/ordinary-snapshot (0.57s)
+        promotion_latest_contract_test.go:111: ordinary snapshot accepted an unannotated latest: err=exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/invalid-evidence-status (1.59s)
+        promotion_latest_contract_test.go:148: invalid bootstrap binding was accepted: err=exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/missing-evidence (0.48s)
+        promotion_latest_contract_test.go:148: invalid bootstrap binding was accepted: err=exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/wrong-public-reference (0.92s)
+        promotion_latest_contract_test.go:148: invalid bootstrap binding was accepted: err=exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/public-evidence-same-version (0.59s)
+        promotion_latest_contract_test.go:167: bootstrap evidence allowed a same-version different-digest replacement: err=exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractAllowsOnlyEvidenceBoundBootstrapReplacement/missing-evidence-version-mismatch (0.81s)
+        promotion_latest_contract_test.go:179: missing evidence authorized a different selected version: err=exit status 127
+            bash: line 37: jq: command not found
+--- FAIL: TestPromotionLatestContractKeepsAnnotatedMonotonicityAndConflicts (1.78s)
+    --- FAIL: TestPromotionLatestContractKeepsAnnotatedMonotonicityAndConflicts/downgrade (1.07s)
+        promotion_latest_contract_test.go:202: annotated latest guard did not fail as expected: err=exit status 127
+            bash: line 37: jq: command not found
+    --- FAIL: TestPromotionLatestContractKeepsAnnotatedMonotonicityAndConflicts/same-version-conflict (0.71s)
+        promotion_latest_contract_test.go:202: annotated latest guard did not fail as expected: err=exit status 127
+            bash: line 37: jq: command not found
+--- FAIL: TestPromotionLatestContractRepairsStaleSameVersionPublicLatest (0.58s)
+    promotion_latest_contract_test.go:223: candidate same-version conflict stopped failing: err=exit status 127
+        bash: line 37: jq: command not found
+--- FAIL: TestPromotionLatestContractCreatesAbsentAndSkipsIdentical (1.11s)
+    promotion_latest_contract_test.go:250: absent/identical latest batch failed: exit status 127
+        bash: line 37: jq: command not found
+--- FAIL: TestPromotionLatestContractDoesNotMutateBeforeCompletePreflight (0.59s)
+    promotion_latest_contract_test.go:267: incomplete preflight unexpectedly succeeded: err=exit status 127
+        bash: line 37: jq: command not found
+--- FAIL: TestPromotionLatestPullGateJournalsFailureAndProcessesPassingPlugins (1.06s)
+    promotion_latest_contract_test.go:278: partial pull gate did not fail visibly: err=exit status 127
+        bash: line 37: jq: command not found
+--- FAIL: TestVerifySnapshotUsesPreMergeInputsAndMergedVersions (0.00s)
+    snapshot_test.go:43: git [init -q]: exec: "git": executable file not found in $PATH: 
+FAIL
+FAIL	github.com/higress-group/higress/tools/plugin-release	30.718s
+FAIL

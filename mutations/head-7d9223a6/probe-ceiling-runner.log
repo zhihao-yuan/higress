@@ -1,0 +1,22 @@
+{"label": "current-mutation-probe-ceiling-20261110", "exit_code": 101, "elapsed_seconds": 49.945717096328735}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 42.74s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::undecided_response_prefix_is_bounded_and_failure_stays_closed ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::undecided_response_prefix_is_bounded_and_failure_stays_closed stdout ----
+thread 'ai_data_masking::tests::undecided_response_prefix_is_bounded_and_failure_stays_closed' panicked at src/ai_data_masking.rs:4210:9:
+undecided prefix exceeded its limit
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::undecided_response_prefix_is_bounded_and_failure_stays_closed
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 6.78s
+
+error: test failed, to rerun pass `--lib`

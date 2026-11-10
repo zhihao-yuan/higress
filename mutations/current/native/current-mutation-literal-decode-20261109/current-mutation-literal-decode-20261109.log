@@ -1,0 +1,22 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 27.98s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting ... FAILED
+
+failures:
+
+---- tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting stdout ----
+thread 'tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting' panicked at src/tool_arguments.rs:363:13:
+assertion failed: rewrite_json(input, None, 4096, 8192, &mut (|value| value == "SECRET"),
+        &mut (|_| { calls += 1; Ok(Some("changed".to_string())) })).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tool_arguments::tests::deny_checks_decoded_keys_and_values_before_rewriting
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`

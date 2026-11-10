@@ -1,0 +1,23 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 39.11s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::response_callback_respects_all_eight_tool_switch_combinations ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::response_callback_respects_all_eight_tool_switch_combinations stdout ----
+thread 'ai_data_masking::tests::response_callback_respects_all_eight_tool_switch_combinations' panicked at src/ai_data_masking.rs:3310:17:
+assertion `left == right` failed
+  left: String("SECRET")
+ right: "0917b13a9091915d54b6336f45909539cce452b3661b21f386418a257883b30a"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::response_callback_respects_all_eight_tool_switch_combinations
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 6.95s
+
+error: test failed, to rerun pass `--lib`

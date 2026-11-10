@@ -1,0 +1,22 @@
+{"label": "current-mutation-call-choice-isolation-20261110", "exit_code": 101, "elapsed_seconds": 36.06088900566101}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 35.71s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tool_stream::tests::stream_keys_calls_by_choice_normalized_index_and_legacy_scope ... FAILED
+
+failures:
+
+---- ai_data_masking::tool_stream::tests::stream_keys_calls_by_choice_normalized_index_and_legacy_scope stdout ----
+thread 'ai_data_masking::tool_stream::tests::stream_keys_calls_by_choice_normalized_index_and_legacy_scope' panicked at src/tool_stream.rs:847:60:
+called `Result::unwrap()` on an `Err` value: "changed stream tool id"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tool_stream::tests::stream_keys_calls_by_choice_normalized_index_and_legacy_scope
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.03s
+
+error: test failed, to rerun pass `--lib`

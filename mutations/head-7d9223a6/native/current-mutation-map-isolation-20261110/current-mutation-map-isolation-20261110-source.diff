@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 69859a7d..8303bbb3 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -2412,7 +2412,7 @@ impl HttpContextWrapper<AiDataMaskingConfig> for AiDataMasking {
+                     } else {
+                         ToolRestore::default()
+                     };
+-                    self.mask_restore = match MaskRestore::from_map(prepared.legacy_map) {
++                    self.mask_restore = match MaskRestore::from_map({ let mut map=prepared.legacy_map; map.extend(prepared.tool_map); map }) {
+                         Ok(restore) => restore,
+                         Err(_) => {
+                             self.log.error("legacy restore matcher failed");

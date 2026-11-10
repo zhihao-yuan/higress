@@ -1,0 +1,1 @@
+{"messages":[{"content":"MASKED_TOKEN","role":"user"},{"content":null,"function_call":{"arguments":"{\"email\":\"MASKED_TOKEN\"","name":"lookup"},"role":"assistant"}],"model":"public-fixture","stream":false,"tools":[{"function":{"description":"public fixture","name":"lookup","parameters":{"properties":{"email":{"type":"string"}},"type":"object"}},"type":"function"}]}

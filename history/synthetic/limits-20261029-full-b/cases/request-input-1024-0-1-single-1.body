@@ -1,0 +1,10 @@
+data: {"choices":[{"delta":{},"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"content":"checking MASKED_TOKEN","role":"assistant"},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{},"finish_reason":"tool_calls","index":0}]}
+
+data: {"choices":[],"usage":{"total_tokens":20}}
+
+data: [DONE]
+

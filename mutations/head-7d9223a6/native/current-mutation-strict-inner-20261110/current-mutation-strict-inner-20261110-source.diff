@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
+index 63ec8daf..fe29957e 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs
+@@ -265,7 +265,7 @@ pub(crate) fn rewrite_json(
+     if input.is_empty() {
+         return Ok(None);
+     }
+-    let document = JsonStrings::parse(input)?;
++    let document = match JsonStrings::parse(input) { Ok(value) => value, Err(_) => return Ok(None) };
+     if document.literals.iter().any(|literal| deny(&literal.value)) {
+         return Err("arguments deny matched");
+     }

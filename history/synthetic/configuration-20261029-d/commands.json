@@ -1,0 +1,2390 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "h5213-config-d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.120521295000799
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-fixture",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5054858460061951
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2934116459946381
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-dynamic",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/bin/sh",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "cp /lab/update-good-1.json /tmp/extension.json && exec /usr/local/bin/envoy -c \"$1\" --concurrency 1 --log-level info",
+      "gateway",
+      "/lab/dynamic.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6448446629947284
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06140336500538979
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4214584800065495
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54280/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: before-bad",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-20261029-d/cases/before-bad.request",
+      "-D",
+      "/path/to/verification-lab/configuration-20261029-d/cases/before-bad.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-20261029-d/cases/before-bad.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0506586070114281
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "/bin/sh",
+      "-c",
+      "cp \"$1\" /tmp/extension.next && mv /tmp/extension.next /tmp/extension.json",
+      "update",
+      "/lab/update-bad-2.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.38019097699725535
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=extension_config_discovery"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8151616880059009
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23680767099722289
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54280/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: after-bad",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-20261029-d/cases/after-bad.request",
+      "-D",
+      "/path/to/verification-lab/configuration-20261029-d/cases/after-bad.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-20261029-d/cases/after-bad.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04066844099725131
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "/bin/sh",
+      "-c",
+      "cp \"$1\" /tmp/extension.next && mv /tmp/extension.next /tmp/extension.json",
+      "update",
+      "/lab/update-good-3.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.26903069399122614
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.15176082799735
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54280/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: new-good-allows-previous-word",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-20261029-d/cases/new-good-allows-previous-word.request",
+      "-D",
+      "/path/to/verification-lab/configuration-20261029-d/cases/new-good-allows-previous-word.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-20261029-d/cases/new-good-allows-previous-word.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.057225110998842865
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54280/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: new-good-blocks-new-word",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-20261029-d/cases/new-good-blocks-new-word.request",
+      "-D",
+      "/path/to/verification-lab/configuration-20261029-d/cases/new-good-blocks-new-word.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-20261029-d/cases/new-good-blocks-new-word.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.042254599000443704
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07638167501136195
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.25201792299048975
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27509897798881866
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06358472300053108
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "0cf5a6d1db4dade2adcde8804d766df00ba5ceb0f636bc81aa5843e19511d8b1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6957090020005126
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-static-missing-allowlist",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-missing-allowlist.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.4395742689957842
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20825298599083908
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12201534799532965
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09912398400774691
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17852030700305477
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20464402801007964
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07245688799594063
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.873655275994679
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08297485300863627
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1035858749964973
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1421961299929535
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11912819999270141
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0651419240020914
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06204765400616452
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08379323199915234
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06950600400159601
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06674124799610581
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0943500850116834
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06982690199220087
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10403581899299752
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13562077999813482
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08381764398654923
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07160840299911797
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09067417900951114
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07163495999702718
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10978020599577576
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07894726000085939
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06309664700529538
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7350486049981555
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0792740080069052
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09047661199292634
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.08505905199854169
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.11003071600862313
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06465490799746476
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "e4797a80eb12662da8a85af621b3d4f594e88421e3aa6e71ae1f3d344d1f41fe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1979016760014929
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-static-bad-pointer",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-pointer.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.118766968997079
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0912922800052911
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07233388398890384
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06577434099745005
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07857701199827716
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07488248600566294
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07981376099633053
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13065494298643898
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07557723300124053
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07153027399908751
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07525667099980637
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06791518100362737
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09475278200989123
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06728878201101907
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07599322599708103
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06986221700208262
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06589014000201132
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07397705000767019
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0720100780017674
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06360105899511836
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07031843600270804
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0666172409983119
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07851375799509697
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0677342819981277
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06228366898722015
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07865894099813886
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0829922139964765
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08036738399823662
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07071092698606662
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08105361599882599
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08588276500813663
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09280498400039505
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9754517520050285
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08924899499106687
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0894153619883582
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.11969384900294244
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.10691005398984998
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.061837835994083434
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "137f020e585bf2a30a6814964a8ab3d5f06468f818deb844540e1c289d68de2d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2230597980087623
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-static-bad-limit",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-limit.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.4039358509908197
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12232722199405544
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1189302839920856
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06555465100973379
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10647053700813558
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07243029100936837
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06513840300613083
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07357411700650118
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07059031999961007
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06740824300504755
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07172684000397567
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07008569799654651
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06857748099719174
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0718006810056977
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06512145600572694
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06582408599206246
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06681583799945656
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06638520999695174
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0783782299986342
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06663712800946087
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0748101270000916
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06879096700868104
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0646463879966177
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13837062701350078
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0746436769986758
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0879518959991401
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08213782600068953
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3012592220038641
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07695079500263091
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07160415199177805
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.07268745198962279
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.07666742100263946
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06760407099500299
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "0279673d1fc4e57d8e5d0eaaa043eb1c696379a85887a28d556062d9a625bdfe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23871025900007226
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-static-bad-global-valid-rule",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-global-valid-rule.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.0020268899970688
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07670596000389196
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07608952600276098
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07587630000489298
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06951701300567947
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06908704499073792
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06698365601187106
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08084264099306893
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0733769650105387
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07449024300149176
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07743764499900863
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07699788300669752
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07391325700154994
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10076629200193565
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08860176098824013
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08919646599679254
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06774116799351759
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06654479299322702
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07102475999272428
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06293338199611753
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0699454879941186
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07004085299558938
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08423868600220885
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06518958100059535
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08922887699736748
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06964121699274983
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07721595799375791
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07718160399235785
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8640944969956763
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08641503698891029
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11782976500398945
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.07785196701297536
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.07932647700363304
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08227437200548593
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "6dfa603170710a0d3b25f977bcf202d8b3703160bf7147623b4da20ba8285408"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2835234100057278
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-config-d-static-bad-rule",
+      "--network",
+      "h5213-config-d",
+      "-v",
+      "/path/to/verification-lab/configuration-20261029-d:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-rule.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.1809782149939565
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06434186300612055
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07892160498886369
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08901104600226972
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07077126200601924
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07557370398717467
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06457225799385924
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0817641899921
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08653291799419094
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11540618201252073
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.060800929000834
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07644576199527364
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10351309798716102
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10649562699836679
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08613286200852599
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0985959730023751
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10302496199437883
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0738833220093511
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0857272449939046
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0946919600100955
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12681574300222564
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07566942799894605
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06533633000799455
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07357371800753754
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06476799999654759
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07450302899815142
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06359195300319698
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06608036199759226
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.29296677900129
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10576614999445155
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09583591199771035
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.09395516099175438
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.06859598100709263
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06396635000419337
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "552e62117e76a477fe1c6f8bfa99159e2cc18739d3acf2d977b983867979dd30"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19512431499606464
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0ea02458e409e025b9a75d08d8f04b44ee86b60148753dd5b2968bc3ceffe82f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07467700898996554
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "0ea02458e409e025b9a75d08d8f04b44ee86b60148753dd5b2968bc3ceffe82f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6501018069975544
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "h5213-config-d"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3582116929901531
+  }
+]

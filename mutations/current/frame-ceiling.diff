@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..7570e037 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -471,7 +471,7 @@ impl ToolStream {
+         while let Some(mut raw) = self.parser.next_event(
+             &mut input,
+             end,
+-            config.tool_arguments.limits.max_unparsed_bytes,
++            usize::MAX,
+         )? {
+             // A flushed HTTP tail must end before any buffered args we append.
+             ensure_event_boundary(&mut raw);

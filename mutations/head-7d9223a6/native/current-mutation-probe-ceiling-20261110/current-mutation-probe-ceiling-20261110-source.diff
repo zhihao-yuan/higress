@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 69859a7d..611d6f60 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -1966,7 +1966,7 @@ impl AiDataMasking {
+                 }
+             } else {
+                 let exceeds_unparsed_limit = match tools.probe.len().checked_add(body.len()) {
+-                    Some(size) => size > config.tool_arguments.limits.max_unparsed_bytes,
++                    Some(_size) => false,
+                     None => true,
+                 };
+                 if exceeds_unparsed_limit {

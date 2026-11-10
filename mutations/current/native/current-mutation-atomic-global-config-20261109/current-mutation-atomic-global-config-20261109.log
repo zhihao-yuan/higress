@@ -1,0 +1,21 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 30.84s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::tool_configuration_update_is_all_or_nothing ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::tool_configuration_update_is_all_or_nothing stdout ----
+thread 'ai_data_masking::tests::tool_configuration_update_is_all_or_nothing' panicked at src/ai_data_masking.rs:2972:9:
+a valid rule must not hide invalid global configuration
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::tool_configuration_update_is_all_or_nothing
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`

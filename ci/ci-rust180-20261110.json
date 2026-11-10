@@ -1,0 +1,37 @@
+{
+  "pr": 5299,
+  "source": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
+  "run_url": "https://github.com/higress-group/higress/actions/runs/42616997964",
+  "job_url": "https://github.com/higress-group/higress/actions/runs/42616997964/job/129159230221",
+  "symptom": "Rust 1.80 Docker build rejects Option::is_none_or",
+  "excerpt": [
+    "2026-11-09T12:45:05.2725084Z #12 40.78    Compiling hmac-sha256 v1.1.12",
+    "2026-11-09T12:45:05.9886505Z #12 41.65    Compiling ai-data-masking v0.1.0 (/workspace/extensions/ai-data-masking)",
+    "2026-11-09T12:45:06.4290142Z #12 42.09 error[E0599]: no method named `is_none_or` found for enum `std::option::Option` in the current scope",
+    "2026-11-09T12:45:06.4290729Z #12 42.09     --> src/ai_data_masking.rs:1972:22",
+    "2026-11-09T12:45:06.4291074Z #12 42.09      |",
+    "2026-11-09T12:45:06.4291319Z #12 42.09 1968 |                   if tools",
+    "2026-11-09T12:45:06.4291638Z #12 42.09      |  ____________________-",
+    "2026-11-09T12:45:06.4291984Z #12 42.09 1969 | |                     .probe",
+    "2026-11-09T12:45:06.4292376Z #12 42.09 1970 | |                     .len()",
+    "2026-11-09T12:45:06.4292788Z #12 42.09 1971 | |                     .checked_add(body.len())",
+    "2026-11-09T12:45:06.4293454Z #12 42.09 1972 | |                     .is_none_or(|size| size > config.tool_arguments.limits.max_unparsed_bytes)",
+    "2026-11-09T12:45:06.4294025Z #12 42.09      | |_____________________-^^^^^^^^^^",
+    "2026-11-09T12:45:06.4294758Z #12 42.09      |",
+    "2026-11-09T12:45:06.4295209Z #12 42.09 help: there is a method `is_none` with a similar name, but with different arguments",
+    "2026-11-09T12:45:06.4295740Z #12 42.09     --> /rustc/3f5fd8dd41153bc5fdca9427e9e05be2c767ba23/library/core/src/option.rs:653:5",
+    "2026-11-09T12:45:06.4296093Z #12 42.09 ",
+    "2026-11-09T12:45:06.7558877Z #12 42.41 For more information about this error, try `rustc --explain E0599`.",
+    "2026-11-09T12:45:06.9176170Z #12 42.43 error: could not compile `ai-data-masking` (lib) due to 1 previous error",
+    "2026-11-09T12:45:07.9674842Z #12 ERROR: process \"/bin/sh -c cargo build --target wasm32-wasip1 $BUILD_OPTS     && cp target/wasm32-wasip1/release/*.wasm /main.wasm     && cargo clean\" did not complete successfully: exit code: 101",
+    "2026-11-09T12:45:07.9758999Z ------",
+    "2026-11-09T12:45:07.9759838Z  > [builder 7/7] RUN cargo build --target wasm32-wasip1 --release     && cp target/wasm32-wasip1/release/*.wasm /main.wasm     && cargo clean:",
+    "2026-11-09T12:45:07.9760588Z 42.09 1970 | |                     .len()",
+    "2026-11-09T12:45:07.9760938Z 42.09 1971 | |                     .checked_add(body.len())",
+    "2026-11-09T12:45:07.9761508Z 42.09 1972 | |                     .is_none_or(|size| size > config.tool_arguments.limits.max_unparsed_bytes)"
+  ],
+  "image": [
+    "2026-11-09T12:43:32.1003516Z #6 [builder 1/7] FROM docker.io/library/rust:1.80@sha256:d22d8938f0403ee31c118b5bf2162b883313dd7f387f859d9f2accd7c884c385"
+  ],
+  "secondary_failure": "Retry encountered permission errors cleaning runner out/. Address compiler failure in plugin code; do not change unrelated CI configuration."
+}

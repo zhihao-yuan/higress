@@ -1,0 +1,300 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "h5213-host-failure-a"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11837486800504848
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-host-failure-a-fixture",
+      "--network",
+      "h5213-host-failure-a",
+      "-v",
+      "/path/to/verification-lab/host-failure-20261029-a/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/host-failure-20261029-a/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.41054066600918304
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.4484516179945786
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-host-failure-a-fail-closed",
+      "--network",
+      "h5213-host-failure-a",
+      "-v",
+      "/path/to/verification-lab/host-failure-20261029-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/fail-closed.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.376148176001152
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05825994099723175
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54448/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: before-host-failure",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/host-failure-20261029-a/cases/before-host-failure.request",
+      "-D",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/before-host-failure.headers",
+      "-o",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/before-host-failure.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.037044397002318874
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54448/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: trigger-host-failure",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/host-failure-20261029-a/cases/trigger-host-failure.request",
+      "-D",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/trigger-host-failure.headers",
+      "-o",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/trigger-host-failure.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.03294946100504603
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54448/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: after-host-failure",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/host-failure-20261029-a/cases/after-host-failure.request",
+      "-D",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/after-host-failure.headers",
+      "-o",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/after-host-failure.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.028781265005818568
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:54448/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: still-failed",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/host-failure-20261029-a/cases/still-failed.request",
+      "-D",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/still-failed.headers",
+      "-o",
+      "/path/to/verification-lab/host-failure-20261029-a/cases/still-failed.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.024870073990314268
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13152241898933426
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04554389099939726
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13431778800440952
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1434561680071056
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04301507100171875
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "bdccdb46ce111229963734fb7d616614be375a85dc6116348c6ab5151dee3d3f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04825704000541009
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "bdccdb46ce111229963734fb7d616614be375a85dc6116348c6ab5151dee3d3f"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2612264490016969
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "1509a84e833defa44f7052d68cbbbec9da51f366b67b1a01384d0f0eb18772b6"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.362107653010753
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "h5213-host-failure-a"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2805207070050528
+  }
+]

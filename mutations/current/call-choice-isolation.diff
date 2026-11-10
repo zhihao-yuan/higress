@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..b520976b 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -233,7 +233,7 @@ impl ToolStream {
+             }
+             _ => return Err("invalid stream tool index"),
+         };
+-        Ok((choice, CallIndex::Modern(index)))
++        Ok((0, CallIndex::Modern(index)))
+     }
+ 
+     fn handle_call(

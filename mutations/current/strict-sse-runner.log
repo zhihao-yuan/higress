@@ -1,0 +1,24 @@
+{"label": "current-mutation-strict-sse-20261109", "exit_code": 101, "elapsed_seconds": 34.42425298690796}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 28.13s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::streaming_callback_runs_without_legacy_openai_and_keeps_failure_state ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::streaming_callback_runs_without_legacy_openai_and_keeps_failure_state stdout ----
+thread 'ai_data_masking::tests::streaming_callback_runs_without_legacy_openai_and_keeps_failure_state' panicked at src/ai_data_masking.rs:3550:13:
+assertion `left == right` failed
+  left: [100, 97, 116, 97, 58, 32, 123, 34, 99, 104, 111, 105, 99, 101, 115, 34, 58, 91, 123, 34, 100, 101, 108, 116, 97, 34, 58, 123, 34, 99, 111, 110, 116, 101, 110, 116, 34, 58, 34, 108, 97, 116, 101, 114, 34, 125, 44, 34, 102, 105, 110, 105, 115, 104, 95, 114, 101, 97, 115, 111, 110, 34, 58, 110, 117, 108, 108, 44, 34, 105, 110, 100, 101, 120, 34, 58, 48, 125, 93, 125, 10, 10, 100, 97, 116, 97, 58, 32, 91, 68, 79, 78, 69, 93, 10, 10]
+ right: []
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::streaming_callback_runs_without_legacy_openai_and_keeps_failure_state
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 6.02s
+
+error: test failed, to rerun pass `--lib`

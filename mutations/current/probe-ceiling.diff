@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 6bbe343f..890ca51d 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -1969,7 +1969,7 @@ impl AiDataMasking {
+                     .probe
+                     .len()
+                     .checked_add(body.len())
+-                    .is_none_or(|size| size > config.tool_arguments.limits.max_unparsed_bytes)
++                    .is_none_or(|_size| false)
+                 {
+                     return self.fail_tool_stream(tools, "unparsed response buffer limit exceeded");
+                 }

@@ -1,0 +1,25 @@
+{
+  "source_revision": "aedc63503d7ab3f42f8dd246c7e02c44fd0818bc",
+  "attempted": 19,
+  "killed_by_focused_assertions": 18,
+  "surviving_attempts_not_counted": [
+    "restore-flag"
+  ],
+  "survivor_explanation": "mutation-restore-gate-note.json",
+  "source_restored_to_revision": true,
+  "source_files_sha256": {
+    "plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs": "0cc35805d5a96b5d08d7b46e3deb237662ea3aafb5f13f6a2a903ab475e4187f",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/deny_word.rs": "3e63c8d41f5c7ced55916f0201e84c8eab25c937189e83d435687518aabcb60f",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs": "51a2d0c102e793f86e45095db4a2f31a4bfcdfc2cf995864d5c306311ff36989",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/lib.rs": "e3ed803dab621a7a5d7ea594c3c73585fc686713b5c8d6769bd39ad118be5889",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs": "21da00a56da84869e9d86a7607164ad64ef368284b22d97fa949d1121440cce8",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_arguments.rs": "064bd52c6fde00b2ba663c7bb6edeef7205afa419f72c9433b2c6da4c09dac68",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_win_openai.rs": "5e24f7d0c12249b0f9fac55c2e4d806bdbecaf989261766f23fcbd4ec307d7b3",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/msg_window.rs": "c4389a4dcc875fb7147f29893068aa05d4d3f59e6edd3fcb9f3b85a8cd71eff3",
+    "plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs": "aa570469e8dbfa6870813b8a458bcc1216847700cd537bc4ca2e40b79b604acb"
+  },
+  "result_files": [
+    "mutations-b/results.json",
+    "mutations-c/results.json"
+  ]
+}

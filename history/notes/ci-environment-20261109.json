@@ -1,0 +1,31 @@
+{
+  "head": "8556a306ea929c1338e1ce9766a57c51f732f4f7",
+  "failed_jobs": [
+    {
+      "job": 129030841011,
+      "reason": "Envoy download HTTP 504; automatic retry then hit permission denied removing container-created out files"
+    },
+    {
+      "job": 129032043571,
+      "reason": "Envoy download HTTP 504 during build-test-pilot"
+    },
+    {
+      "job": 129032043660,
+      "reason": "Envoy download HTTP 504 during build-test-pilot"
+    },
+    {
+      "job": 129034840672,
+      "reason": "Envoy download HTTP 504 during build-test-pilot"
+    }
+  ],
+  "local_same_url_head_status": 504,
+  "rerun_attempt": {
+    "run": 42578285069,
+    "result": "Rejected by GitHub: Must have admin rights to Repository"
+  },
+  "pending_public_comment": "review-20261109/ci-environment-comment.md",
+  "comment_posted": false,
+  "download_retry_status": 504,
+  "release_asset_exists": true,
+  "rerun_retry_result": "GitHub again denied rerun: Must have admin rights to Repository"
+}

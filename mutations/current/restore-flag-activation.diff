@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
+index 5ffb2bd7..8e2cd4a4 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
+@@ -155,7 +155,7 @@ impl<'de> Deserialize<'de> for ToolArgumentsConfig {
+             #[serde(default = "empty_object")]
+             limits: Value,
+         }
+-        let raw = Raw::deserialize(deserializer)?;
++        let mut raw = Raw::deserialize(deserializer)?; raw.restore |= raw.restore_allowlist.is_array();
+         let limits = if raw.check || raw.restore {
+             serde_json::from_value(raw.limits).map_err(D::Error::custom)?
+         } else {

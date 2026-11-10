@@ -1,0 +1,1 @@
+{"id":"public-fixture","choices":[{"index":0,"message":{"role":"assistant","content":"checking MASKED_TOKEN","tool_calls":[{"id":"public-call-0","type":"function","function":{"name":"lookup","arguments":"{ \"email\":\"91ca58486d1046fd393096159c869e9d25acceee88fbad0c5ce10e3d74380fc2\", \"n\":1e2 }"}}]},"finish_reason":"tool_calls"}],"usage":{"total_tokens":20}}

@@ -1,0 +1,41 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index fd2105ca..7fc16889 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -943,4 +943,36 @@ mod tests {
+         assert_eq!(stream.retained, 0);
+         assert!(!stream.done);
+     }
++    #[test]
++    fn unclosed_sse_frames_obey_the_unparsed_buffer_limit() {
++        let config: AiDataMaskingConfig = serde_json::from_value(json!({
++            "deny_openai":false,"deny_words":["BLOCKED"],
++            "tool_arguments":{"check":true,"limits":{
++                "max_call_bytes":16,"max_buffer_bytes":64,"max_unparsed_bytes":16
++            }}
++        }))
++        .unwrap();
++        let input = [b"data:".as_slice(), &[b'x'; 1025]].concat();
++        assert_eq!(input.len(), 1030);
++        for size in [1, 17, input.len()] {
++            let mut stream = ToolStream::default();
++            let mut rejected = false;
++            for part in input.chunks(size) {
++                if stream
++                    .push(
++                        part,
++                        false,
++                        &config,
++                        &ToolRestore::default(),
++                        &Log::new("test".into()),
++                    )
++                    .is_err()
++                {
++                    rejected = true;
++                    break;
++                }
++            }
++            assert!(rejected, "unclosed SSE accepted with chunk size {size}");
++        }
++    }
+ }

@@ -1,0 +1,22 @@
+{"label": "current-mutation-map-isolation-20261109", "exit_code": 101, "elapsed_seconds": 36.047444343566895}
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 31.45s
+     Running unittests src/lib.rs (/src/target/p2-final/debug/deps/ai_data_masking-ae0150eabd6a8208)
+
+running 1 test
+test ai_data_masking::tests::tool_generated_maps_do_not_expand_legacy_content_restoration ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::tool_generated_maps_do_not_expand_legacy_content_restoration stdout ----
+thread 'ai_data_masking::tests::tool_generated_maps_do_not_expand_legacy_content_restoration' panicked at src/ai_data_masking.rs:3743:9:
+assertion failed: plugin.mask_restore.is_none()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::tool_generated_maps_do_not_expand_legacy_content_restoration
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 87 filtered out; finished in 4.29s
+
+error: test failed, to rerun pass `--lib`

@@ -1,0 +1,238 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 47e74626..389b459e 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -4185,4 +4185,35 @@ mod tests {
+             }
+         }
+     }
++    #[test]
++    fn undecided_response_prefix_is_bounded_and_failure_stays_closed() {
++        crate::test_host::reset();
++        let config = serde_json::from_value(json!({"deny_openai":false,"deny_words":["BLOCKED"],
++            "tool_arguments":{"check":true,"limits":{"max_unparsed_bytes":16}}}))
++        .unwrap();
++        let mut plugin = AiDataMasking::new();
++        plugin.on_config(Rc::new(config));
++        plugin.on_http_request_complete_body(
++            &json!({"stream":true,"messages":[]})
++                .to_string()
++                .into_bytes(),
++        );
++        let input = vec![b' '; 1030];
++        crate::test_host::response_input(&input);
++        plugin.on_http_response_body(input.len(), false);
++        assert!(
++            plugin.tools.as_ref().unwrap().failed,
++            "undecided prefix exceeded its limit"
++        );
++        assert!(plugin.tools.as_ref().unwrap().probe.is_empty());
++        for tail in [
++            b"data: {\"choices\":[]}\n\n".as_slice(),
++            b"data: [DONE]\n\n",
++        ] {
++            crate::test_host::reset();
++            crate::test_host::response_input(tail);
++            plugin.on_http_response_body(tail.len(), true);
++            assert_eq!(crate::test_host::take_response_body().unwrap(), b"");
++        }
++    }
+ }
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
+index 1c8699b4..cb7f6a54 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
+@@ -29,6 +29,7 @@ pub(crate) struct ToolArgumentsConfig {
+ pub(crate) struct ToolLimits {
+     pub(crate) max_call_bytes: usize,
+     pub(crate) max_buffer_bytes: usize,
++    pub(crate) max_unparsed_bytes: usize,
+     pub(crate) max_calls: usize,
+ }
+ 
+@@ -37,6 +38,7 @@ impl Default for ToolLimits {
+         Self {
+             max_call_bytes: 1_048_576,
+             max_buffer_bytes: 4_194_304,
++            max_unparsed_bytes: 4_194_304,
+             max_calls: 128,
+         }
+     }
+@@ -59,9 +61,11 @@ impl<'de> Deserialize<'de> for ToolLimits {
+                     D::Error::custom("tool limit must be a positive representable integer")
+                 }),
+         };
++        let max_buffer_bytes = read("max_buffer_bytes", default.max_buffer_bytes)?;
+         Ok(Self {
+             max_call_bytes: read("max_call_bytes", default.max_call_bytes)?,
+-            max_buffer_bytes: read("max_buffer_bytes", default.max_buffer_bytes)?,
++            max_buffer_bytes,
++            max_unparsed_bytes: read("max_unparsed_bytes", max_buffer_bytes)?,
+             max_calls: read("max_calls", default.max_calls)?,
+         })
+     }
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index fd2105ca..5f7c6d40 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -10,43 +10,58 @@ struct SseDecoder {
+     line_start: usize,
+ }
+ impl SseDecoder {
+-    fn push(&mut self, data: &[u8], end: bool) -> Vec<Vec<u8>> {
+-        self.pending.extend_from_slice(data);
+-        let mut events = Vec::new();
+-        let mut consumed = 0;
+-        while self.scan < self.pending.len() {
+-            let position = self.scan;
+-            let byte = self.pending[position];
+-            if byte != b'\r' && byte != b'\n' {
+-                self.scan += 1;
+-                continue;
++    fn next_event(
++        &mut self,
++        input: &mut &[u8],
++        end: bool,
++        limit: usize,
++    ) -> Result<Option<Vec<u8>>, &'static str> {
++        loop {
++            while self.scan < self.pending.len() {
++                let position = self.scan;
++                let byte = self.pending[position];
++                if byte != b'\r' && byte != b'\n' {
++                    self.scan += 1;
++                    continue;
++                }
++                if byte == b'\r'
++                    && position + 1 == self.pending.len()
++                    && !(end && input.is_empty())
++                    && input.first().map_or(true, |next| *next == b'\n')
++                {
++                    break;
++                }
++                let length = if byte == b'\r' && self.pending.get(position + 1) == Some(&b'\n') {
++                    2
++                } else {
++                    1
++                };
++                self.scan += length;
++                if position == self.line_start {
++                    let rest = self.pending.split_off(self.scan);
++                    let event = std::mem::replace(&mut self.pending, rest);
++                    self.scan = 0;
++                    self.line_start = 0;
++                    return Ok(Some(event));
++                }
++                self.line_start = self.scan;
+             }
+-            if byte == b'\r' && position + 1 == self.pending.len() && !end {
+-                break;
++            if input.is_empty() {
++                if end && !self.pending.is_empty() {
++                    self.scan = 0;
++                    self.line_start = 0;
++                    return Ok(Some(std::mem::take(&mut self.pending)));
++                }
++                return Ok(None);
+             }
+-            let length = if byte == b'\r' && self.pending.get(position + 1) == Some(&b'\n') {
+-                2
+-            } else {
+-                1
+-            };
+-            self.scan += length;
+-            if position == self.line_start {
+-                events.push(self.pending[consumed..self.scan].to_vec());
+-                consumed = self.scan;
++            let available = limit.saturating_sub(self.pending.len());
++            if available == 0 {
++                return Err("unparsed SSE buffer limit exceeded");
+             }
+-            self.line_start = self.scan;
+-        }
+-        if consumed != 0 {
+-            self.pending.drain(..consumed);
+-            self.scan -= consumed;
+-            self.line_start -= consumed;
++            let count = input.len().min(available);
++            self.pending.extend_from_slice(&input[..count]);
++            *input = &input[count..];
+         }
+-        if end && !self.pending.is_empty() {
+-            events.push(std::mem::take(&mut self.pending));
+-            self.scan = 0;
+-            self.line_start = 0;
+-        }
+-        events
+     }
+ }
+ 
+@@ -446,7 +461,12 @@ impl ToolStream {
+         log: &Log,
+     ) -> Result<Vec<StreamAction>, &'static str> {
+         let mut actions = Vec::new();
+-        for mut raw in self.parser.push(data, end) {
++        let mut input = data;
++        while let Some(mut raw) = self.parser.next_event(
++            &mut input,
++            end,
++            config.tool_arguments.limits.max_unparsed_bytes,
++        )? {
+             // A flushed HTTP tail must end before any buffered args we append.
+             ensure_event_boundary(&mut raw);
+             let data = payload(&raw);
+@@ -692,10 +712,15 @@ mod tests {
+             let mut parser = SseDecoder::default();
+             let mut events = Vec::new();
+             for chunk in input.chunks(size) {
+-                events.extend(parser.push(chunk, false));
++                let mut input = chunk;
++                while let Some(event) = parser.next_event(&mut input, false, 4096).unwrap() {
++                    events.push(event);
++                }
+             }
+             assert_eq!(events.len(), 1, "size {size}");
+-            events.extend(parser.push(&[], true));
++            while let Some(event) = parser.next_event(&mut &[][..], true, 4096).unwrap() {
++                events.push(event);
++            }
+             assert_eq!(events.len(), 2);
+             assert_eq!(events.concat(), input);
+         }
+@@ -943,4 +968,36 @@ mod tests {
+         assert_eq!(stream.retained, 0);
+         assert!(!stream.done);
+     }
++    #[test]
++    fn unclosed_sse_frames_obey_the_unparsed_buffer_limit() {
++        let config: AiDataMaskingConfig = serde_json::from_value(json!({
++            "deny_openai":false,"deny_words":["BLOCKED"],
++            "tool_arguments":{"check":true,"limits":{
++                "max_call_bytes":16,"max_buffer_bytes":64,"max_unparsed_bytes":16
++            }}
++        }))
++        .unwrap();
++        let input = [b"data:".as_slice(), &[b'x'; 1025]].concat();
++        assert_eq!(input.len(), 1030);
++        for size in [1, 17, input.len()] {
++            let mut stream = ToolStream::default();
++            let mut rejected = false;
++            for part in input.chunks(size) {
++                if stream
++                    .push(
++                        part,
++                        false,
++                        &config,
++                        &ToolRestore::default(),
++                        &Log::new("test".into()),
++                    )
++                    .is_err()
++                {
++                    rejected = true;
++                    break;
++                }
++            }
++            assert!(rejected, "unclosed SSE accepted with chunk size {size}");
++        }
++    }
+ }
