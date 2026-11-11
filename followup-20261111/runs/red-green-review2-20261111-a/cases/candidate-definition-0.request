@@ -1,0 +1,1 @@
+{"model": "public-fixture", "stream": false, "messages": [{"role": "user", "content": "DEMO_SECRET"}], "tools": [{"type": "function", "function": {"name": "lookup", "description": "BLOCKED", "parameters": {"type": "object", "properties": {"email": {"type": "string"}}}}}]}

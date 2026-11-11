@@ -1,0 +1,11 @@
+--- a/tool_stream.rs
++++ b/tool_stream.rs
+@@ -72,7 +72,7 @@
+                     .capacity()
+                     .saturating_mul(2)
+                     .max(required)
+-                    .min(limit);
++                    ;
+                 self.pending.reserve_exact(capacity - self.pending.len());
+             }
+             self.pending.extend_from_slice(&input[..count]);

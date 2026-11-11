@@ -1,0 +1,65 @@
+[
+  {
+    "monotonic": 1214138.465089732,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t64\nnonvoluntary_ctxt_switches:\t40\nusage_usec 17898451\nuser_usec 17389211\nsystem_usec 509239\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n419278848\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 17898451,
+    "cgroup_memory_bytes": 419278848
+  },
+  {
+    "monotonic": 1214138.634163698,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t66\nnonvoluntary_ctxt_switches:\t40\nusage_usec 18033731\nuser_usec 17508590\nsystem_usec 525140\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n419217408\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 18033731,
+    "cgroup_memory_bytes": 419217408
+  },
+  {
+    "monotonic": 1214139.329577997,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t74\nnonvoluntary_ctxt_switches:\t40\nusage_usec 18515083\nuser_usec 17953976\nsystem_usec 561107\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n418689024\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 18515083,
+    "cgroup_memory_bytes": 418689024
+  },
+  {
+    "monotonic": 1214140.161673905,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t83\nnonvoluntary_ctxt_switches:\t40\nusage_usec 19134077\nuser_usec 18543180\nsystem_usec 590896\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n418963456\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 19134077,
+    "cgroup_memory_bytes": 418963456
+  },
+  {
+    "monotonic": 1214141.168390033,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t95\nnonvoluntary_ctxt_switches:\t40\nusage_usec 19819729\nuser_usec 19193110\nsystem_usec 626619\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n418787328\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 19819729,
+    "cgroup_memory_bytes": 418787328
+  },
+  {
+    "monotonic": 1214141.884569928,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t110\nnonvoluntary_ctxt_switches:\t40\nusage_usec 20346985\nuser_usec 19687799\nsystem_usec 659186\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n419065856\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 20346985,
+    "cgroup_memory_bytes": 419065856
+  },
+  {
+    "monotonic": 1214142.172051862,
+    "exit_code": 0,
+    "raw": "Name:\tenvoy\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nKthread:\t0\nVmPeak:\t28024608 kB\nVmSize:\t28024608 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  451868 kB\nVmRSS:\t  451868 kB\nRssAnon:\t  397944 kB\nRssFile:\t   53924 kB\nRssShmem:\t       0 kB\nVmData:\t 2112676 kB\nVmStk:\t     132 kB\nVmExe:\t   63752 kB\nVmLib:\t    2384 kB\nVmPTE:\t    1420 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t18\nSigQ:\t0/31337\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001000\nSigCgt:\t00000001040046eb\nCapInh:\t0000000000000000\nCapPrm:\t00000000a80425fb\nCapEff:\t00000000a80425fb\nCapBnd:\t00000000a80425fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t114\nnonvoluntary_ctxt_switches:\t40\nusage_usec 20479766\nuser_usec 19807451\nsystem_usec 672315\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n418721792\n",
+    "stderr": "",
+    "rss_bytes": 462712832,
+    "cpu_usage_usec": 20479766,
+    "cgroup_memory_bytes": 418721792
+  }
+]

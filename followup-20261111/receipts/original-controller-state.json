@@ -1,0 +1,223 @@
+{
+  "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+  "baseline_revision": "1fef633553462434ccafad94a6ef35d2b367450f",
+  "model_budget_approved": {
+    "health": 1,
+    "formal": 14,
+    "formal_max_tokens": 256
+  },
+  "steps": [
+    {
+      "name": "unparsed",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_unparsed.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/merged-20261109.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "8ee506a2a727cb7793bc909fc74e53c204df6218",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/unparsed-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-unparsed"
+      ],
+      "state": "passed",
+      "started": 1794364515.223356,
+      "exit_code": 0,
+      "elapsed_seconds": 591.5561850070953
+    },
+    {
+      "name": "unparsed-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/unparsed-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794365106.843691,
+      "exit_code": 0,
+      "elapsed_seconds": 1.983854055404663
+    },
+    {
+      "name": "red-green",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_red_green.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/red-green-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-red-green"
+      ],
+      "state": "passed",
+      "started": 1794365108.8497112,
+      "exit_code": 0,
+      "elapsed_seconds": 37.15324878692627
+    },
+    {
+      "name": "red-green-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/red-green-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794365146.030988,
+      "exit_code": 0,
+      "elapsed_seconds": 0.4648451805114746
+    },
+    {
+      "name": "runtime",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_runtime.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/runtime-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-runtime"
+      ],
+      "state": "passed",
+      "started": 1794365146.517167,
+      "exit_code": 0,
+      "elapsed_seconds": 422.83177185058594
+    },
+    {
+      "name": "runtime-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/runtime-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794365569.410347,
+      "exit_code": 0,
+      "elapsed_seconds": 21.956449031829834
+    },
+    {
+      "name": "content",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_content_merge.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/content-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-content"
+      ],
+      "state": "passed",
+      "started": 1794365591.395704,
+      "exit_code": 0,
+      "elapsed_seconds": 162.28934001922607
+    },
+    {
+      "name": "content-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/content-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794365753.7742999,
+      "exit_code": 0,
+      "elapsed_seconds": 1.665389060974121
+    },
+    {
+      "name": "flags",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/review2-supplemental-suite-20261111/verify_flags.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/flags-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-flags",
+        "--system-word-file",
+        "/path/to/verification-lab/higress/plugins/wasm-rust/extensions/ai-data-masking/res/sensitive_word_dict.txt"
+      ],
+      "state": "passed",
+      "started": 1794365755.4763892,
+      "exit_code": 0,
+      "elapsed_seconds": 960.1675956249237
+    },
+    {
+      "name": "flags-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/flags-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794366715.746579,
+      "exit_code": 0,
+      "elapsed_seconds": 7.672526121139526
+    },
+    {
+      "name": "legacy",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/review2-supplemental-suite-20261111/verify_legacy_rules.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/legacy-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-legacy"
+      ],
+      "state": "failed",
+      "started": 1794366723.569124,
+      "exit_code": 1,
+      "elapsed_seconds": 0.8396172523498535
+    }
+  ],
+  "state": "running-full-verification"
+}

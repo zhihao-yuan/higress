@@ -28,5 +28,12 @@
   "wasm_sha256": "5e8ad8fe1989047094726b293a1a8767b94092d2343fae1c03023f10f6cc5232",
   "wasm_bytes": 7273750,
   "wasm_tested_in_gateway": false,
-  "lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503"
+  "lock_sha256": "267ee4b1873ea76e260d416e20bdf0335c9e63df3fe3098854254b7aa848f99c",
+  "lock_path": "plugins/wasm-rust/extensions/ai-data-masking/Cargo.lock",
+  "sdk_root_lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+  "provenance_correction": {
+    "original_recorded_sdk_root_hash": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+    "immutable_original_manifest": "https://github.com/zhihao-yuan/higress/blob/b5a7e51cf7a68a69db52110b9cb0ab9f9520f891/builds/head-7d9223a6-native-20261110/manifest.json",
+    "reason": "Correct the selected Cargo project: the build runs from the extension project, not the SDK root. No source, module, or runtime result changed."
+  }
 }

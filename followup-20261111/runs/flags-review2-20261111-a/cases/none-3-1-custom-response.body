@@ -1,0 +1,16 @@
+data: {"choices":[{"delta":{"content":"public response MASKED_TOKEN","role":"assistant"},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"call-0","type":"function","function":{"name":"lookup"}}]},"finish_reason":null}]}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{},"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{"arguments":"{\"email\": \"BLOCKED\", \"other\": \"MASKED_TOKEN\"}"},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{},"finish_reason":"tool_calls","index":0}]}
+
+data: {"choices":[],"usage":{"total_tokens":20}}
+
+data: [DONE]
+

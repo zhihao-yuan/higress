@@ -1,0 +1,180 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "h5213-r2-capacity-clock-control-b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3243755609728396
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-clock-control-b-fixture",
+      "--network",
+      "h5213-r2-capacity-clock-control-b",
+      "-v",
+      "/path/to/verification-lab/capacity-clock-control-review2-20261111-a/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/capacity-clock-control-review2-20261111-a/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.862888955976814
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.1078127559740096
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-clock-control-b-near-total-c1-candidate-off",
+      "--network",
+      "h5213-r2-capacity-clock-control-b",
+      "-v",
+      "/path/to/verification-lab/capacity-clock-control-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/near-total-c1-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7358510019257665
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07822300191037357
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14882004796527326
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.054130534175783396
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1546449619345367
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16028510383330286
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.053757952991873026
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "cfcd22aa9291e04ccfadcf8cc57cecb178c8c53df3d0fda50e9fd8d4e949d357"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3894137069582939
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "8791ed05ec99ed79db9b5f87f2947d2aab5e0106f9e08d456896362255f98ee7"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10876325494609773
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "8791ed05ec99ed79db9b5f87f2947d2aab5e0106f9e08d456896362255f98ee7"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32905256003141403
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "h5213-r2-capacity-clock-control-b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2509542068000883
+  }
+]

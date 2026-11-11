@@ -1,0 +1,18 @@
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}],"prompt_token_ids":null,"prompt_text":null}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{"tool_calls":[{"id":"chatcmpl-tool-894f39fc9f9ff282","type":"function","index":0,"function":{"name":"lookup"}}]},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"{\"email\": \"DEMO_SECRET"}}]},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\", \"other\": \"DEMO_SEC"}}]},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"RET"}}]},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\"}"}}]},"logprobs":null,"finish_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop","stop_reason":null,"token_ids":null}]}
+
+data: {"id":"chatcmpl-2ab1af22-e0a1-4637-b1f0-877d6598e5d7","object":"chat.completion.chunk","created":1794368887,"model":"dsv4","choices":[],"usage":{"prompt_tokens":324,"total_tokens":390,"completion_tokens":66},"system_fingerprint":"vllm-0.26.0-tp8-ep-01075c7d"}
+
+data: [DONE]
+

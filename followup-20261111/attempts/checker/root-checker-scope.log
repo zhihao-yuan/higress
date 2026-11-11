@@ -1,0 +1,33 @@
+{"package_files_verified": 94802}
+{"run": "capacity-options-head-7d9223a6-20261110-a", "files_verified": 1212, "decoded_body_hashes_verified": 256, "fixture_inputs_verified": 144, "recorded_failure": false, "result_rows": 4, "status": "integrity checked"}
+{"run": "disabled-p2-final-20261109-a", "files_verified": 722, "decoded_body_hashes_verified": 320, "fixture_inputs_verified": 80, "recorded_failure": false, "result_rows": 80, "status": "integrity checked"}
+{"run": "flags-p2-final-20261109-a", "files_verified": 3510, "decoded_body_hashes_verified": 896, "fixture_inputs_verified": 384, "recorded_failure": false, "result_rows": 448, "status": "integrity checked"}
+{"run": "legacy-p2-final-20261109-a", "files_verified": 583, "decoded_body_hashes_verified": 192, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 96, "status": "integrity checked"}
+{"run": "limits-p2-final-20261109-a", "files_verified": 3388, "decoded_body_hashes_verified": 848, "fixture_inputs_verified": 392, "recorded_failure": false, "result_rows": 424, "status": "integrity checked"}
+{"run": "red-green-ci-rust180-20261110-a", "files_verified": 124, "decoded_body_hashes_verified": 32, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 16, "status": "integrity checked"}
+{"run": "red-green-p2-final-20261109-a", "files_verified": 124, "decoded_body_hashes_verified": 32, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 16, "status": "integrity checked"}
+{"run": "runtime-p2-final-20261109-a", "files_verified": 9430, "decoded_body_hashes_verified": 6256, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 1568, "status": "integrity checked"}
+{"run": "unparsed-ci-rust180-20261110-a", "files_verified": 690, "decoded_body_hashes_verified": 144, "fixture_inputs_verified": 72, "recorded_failure": false, "result_rows": 72, "status": "integrity checked"}
+{"run": "unparsed-final-20261109-a", "files_verified": 690, "decoded_body_hashes_verified": 144, "fixture_inputs_verified": 72, "recorded_failure": false, "result_rows": 72, "status": "integrity checked"}
+{"run": "capacity-20261029-b", "files_verified": 10712, "decoded_body_hashes_verified": 2304, "fixture_inputs_verified": 1296, "recorded_failure": false, "result_rows": 36, "status": "integrity checked"}
+{"run": "capacity-options-20261104-a", "files_verified": 1210, "decoded_body_hashes_verified": 256, "fixture_inputs_verified": 144, "recorded_failure": false, "result_rows": 4, "status": "integrity checked"}
+{"run": "configuration-20261029-d", "files_verified": 81, "decoded_body_hashes_verified": 8, "fixture_inputs_verified": 1, "recorded_failure": false, "result_rows": 10, "status": "integrity checked"}
+{"run": "disabled-large-20261104-c", "files_verified": 723, "decoded_body_hashes_verified": 320, "fixture_inputs_verified": 80, "recorded_failure": false, "result_rows": 80, "status": "integrity checked"}
+{"run": "flags-20261104-a", "files_verified": 3511, "decoded_body_hashes_verified": 896, "fixture_inputs_verified": 384, "recorded_failure": false, "result_rows": 448, "status": "integrity checked"}
+{"run": "host-failure-20261029-a", "files_verified": 41, "decoded_body_hashes_verified": 8, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 4, "status": "integrity checked"}
+{"run": "legacy-rules-20261104-a", "files_verified": 584, "decoded_body_hashes_verified": 192, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 96, "status": "integrity checked"}
+{"run": "limits-20261029-full-b", "files_verified": 2985, "decoded_body_hashes_verified": 848, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 424, "status": "integrity checked"}
+{"run": "limits-followup-20261104-a", "files_verified": 81, "decoded_body_hashes_verified": 14, "fixture_inputs_verified": 1, "recorded_failure": false, "result_rows": 7, "status": "integrity checked"}
+{"run": "runtime-20261029-full-b", "files_verified": 8081, "decoded_body_hashes_verified": 5360, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 1344, "status": "integrity checked"}
+{"run": "runtime-explicit-false-20261029-a", "files_verified": 2709, "decoded_body_hashes_verified": 1792, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 448, "status": "integrity checked"}
+{"run": "red-green", "files_verified": 121, "decoded_body_hashes_verified": 32, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 16, "status": "integrity checked"}
+{"run": "live", "files_verified": 171, "decoded_body_hashes_verified": 27, "fixture_inputs_verified": 0, "recorded_failure": false, "result_rows": 14, "status": "integrity checked"}
+red-green-p2-final-20261109-a: eight baseline failures and eight candidate scope assertions rechecked
+red-green-ci-rust180-20261110-a: eight baseline failures and eight candidate scope assertions rechecked
+unparsed-final-20261109-a: 72 raw framing outcomes rechecked against saved upstream bytes
+unparsed-ci-rust180-20261110-a: 72 raw framing outcomes rechecked against saved upstream bytes
+Traceback (most recent call last):
+  File "/path/to/verification-lab/evidence-stage-20261109/verify_package.py", line 92, in <module>
+    assert record['exit_code'] == expected_exit, label
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: review2-green-focused-20261111

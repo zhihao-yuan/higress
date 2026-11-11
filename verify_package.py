@@ -80,6 +80,8 @@ for name in ('unparsed-final-20261109-a', 'unparsed-ci-rust180-20261110-a'):
     print(name + ': 72 raw framing outcomes rechecked against saved upstream bytes')
 
 for record_path in sorted(root.rglob('*-result.json')):
+    if record_path.relative_to(root).parts[0] == 'followup-20261111':
+        continue  # Current native successes and retained attempts have an explicit checker below.
     record = json.loads(record_path.read_text())
     if 'source_files_sha256' not in record:
         continue
@@ -133,7 +135,7 @@ assert native_manifest['git_diff_check_exit_code'] == 0
 assert sha(root / 'builds' / native_label / 'module.wasm') == native_manifest['wasm_sha256']
 for relative, expected in native_manifest['source_files_sha256'].items():
     assert sha(root / 'source-head' / relative) == expected, relative
-print('Current-head Rust 1.82 tests, lint, build and restored-source Makefile test checked')
+print('Archived 7d9223a Rust 1.82 tests, lint, build and restored-source Makefile test checked')
 
 profile = root / 'runs/capacity-options-head-7d9223a6-20261110-a'
 
@@ -174,7 +176,7 @@ for group in groups:
         assert actual['finish'] == [(0, 'tool_calls')] and actual['done'] == 1
         assert actual['usage'] == [{'total_tokens': 20}]
         assert actual['text'] == {('0', 'content'): 'checking DEMO_SECRET'}
-print('Current-module capacity subset: 128 complete responses, sample RSS and P95 rechecked')
+print('Archived 7d9223a capacity subset: 128 complete responses, sample RSS and P95 rechecked')
 
 with tempfile.TemporaryDirectory(prefix='masking-live-offline-') as directory:
     subprocess.run([sys.executable, '-B', str(root / 'reproduce/reanalyze_live.py'),
@@ -183,4 +185,5 @@ with tempfile.TemporaryDirectory(prefix='masking-live-offline-') as directory:
     assert result['covered'] == 14 and result['model_calls_new'] == 0
 assert {str(path.relative_to(root)) for path in root.rglob('*') if path.is_file()
         and '.git' not in path.relative_to(root).parts and path != root / 'SHA256SUMS'} == listed
+subprocess.run([sys.executable, '-B', str(root / 'followup-20261111/verify_followup.py')], check=True)
 print('Offline package verification passed')

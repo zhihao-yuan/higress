@@ -1,0 +1,73 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 69859a7d..cfd5c1ad 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -4250,4 +4250,54 @@ mod tests {
+             assert_eq!(output, wire);
+         }
+     }
++    #[test]
++    fn raw_deny_batched_frames_do_not_retain_the_callback_allocation() {
++        let frame = b"data: {\"choices\":[]}\n\n";
++        assert_eq!(frame.len(), 22);
++        for prefix in [0, 1, 3] {
++            crate::test_host::reset();
++            let config = serde_json::from_value(json!({"deny_openai":false,"deny_raw":true,
++                "deny_words":["BLOCKED"],"tool_arguments":{"check":true,
++                    "limits":{"max_unparsed_bytes":22}}})).unwrap();
++            let mut plugin = AiDataMasking::new();
++            plugin.on_config(Rc::new(config));
++            plugin.on_http_request_complete_body(br#"{"stream":true,"messages":[]}"#);
++            let wire = frame.repeat(100);
++            let mut output = Vec::new();
++            for part in [&wire[..prefix], &wire[prefix..]] {
++                crate::test_host::response_input(part);
++                plugin.on_http_response_body(part.len(), false);
++                output.extend(crate::test_host::take_response_body().unwrap());
++            }
++            let tools = plugin.tools.as_ref().unwrap();
++            assert!(!tools.failed);
++            assert_eq!(output, wire);
++            assert!(tools.raw_deny.retained_capacity() <= frame.len(),
++                "raw deny allocated {} bytes for a {} byte frame limit", tools.raw_deny.retained_capacity(), frame.len());
++        }
++    }
++
++    #[test]
++    fn recognized_json_errors_do_not_use_the_unparsed_sse_limit() {
++        let input = json!({"error":{"message":"x".repeat(1030)}}).to_string().into_bytes();
++        for size in [1, 7, usize::MAX] {
++            crate::test_host::reset();
++            let config = serde_json::from_value(json!({"deny_openai":false,"deny_words":["BLOCKED"],
++                "tool_arguments":{"check":true,"limits":{"max_unparsed_bytes":16}}})).unwrap();
++            let mut plugin = AiDataMasking::new();
++            plugin.on_config(Rc::new(config));
++            plugin.on_http_request_complete_body(br#"{"stream":true,"messages":[]}"#);
++            let mut output = Vec::new();
++            let mut consumed = 0;
++            for chunk in input.chunks(size) {
++                consumed += chunk.len();
++                crate::test_host::response_input(chunk);
++                plugin.on_http_response_body(chunk.len(), consumed == input.len());
++                output.extend(crate::test_host::take_response_body().unwrap());
++            }
++            assert!(!plugin.tools.as_ref().unwrap().failed, "chunk size {size}");
++            assert_eq!(output, input, "chunk size {size}");
++        }
++    }
++
+ }
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs
+index add6ac0c..ee25d263 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs
+@@ -260,6 +260,9 @@ pub(super) struct RawDenyWindow {
+     bytes: Vec<u8>,
+ }
+ impl RawDenyWindow {
++    #[cfg(test)]
++    pub(super) fn retained_capacity(&self) -> usize { self.bytes.capacity() }
++
+     pub(super) fn push(
+         &mut self,
+         data: &[u8],

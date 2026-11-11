@@ -1,0 +1,13 @@
+--- a/tool_raw.rs
++++ b/tool_raw.rs
+@@ -321,9 +321,7 @@
+         }
+         self.bytes.drain(..cutoff);
+         // Keep only the deny-word overlap, not a previous frame's allocation.
+-        if self.bytes.capacity() > config.tool_arguments.limits.max_unparsed_bytes {
+-            self.bytes.shrink_to_fit();
+-        }
++
+         Ok(())
+     }
+ }

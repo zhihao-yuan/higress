@@ -1,0 +1,36 @@
+{
+  "power_events": [
+    {
+      "local_time": "2026-11-11 11:24:12 +0800",
+      "event": "Sleep"
+    },
+    {
+      "local_time": "2026-11-11 11:24:30 +0800",
+      "event": "Sleep"
+    },
+    {
+      "local_time": "2026-11-11 11:24:31 +0800",
+      "event": "Wake"
+    },
+    {
+      "local_time": "2026-11-11 11:24:31 +0800",
+      "event": "Sleep"
+    },
+    {
+      "local_time": "2026-11-11 11:26:34 +0800",
+      "event": "Wake"
+    },
+    {
+      "local_time": "2026-11-11 11:26:34 +0800",
+      "event": "Sleep"
+    },
+    {
+      "local_time": "2026-11-11 11:26:34 +0800",
+      "event": "Wake"
+    }
+  ],
+  "gateway_failed_request_ms": 124564,
+  "client_monotonic_seconds": 7.718249845085666,
+  "gap_seconds": 116.84575015491433,
+  "raw_system_log_saved": false
+}

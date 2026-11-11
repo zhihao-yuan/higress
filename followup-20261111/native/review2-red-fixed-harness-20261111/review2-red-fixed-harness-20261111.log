@@ -1,0 +1,71 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 20s
+     Running unittests src/lib.rs (/src/target/ci-rust180-20261110/debug/deps/ai_data_masking-ac9f7a8254604e7a)
+
+running 46 tests
+test ai_data_masking::tests::ambiguous_hash_restore_preserves_existing_substring_matching ... ok
+test ai_data_masking::tests::content_parts_preserve_unknown_fields_when_text_is_replaced ... ok
+test ai_data_masking::tests::general_restore_limit_is_explicit ... ok
+test ai_data_masking::tests::hash_and_general_matches_use_global_leftmost_longest_order ... ok
+test ai_data_masking::tests::ignores_unknown_fields_and_parses_stream ... ok
+test ai_data_masking::tests::masks_forty_five_thousand_unique_values_without_per_word_replacement ... ok
+test ai_data_masking::tests::merged_openai_content_scopes_keep_tool_fields_independent ... ok
+test ai_data_masking::tests::merged_openai_parse_errors_are_rejected_with_every_tool_scope ... ok
+test ai_data_masking::tests::non_openai_json_requests_remain_non_candidates ... ok
+test ai_data_masking::tests::non_textual_parts_preserve_text_fields_and_are_not_scanned ... ok
+test ai_data_masking::tests::nonstream_callback_restores_only_the_allowed_tool_string_value ... ok
+test ai_data_masking::tests::null_message_does_not_hide_other_message_text ... ok
+test ai_data_masking::tests::old_raw_restore_cannot_change_null_arguments ... ok
+test ai_data_masking::tests::opt_in_arguments_enter_the_request_callback_with_legacy_openai_disabled ... ok
+test ai_data_masking::tests::parses_nullable_response_content ... ok
+test ai_data_masking::tests::parses_reasoning_content_compatibly ... ok
+test ai_data_masking::tests::parses_supported_openai_content_shapes ... ok
+test ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation ... FAILED
+test ai_data_masking::tests::raw_rules_crossing_arguments_are_rejected_instead_of_truncated ... ok
+test ai_data_masking::tests::raw_stream_callback_restores_content_and_keeps_tool_arguments_masked ... ok
+test ai_data_masking::tests::recognized_json_errors_do_not_use_the_unparsed_sse_limit ... FAILED
+test ai_data_masking::tests::regex_runtime_error_is_returned_without_retrying ... ok
+test ai_data_masking::tests::rejects_invalid_openai_content_shapes ... ok
+test ai_data_masking::tests::repeated_hash_keeps_restore_mapping ... ok
+test ai_data_masking::tests::replacement_expands_captures_for_each_match_context ... ok
+test ai_data_masking::tests::request_callback_keeps_all_eight_tool_switch_combinations_separate ... ok
+test ai_data_masking::tests::request_history_does_not_use_response_buffer_or_call_limits ... ok
+test ai_data_masking::tests::response_callback_respects_all_eight_tool_switch_combinations ... ok
+test ai_data_masking::tests::response_limits_ignore_nonparameters_and_apply_before_rewrite_allocation ... ok
+test ai_data_masking::tests::response_sniffing_preserves_batched_frames_after_a_split_prefix ... ok
+test ai_data_masking::tests::restores_more_than_five_thousand_unique_values ... ok
+test ai_data_masking::tests::stream_request_accepts_a_json_error_response_without_content_type ... ok
+test ai_data_masking::tests::streaming_callback_runs_without_legacy_openai_and_keeps_failure_state ... ok
+test ai_data_masking::tests::system_deny_enters_only_the_explicit_new_check_scopes ... ok
+test ai_data_masking::tests::terminal_tool_frame_flushes_checked_text_before_arguments_and_finish ... ok
+test ai_data_masking::tests::tool_configuration_update_is_all_or_nothing ... ok
+test ai_data_masking::tests::tool_generated_maps_do_not_expand_legacy_content_restoration ... ok
+test ai_data_masking::tests::tool_limits_are_positive_integers_only_when_arguments_are_enabled ... ok
+test ai_data_masking::tests::tool_literal_masking_limits_expansion_and_keeps_capture_semantics ... ok
+test ai_data_masking::tests::tool_request_masks_once_with_raw_and_argument_jsonpath_rules ... ok
+test ai_data_masking::tests::tool_restore_rejects_invalid_or_ambiguous_allowlists ... ok
+test ai_data_masking::tests::tool_restore_requires_an_explicit_allowlist ... ok
+test ai_data_masking::tests::tool_restore_shares_maps_in_one_direction_and_rejects_collisions ... ok
+test ai_data_masking::tests::tool_switches_are_independent_and_inactive_dependencies_are_ignored ... ok
+test ai_data_masking::tests::undecided_response_prefix_is_bounded_and_failure_stays_closed ... ok
+test ai_data_masking::tests::unterminated_usage_event_is_separated_from_http_end_tool_arguments ... ok
+
+failures:
+
+---- ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation stdout ----
+thread 'ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation' panicked at src/ai_data_masking.rs:4275:13:
+raw deny allocated 2200 bytes for a 22 byte frame limit
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- ai_data_masking::tests::recognized_json_errors_do_not_use_the_unparsed_sse_limit stdout ----
+thread 'ai_data_masking::tests::recognized_json_errors_do_not_use_the_unparsed_sse_limit' panicked at src/ai_data_masking.rs:4298:13:
+chunk size 1
+
+
+failures:
+    ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation
+    ai_data_masking::tests::recognized_json_errors_do_not_use_the_unparsed_sse_limit
+
+test result: FAILED. 44 passed; 2 failed; 0 ignored; 0 measured; 44 filtered out; finished in 210.09s
+
+error: test failed, to rerun pass `--lib`

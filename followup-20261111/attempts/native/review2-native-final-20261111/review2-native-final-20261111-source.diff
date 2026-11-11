@@ -1,0 +1,399 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/README.md b/plugins/wasm-rust/extensions/ai-data-masking/README.md
+index 4a191ecd..3a8f3690 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/README.md
++++ b/plugins/wasm-rust/extensions/ai-data-masking/README.md
+@@ -65,9 +65,9 @@ description: AI 数据脱敏插件配置参考
+ | `tool_arguments.limits.max_unparsed_bytes` | 正整数 | 沿用 `max_buffer_bytes` | 单个原始 SSE 帧及响应格式识别缓存的硬上限，按网络字节计 |
+ | `tool_arguments.limits.max_calls` | 正整数 | 128 | 每个响应登记过的需处理 call 数，结束后仍计数 |
+ 
+-未解析缓存单独按 `max_unparsed_bytes` 限制，包含协议字段和外层 JSON 转义。可以单独调高它，同时保留较小的参数预算；未配置时沿用 `max_buffer_bytes`。帧边界之前先检查空间，再追加数据；一次回调中的多帧逐帧处理。超限后丢弃待发参数并保持拒绝状态。只开启定义检查不启用这项响应限制。
++未解析缓存单独按 `max_unparsed_bytes` 限制，包含协议字段和外层 JSON 转义。可以单独调高它，同时保留较小的参数预算；未配置时沿用 `max_buffer_bytes`。帧边界之前先检查空间，再追加数据；一次回调中的多帧逐帧处理。启用 `deny_raw` 时，原始检查也只接收已经检查过大小的帧，不复制整批回调。其关键词重叠窗口另有开销。已经识别为普通 JSON 的完整响应不受这项 SSE 限制。超限后丢弃待发参数并保持拒绝状态。只开启定义检查不启用这项响应限制。
+ 
+-以上三项数值是当前开发分支的候选值，需完成容量验证后才能确定发布默认值。总量预算不等于网关 RSS 上限；解析树、协议编码、旧文字窗口和其他 HTTP 缓冲另有开销。请求历史只检查单 call 上限，不套用响应总量和 call 数上限。关闭新功能时，这些上限不影响旧路径。
++单 call 1 MiB、单响应 4 MiB、128 次调用作为过渡期默认值保留。后续收紧前，需要观察解码后参数大小的 P95/P99 和超限率。总量预算不等于网关 RSS 上限；解析树、协议编码、旧文字窗口和其他 HTTP 缓冲另有开销。请求历史只检查单 call 上限，不套用响应总量和 call 数上限。关闭新功能时，这些上限不影响旧路径。
+ 
+ 新检查复用 `deny_words`、`system_deny` 和 `replace_roles`。参数覆盖现代 `tool_calls[].function.arguments` 与 legacy `function_call.arguments`，包括请求历史、普通响应和 SSE delta；不依赖旧 `deny_openai` 开关。只开定义检查不接管响应。定义检查涵盖字符串叶子以及 schema 的 properties、patternProperties、$defs、definitions 等动态名称。
+ 
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/README_EN.md b/plugins/wasm-rust/extensions/ai-data-masking/README_EN.md
+index bfb26f2c..e64ef244 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/README_EN.md
++++ b/plugins/wasm-rust/extensions/ai-data-masking/README_EN.md
+@@ -60,9 +60,9 @@ Plugin Execution Priority: `991`
+ | `tool_arguments.limits.max_unparsed_bytes` | positive integer | Inherits `max_buffer_bytes` | Hard byte ceiling for one wire SSE frame and buffered response-format detection |
+ | `tool_arguments.limits.max_calls` | positive integer | 128 | Registered calls requiring processing, including completed calls |
+ 
+-`max_unparsed_bytes` counts wire bytes, including protocol fields and outer JSON escaping. Set it separately when framing requires more room than the parameter budget. If omitted, it inherits `max_buffer_bytes`. Space is checked before appending bytes, and batched events are processed one at a time. Exceeding this ceiling discards queued arguments and keeps the response rejected. Definition-only checks do not enable this response limit.
++`max_unparsed_bytes` counts wire bytes, including protocol fields and outer JSON escaping. Set it separately when framing requires more room than the parameter budget. If omitted, it inherits `max_buffer_bytes`. Space is checked before appending bytes, and batched events are processed one at a time. With `deny_raw` enabled, raw checks receive only size-checked frames, rather than copying the entire callback. The deny-word overlap window has separate overhead. Complete responses identified as ordinary JSON are not subject to this SSE limit. Exceeding this ceiling discards queued arguments and keeps the response rejected. Definition-only checks do not enable this response limit.
+ 
+-These values are development candidates pending capacity verification before release. The buffer budget is not an RSS cap: parsing trees, protocol encoding, legacy text windows, and HTTP buffering have additional costs. Request history uses only the per-call limit, not response byte/count quotas. Disabled features do not impose these limits on legacy traffic.
++The transitional defaults remain 1 MiB per call, 4 MiB per response, and 128 calls. Tightening them requires observations of decoded argument sizes (P95/P99) and exceedance rates. The buffer budget is not an RSS cap: parsing trees, protocol encoding, legacy text windows, and HTTP buffering have additional costs. Request history uses only the per-call limit, not response byte/count quotas. Disabled features do not impose these limits on legacy traffic.
+ 
+ The checks use existing `deny_words`, `system_deny`, and `replace_roles`. Arguments include modern `tool_calls[].function.arguments` and legacy `function_call.arguments` in request history, JSON responses, and SSE deltas, independently of `deny_openai`. Definition-only checks do not take over responses. Definitions include string leaves and dynamic schema names under properties, patternProperties, $defs, definitions and related dependency fields.
+ 
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+index 69859a7d..2a252c08 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -1969,7 +1969,7 @@ impl AiDataMasking {
+                     Some(size) => size > config.tool_arguments.limits.max_unparsed_bytes,
+                     None => true,
+                 };
+-                if exceeds_unparsed_limit {
++                if tools.response_stream.is_none() && exceeds_unparsed_limit {
+                     return self.fail_tool_stream(tools, "unparsed response buffer limit exceeded");
+                 }
+                 tools.probe.extend_from_slice(body);
+@@ -1992,15 +1992,21 @@ impl AiDataMasking {
+             .map(|bytes| (bytes.as_slice(), false))
+             .chain(std::iter::once((body, end)))
+         {
+-            if raw_mode {
+-                if let Err(reason) = tools.raw_deny.push(part, part_end, &config, &self.log) {
+-                    return self.fail_tool_stream(tools, reason);
+-                }
+-            }
+-            match tools
+-                .stream
+-                .push(part, part_end, &config, &tools.restore, &self.log)
+-            {
++            let result = if raw_mode {
++                tools.stream.push_with_raw_deny(
++                    part,
++                    part_end,
++                    &config,
++                    &tools.restore,
++                    &self.log,
++                    Some(&mut tools.raw_deny),
++                )
++            } else {
++                tools
++                    .stream
++                    .push(part, part_end, &config, &tools.restore, &self.log)
++            };
++            match result {
+                 Ok(output) => actions.extend(output),
+                 Err(reason) => return self.fail_tool_stream(tools, reason),
+             }
+@@ -4250,4 +4256,62 @@ mod tests {
+             assert_eq!(output, wire);
+         }
+     }
++    #[test]
++    fn raw_deny_batched_frames_do_not_retain_the_callback_allocation() {
++        let frame = b"data: {\"choices\":[]}\n\n";
++        assert_eq!(frame.len(), 22);
++        for prefix in [0, 1, 3] {
++            crate::test_host::reset();
++            let config = serde_json::from_value(json!({"deny_openai":false,"deny_raw":true,
++                "deny_words":["BLOCKED"],"tool_arguments":{"check":true,
++                    "limits":{"max_unparsed_bytes":22}}}))
++            .unwrap();
++            let mut plugin = AiDataMasking::new();
++            plugin.on_config(Rc::new(config));
++            plugin.on_http_request_complete_body(&br#"{"stream":true,"messages":[]}"#.to_vec());
++            let wire = frame.repeat(100);
++            let mut output = Vec::new();
++            for part in [&wire[..prefix], &wire[prefix..]] {
++                crate::test_host::response_input(part);
++                plugin.on_http_response_body(part.len(), false);
++                output.extend(crate::test_host::take_response_body().unwrap());
++            }
++            let tools = plugin.tools.as_ref().unwrap();
++            assert!(!tools.failed);
++            assert_eq!(output, wire);
++            assert!(
++                tools.raw_deny.retained_capacity() <= frame.len(),
++                "raw deny allocated {} bytes for a {} byte frame limit",
++                tools.raw_deny.retained_capacity(),
++                frame.len()
++            );
++        }
++    }
++
++    #[test]
++    fn recognized_json_errors_do_not_use_the_unparsed_sse_limit() {
++        let input = json!({"error":{"message":"x".repeat(1030)}})
++            .to_string()
++            .into_bytes();
++        for size in [1, 7, usize::MAX] {
++            crate::test_host::reset();
++            let config =
++                serde_json::from_value(json!({"deny_openai":false,"deny_words":["BLOCKED"],
++                "tool_arguments":{"check":true,"limits":{"max_unparsed_bytes":16}}}))
++                .unwrap();
++            let mut plugin = AiDataMasking::new();
++            plugin.on_config(Rc::new(config));
++            plugin.on_http_request_complete_body(&br#"{"stream":true,"messages":[]}"#.to_vec());
++            let mut output = Vec::new();
++            let mut consumed = 0;
++            for chunk in input.chunks(size) {
++                consumed += chunk.len();
++                crate::test_host::response_input(chunk);
++                plugin.on_http_response_body(chunk.len(), consumed == input.len());
++                output.extend(crate::test_host::take_response_body().unwrap());
++            }
++            assert!(!plugin.tools.as_ref().unwrap().failed, "chunk size {size}");
++            assert_eq!(output, input, "chunk size {size}");
++        }
++    }
+ }
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
+index 5ffb2bd7..0980681c 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_config.rs
+@@ -24,7 +24,7 @@ pub(crate) struct ToolArgumentsConfig {
+     pub(crate) limits: ToolLimits,
+ }
+ 
+-// Candidate defaults from the approved Design; release values require T5 evidence.
++// Transitional defaults retained after maintainer review; tightening needs size observations.
+ #[derive(Clone, Debug)]
+ pub(crate) struct ToolLimits {
+     pub(crate) max_call_bytes: usize,
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs
+index add6ac0c..c99b5872 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_raw.rs
+@@ -260,6 +260,11 @@ pub(super) struct RawDenyWindow {
+     bytes: Vec<u8>,
+ }
+ impl RawDenyWindow {
++    #[cfg(test)]
++    pub(super) fn retained_capacity(&self) -> usize {
++        self.bytes.capacity()
++    }
++
+     pub(super) fn push(
+         &mut self,
+         data: &[u8],
+@@ -270,6 +275,8 @@ impl RawDenyWindow {
+         if config.deny_words.is_empty() && !config.system_deny {
+             return Ok(());
+         }
++        // Production input is one size-checked SSE frame, never a host batch.
++        self.bytes.reserve_exact(data.len());
+         self.bytes.extend_from_slice(data);
+         let valid = match std::str::from_utf8(&self.bytes) {
+             Ok(text) => text.len(),
+@@ -313,6 +320,10 @@ impl RawDenyWindow {
+             cutoff = at;
+         }
+         self.bytes.drain(..cutoff);
++        // Keep only the deny-word overlap, not a previous frame's allocation.
++        if self.bytes.capacity() > config.tool_arguments.limits.max_unparsed_bytes {
++            self.bytes.shrink_to_fit();
++        }
+         Ok(())
+     }
+ }
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 7fc20c11..6f3270c3 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -65,6 +65,7 @@ impl SseDecoder {
+                 .iter()
+                 .position(|byte| matches!(byte, b'\r' | b'\n'))
+                 .map_or(piece.len(), |position| position + 1);
++            self.pending.reserve_exact(count);
+             self.pending.extend_from_slice(&input[..count]);
+             *input = &input[count..];
+         }
+@@ -465,6 +466,18 @@ impl ToolStream {
+         config: &AiDataMaskingConfig,
+         restore: &ToolRestore,
+         log: &Log,
++    ) -> Result<Vec<StreamAction>, &'static str> {
++        self.push_with_raw_deny(data, end, config, restore, log, None)
++    }
++
++    pub(super) fn push_with_raw_deny(
++        &mut self,
++        data: &[u8],
++        end: bool,
++        config: &AiDataMaskingConfig,
++        restore: &ToolRestore,
++        log: &Log,
++        mut raw_deny: Option<&mut tool_raw::RawDenyWindow>,
+     ) -> Result<Vec<StreamAction>, &'static str> {
+         let mut actions = Vec::new();
+         let mut input = data;
+@@ -473,6 +486,11 @@ impl ToolStream {
+             end,
+             config.tool_arguments.limits.max_unparsed_bytes,
+         )? {
++            // The decoder enforces the frame limit before the raw checker can
++            // copy bytes. A large callback of small events is processed in order.
++            if let Some(window) = raw_deny.as_deref_mut() {
++                window.push(&raw, false, config, log)?;
++            }
+             // A flushed HTTP tail must end before any buffered args we append.
+             ensure_event_boundary(&mut raw);
+             let data = payload(&raw);
+@@ -689,6 +707,11 @@ impl ToolStream {
+         if end && !self.errored {
+             self.complete_choice(None, config, restore, log, &mut actions)?;
+         }
++        if end {
++            if let Some(window) = raw_deny {
++                window.push(&[], true, config, log)?;
++            }
++        }
+         Ok(actions)
+     }
+ }
+@@ -1053,4 +1076,78 @@ mod tests {
+             }
+         }
+     }
++    #[test]
++    fn raw_deny_sees_only_bounded_frames_and_preserves_cross_event_matches() {
++        let mut config: AiDataMaskingConfig = serde_json::from_value(json!({
++            "deny_openai":false,"deny_raw":true,"deny_words":["BLOCKED", "one\n\n: two"],
++            "tool_arguments":{"check":true,"limits":{"max_unparsed_bytes":22}}
++        }))
++        .unwrap();
++        let log = Log::new("test".into());
++        let restore = ToolRestore::default();
++        let mut stream = ToolStream::default();
++        let mut window = tool_raw::RawDenyWindow::default();
++        let oversized = format!("data: {}\n\ndata: [DONE]\n\n", "x".repeat(2200));
++        assert!(stream
++            .push_with_raw_deny(
++                oversized.as_bytes(),
++                true,
++                &config,
++                &restore,
++                &log,
++                Some(&mut window)
++            )
++            .is_err());
++        assert_eq!(
++            window.retained_capacity(),
++            0,
++            "oversized frame was copied before validation"
++        );
++        config.tool_arguments.limits.max_unparsed_bytes = 64;
++        for size in [1, 17, usize::MAX] {
++            let mut stream = ToolStream::default();
++            let mut window = tool_raw::RawDenyWindow::default();
++            let mut denied = false;
++            for chunk in b": one\n\n: two\n\ndata: [DONE]\n\n".chunks(size) {
++                if stream
++                    .push_with_raw_deny(chunk, false, &config, &restore, &log, Some(&mut window))
++                    .is_err()
++                {
++                    denied = true;
++                    break;
++                }
++            }
++            assert!(
++                denied,
++                "cross-event raw keyword missed at chunk size {size}"
++            );
++        }
++    }
++
++    #[test]
++    fn default_response_call_count_accepts_127_and_128_but_rejects_129() {
++        let (mut config, restore) = fixture();
++        let log = Log::new("test".into());
++        for check in [false, true] {
++            config.tool_arguments.check = check;
++            for count in [127, 128, 129] {
++                let calls: Vec<_> = (0..count).map(|index| json!({"index":index,
++                    "id":format!("call-{index}"),"function":{"name":"lookup_customer","arguments":"{}"}})).collect();
++                let event = json!({"choices":[{"index":0,"delta":{"tool_calls":calls},"finish_reason":"tool_calls"}]});
++                let wire = format!("data: {event}\n\ndata: [DONE]\n\n");
++                let result =
++                    ToolStream::default().push(wire.as_bytes(), true, &config, &restore, &log);
++                assert_eq!(result.is_ok(), count <= 128, "check={check}, count={count}");
++                if let Ok(actions) = result {
++                    assert_eq!(
++                        actions
++                            .iter()
++                            .filter(|a| matches!(a, StreamAction::Arguments(_)))
++                            .count(),
++                        count
++                    );
++                }
++            }
++        }
++    }
+ }
+diff --git a/verification/ai-data-masking-tool-arguments/verify_limits.py b/verification/ai-data-masking-tool-arguments/verify_limits.py
+index 37189719..e4c50292 100644
+--- a/verification/ai-data-masking-tool-arguments/verify_limits.py
++++ b/verification/ai-data-masking-tool-arguments/verify_limits.py
+@@ -154,6 +154,15 @@ def main():
+                 calls = [{'name': 'lookup', 'index': index, 'id': 'call-' + str(index), 'arguments': '{}'} for index in range(count)]
+                 cases.append({'spec': {'calls': calls}, 'expected': 'pass' if count <= maximum else 'response-denied', 'streams': (True,)})
+             group(f'count-{maximum}', config({'max_call_bytes': 1024, 'max_buffer_bytes': 100000, 'max_calls': maximum}), cases)
++        # Maintainer-requested production count boundary, with default limits.
++        for restore in (False, True):
++            settings = config({}, restore=restore)
++            settings['tool_arguments']['limits'] = {}
++            cases = []
++            for count in (127, 128, 129):
++                calls = [{'name': 'lookup', 'index': index, 'id': 'call-' + str(index), 'arguments': '{}'} for index in range(count)]
++                cases.append({'spec': {'calls': calls}, 'expected': 'pass' if count <= 128 else 'response-denied'})
++            group('default-count-' + ('restore' if restore else 'check'), settings, cases)
+         # Restore expands a four-byte placeholder to 51/52/53 bytes; the
+         # containing JSON adds 12 bytes. Request history is restore-only.
+         for size in (63, 64, 65):
+diff --git a/verification/ai-data-masking-tool-arguments/verify_unparsed.py b/verification/ai-data-masking-tool-arguments/verify_unparsed.py
+index 1b3a17e5..b426ea99 100644
+--- a/verification/ai-data-masking-tool-arguments/verify_unparsed.py
++++ b/verification/ai-data-masking-tool-arguments/verify_unparsed.py
+@@ -32,26 +32,30 @@ def cases():
+     small = 'data: {"choices":[]}\n\n'
+     yield 'batched', small * 100, len(small.encode()), True
+     yield 'undecided-prefix', ' ' * 1030, 16, False
++    yield 'json-error', json.dumps({'error': {'message': 'x' * 1030}}, separators=(',', ':')), 16, True
+ 
+ 
+ def main():
+     args = arguments(__doc__).parse_args()
+     rows = []
+     with Lab(args, 'unparsed-buffer') as lab:
+-        for variant in ('baseline', 'candidate'):
++        for variant, raw_mode in ((variant, raw) for raw in (False, True) for variant in ('baseline', 'candidate')):
+             for label, wire, limit, allowed in cases():
+                 settings = deepcopy(BASE_CONFIG)
++                if raw_mode:
++                    settings.update(deny_openai=False, deny_raw=True)
+                 settings['tool_arguments'] = {'check': True, 'limits': {
+                     'max_call_bytes': 16, 'max_buffer_bytes': 16}}
+                 if limit is not None:
+                     settings['tool_arguments']['limits']['max_unparsed_bytes'] = limit
+-                gateway = lab.start(variant + '-' + label, settings, variant + '.wasm')
++                group = variant + '-' + ('raw-' if raw_mode else 'text-') + label
++                gateway = lab.start(group, settings, variant + '.wasm')
+                 try:
+                     for delivery in ('single', 'events', 'fragment17', 'prefix1'):
+-                        case = variant + '-' + label + '-' + delivery
++                        case = group + '-' + delivery
+                         lab.save('cases/' + case + '.fixture.json', {'raw': wire})
+                         row, body = lab.request(gateway, case, request_for('normal', True),
+-                                                scenario='missing-content-type' if label == 'undecided-prefix' else 'normal',
++                                                scenario='missing-content-type' if label in ('undecided-prefix', 'json-error') else 'normal',
+                                                 delivery=delivery)
+                         try:
+                             assert row['curl_exit'] == 0 and row['status'] == '200' and row['upstream_received'], row
+@@ -67,7 +71,7 @@ def main():
+                                 assert body == b'', 'Rejected raw bytes reached the client'
+                                 assert parse(body, True)['done'] == 0
+                                 row['expected_baseline_failure'] = False
+-                            row.update(passed=True, wire_bytes=len(original), max_unparsed_bytes=limit or 16)
++                            row.update(passed=True, raw_mode=raw_mode, wire_bytes=len(original), max_unparsed_bytes=limit or 16)
+                         except Exception as error:
+                             row.update(passed=False, error=str(error))
+                             raise
+@@ -76,7 +80,7 @@ def main():
+                             lab.save('results.json', rows)
+                 finally:
+                     lab.stop(gateway)
+-                print(json.dumps({'group': variant + '-' + label, 'passed': len(rows)}), flush=True)
++                print(json.dumps({'group': group, 'passed': len(rows)}), flush=True)
+         lab.save('summary.json', {'passed': len(rows), 'failed': 0,
+             'baseline_scope_failures': sum(row['expected_baseline_failure'] for row in rows), 'model_requests': 0})
+ 

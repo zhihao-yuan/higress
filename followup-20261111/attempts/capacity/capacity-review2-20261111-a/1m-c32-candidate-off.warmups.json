@@ -1,0 +1,62 @@
+[
+  {
+    "case": "1m-c32-candidate-off-warm-0",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "status": 200,
+    "first_metadata_seconds": 0.05091392691247165,
+    "first_arguments_seconds": 0.05096736690029502,
+    "last_arguments_seconds": 0.08960294490680099,
+    "complete_response_seconds": 0.08980138599872589,
+    "body_sha256": "dda6c700818902dcc877cfcfd5d865f2ad6ac12e60c42397aa9a1d3e4c436be6",
+    "body_bytes": 1085151,
+    "arguments_sha256": {
+      "0:modern:0": "6ec10ed3c90131313756a771fff7460146f22ebe9e164a49e4bc36a2a98d1f40"
+    },
+    "passed": true
+  },
+  {
+    "case": "1m-c32-candidate-off-warm-1",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "status": 200,
+    "first_metadata_seconds": 0.03779013501480222,
+    "first_arguments_seconds": 0.03781169420108199,
+    "last_arguments_seconds": 0.05456850421614945,
+    "complete_response_seconds": 0.054785127053037286,
+    "body_sha256": "dda6c700818902dcc877cfcfd5d865f2ad6ac12e60c42397aa9a1d3e4c436be6",
+    "body_bytes": 1085151,
+    "arguments_sha256": {
+      "0:modern:0": "6ec10ed3c90131313756a771fff7460146f22ebe9e164a49e4bc36a2a98d1f40"
+    },
+    "passed": true
+  },
+  {
+    "case": "1m-c32-candidate-off-warm-2",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "status": 200,
+    "first_metadata_seconds": 0.04276755591854453,
+    "first_arguments_seconds": 0.04278751485981047,
+    "last_arguments_seconds": 0.06455490295775235,
+    "complete_response_seconds": 0.06483404687605798,
+    "body_sha256": "dda6c700818902dcc877cfcfd5d865f2ad6ac12e60c42397aa9a1d3e4c436be6",
+    "body_bytes": 1085151,
+    "arguments_sha256": {
+      "0:modern:0": "6ec10ed3c90131313756a771fff7460146f22ebe9e164a49e4bc36a2a98d1f40"
+    },
+    "passed": true
+  },
+  {
+    "case": "1m-c32-candidate-off-warm-3",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "status": 200,
+    "first_metadata_seconds": 0.035890643019229174,
+    "first_arguments_seconds": 0.035913126077502966,
+    "last_arguments_seconds": 0.052208157954737544,
+    "complete_response_seconds": 0.05248178797774017,
+    "body_sha256": "dda6c700818902dcc877cfcfd5d865f2ad6ac12e60c42397aa9a1d3e4c436be6",
+    "body_bytes": 1085151,
+    "arguments_sha256": {
+      "0:modern:0": "6ec10ed3c90131313756a771fff7460146f22ebe9e164a49e4bc36a2a98d1f40"
+    },
+    "passed": true
+  }
+]

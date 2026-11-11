@@ -1,0 +1,35 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+error[E0308]: mismatched types
+    --> src/ai_data_masking.rs:4264:50
+     |
+4264 |             plugin.on_http_request_complete_body(br#"{"stream":true,"messages":[]}"#);
+     |                    ----------------------------- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `&Vec<u8>`, found `&[u8; 29]`
+     |                    |
+     |                    arguments to this method are incorrect
+     |
+     = note: expected reference `&std::vec::Vec<u8>`
+                found reference `&'static [u8; 29]`
+note: method defined here
+    --> /src/src/plugin_wrapper.rs:130:8
+     |
+130  |     fn on_http_request_complete_body(&mut self, _req_body: &Bytes) -> DataAction {
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0308]: mismatched types
+    --> src/ai_data_masking.rs:4289:50
+     |
+4289 |             plugin.on_http_request_complete_body(br#"{"stream":true,"messages":[]}"#);
+     |                    ----------------------------- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `&Vec<u8>`, found `&[u8; 29]`
+     |                    |
+     |                    arguments to this method are incorrect
+     |
+     = note: expected reference `&std::vec::Vec<u8>`
+                found reference `&'static [u8; 29]`
+note: method defined here
+    --> /src/src/plugin_wrapper.rs:130:8
+     |
+130  |     fn on_http_request_complete_body(&mut self, _req_body: &Bytes) -> DataAction {
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `ai-data-masking` (lib test) due to 2 previous errors

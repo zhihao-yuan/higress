@@ -1,0 +1,12 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant","content":"ordinary response"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"name":"lookup"}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"function_call":{"arguments":"{\"email\":\"DEMO_SECRET\""}},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: {"choices":[],"usage":{"total_tokens":20}}
+
+data: [DONE]
+

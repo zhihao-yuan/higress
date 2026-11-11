@@ -1,0 +1,11 @@
+--- a/tool_config.rs
++++ b/tool_config.rs
+@@ -39,7 +39,7 @@
+             max_call_bytes: 1_048_576,
+             max_buffer_bytes: 4_194_304,
+             max_unparsed_bytes: 4_194_304,
+-            max_calls: 128,
++            max_calls: 129,
+         }
+     }
+ }

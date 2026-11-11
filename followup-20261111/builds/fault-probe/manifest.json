@@ -1,0 +1,31 @@
+{
+  "diagnostic_only": true,
+  "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+  "archive_sha256": "c85b4fb04e5b0041073b6e28123b3accb2d12bcdd6453f929aa038e3ed2e5849",
+  "instrumentation_sha256": "0e41087850fe2412147153a0054209365eb04cb27b35f6e52db1176876dfb57f",
+  "modified_source_sha256": "47fd1cb8ea7ba06d0bc2276f5f9afd415708a9ea9dfe249d1d62d1859191eb0d",
+  "command": [
+    "docker",
+    "exec",
+    "-w",
+    "/src/target/review2-fault-probe-source-20261111/plugins/wasm-rust/extensions/ai-data-masking",
+    "-e",
+    "CARGO_TARGET_DIR=/src/target/ci-rust180-20261110-artifacts",
+    "higress5213-builder",
+    "cargo",
+    "+1.80.0",
+    "build",
+    "--locked",
+    "--offline",
+    "--release",
+    "--target",
+    "wasm32-wasip1"
+  ],
+  "exit_code": 0,
+  "effective_lock_path": "plugins/wasm-rust/extensions/ai-data-masking/Cargo.lock",
+  "effective_lock_sha256": "267ee4b1873ea76e260d416e20bdf0335c9e63df3fe3098854254b7aa848f99c",
+  "sdk_root_lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+  "rust_toolchain": "1.80.0",
+  "wasm_sha256": "96eaec1b1707b8669ea3ace31ec71e4ac043bf24b3707fa17fcba3f81a691728",
+  "wasm_bytes": 7212502
+}

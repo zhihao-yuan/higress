@@ -1,0 +1,4238 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "h5213-r2-configuration"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7721886239014566
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-fixture",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 10.079832796938717
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.35810998105444
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-dynamic",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/bin/sh",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "cp /lab/update-good-1.json /tmp/extension.json && exec /usr/local/bin/envoy -c \"$1\" --concurrency 1 --log-level info",
+      "gateway",
+      "/lab/dynamic.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 6.743419378995895
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10480346414260566
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3700197581201792
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:55667/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: before-bad",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-review2-20261111-a/cases/before-bad.request",
+      "-D",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/before-bad.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/before-bad.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06893554399721324
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "/bin/sh",
+      "-c",
+      "cp \"$1\" /tmp/extension.next && mv /tmp/extension.next /tmp/extension.json",
+      "update",
+      "/lab/update-bad-2.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.60954076400958
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=extension_config_discovery"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.2247191751375794
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5956399769056588
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:55667/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: after-bad",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-review2-20261111-a/cases/after-bad.request",
+      "-D",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/after-bad.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/after-bad.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09829658409580588
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "/bin/sh",
+      "-c",
+      "cp \"$1\" /tmp/extension.next && mv /tmp/extension.next /tmp/extension.json",
+      "update",
+      "/lab/update-good-3.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.464777538087219
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 8.926500599831343
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:55667/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: new-good-allows-previous-word",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-review2-20261111-a/cases/new-good-allows-previous-word.request",
+      "-D",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/new-good-allows-previous-word.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/new-good-allows-previous-word.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13955294899642467
+  },
+  {
+    "command": [
+      "curl",
+      "-sS",
+      "-N",
+      "--connect-timeout",
+      "3",
+      "--max-time",
+      "120",
+      "http://127.0.0.1:55667/v1/chat/completions",
+      "-H",
+      "Content-Type: application/json",
+      "-H",
+      "X-Test-Case: new-good-blocks-new-word",
+      "-H",
+      "X-Scenario: normal",
+      "-H",
+      "X-Delivery: single",
+      "--data-binary",
+      "@/path/to/verification-lab/configuration-review2-20261111-a/cases/new-good-blocks-new-word.request",
+      "-D",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/new-good-blocks-new-word.headers",
+      "-o",
+      "/path/to/verification-lab/configuration-review2-20261111-a/cases/new-good-blocks-new-word.body",
+      "-w",
+      "%{http_code}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04534017597325146
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2226462720427662
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.6140970890410244
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.6259977410081774
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4420159428846091
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "11cbe0ebd4bb9555a1605ac9f9f014df05561cb75c12088bbc29a7b4dc41dddb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.203778320923448
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-static-missing-allowlist",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-missing-allowlist.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.3237875720951706
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0848416939843446
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08539168094284832
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12991241598501801
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4351175359915942
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22329581691883504
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.30161318206228316
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5587542988359928
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5005324890371412
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1595064119901508
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1406030929647386
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11806826596148312
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08867229311726987
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19163205800577998
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08702463493682444
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17573227686807513
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11056906008161604
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21882368298247457
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13199755502864718
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10811095801182091
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21407246589660645
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.507163702044636
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8272504820488393
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3643712289631367
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20460041402839124
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09548682300373912
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13624800299294293
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16757287899963558
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27941348403692245
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.28034310578368604
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5843596470076591
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.49645910202525556
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.48950687306933105
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.45284343091771007
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.28856934793293476
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.25220530782826245
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13744906289502978
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14287030906416476
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09581364504992962
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2086561699397862
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09616578090935946
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18649180210195482
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11643011402338743
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1644116579554975
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1887726471759379
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15500143985264003
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10573130799457431
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10548774409107864
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1261673488188535
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0935816999990493
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09509488311596215
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08862013719044626
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1093746351543814
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10912563814781606
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10658741905353963
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10235330183058977
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10524770896881819
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11648811702616513
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1094789698254317
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16195222199894488
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1987601718865335
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13761452795006335
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12608787906356156
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9724370948970318
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15450793504714966
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3391053010709584
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.2050756011158228
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.09991166391409934
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08283126982860267
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "1d4e6304eaa18b0532059d19621f1f800c4dc827e75eb6d7004e000c0ea3d1d9"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6206843650434166
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-static-bad-pointer",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-pointer.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.2875137419905514
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09190087905153632
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14370925282128155
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09966631908901036
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1081451119389385
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.086299346992746
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09865562594495714
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14101212308742106
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19787033507600427
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1428174909669906
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12324557406827807
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08886106708087027
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12921668589115143
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08809285890311003
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10183942620642483
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11800501612015069
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12580477097071707
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08081833901815116
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07720706798136234
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09164825407788157
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12299128295853734
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0855564707890153
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09084141999483109
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11867686500772834
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10007030586712062
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11117358691990376
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09585052193142474
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0790439029224217
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11653391201980412
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13510952284559608
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08958217804320157
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14099728502333164
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16608558711595833
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12506740912795067
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11409482988528907
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14312379714101553
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09041383606381714
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0894046991597861
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10473860008642077
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09955141507089138
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1062800690997392
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10129863419570029
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22037660516798496
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0896922298707068
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1035205798689276
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08758539496921003
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12834124104119837
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15897479886189103
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10276408097706735
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1164693629834801
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12503928178921342
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09436879004351795
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15378533606417477
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15155954007059336
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1023337128572166
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16045958898030221
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23926252010278404
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0839075050316751
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.43625901313498616
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1218499259557575
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10457393806427717
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.1000125459395349
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.1253528359811753
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11576337902806699
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "519a6fff5d30987e388a2b6c9b1857b425fbf7aac04d6e6193fb28fb5e619ac2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5537617970257998
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-static-bad-limit",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-limit.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.6008299831300974
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10671826614998281
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20763073698617518
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21094850893132389
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10788729903288186
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07909283204935491
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09406251716427505
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0966640030965209
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6239380079787225
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1319075981155038
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11433179909363389
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10306818480603397
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1463647079654038
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2397499440703541
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08868249994702637
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09621205599978566
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15139221283607185
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0973938349634409
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09287168807350099
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13266421994194388
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.24096051114611328
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15209233318455517
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.462591151939705
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13098652404733002
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16263733198866248
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14195163291878998
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10282963397912681
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10519817215390503
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08070293487980962
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13603185792453587
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.188354698009789
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09694291302002966
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11781125701963902
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07873290404677391
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11963940784335136
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2621610020287335
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3576991679146886
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5634346110746264
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12423662887886167
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.707098226994276
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.881374198012054
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3259719009511173
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15995790716260672
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11949065513908863
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.24224605807103217
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.26857378683052957
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.26074980990961194
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21819554292596877
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13572646491229534
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9967544130049646
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1320396929513663
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11789829889312387
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.21460623992606997
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.23487052111886442
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15669099893420935
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "f5f81734aaa9451697fa79ead1b677409b632391c5d09ac8617bf5ddf8f11f49"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27087503392249346
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-static-bad-global-valid-rule",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-global-valid-rule.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.185810082126409
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14820622699335217
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2160329578910023
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22045174101367593
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23001305805519223
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21740626893006265
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.359096015105024
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5941925831139088
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7401850698515773
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0918435170315206
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10057696397416294
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13765620603226125
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15324811288155615
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17014396679587662
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22213122597895563
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18054505111649632
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15180397196672857
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08351467410102487
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13798465207219124
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09438715316355228
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15198460291139781
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23990080901421607
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1642562630586326
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11697405180893838
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.35135736619122326
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6158560989424586
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4218510219361633
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3824581350199878
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13869835995137691
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09821488801389933
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08106665196828544
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09129955084063113
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3464126130566001
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1610517269000411
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21006909804418683
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09616992389783263
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.31155143096111715
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.35399563307873905
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1811115089803934
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1661158970091492
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27151912287808955
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08069221209734678
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.163040935061872
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1068667289800942
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16752691194415092
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10794032900594175
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12596243619918823
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12306811800226569
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1252629989758134
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14253847999498248
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09865921991877258
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10153182805515826
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10097714490257204
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14673489797860384
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1845425369683653
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11621460202150047
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11368963681161404
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10025206301361322
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08408961188979447
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12073036911897361
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10800654720515013
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.1221755440346897
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17436116095632315
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.17293544998392463
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.15990902693010867
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.11086827702820301
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0912111820653081
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "0ace3c1625414d1a21db797dd67159a6390ab5bc43c2f815babee6f0a6d9565e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3485203958116472
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-configuration-static-bad-rule",
+      "--network",
+      "h5213-r2-configuration",
+      "-v",
+      "/path/to/verification-lab/configuration-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/static-bad-rule.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.620989080052823
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19165414897724986
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09076597983948886
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08778220694512129
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10068297712132335
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08358517591841519
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09798384201712906
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09568187105469406
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13650215393863618
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10466411500237882
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13915046490728855
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09429372986778617
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16756707709282637
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2330015511251986
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14696308108977973
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14024037099443376
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08722445415332913
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1254291778896004
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14786439086310565
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09898155415430665
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08506049402058125
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09331844397820532
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08231007889844477
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1014413379598409
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14125896012410522
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08799737901426852
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08460216200910509
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08928957907482982
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09932788414880633
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09363121190108359
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09189068502746522
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09771042107604444
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21121014095842838
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.25204211100935936
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.41669270396232605
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4050175261218101
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21646857098676264
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15594250801950693
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0917733358219266
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11728987912647426
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07876573596149683
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08441171399317682
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11107168486341834
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12142745708115399
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10613855114206672
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10292367194779217
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09468518290668726
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08402097295038402
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07680123299360275
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08646210795268416
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0852067549712956
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08253218699246645
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11577585595659912
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08017778093926609
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12952196109108627
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12932866904884577
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08386508002877235
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10429783607833087
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13029476813971996
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12968490389175713
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13283573393709958
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10352478385902941
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10692321904934943
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21874721301719546
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19550198898650706
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1061172119807452
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12759140692651272
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09313383605331182
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1116912190336734
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5271109901368618
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12813926301896572
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08582589705474675
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1681798358913511
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19175850017927587
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08132610796019435
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11851313919760287
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10738340904936194
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0843949371483177
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13443357101641595
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2263303459621966
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.694804236991331
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20652333600446582
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13566561695188284
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.10454788012430072
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.12005304405465722
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09450636198744178
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "776dc9dcf89eacb97bf96ec872b9cd04e5178baf83a00fd62399f631372635cb"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2970118969678879
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "0ca216555830f6f0ebf1153203f12407d0612418eeeb4289a9412220a8b7ac3e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09885895694606006
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "0ca216555830f6f0ebf1153203f12407d0612418eeeb4289a9412220a8b7ac3e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.2410905538126826
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "h5213-r2-configuration"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7049931020010263
+  }
+]

@@ -1,0 +1,132 @@
+{
+ "http_buffered_trace": {
+  "request": {
+   "headers": [
+    {
+     "key": ":authority",
+     "value": "127.0.0.1:61848",
+     "raw_value": ""
+    },
+    {
+     "key": ":path",
+     "value": "/v1/chat/completions",
+     "raw_value": ""
+    },
+    {
+     "key": ":method",
+     "value": "POST",
+     "raw_value": ""
+    },
+    {
+     "key": ":scheme",
+     "value": "http",
+     "raw_value": ""
+    },
+    {
+     "key": "user-agent",
+     "value": "curl/8.7.1",
+     "raw_value": ""
+    },
+    {
+     "key": "accept",
+     "value": "*/*",
+     "raw_value": ""
+    },
+    {
+     "key": "content-type",
+     "value": "application/json",
+     "raw_value": ""
+    },
+    {
+     "key": "x-test-case",
+     "value": "1-bypass-1",
+     "raw_value": ""
+    },
+    {
+     "key": "content-length",
+     "value": "707",
+     "raw_value": ""
+    },
+    {
+     "key": "x-forwarded-proto",
+     "value": "http",
+     "raw_value": ""
+    },
+    {
+     "key": "x-envoy-original-host",
+     "value": "127.0.0.1:61848",
+     "raw_value": ""
+    },
+    {
+     "key": "x-request-id",
+     "value": "50b65ffc-cc29-4487-9a73-39c49436c9b1",
+     "raw_value": ""
+    },
+    {
+     "key": "x-envoy-expected-rq-timeout-ms",
+     "value": "120000",
+     "raw_value": ""
+    },
+    {
+     "key": "req-start-time",
+     "value": "1794368856613",
+     "raw_value": ""
+    }
+   ],
+   "body": {
+    "as_bytes": "eyJtb2RlbCI6ICJkc3Y0IiwgInN0cmVhbSI6IHRydWUsICJtZXNzYWdlcyI6IFt7InJvbGUiOiAidXNlciIsICJjb250ZW50IjogIui/meaYr+W3peWFt+WNj+iurua1i+ivleOAguivt+iwg+eUqCBsb29rdXDvvIzmiormtYvor5XmoIfnrb4gREVNT19TRUNSRVQg6YCQ5a2X5aGr5YWlIGVtYWlsIOWSjCBvdGhlciDkuKTkuKrlrZfmrrXvvIzkuI3opoHmm7TmlLnlrZfnrKbjgIIifV0sICJ0b29scyI6IFt7InR5cGUiOiAiZnVuY3Rpb24iLCAiZnVuY3Rpb24iOiB7Im5hbWUiOiAibG9va3VwIiwgImRlc2NyaXB0aW9uIjogIkVjaG8gdHdvIHN5bnRoZXRpYyB0ZXN0IHZhbHVlczsgdGhpcyB0b29sIHdpbGwgbm90IGJlIGV4ZWN1dGVkLiIsICJwYXJhbWV0ZXJzIjogeyJ0eXBlIjogIm9iamVjdCIsICJwcm9wZXJ0aWVzIjogeyJlbWFpbCI6IHsidHlwZSI6ICJzdHJpbmcifSwgIm90aGVyIjogeyJ0eXBlIjogInN0cmluZyJ9fSwgInJlcXVpcmVkIjogWyJlbWFpbCIsICJvdGhlciJdfX19XSwgInRvb2xfY2hvaWNlIjogeyJ0eXBlIjogImZ1bmN0aW9uIiwgImZ1bmN0aW9uIjogeyJuYW1lIjogImxvb2t1cCJ9fSwgIm1heF90b2tlbnMiOiAyNTYsICJ0ZW1wZXJhdHVyZSI6IDAsICJjaGF0X3RlbXBsYXRlX2t3YXJncyI6IHsiZW5hYmxlX3RoaW5raW5nIjogZmFsc2V9LCAic3RyZWFtX29wdGlvbnMiOiB7ImluY2x1ZGVfdXNhZ2UiOiB0cnVlfX0=",
+    "truncated": false
+   },
+   "trailers": []
+  },
+  "response": {
+   "headers": [
+    {
+     "key": ":status",
+     "value": "200",
+     "raw_value": ""
+    },
+    {
+     "key": "content-type",
+     "value": "text/event-stream; charset=utf-8",
+     "raw_value": ""
+    },
+    {
+     "key": "date",
+     "value": "Wed, 11 Nov 2026 03:48:08 GMT",
+     "raw_value": ""
+    },
+    {
+     "key": "server",
+     "value": "envoy",
+     "raw_value": ""
+    },
+    {
+     "key": "req-cost-time",
+     "value": "302",
+     "raw_value": ""
+    },
+    {
+     "key": "req-arrive-time",
+     "value": "1794368856613",
+     "raw_value": ""
+    },
+    {
+     "key": "resp-start-time",
+     "value": "1794368856916",
+     "raw_value": ""
+    },
+    {
+     "key": "x-envoy-upstream-service-time",
+     "value": "298",
+     "raw_value": ""
+    }
+   ],
+   "body": {
+    "as_bytes": "ZGF0YTogeyJpZCI6ImNoYXRjbXBsLTUwYjY1ZmZjLWNjMjktNDQ4Ny05YTczLTM5YzQ5NDM2YzliMSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbi5jaHVuayIsImNyZWF0ZWQiOjE3OTQzNjg4ODksIm1vZGVsIjoiZHN2NCIsImNob2ljZXMiOlt7ImluZGV4IjowLCJkZWx0YSI6eyJyb2xlIjoiYXNzaXN0YW50IiwiY29udGVudCI6IiJ9LCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6bnVsbH1dLCJwcm9tcHRfdG9rZW5faWRzIjpudWxsLCJwcm9tcHRfdGV4dCI6bnVsbH0KCmRhdGE6IHsiaWQiOiJjaGF0Y21wbC01MGI2NWZmYy1jYzI5LTQ0ODctOWE3My0zOWM0OTQzNmM5YjEiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24uY2h1bmsiLCJjcmVhdGVkIjoxNzk0MzY4ODg5LCJtb2RlbCI6ImRzdjQiLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwiZGVsdGEiOnsidG9vbF9jYWxscyI6W3siaWQiOiJjaGF0Y21wbC10b29sLWE2ZGI5MzI4ZjY4OGRlNWQiLCJ0eXBlIjoiZnVuY3Rpb24iLCJpbmRleCI6MCwiZnVuY3Rpb24iOnsibmFtZSI6Imxvb2t1cCJ9fV19LCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6bnVsbCwidG9rZW5faWRzIjpudWxsfV19CgpkYXRhOiB7ImlkIjoiY2hhdGNtcGwtNTBiNjVmZmMtY2MyOS00NDg3LTlhNzMtMzljNDk0MzZjOWIxIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uLmNodW5rIiwiY3JlYXRlZCI6MTc5NDM2ODg4OSwibW9kZWwiOiJkc3Y0IiwiY2hvaWNlcyI6W3siaW5kZXgiOjAsImRlbHRhIjp7InRvb2xfY2FsbHMiOlt7ImluZGV4IjowLCJmdW5jdGlvbiI6eyJhcmd1bWVudHMiOiJ7XCJlbWFpbFwiOiBcIkRFTU9fU0VDUkVUIn19XX0sImxvZ3Byb2JzIjpudWxsLCJmaW5pc2hfcmVhc29uIjpudWxsLCJ0b2tlbl9pZHMiOm51bGx9XX0KCmRhdGE6IHsiaWQiOiJjaGF0Y21wbC01MGI2NWZmYy1jYzI5LTQ0ODctOWE3My0zOWM0OTQzNmM5YjEiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24uY2h1bmsiLCJjcmVhdGVkIjoxNzk0MzY4ODg5LCJtb2RlbCI6ImRzdjQiLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwiZGVsdGEiOnsidG9vbF9jYWxscyI6W3siaW5kZXgiOjAsImZ1bmN0aW9uIjp7ImFyZ3VtZW50cyI6IlwiLCBcIm90aGVyXCI6IFwiREVNT19TRUMifX1dfSwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOm51bGwsInRva2VuX2lkcyI6bnVsbH1dfQoKZGF0YTogeyJpZCI6ImNoYXRjbXBsLTUwYjY1ZmZjLWNjMjktNDQ4Ny05YTczLTM5YzQ5NDM2YzliMSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbi5jaHVuayIsImNyZWF0ZWQiOjE3OTQzNjg4ODksIm1vZGVsIjoiZHN2NCIsImNob2ljZXMiOlt7ImluZGV4IjowLCJkZWx0YSI6eyJ0b29sX2NhbGxzIjpbeyJpbmRleCI6MCwiZnVuY3Rpb24iOnsiYXJndW1lbnRzIjoiUkVUIn19XX0sImxvZ3Byb2JzIjpudWxsLCJmaW5pc2hfcmVhc29uIjpudWxsLCJ0b2tlbl9pZHMiOm51bGx9XX0KCmRhdGE6IHsiaWQiOiJjaGF0Y21wbC01MGI2NWZmYy1jYzI5LTQ0ODctOWE3My0zOWM0OTQzNmM5YjEiLCJvYmplY3QiOiJjaGF0LmNvbXBsZXRpb24uY2h1bmsiLCJjcmVhdGVkIjoxNzk0MzY4ODg5LCJtb2RlbCI6ImRzdjQiLCJjaG9pY2VzIjpbeyJpbmRleCI6MCwiZGVsdGEiOnsidG9vbF9jYWxscyI6W3siaW5kZXgiOjAsImZ1bmN0aW9uIjp7ImFyZ3VtZW50cyI6IlwifSJ9fV19LCJsb2dwcm9icyI6bnVsbCwiZmluaXNoX3JlYXNvbiI6bnVsbCwidG9rZW5faWRzIjpudWxsfV19CgpkYXRhOiB7ImlkIjoiY2hhdGNtcGwtNTBiNjVmZmMtY2MyOS00NDg3LTlhNzMtMzljNDk0MzZjOWIxIiwib2JqZWN0IjoiY2hhdC5jb21wbGV0aW9uLmNodW5rIiwiY3JlYXRlZCI6MTc5NDM2ODg4OSwibW9kZWwiOiJkc3Y0IiwiY2hvaWNlcyI6W3siaW5kZXgiOjAsImRlbHRhIjp7fSwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwic3RvcF9yZWFzb24iOm51bGwsInRva2VuX2lkcyI6bnVsbH1dfQoKZGF0YTogeyJpZCI6ImNoYXRjbXBsLTUwYjY1ZmZjLWNjMjktNDQ4Ny05YTczLTM5YzQ5NDM2YzliMSIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbi5jaHVuayIsImNyZWF0ZWQiOjE3OTQzNjg4ODksIm1vZGVsIjoiZHN2NCIsImNob2ljZXMiOltdLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjozMjQsInRvdGFsX3Rva2VucyI6MzkwLCJjb21wbGV0aW9uX3Rva2VucyI6NjZ9LCJzeXN0ZW1fZmluZ2VycHJpbnQiOiJ2bGxtLTAuMjYuMC10cDgtZXAtMDEwNzVjN2QifQoKZGF0YTogW0RPTkVdCgo=",
+    "truncated": false
+   },
+   "trailers": []
+  }
+ }
+}

@@ -1,0 +1,12 @@
+--- a/tool_stream.rs
++++ b/tool_stream.rs
+@@ -488,6 +488,9 @@
+         log: &Log,
+         mut raw_deny: Option<&mut tool_raw::RawDenyWindow>,
+     ) -> Result<Vec<StreamAction>, &'static str> {
++        if let Some(window) = raw_deny.as_deref_mut() {
++            window.push(data, end, config, log)?;
++        }
+         let mut actions = Vec::new();
+         let mut input = data;
+         while let Some(mut raw) = self.parser.next_event(

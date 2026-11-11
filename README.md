@@ -1,3 +1,12 @@
+<!-- FOLLOWUP-20261111 -->
+# Current follow-up: 2026-11-11
+
+Source `9efa167c`, transitional defaults 1 MiB / 4 MiB / 128, and all final-configuration evidence are in [the follow-up report](followup-20261111/README.md). The report includes the two P2 fixes, selected-lock correction, both native toolchains, complete gateway/capacity checks and a new real-model round. Public TASK/comment updates still require the author's confirmation.
+
+---
+
+The sections below are the archived 2026-11-10 snapshot. References to “current” in those sections refer to that dated snapshot; files and historical version distinctions are retained.
+
 # #5213 / #5299 verification records
 
 This review copy was prepared on 2026-11-10 for [PR #5299](https://github.com/higress-group/higress/pull/5299). These records support review; they do not mean every Design TASK is complete or that a maintainer has accepted the verification.

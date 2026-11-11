@@ -1,0 +1,44 @@
+{
+  "name": "configuration",
+  "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+  "steps": [
+    {
+      "label": "configuration",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_configuration.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/configuration-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-configuration"
+      ],
+      "started": 1794366064.442434,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 186.55512595176697
+    },
+    {
+      "label": "configuration-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/configuration-review2-20261111-a"
+      ],
+      "started": 1794366251.011894,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5311880111694336
+    }
+  ],
+  "state": "passed"
+}

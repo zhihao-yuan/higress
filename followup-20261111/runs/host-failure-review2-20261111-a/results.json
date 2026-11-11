@@ -1,0 +1,46 @@
+[
+  {
+    "case": "before-host-failure",
+    "gateway": "fail-closed",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "200",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "body_sha256": "1db66966820f4afac80213b957eea63477f0ec07e33bc4e2ce0b9b196d42ce72",
+    "upstream_received": true
+  },
+  {
+    "case": "trigger-host-failure",
+    "gateway": "fail-closed",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "503",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream_received": false
+  },
+  {
+    "case": "after-host-failure",
+    "gateway": "fail-closed",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "503",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream_received": false
+  },
+  {
+    "case": "still-failed",
+    "gateway": "fail-closed",
+    "scenario": "normal",
+    "delivery": "single",
+    "curl_exit": 0,
+    "status": "503",
+    "request_sha256": "cb84b1a44e5661a9d0149ef6603c660d4090a3534cd87a5a06631d0d0a72ba94",
+    "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream_received": false
+  }
+]

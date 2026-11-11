@@ -1,0 +1,11 @@
+--- a/tool_stream.rs
++++ b/tool_stream.rs
+@@ -498,7 +498,7 @@
+             // The decoder enforces the frame limit before the raw checker can
+             // copy bytes. A large callback of small events is processed in order.
+             if let Some(window) = raw_deny.as_deref_mut() {
+-                window.push(&raw, false, config, log)?;
++                let _ = window;
+             }
+             // A flushed HTTP tail must end before any buffered args we append.
+             ensure_event_boundary(&mut raw);

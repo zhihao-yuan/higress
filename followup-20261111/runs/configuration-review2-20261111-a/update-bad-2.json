@@ -1,0 +1,30 @@
+{
+  "version_info": "bad-2",
+  "type_url": "type.googleapis.com/envoy.config.core.v3.TypedExtensionConfig",
+  "resources": [
+    {
+      "@type": "type.googleapis.com/envoy.config.core.v3.TypedExtensionConfig",
+      "name": "masking-dynamic",
+      "typed_config": {
+        "@type": "type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm",
+        "config": {
+          "name": "ai-data-masking",
+          "configuration": {
+            "@type": "type.googleapis.com/google.protobuf.StringValue",
+            "value": "{\"deny_openai\": false, \"deny_words\": [\"BLOCKED\"], \"tool_arguments\": {\"check\": true, \"restore\": true}}"
+          },
+          "vm_config": {
+            "runtime": "envoy.wasm.runtime.v8",
+            "code": {
+              "local": {
+                "filename": "/lab/candidate.wasm"
+              }
+            },
+            "vm_id": "configuration-probe"
+          },
+          "failure_policy": "FAIL_CLOSED"
+        }
+      }
+    }
+  ]
+}

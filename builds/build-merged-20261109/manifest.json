@@ -1,7 +1,7 @@
 {
   "source_revision": "8ee506a2a727cb7793bc909fc74e53c204df6218",
   "archive_sha256": "8b6b20a051137ee13ca17dcb6a3bbd0cbee20be235005b37aff4243efe3d72cb",
-  "lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+  "lock_sha256": "267ee4b1873ea76e260d416e20bdf0335c9e63df3fe3098854254b7aa848f99c",
   "command": [
     "docker",
     "exec",
@@ -32,5 +32,12 @@
   "exit_code": 0,
   "elapsed_seconds": 205.09087324142456,
   "wasm_sha256": "4680dc6260926a59b72414d1dbe051d6b71cc0adff79d64b0f47e675a6305021",
-  "wasm_bytes": 7269051
+  "wasm_bytes": 7269051,
+  "lock_path": "plugins/wasm-rust/extensions/ai-data-masking/Cargo.lock",
+  "sdk_root_lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+  "provenance_correction": {
+    "original_recorded_sdk_root_hash": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+    "immutable_original_manifest": "https://github.com/zhihao-yuan/higress/blob/b5a7e51cf7a68a69db52110b9cb0ab9f9520f891/builds/build-merged-20261109/manifest.json",
+    "reason": "Correct the selected Cargo project: the build runs from the extension project, not the SDK root. No source, module, or runtime result changed."
+  }
 }

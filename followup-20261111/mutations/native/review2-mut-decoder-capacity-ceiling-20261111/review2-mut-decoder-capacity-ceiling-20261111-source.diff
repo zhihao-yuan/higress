@@ -1,0 +1,13 @@
+diff --git a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+index 9f81b702..ac38bdef 100644
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/tool_stream.rs
+@@ -72,7 +72,7 @@ impl SseDecoder {
+                     .capacity()
+                     .saturating_mul(2)
+                     .max(required)
+-                    .min(limit);
++                    ;
+                 self.pending.reserve_exact(capacity - self.pending.len());
+             }
+             self.pending.extend_from_slice(&input[..count]);

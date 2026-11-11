@@ -1,0 +1,13 @@
+{
+  "dynamic_bad_update_rejected": true,
+  "last_good_retained": true,
+  "in_flight_config_retained": true,
+  "rejected_resource_config_dump_versions": [
+    "bad-2"
+  ],
+  "accepted_version_after_rejection": "good-1",
+  "new_good_applied": true,
+  "static_bad_cases": 5,
+  "models": 0,
+  "full_t5_complete": false
+}

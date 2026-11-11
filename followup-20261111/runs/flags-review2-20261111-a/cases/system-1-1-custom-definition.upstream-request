@@ -1,0 +1,1 @@
+{"messages":[{"content":"DEMO_SECRET","role":"user"},{"content":null,"role":"assistant","tool_calls":[{"function":{"arguments":"{\"email\": \"MASKED_TOKEN\"}","name":"lookup"},"id":"call-0","type":"function"}]}],"stream":true,"tools":[{"function":{"description":"BLOCKED","name":"lookup"},"type":"function"}]}

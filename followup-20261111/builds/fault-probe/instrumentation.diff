@@ -1,0 +1,12 @@
+--- a/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
++++ b/plugins/wasm-rust/extensions/ai-data-masking/src/ai_data_masking.rs
+@@ -2253,6 +2253,9 @@
+         _num_headers: usize,
+         _end_of_stream: bool,
+     ) -> HeaderAction {
++        if self.get_http_request_header("x-test-case").as_deref() == Some("trigger-host-failure") {
++            panic!("intentional owned FAIL_CLOSED verification probe");
++        }
+         if has_request_body() {
+             self.set_http_request_header("Content-Length", None);
+             HeaderAction::StopIteration

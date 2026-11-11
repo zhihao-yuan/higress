@@ -1,0 +1,10 @@
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"role":"assistant"},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"id":"public-call-0","type":"function","function":{"name":"ext"}}]},"finish_reason":null}]}
+
+data: {"id":"public-fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":0,"function":{"name":"ernal"}}]},"finish_reason":null}]}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+
+data: {"choices":[{"delta":{"tool_calls":[{"function":{},"index":0}]},"finish_reason":null,"index":0}],"id":"public-fixture"}
+

@@ -1,0 +1,14 @@
+{"run": "configuration-review2-20261111-a", "files_verified": 85, "decoded_body_hashes_verified": 8, "fixture_inputs_verified": 1, "recorded_failure": false, "result_rows": 10, "status": "integrity checked"}
+{"run": "defaults-review2-20261111-a", "files_verified": 1540, "decoded_body_hashes_verified": 384, "fixture_inputs_verified": 176, "recorded_failure": false, "result_rows": 192, "status": "integrity checked"}
+{"run": "unparsed-review2-20261111-a", "files_verified": 1504, "decoded_body_hashes_verified": 320, "fixture_inputs_verified": 160, "recorded_failure": false, "result_rows": 160, "status": "integrity checked"}
+{"run": "disabled-review2-20261111-a", "files_verified": 728, "decoded_body_hashes_verified": 320, "fixture_inputs_verified": 80, "recorded_failure": false, "result_rows": 80, "status": "integrity checked"}
+{"run": "flags-review2-20261111-a", "files_verified": 3516, "decoded_body_hashes_verified": 896, "fixture_inputs_verified": 384, "recorded_failure": false, "result_rows": 448, "status": "integrity checked"}
+/usr/local/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/path/to/verification-lab/evidence-stage-20261109/followup-20261111/runs/runtime-review2-20261111-a/source/check_results.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/path/to/verification-lab/evidence-stage-20261109/followup-20261111/verify_followup.py", line 63, in <module>
+    subprocess.run([sys.executable,'-B',str(run/'source/check_results.py'),str(run)],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/local/opt/python@3.14/bin/python3.14', '-B', '/path/to/verification-lab/evidence-stage-20261109/followup-20261111/runs/runtime-review2-20261111-a/source/check_results.py', '/path/to/verification-lab/evidence-stage-20261109/followup-20261111/runs/runtime-review2-20261111-a']' returned non-zero exit status 2.

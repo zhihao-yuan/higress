@@ -1,0 +1,127 @@
+{
+ "http_buffered_trace": {
+  "request": {
+   "headers": [
+    {
+     "key": ":authority",
+     "value": "127.0.0.1:61931",
+     "raw_value": ""
+    },
+    {
+     "key": ":path",
+     "value": "/v1/chat/completions",
+     "raw_value": ""
+    },
+    {
+     "key": ":method",
+     "value": "POST",
+     "raw_value": ""
+    },
+    {
+     "key": ":scheme",
+     "value": "http",
+     "raw_value": ""
+    },
+    {
+     "key": "user-agent",
+     "value": "curl/8.7.1",
+     "raw_value": ""
+    },
+    {
+     "key": "accept",
+     "value": "*/*",
+     "raw_value": ""
+    },
+    {
+     "key": "content-type",
+     "value": "application/json",
+     "raw_value": ""
+    },
+    {
+     "key": "x-test-case",
+     "value": "12-check-0",
+     "raw_value": ""
+    },
+    {
+     "key": "x-forwarded-proto",
+     "value": "http",
+     "raw_value": ""
+    },
+    {
+     "key": "x-envoy-original-host",
+     "value": "127.0.0.1:61931",
+     "raw_value": ""
+    },
+    {
+     "key": "x-request-id",
+     "value": "c2fe25f1-f2d8-4c8c-929c-feb35124b1cf",
+     "raw_value": ""
+    },
+    {
+     "key": "x-envoy-expected-rq-timeout-ms",
+     "value": "120000",
+     "raw_value": ""
+    },
+    {
+     "key": "req-start-time",
+     "value": "1794368920559",
+     "raw_value": ""
+    }
+   ],
+   "body": {
+    "as_bytes": "eyJjaGF0X3RlbXBsYXRlX2t3YXJncyI6eyJlbmFibGVfdGhpbmtpbmciOmZhbHNlfSwibWF4X3Rva2VucyI6MjU2LCJtZXNzYWdlcyI6W3siY29udGVudCI6bnVsbCwicm9sZSI6ImFzc2lzdGFudCIsInRvb2xfY2FsbHMiOlt7ImZ1bmN0aW9uIjp7ImFyZ3VtZW50cyI6IntcImVtYWlsXCI6XCJNQVNLRURfVE9LRU5cIixcIm90aGVyXCI6XCJNQVNLRURfVE9LRU5cIn0iLCJuYW1lIjoibG9va3VwIn0sImlkIjoiaGlzdG9yeS1jYWxsIiwidHlwZSI6ImZ1bmN0aW9uIn1dfSx7ImNvbnRlbnQiOiJkb25lIiwicm9sZSI6InRvb2wiLCJ0b29sX2NhbGxfaWQiOiJoaXN0b3J5LWNhbGwifSx7ImNvbnRlbnQiOiLov5nmmK/lt6XlhbfljY/orq7mtYvor5XjgILor7flho3mrKHosIPnlKggbG9va3Vw77yMZW1haWwg5ZKMIG90aGVyIOS4juWImuaJjeeahOWPguaVsOWujOWFqOebuOWQjOOAgiIsInJvbGUiOiJ1c2VyIn1dLCJtb2RlbCI6ImRzdjQiLCJzdHJlYW0iOmZhbHNlLCJ0ZW1wZXJhdHVyZSI6MCwidG9vbF9jaG9pY2UiOnsiZnVuY3Rpb24iOnsibmFtZSI6Imxvb2t1cCJ9LCJ0eXBlIjoiZnVuY3Rpb24ifSwidG9vbHMiOlt7ImZ1bmN0aW9uIjp7ImRlc2NyaXB0aW9uIjoiRWNobyB0d28gc3ludGhldGljIHRlc3QgdmFsdWVzOyB0aGlzIHRvb2wgd2lsbCBub3QgYmUgZXhlY3V0ZWQuIiwibmFtZSI6Imxvb2t1cCIsInBhcmFtZXRlcnMiOnsicHJvcGVydGllcyI6eyJlbWFpbCI6eyJ0eXBlIjoic3RyaW5nIn0sIm90aGVyIjp7InR5cGUiOiJzdHJpbmcifX0sInJlcXVpcmVkIjpbImVtYWlsIiwib3RoZXIiXSwidHlwZSI6Im9iamVjdCJ9fSwidHlwZSI6ImZ1bmN0aW9uIn1dfQ==",
+    "truncated": false
+   },
+   "trailers": []
+  },
+  "response": {
+   "headers": [
+    {
+     "key": ":status",
+     "value": "200",
+     "raw_value": ""
+    },
+    {
+     "key": "content-type",
+     "value": "application/json",
+     "raw_value": ""
+    },
+    {
+     "key": "date",
+     "value": "Wed, 11 Nov 2026 03:49:12 GMT",
+     "raw_value": ""
+    },
+    {
+     "key": "server",
+     "value": "envoy",
+     "raw_value": ""
+    },
+    {
+     "key": "req-cost-time",
+     "value": "833",
+     "raw_value": ""
+    },
+    {
+     "key": "req-arrive-time",
+     "value": "1794368920559",
+     "raw_value": ""
+    },
+    {
+     "key": "resp-start-time",
+     "value": "1794368921393",
+     "raw_value": ""
+    },
+    {
+     "key": "x-envoy-upstream-service-time",
+     "value": "831",
+     "raw_value": ""
+    }
+   ],
+   "body": {
+    "as_bytes": "eyJpZCI6ImNoYXRjbXBsLWMyZmUyNWYxLWYyZDgtNGM4Yy05MjljLWZlYjM1MTI0YjFjZiIsIm9iamVjdCI6ImNoYXQuY29tcGxldGlvbiIsImNyZWF0ZWQiOjE3OTQzNjg5NTIsIm1vZGVsIjoiZHN2NCIsImNob2ljZXMiOlt7ImluZGV4IjowLCJtZXNzYWdlIjp7InJvbGUiOiJhc3Npc3RhbnQiLCJjb250ZW50IjoiIiwicmVmdXNhbCI6bnVsbCwiYW5ub3RhdGlvbnMiOm51bGwsImF1ZGlvIjpudWxsLCJmdW5jdGlvbl9jYWxsIjpudWxsLCJ0b29sX2NhbGxzIjpbeyJpZCI6ImNoYXRjbXBsLXRvb2wtYjIyNzRjMjg4ZWQyYWNjMyIsInR5cGUiOiJmdW5jdGlvbiIsImZ1bmN0aW9uIjp7Im5hbWUiOiJsb29rdXAiLCJhcmd1bWVudHMiOiJ7XCJlbWFpbFwiOiBcIk1BU0tFRF9UT0tFTlwiLCBcIm90aGVyXCI6IFwiTUFTS0VEX1RPS0VOXCJ9In19XSwicmVhc29uaW5nIjpudWxsfSwibG9ncHJvYnMiOm51bGwsImZpbmlzaF9yZWFzb24iOiJzdG9wIiwic3RvcF9yZWFzb24iOm51bGwsInRva2VuX2lkcyI6bnVsbCwicm91dGVkX2V4cGVydHMiOm51bGx9XSwic2VydmljZV90aWVyIjpudWxsLCJzeXN0ZW1fZmluZ2VycHJpbnQiOiJ2bGxtLTAuMjYuMC10cDgtZXAtMDEwNzVjN2QiLCJ1c2FnZSI6eyJwcm9tcHRfdG9rZW5zIjozODYsInRvdGFsX3Rva2VucyI6NDUyLCJjb21wbGV0aW9uX3Rva2VucyI6NjYsInByb21wdF90b2tlbnNfZGV0YWlscyI6bnVsbCwiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6bnVsbH0sInByb21wdF9sb2dwcm9icyI6bnVsbCwicHJvbXB0X3Rva2VuX2lkcyI6bnVsbCwicHJvbXB0X3RleHQiOm51bGwsImt2X3RyYW5zZmVyX3BhcmFtcyI6bnVsbCwiZWNfdHJhbnNmZXJfcGFyYW1zIjpudWxsLCJtZXRyaWNzIjpudWxsfQ==",
+    "truncated": false
+   },
+   "trailers": []
+  }
+ }
+}

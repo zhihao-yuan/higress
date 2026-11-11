@@ -1,0 +1,50 @@
+{
+  "source_revision": "1fef633553462434ccafad94a6ef35d2b367450f",
+  "archive_sha256": "4fe7b3e6201b9e9d0b032114b020b514338121de9511e7c05f92b248924604c1",
+  "effective_lock_path": "plugins/wasm-rust/extensions/ai-data-masking/Cargo.lock",
+  "effective_lock_sha256": "267ee4b1873ea76e260d416e20bdf0335c9e63df3fe3098854254b7aa848f99c",
+  "sdk_root_lock_sha256": "6fc98705a50f93648539897d0ad77e7b7d28550974d6c3367058567c2887f503",
+  "rust_toolchain": "1.80.0",
+  "command": [
+    "docker",
+    "exec",
+    "-w",
+    "/src/target/review2-upstream-rust180-20261111-source/plugins/wasm-rust/extensions/ai-data-masking",
+    "-e",
+    "CARGO_TARGET_DIR=/src/target/ci-rust180-20261110-artifacts",
+    "higress5213-builder",
+    "cargo",
+    "+1.80.0",
+    "build",
+    "--locked",
+    "--offline",
+    "--release",
+    "--target",
+    "wasm32-wasip1"
+  ],
+  "source_files_sha256": {
+    "ai_data_masking.rs": "9707f289c2e36c4aff72ccbeac83d7bd0e9544bc1141791ae72db5cf060ed57b",
+    "deny_word.rs": "b79e27c992af785220fdbf5bdbb7eb293f610c68b520b5b68620c350af69f655",
+    "lib.rs": "d2c8efe4490d6675811c7d6733f3566f823e5601b8455ec02398e57219c37a50",
+    "msg_win_openai.rs": "56cfa251548b6b604d91421134d4a75124635735d0a31f31b0d7c89829d9781a",
+    "msg_window.rs": "d55ec34567c83ada93566ef5a9cf17000ea2b91962e75428c11445fd867654d2"
+  },
+  "locate_project_command": [
+    "docker",
+    "exec",
+    "-w",
+    "/src/target/review2-upstream-rust180-20261111-source/plugins/wasm-rust/extensions/ai-data-masking",
+    "higress5213-builder",
+    "cargo",
+    "+1.80.0",
+    "locate-project",
+    "--workspace",
+    "--message-format",
+    "plain"
+  ],
+  "effective_manifest": "/src/target/review2-upstream-rust180-20261111-source/plugins/wasm-rust/extensions/ai-data-masking/Cargo.toml",
+  "exit_code": 0,
+  "elapsed_seconds": 317.9273798465729,
+  "wasm_sha256": "9ee08799a01a00a34fa2df09884733f03bb93474f6103dcba55933306d763bd3",
+  "wasm_bytes": 6948201
+}

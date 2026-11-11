@@ -1,0 +1,120 @@
+{
+  "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+  "state": "all-verification-completed",
+  "cause": "A documented clamshell sleep interrupted the first capacity run. Original data preserved; no code, timeout or quota change.",
+  "steps": [
+    {
+      "name": "capacity-clock-control",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_capacity.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/capacity-clock-control-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-capacity-clock-control-b",
+        "--only-group",
+        "near-total-c1-candidate-off"
+      ],
+      "state": "passed",
+      "started": 1794368263.011808,
+      "exit_code": 0,
+      "elapsed_seconds": 35.4632351398468
+    },
+    {
+      "name": "capacity-clock-control-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/capacity-clock-control-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794368298.476798,
+      "exit_code": 0,
+      "elapsed_seconds": 0.721491813659668
+    },
+    {
+      "name": "capacity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_capacity.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/capacity-review2-20261111-b",
+        "--resource-prefix",
+        "h5213-r2-capacity-b"
+      ],
+      "state": "passed",
+      "started": 1794368299.199647,
+      "exit_code": 0,
+      "elapsed_seconds": 542.6923410892487
+    },
+    {
+      "name": "capacity-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/capacity-review2-20261111-b"
+      ],
+      "state": "passed",
+      "started": 1794368841.899062,
+      "exit_code": 0,
+      "elapsed_seconds": 10.60942816734314
+    },
+    {
+      "name": "live",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_live.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/live-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-live-b"
+      ],
+      "state": "passed",
+      "started": 1794368852.51045,
+      "exit_code": 0,
+      "elapsed_seconds": 77.7235460281372
+    },
+    {
+      "name": "live-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/live-review2-20261111-a"
+      ],
+      "state": "passed",
+      "started": 1794368930.236419,
+      "exit_code": 0,
+      "elapsed_seconds": 0.2811930179595947
+    }
+  ]
+}

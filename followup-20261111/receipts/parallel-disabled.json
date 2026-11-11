@@ -1,0 +1,44 @@
+{
+  "name": "disabled",
+  "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+  "steps": [
+    {
+      "label": "disabled",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/review2-supplemental-suite-20261111/verify_disabled_large.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/wasm/review2-candidate-rust180-20261111.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/disabled-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-disabled"
+      ],
+      "started": 1794366064.3815901,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 553.7970108985901
+    },
+    {
+      "label": "disabled-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/disabled-review2-20261111-a"
+      ],
+      "started": 1794366618.1974468,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 11.918450355529785
+    }
+  ],
+  "state": "passed"
+}

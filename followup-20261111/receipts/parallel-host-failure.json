@@ -1,0 +1,62 @@
+{
+  "name": "host-failure",
+  "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+  "steps": [
+    {
+      "label": "build-fault-probe",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/build_fault_probe_review2_20261111.py",
+        "--repo",
+        "/path/to/verification-lab/higress",
+        "--revision",
+        "9efa167c17346817ad7487e752ede06d20276b72",
+        "--output",
+        "/path/to/verification-lab/fault-probe-review2-build-20261111"
+      ],
+      "started": 1794366064.417037,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 228.38124084472656
+    },
+    {
+      "label": "host-failure",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/verify_host_failure.py",
+        "--baseline-wasm",
+        "/path/to/verification-lab/wasm/review2-upstream-rust180-20261111.wasm",
+        "--candidate-wasm",
+        "/path/to/verification-lab/fault-probe-review2-build-20261111/fault-probe.wasm",
+        "--baseline-source",
+        "1fef633553462434ccafad94a6ef35d2b367450f",
+        "--candidate-source",
+        "9efa167c17346817ad7487e752ede06d20276b72 + recorded intentional diagnostic patch",
+        "--output",
+        "/path/to/verification-lab/host-failure-review2-20261111-a",
+        "--resource-prefix",
+        "h5213-r2-host-failure"
+      ],
+      "started": 1794366292.811697,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 76.8591799736023
+    },
+    {
+      "label": "host-failure-integrity",
+      "command": [
+        "/usr/local/opt/python@3.14/bin/python3.14",
+        "-B",
+        "/path/to/verification-lab/higress/verification/ai-data-masking-tool-arguments/check_results.py",
+        "/path/to/verification-lab/host-failure-review2-20261111-a"
+      ],
+      "started": 1794366369.681728,
+      "state": "passed",
+      "exit_code": 0,
+      "elapsed_seconds": 1.4877870082855225
+    }
+  ],
+  "state": "passed"
+}

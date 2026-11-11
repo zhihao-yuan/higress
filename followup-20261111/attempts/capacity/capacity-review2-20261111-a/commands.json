@@ -1,0 +1,3092 @@
+[
+  {
+    "command": [
+      "docker",
+      "network",
+      "create",
+      "h5213-r2-capacity"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2921955019701272
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-fixture",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a/source:/scripts:ro",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a/cases:/evidence",
+      "--entrypoint",
+      "python3",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+      "/scripts/fixture.py",
+      "--evidence",
+      "/evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.348500806838274
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.OSType}} {{.Architecture}} cpus={{.NCPU}} memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.100428229896352
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c1-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c1-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.531962133012712
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.30123649002052844
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.25863235886208713
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08615069393999875
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.24178189714439213
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2607858420815319
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0841699771117419
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "257c565be83c537e25d2babbaee5df0429cc813e76a6722470e0af0ee8bf915b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5927388011477888
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c1-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c1-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.6834080750122666
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5031338189728558
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2957865260541439
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10271220793947577
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32624025107361376
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32427922496572137
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08817414287477732
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "9af40973162b2220dc57b0ed34742cf710c23582b98998cd84ca60e6120a33ff"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7182909208349884
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c1-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c1-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.2691370819229633
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12471110001206398
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3281121600884944
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1890487449709326
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.34484027908183634
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32277126098051667
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.3185504709836096
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "21dac3e7a45b571da1dcff7d0d76e34f158ded8f96f48aa38155e8b602f357e8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.357853173976764
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c8-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c8-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.5677513619884849
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1430141101591289
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.39847681717947125
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1322874310426414
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.38600824610330164
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.385025231866166
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0745503380894661
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "c82a5e91154688cc0ed96e1b99b2252cdfb674392b954320b0e7068c17e16bb0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4916215189732611
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c8-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c8-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9649285778868943
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12503680400550365
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6080341080669314
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.39790218509733677
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.654059360967949
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6025451789610088
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.188301513902843
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "df526552b1a37e4ed1bdfb12cd1dbbc00f0ac3bfd516388c173840bdfb388062"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.097805059980601
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c8-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c8-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.5082318962085992
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09631285700015724
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2605270459316671
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09548348281532526
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7422067900188267
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.34030636586248875
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08439334179274738
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "9e3f905ab768c15ae9e213ec6e19fc90bb557f27530f30af5c0e79ea552be162"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5414059839677066
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c32-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c32-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8196975691244006
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11708892788738012
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.362454327987507
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13374865404330194
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8206284418702126
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.39978447719477117
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0965661860536784
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "da662893594463760ec362e251db0e348cd4b02057cc435af8b65f9954b206d4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8438905689399689
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c32-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c32-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.2477762198541313
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13545121415518224
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.36323381680995226
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10023415484465659
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3600118418689817
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.32433759002014995
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0921253589913249
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "922925a00f00b70d4ea9e03faab14bffacb569da6ebe1afb4f4053e2dab5e2e2"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.605946026975289
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-4k-c32-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/4k-c32-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.3515662411227822
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20285166800022125
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5416852368507534
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1904904681723565
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4068500869907439
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.43981087603606284
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10598475486040115
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "06aad50919f37c0108be60de6d5e55c4cc702f374c670bea4384e2b588a961c3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7561471029184759
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c1-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c1-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9205871829763055
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09392488491721451
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9283939199522138
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08863992500118911
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20378380198962986
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27182230399921536
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08584129600785673
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "9beeff4544597c002cac5e964670bc78846c5c35fd4b3ff0990fa25ce49a9b20"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5714302801061422
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c1-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c1-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7559511491563171
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10826279199682176
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3639488681219518
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09174487390555441
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27906366088427603
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.41305681387893856
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.294797555077821
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "82c62285adf6eb6a2de8e1d28b174569c1643f8512fb74545f6e2cd7ce4e8513"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7162503600120544
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c1-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c1-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8729201080277562
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12660424993373454
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.30709304683841765
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08796468796208501
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.241597100161016
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.258150109089911
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06984717212617397
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "214b1a24c9b27f77aed3feed58b9a7d93a86b866958a8c50b9d1f125b4f894a4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5342424698174
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c8-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c8-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8166159661486745
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09424350690096617
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20841464982368052
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11242905585095286
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3398352770600468
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27042256598360837
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07008085888810456
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "1764dbbeb98eff07c7f48535ca3cf0f7079b3f31097ddc84b2e29414d9757e11"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7273437150288373
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c8-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c8-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.056023595156148
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0887191069778055
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22645500604994595
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07686920184642076
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22068087407387793
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3408653629012406
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06725305505096912
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "2a06a118fd3fed34b90b6f8e6754d72eaf90745b8b89fb2981ad597265c0d1cf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5597113908734173
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c8-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c8-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8752292059361935
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08475119294598699
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21001966414041817
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08883093483746052
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21324167004786432
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.282597839133814
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09034887002781034
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "1413446701fb99fabecdb5b2176e5e8ebc9f2a6b61ec71efad7d7e9e328cb00c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.0498777499888092
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c32-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c32-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.2633435579482466
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11077061598189175
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20780114107765257
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0972240250557661
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2972834010142833
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.24305200902745128
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06593964505009353
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "5cf9f6692aafe651cf795755da2e5e4421d84c32e06a63f96cde8168911d7c76"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5267526479437947
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c32-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c32-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9317717470694333
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08933848608285189
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.27374752704054117
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06753876502625644
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2189761269837618
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2421966369729489
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07769180205650628
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "2719e21ade6e75b5c0bc9f4270c1cffa20801a5104ac15e1d7b34c90d9a652b6"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5268456791527569
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-256k-c32-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/256k-c32-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.9290400999598205
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07919194898568094
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2613351091276854
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11531438492238522
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.30549829197116196
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2831699058879167
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06859670206904411
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "00b1d976e74431d77ee3efd932d8529741416d4a6eaab0eeb97a1d6a872a21cf"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5353092399891466
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c1-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c1-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7662483488675207
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07551636500284076
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3353607691824436
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07751876907423139
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2712680441327393
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3818808679934591
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08506990387104452
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "40ff2588b4bf13dc99412beb38eb15a000e026abc42c9877554ed8c395ea5e1c"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6258496390655637
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c1-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c1-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8859608808998019
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08671271102502942
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.28203825489617884
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07940581697039306
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.28569303802214563
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2460085458587855
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1793509260751307
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "6f9954fd053eeccb49efcff3a1c4ced2e72261c852e6c41988c0d7e796d602b8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5619433261454105
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c1-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c1-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8105921859387308
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07453187298960984
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22408462897874415
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07974211010150611
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.19099124800413847
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2030294460710138
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.05679987301118672
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "f007742e372a6666314e771781ff9fc3a005acbee5df602cb0d74e23ab559baa"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4567177619319409
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c8-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c8-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6409773279447109
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0848065537866205
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20682093407958746
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07437899708747864
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22056879592128098
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2414373429492116
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.068523254012689
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "db059c7d06c48ef9fbd976b8f5ec56bc41f0e7580dbd9b4300e98b2b655b60d0"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.48973734793253243
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c8-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c8-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6749682819936424
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08798250206746161
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21156767406500876
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.080132813192904
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2327223310712725
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22259755688719451
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06670055002905428
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "ae96ec49d035dc0123f7ed11975a7ee3b7171c0b58cb69d8b448deba00c73237"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.43978137406520545
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c8-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c8-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.709843791089952
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0836944489274174
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3256648760288954
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07608828786760569
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2684962567873299
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.26519075385294855
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08530305605381727
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "baefdba3fa92e86d98cb5d435a00b1b6766c97c073d94be8281b04756f7dae1b"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5604287940077484
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c32-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c32-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6129272801335901
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08701014402322471
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.30546012497507036
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07575942110270262
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2392305361572653
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2677088810596615
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07035816600546241
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "d5c1bf98cf528c8c9bf4385f5bf936110685f9257ecd1f3d6a9de424b47be4d3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.0060086061712354
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c32-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c32-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.7351880518253893
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1443379009142518
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2331445359159261
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07957375794649124
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22689704596996307
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2266381038352847
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06824219808913767
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "b70aaa3b3a49b28d2e489e35daa624c6f96b42d5b4851f534278e899c20adae7"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4577031380031258
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-1m-c32-candidate-on",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/1m-c32-candidate-on.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6411000890657306
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08239838108420372
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22656390210613608
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.0694386400282383
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.24232733994722366
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.23671856010332704
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07883170479908586
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "a145c085e39097e8d81661d434578f5f87a36f48dfd80655de196e60b2e5fea1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5220495560206473
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-near-total-c1-baseline",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/near-total-c1-baseline.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6361285659950227
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08145077805966139
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21730917296372354
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07677807589061558
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.21823025099001825
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.28864370402880013
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07355080498382449
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "8423d0455b4a11a7666c21d6bc91664cd97b2f3e4fc90e400a82591ffd12b845"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.610762458993122
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--platform",
+      "linux/amd64",
+      "--name",
+      "h5213-r2-capacity-near-total-c1-candidate-off",
+      "--network",
+      "h5213-r2-capacity",
+      "-v",
+      "/path/to/verification-lab/capacity-review2-20261111-a:/lab:ro",
+      "-p",
+      "127.0.0.1::10000",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/near-total-c1-candidate-off.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8184590470045805
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16",
+      "10000/tcp"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10972004290670156
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats?filter=wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3372998221311718
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.076884940965101
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/stats"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.7234150720760226
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16",
+      "curl",
+      "-sf",
+      "http://127.0.0.1:15000/config_dump"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8677050021942705
+  },
+  {
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06758772511966527
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "8bc1b9d89320b8404b435dd2df3f4534739734676923934b5647cff6447f9b16"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.170536746038124
+  },
+  {
+    "command": [
+      "docker",
+      "logs",
+      "bb6670e0e013df131bd568e69eb67db3436ef4941ae117d9c3649849bda72aba"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09054292598739266
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "bb6670e0e013df131bd568e69eb67db3436ef4941ae117d9c3649849bda72aba"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.8168703471310437
+  },
+  {
+    "command": [
+      "docker",
+      "network",
+      "rm",
+      "h5213-r2-capacity"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.43196310801431537
+  }
+]

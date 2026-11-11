@@ -1,0 +1,23 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 58s
+     Running unittests src/lib.rs (/src/target/ci-rust180-20261110/debug/deps/ai_data_masking-ac9f7a8254604e7a)
+
+running 1 test
+test ai_data_masking::tool_stream::tests::raw_deny_sees_only_bounded_frames_and_matches_whole_body_checks ... FAILED
+
+failures:
+
+---- ai_data_masking::tool_stream::tests::raw_deny_sees_only_bounded_frames_and_matches_whole_body_checks stdout ----
+thread 'ai_data_masking::tool_stream::tests::raw_deny_sees_only_bounded_frames_and_matches_whole_body_checks' panicked at src/tool_stream.rs:1113:9:
+assertion `left == right` failed: oversized frame was copied before validation
+  left: 2216
+ right: 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tool_stream::tests::raw_deny_sees_only_bounded_frames_and_matches_whole_body_checks
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 92 filtered out; finished in 5.67s
+
+error: test failed, to rerun pass `--lib`

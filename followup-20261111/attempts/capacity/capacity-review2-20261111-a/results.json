@@ -1,0 +1,1481 @@
+[
+  {
+    "group": "4k-c1-baseline",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.311759719159454,
+    "sampled_peak_rss_bytes": 442572800,
+    "sampled_peak_cgroup_memory_bytes": 398241792,
+    "cpu_usage_usec_delta": 379485,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.021739443065598607,
+        "median": 0.03477066138293594,
+        "p95_nearest_rank": 0.05360661190934479,
+        "max": 0.06336082005873322
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.021763409953564405,
+        "median": 0.03479013789910823,
+        "p95_nearest_rank": 0.053634373005479574,
+        "max": 0.06339421309530735
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.021763409953564405,
+        "median": 0.03479013789910823,
+        "p95_nearest_rank": 0.053634373005479574,
+        "max": 0.06339421309530735
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.0218197840731591,
+        "median": 0.034870909876190126,
+        "p95_nearest_rank": 0.05369772599078715,
+        "max": 0.06351273716427386
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c1-candidate-off",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.9573310611303896,
+    "sampled_peak_rss_bytes": 450707456,
+    "sampled_peak_cgroup_memory_bytes": 407035904,
+    "cpu_usage_usec_delta": 461929,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.02466972405090928,
+        "median": 0.03578092297539115,
+        "p95_nearest_rank": 0.08721004915423691,
+        "max": 0.16151572787202895
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.024702648865059018,
+        "median": 0.03734819043893367,
+        "p95_nearest_rank": 0.09091823594644666,
+        "max": 0.16163896792568266
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.024702648865059018,
+        "median": 0.03734819043893367,
+        "p95_nearest_rank": 0.09091823594644666,
+        "max": 0.16163896792568266
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.02476790687069297,
+        "median": 0.0391770105343312,
+        "p95_nearest_rank": 0.09103201795369387,
+        "max": 0.1619122119154781
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c1-candidate-on",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 3.1239884989336133,
+    "sampled_peak_rss_bytes": 452386816,
+    "sampled_peak_cgroup_memory_bytes": 408092672,
+    "cpu_usage_usec_delta": 769853,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.023116578813642263,
+        "median": 0.042511933483183384,
+        "p95_nearest_rank": 0.13590277801267803,
+        "max": 0.19790123193524778
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.02315281401388347,
+        "median": 0.0822492529405281,
+        "p95_nearest_rank": 0.15621715085580945,
+        "max": 0.19794100802391768
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.02315281401388347,
+        "median": 0.0822492529405281,
+        "p95_nearest_rank": 0.15621715085580945,
+        "max": 0.19794100802391768
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.023200741969048977,
+        "median": 0.08231509290635586,
+        "p95_nearest_rank": 0.1562897318508476,
+        "max": 0.1980087528936565
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c8-baseline",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 0.7726429530885071,
+    "sampled_peak_rss_bytes": 445399040,
+    "sampled_peak_cgroup_memory_bytes": 401833984,
+    "cpu_usage_usec_delta": 414071,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.04917040187865496,
+        "median": 0.12951217347290367,
+        "p95_nearest_rank": 0.26599188218824565,
+        "max": 0.2666736680548638
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.04919068794697523,
+        "median": 0.12953388399910182,
+        "p95_nearest_rank": 0.2660116390325129,
+        "max": 0.2666943590156734
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.04919068794697523,
+        "median": 0.12953388399910182,
+        "p95_nearest_rank": 0.2660116390325129,
+        "max": 0.2666943590156734
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.04924664390273392,
+        "median": 0.13823262741789222,
+        "p95_nearest_rank": 0.26609899499453604,
+        "max": 0.26692937104962766
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c8-candidate-off",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.6204301761463284,
+    "sampled_peak_rss_bytes": 449835008,
+    "sampled_peak_cgroup_memory_bytes": 405622784,
+    "cpu_usage_usec_delta": 983854,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.16300332290120423,
+        "median": 0.3864092694129795,
+        "p95_nearest_rank": 0.4950241700280458,
+        "max": 0.5023511170875281
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.16303528402931988,
+        "median": 0.3864312714431435,
+        "p95_nearest_rank": 0.49504323792643845,
+        "max": 0.5023719591554254
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.16303528402931988,
+        "median": 0.3864312714431435,
+        "p95_nearest_rank": 0.49504323792643845,
+        "max": 0.5023719591554254
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.16310360888019204,
+        "median": 0.39254648541100323,
+        "p95_nearest_rank": 0.5341435398440808,
+        "max": 0.5401199001353234
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c8-candidate-on",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 0.6541275670751929,
+    "sampled_peak_rss_bytes": 449933312,
+    "sampled_peak_cgroup_memory_bytes": 404680704,
+    "cpu_usage_usec_delta": 392057,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.06182058807462454,
+        "median": 0.12032529048155993,
+        "p95_nearest_rank": 0.17064631800167263,
+        "max": 0.1887417919933796
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.06605215882882476,
+        "median": 0.15382287907414138,
+        "p95_nearest_rank": 0.20610441197641194,
+        "max": 0.22250421694479883
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.06605215882882476,
+        "median": 0.15382287907414138,
+        "p95_nearest_rank": 0.20610441197641194,
+        "max": 0.22250421694479883
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.06610566796734929,
+        "median": 0.15387978206854314,
+        "p95_nearest_rank": 0.20616858103312552,
+        "max": 0.22256993385963142
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c32-baseline",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 0.5837037120945752,
+    "sampled_peak_rss_bytes": 442396672,
+    "sampled_peak_cgroup_memory_bytes": 397406208,
+    "cpu_usage_usec_delta": 368137,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.19980299496091902,
+        "median": 0.3450608809944242,
+        "p95_nearest_rank": 0.45490165799856186,
+        "max": 0.4757951679639518
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.20156197901815176,
+        "median": 0.348406933946535,
+        "p95_nearest_rank": 0.45493837888352573,
+        "max": 0.4758164919912815
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.20156197901815176,
+        "median": 0.348406933946535,
+        "p95_nearest_rank": 0.45493837888352573,
+        "max": 0.4758164919912815
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.20178502518683672,
+        "median": 0.35972680000122637,
+        "p95_nearest_rank": 0.45504730590619147,
+        "max": 0.4758975878357887
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c32-candidate-off",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 0.8402617280371487,
+    "sampled_peak_rss_bytes": 451747840,
+    "sampled_peak_cgroup_memory_bytes": 407830528,
+    "cpu_usage_usec_delta": 564161,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.2371083169709891,
+        "median": 0.5542332651093602,
+        "p95_nearest_rank": 0.6914205390494317,
+        "max": 0.7164675269741565
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.2371325350832194,
+        "median": 0.5542529756203294,
+        "p95_nearest_rank": 0.6914395319763571,
+        "max": 0.7164869047701359
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.2371325350832194,
+        "median": 0.5542529756203294,
+        "p95_nearest_rank": 0.6914395319763571,
+        "max": 0.7164869047701359
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.2371963830664754,
+        "median": 0.5543142250971869,
+        "p95_nearest_rank": 0.6915423679165542,
+        "max": 0.7165803369134665
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "4k-c32-candidate-on",
+    "payload_bytes_per_call": 4096,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.665174335008487,
+    "sampled_peak_rss_bytes": 449556480,
+    "sampled_peak_cgroup_memory_bytes": 406007808,
+    "cpu_usage_usec_delta": 1764748,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.41328400117345154,
+        "median": 0.7121234510559589,
+        "p95_nearest_rank": 1.1735728362109512,
+        "max": 1.1793344600591809
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.413378844037652,
+        "median": 0.7121830959804356,
+        "p95_nearest_rank": 1.173619023989886,
+        "max": 1.179393860977143
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.413378844037652,
+        "median": 0.7121830959804356,
+        "p95_nearest_rank": 1.173619023989886,
+        "max": 1.179393860977143
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.4134248560294509,
+        "median": 0.7142393395770341,
+        "p95_nearest_rank": 1.173691735137254,
+        "max": 1.1794757121242583
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c1-baseline",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.9959742380306125,
+    "sampled_peak_rss_bytes": 442814464,
+    "sampled_peak_cgroup_memory_bytes": 398323712,
+    "cpu_usage_usec_delta": 744533,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.027158341137692332,
+        "median": 0.035498885554261506,
+        "p95_nearest_rank": 0.061449392000213265,
+        "max": 0.062018049880862236
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.02722100494429469,
+        "median": 0.035544656100682914,
+        "p95_nearest_rank": 0.06148950196802616,
+        "max": 0.062040126882493496
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.030462684109807014,
+        "median": 0.039734140620566905,
+        "p95_nearest_rank": 0.06653016107156873,
+        "max": 0.07434489601291716
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.03056752705015242,
+        "median": 0.04271685658022761,
+        "p95_nearest_rank": 0.0746239849831909,
+        "max": 0.09348640078678727
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c1-candidate-off",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 3.206015856936574,
+    "sampled_peak_rss_bytes": 448425984,
+    "sampled_peak_cgroup_memory_bytes": 405704704,
+    "cpu_usage_usec_delta": 934509,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.033119693864136934,
+        "median": 0.06567383545916528,
+        "p95_nearest_rank": 0.126942666945979,
+        "max": 0.13171628303825855
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.033144124085083604,
+        "median": 0.06574182643089443,
+        "p95_nearest_rank": 0.12696677003987134,
+        "max": 0.13182377512566745
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.03720894688740373,
+        "median": 0.07625259459018707,
+        "p95_nearest_rank": 0.13034805795177817,
+        "max": 0.14233499811962247
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.03746320400387049,
+        "median": 0.07855296996422112,
+        "p95_nearest_rank": 0.1304826969280839,
+        "max": 0.1436776639893651
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c1-candidate-on",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 5.179163412889466,
+    "sampled_peak_rss_bytes": 462311424,
+    "sampled_peak_cgroup_memory_bytes": 418590720,
+    "cpu_usage_usec_delta": 3468742,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.03185566794127226,
+        "median": 0.08163392648566514,
+        "p95_nearest_rank": 0.21961183310486376,
+        "max": 0.22008675010874867
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.0894748440477997,
+        "median": 0.11753099912311882,
+        "p95_nearest_rank": 0.22645444120280445,
+        "max": 0.24342109309509397
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.0894748440477997,
+        "median": 0.11753099912311882,
+        "p95_nearest_rank": 0.22645444120280445,
+        "max": 0.24342109309509397
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.09011249407194555,
+        "median": 0.11815710505470634,
+        "p95_nearest_rank": 0.22693812800571322,
+        "max": 0.24433193006552756
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 144506880"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c8-baseline",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.0481358438264579,
+    "sampled_peak_rss_bytes": 444514304,
+    "sampled_peak_cgroup_memory_bytes": 399986688,
+    "cpu_usage_usec_delta": 542152,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.06862734584137797,
+        "median": 0.11364862555637956,
+        "p95_nearest_rank": 0.1402871930040419,
+        "max": 0.14105944498442113
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.06865602894686162,
+        "median": 0.11409312696196139,
+        "p95_nearest_rank": 0.1403207271359861,
+        "max": 0.1410797459539026
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.09704137104563415,
+        "median": 0.15732104959897697,
+        "p95_nearest_rank": 0.1906678881496191,
+        "max": 0.193133934866637
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.09743499802425504,
+        "median": 0.15851703204680234,
+        "p95_nearest_rank": 0.1962975470814854,
+        "max": 0.19877039408311248
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c8-candidate-off",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.1122472540009767,
+    "sampled_peak_rss_bytes": 447852544,
+    "sampled_peak_cgroup_memory_bytes": 403857408,
+    "cpu_usage_usec_delta": 555695,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.08273124601691961,
+        "median": 0.1513200500048697,
+        "p95_nearest_rank": 0.1890843401197344,
+        "max": 0.21345141506753862
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.08275154395960271,
+        "median": 0.15134487499017268,
+        "p95_nearest_rank": 0.18911335105076432,
+        "max": 0.21348500903695822
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.08659904496744275,
+        "median": 0.1836294385138899,
+        "p95_nearest_rank": 0.21981043019331992,
+        "max": 0.22016620892100036
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.08669580309651792,
+        "median": 0.1852167908800766,
+        "p95_nearest_rank": 0.22412130213342607,
+        "max": 0.2551729439292103
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c8-candidate-on",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 2.6284361409489065,
+    "sampled_peak_rss_bytes": 463298560,
+    "sampled_peak_cgroup_memory_bytes": 420364288,
+    "cpu_usage_usec_delta": 2381508,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.042968546971678734,
+        "median": 0.5441814634250477,
+        "p95_nearest_rank": 0.62330227997154,
+        "max": 0.6301309820264578
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.1419638351071626,
+        "median": 0.5842887470498681,
+        "p95_nearest_rank": 0.6458854179363698,
+        "max": 0.6494876779615879
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.1419638351071626,
+        "median": 0.5842887470498681,
+        "p95_nearest_rank": 0.6458854179363698,
+        "max": 0.6494876779615879
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.14249340002425015,
+        "median": 0.5854372970061377,
+        "p95_nearest_rank": 0.6508856860455126,
+        "max": 0.6514022978954017
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 144506880"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c32-baseline",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.2719710229430348,
+    "sampled_peak_rss_bytes": 446046208,
+    "sampled_peak_cgroup_memory_bytes": 401367040,
+    "cpu_usage_usec_delta": 808622,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.17530757188796997,
+        "median": 0.45011702296324074,
+        "p95_nearest_rank": 0.9451356169302016,
+        "max": 1.0403170268982649
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.17806584993377328,
+        "median": 0.47463109192904085,
+        "p95_nearest_rank": 0.9552673059515655,
+        "max": 1.0403379609342664
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.602378424955532,
+        "median": 0.9769142885925248,
+        "p95_nearest_rank": 1.1211596510838717,
+        "max": 1.1215963589493185
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.6176603168714792,
+        "median": 0.980454255011864,
+        "p95_nearest_rank": 1.1219432619400322,
+        "max": 1.12424949510023
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c32-candidate-off",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 1.2218222392257303,
+    "sampled_peak_rss_bytes": 447930368,
+    "sampled_peak_cgroup_memory_bytes": 403865600,
+    "cpu_usage_usec_delta": 866295,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.18067591194994748,
+        "median": 0.4193811510922387,
+        "p95_nearest_rank": 0.8562908680178225,
+        "max": 0.9127216709312052
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.18081221915781498,
+        "median": 0.4298455659300089,
+        "p95_nearest_rank": 0.856320290826261,
+        "max": 0.9127432799432427
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.628499492071569,
+        "median": 0.9045187975279987,
+        "p95_nearest_rank": 1.0191061629448086,
+        "max": 1.0228856690227985
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.6376661940012127,
+        "median": 0.917951213545166,
+        "p95_nearest_rank": 1.0348027979489416,
+        "max": 1.0390337940771133
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "256k-c32-candidate-on",
+    "payload_bytes_per_call": 262144,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 2.963207061169669,
+    "sampled_peak_rss_bytes": 473546752,
+    "sampled_peak_cgroup_memory_bytes": 432005120,
+    "cpu_usage_usec_delta": 2904978,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.22518562688492239,
+        "median": 0.43657989462371916,
+        "p95_nearest_rank": 2.767750458791852,
+        "max": 2.811891291057691
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 1.3577017590869218,
+        "median": 2.7039152774959803,
+        "p95_nearest_rank": 2.813274039886892,
+        "max": 2.8335613070521504
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 1.3577017590869218,
+        "median": 2.7039152774959803,
+        "p95_nearest_rank": 2.813274039886892,
+        "max": 2.8335613070521504
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 1.358679014025256,
+        "median": 2.713741571409628,
+        "p95_nearest_rank": 2.833495929837227,
+        "max": 2.834937928011641
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 152240128"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c1-baseline",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 10.594496512087062,
+    "sampled_peak_rss_bytes": 442822656,
+    "sampled_peak_cgroup_memory_bytes": 398721024,
+    "cpu_usage_usec_delta": 1786099,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.036149115068838,
+        "median": 0.06016714044380933,
+        "p95_nearest_rank": 0.1643929670099169,
+        "max": 0.18255662312731147
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.03618402616120875,
+        "median": 0.0602168960031122,
+        "p95_nearest_rank": 0.1644243060145527,
+        "max": 0.1827007019892335
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.054830848006531596,
+        "median": 0.0883795958943665,
+        "p95_nearest_rank": 0.22814912092871964,
+        "max": 0.2615820891223848
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.055587874026969075,
+        "median": 0.08874755841679871,
+        "p95_nearest_rank": 0.2285124969203025,
+        "max": 0.2626535960007459
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c1-candidate-off",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 15.552877517882735,
+    "sampled_peak_rss_bytes": 449622016,
+    "sampled_peak_cgroup_memory_bytes": 406855680,
+    "cpu_usage_usec_delta": 4351295,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.04072786797769368,
+        "median": 0.05968465795740485,
+        "p95_nearest_rank": 0.2231030990369618,
+        "max": 0.3360450891777873
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.04075077292509377,
+        "median": 0.05978266755118966,
+        "p95_nearest_rank": 0.22312560211867094,
+        "max": 0.33609498711302876
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.058845422929152846,
+        "median": 0.08958474057726562,
+        "p95_nearest_rank": 0.2626913881395012,
+        "max": 0.4933756380341947
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.05937588308006525,
+        "median": 0.08992304652929306,
+        "p95_nearest_rank": 0.2630087740253657,
+        "max": 0.49368608300574124
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c1-candidate-on",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 1,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 12.458036098862067,
+    "sampled_peak_rss_bytes": 559517696,
+    "sampled_peak_cgroup_memory_bytes": 516812800,
+    "cpu_usage_usec_delta": 10254873,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.03359759319573641,
+        "median": 0.04760960093699396,
+        "p95_nearest_rank": 0.06754612596705556,
+        "max": 0.07498942199163139
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.27235442982055247,
+        "median": 0.35646824701689184,
+        "p95_nearest_rank": 0.4447759408503771,
+        "max": 0.49468329292722046
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.27235442982055247,
+        "median": 0.35646824701689184,
+        "p95_nearest_rank": 0.4447759408503771,
+        "max": 0.49468329292722046
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.27369773387908936,
+        "median": 0.35775909561198205,
+        "p95_nearest_rank": 0.44645049795508385,
+        "max": 0.49687053309753537
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 246153216"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c8-baseline",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 4.910242347046733,
+    "sampled_peak_rss_bytes": 443355136,
+    "sampled_peak_cgroup_memory_bytes": 399732736,
+    "cpu_usage_usec_delta": 1697894,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.1570328229572624,
+        "median": 0.32039426756091416,
+        "p95_nearest_rank": 0.4557771298568696,
+        "max": 0.4566364260390401
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.1594357208814472,
+        "median": 0.32042425603140146,
+        "p95_nearest_rank": 0.4558244759682566,
+        "max": 0.45665479893796146
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.25279350113123655,
+        "median": 0.507342888507992,
+        "p95_nearest_rank": 0.8521416920702904,
+        "max": 0.881132521899417
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.2531272571068257,
+        "median": 0.5220028349431232,
+        "p95_nearest_rank": 0.884758872911334,
+        "max": 0.8880960999522358
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c8-candidate-off",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 3.9426561649888754,
+    "sampled_peak_rss_bytes": 452509696,
+    "sampled_peak_cgroup_memory_bytes": 408100864,
+    "cpu_usage_usec_delta": 1493930,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.13647378189489245,
+        "median": 0.19159376458264887,
+        "p95_nearest_rank": 0.27720211003907025,
+        "max": 0.2782974811270833
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.14296082803048193,
+        "median": 0.1950184894958511,
+        "p95_nearest_rank": 0.27724192501045763,
+        "max": 0.2854627009946853
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.16726775490678847,
+        "median": 0.4970338969724253,
+        "p95_nearest_rank": 0.7438185850623995,
+        "max": 0.8016155569348484
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.16757169598713517,
+        "median": 0.5109213649993762,
+        "p95_nearest_rank": 0.7931090001948178,
+        "max": 0.8327798158861697
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c8-candidate-on",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 8,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 11.972556858090684,
+    "sampled_peak_rss_bytes": 586850304,
+    "sampled_peak_cgroup_memory_bytes": 551235584,
+    "cpu_usage_usec_delta": 11085745,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.17911173007450998,
+        "median": 0.2429152720142156,
+        "p95_nearest_rank": 2.024319542106241,
+        "max": 2.2995195840485394
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.9272474080789834,
+        "median": 2.718727885512635,
+        "p95_nearest_rank": 3.283709486015141,
+        "max": 3.31172459712252
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.9272474080789834,
+        "median": 2.718727885512635,
+        "p95_nearest_rank": 3.283709486015141,
+        "max": 3.31172459712252
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.9286950340028852,
+        "median": 2.73810354154557,
+        "p95_nearest_rank": 3.341290727024898,
+        "max": 3.353070948040113
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 269549568"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c32-baseline",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 4.596214141929522,
+    "sampled_peak_rss_bytes": 443895808,
+    "sampled_peak_cgroup_memory_bytes": 399781888,
+    "cpu_usage_usec_delta": 2032755,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.27657933882437646,
+        "median": 0.6633253360632807,
+        "p95_nearest_rank": 1.2889949909877032,
+        "max": 1.3149346199352294
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.27942992793396115,
+        "median": 0.6798843770520762,
+        "p95_nearest_rank": 1.2890819539315999,
+        "max": 1.31495371600613
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 1.873274217126891,
+        "median": 2.369263244443573,
+        "p95_nearest_rank": 2.7745507890358567,
+        "max": 3.1697637198958546
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 1.9002991351298988,
+        "median": 2.4575293814996257,
+        "p95_nearest_rank": 2.9943441851064563,
+        "max": 3.219835900934413
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c32-candidate-off",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 3.916133087128401,
+    "sampled_peak_rss_bytes": 449318912,
+    "sampled_peak_cgroup_memory_bytes": 405487616,
+    "cpu_usage_usec_delta": 1778394,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.2977618749719113,
+        "median": 0.5865515259793028,
+        "p95_nearest_rank": 0.9912080359645188,
+        "max": 1.0074347800109535
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.3148722918704152,
+        "median": 0.5883856810396537,
+        "p95_nearest_rank": 0.9912372820544988,
+        "max": 1.0074548919219524
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 1.6586906290613115,
+        "median": 2.0912401330424473,
+        "p95_nearest_rank": 2.6961776970420033,
+        "max": 2.7989377931226045
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 1.6598234029952437,
+        "median": 2.125621204962954,
+        "p95_nearest_rank": 2.8048402450513095,
+        "max": 2.9456163009162992
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "1m-c32-candidate-on",
+    "payload_bytes_per_call": 1048576,
+    "calls": 1,
+    "concurrency": 32,
+    "variant": "candidate-on",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 13.981200216105208,
+    "sampled_peak_rss_bytes": 608268288,
+    "sampled_peak_cgroup_memory_bytes": 570134528,
+    "cpu_usage_usec_delta": 13726997,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.2251784480176866,
+        "median": 1.2740484329406172,
+        "p95_nearest_rank": 1.3905637490097433,
+        "max": 1.4096471308730543
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 1.3363521078135818,
+        "median": 13.258612515055574,
+        "p95_nearest_rank": 13.507747669937089,
+        "max": 13.637393580982462
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 1.3363521078135818,
+        "median": 13.258612515055574,
+        "p95_nearest_rank": 13.507747669937089,
+        "max": 13.637393580982462
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 1.3407226339913905,
+        "median": 13.32185738044791,
+        "p95_nearest_rank": 13.564032885013148,
+        "max": 13.668390634004027
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 277938176"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "near-total-c1-baseline",
+    "payload_bytes_per_call": 1044480,
+    "calls": 3,
+    "concurrency": 1,
+    "variant": "baseline",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 32,
+    "failed": 0,
+    "elapsed_seconds": 32.98459573392756,
+    "sampled_peak_rss_bytes": 444141568,
+    "sampled_peak_cgroup_memory_bytes": 400130048,
+    "cpu_usage_usec_delta": 5222635,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 32,
+        "min": 0.07328219898045063,
+        "median": 0.11350784753449261,
+        "p95_nearest_rank": 0.23216353286989033,
+        "max": 0.3641031910665333
+      },
+      "first_arguments_seconds": {
+        "n": 32,
+        "min": 0.07333144405856729,
+        "median": 0.11357238050550222,
+        "p95_nearest_rank": 0.23220234108157456,
+        "max": 0.3645389841403812
+      },
+      "last_arguments_seconds": {
+        "n": 32,
+        "min": 0.13421849301084876,
+        "median": 0.20456882799044251,
+        "p95_nearest_rank": 0.5144671951420605,
+        "max": 0.763457149034366
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.13728329096920788,
+        "median": 0.20614633697550744,
+        "p95_nearest_rank": 0.5188510189764202,
+        "max": 0.7725549079477787
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  },
+  {
+    "group": "near-total-c1-candidate-off",
+    "payload_bytes_per_call": 1044480,
+    "calls": 3,
+    "concurrency": 1,
+    "variant": "candidate-off",
+    "warmup_requests": 4,
+    "formal_requests": 32,
+    "passed": 31,
+    "failed": 1,
+    "elapsed_seconds": 99.25301679200493,
+    "sampled_peak_rss_bytes": 448356352,
+    "sampled_peak_cgroup_memory_bytes": 404385792,
+    "cpu_usage_usec_delta": 39753240,
+    "latency": {
+      "first_metadata_seconds": {
+        "n": 31,
+        "min": 0.08468481083400548,
+        "median": 0.18251556809991598,
+        "p95_nearest_rank": 1.5446271039545536,
+        "max": 5.649415510939434
+      },
+      "first_arguments_seconds": {
+        "n": 31,
+        "min": 0.08486067689955235,
+        "median": 0.1825705491937697,
+        "p95_nearest_rank": 1.5451974449679255,
+        "max": 5.651821300853044
+      },
+      "last_arguments_seconds": {
+        "n": 31,
+        "min": 0.14681172603741288,
+        "median": 0.3599404450505972,
+        "p95_nearest_rank": 2.4240434400271624,
+        "max": 6.416534689022228
+      },
+      "complete_response_seconds": {
+        "n": 32,
+        "min": 0.14771430799737573,
+        "median": 0.37182377895805985,
+        "p95_nearest_rank": 6.420507774921134,
+        "max": 7.718249845085666
+      }
+    },
+    "wasm_memory_gauges": [
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.main_thread.memory_size: 131399680",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.rebuild_memory_total: 0",
+      "wasm.envoy.wasm.runtime.v8.plugin.ai-data-masking.worker_0.memory_size: 131399680"
+    ],
+    "wasm_memory_gauge_available": true
+  }
+]

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/path/to/verification-lab/review2-supplemental-suite-20261111/verify_legacy_rules.py", line 73, in <module>
+    main()
+    ~~~~^^
+  File "/path/to/verification-lab/review2-supplemental-suite-20261111/verify_legacy_rules.py", line 30, in main
+    with Lab(args, 'legacy-rules') as lab:
+         ~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/path/to/verification-lab/review2-supplemental-suite-20261111/runtime_lab.py", line 56, in __init__
+    self.output.mkdir(parents=True, exist_ok=False)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: '/path/to/verification-lab/legacy-review2-20261111-a'

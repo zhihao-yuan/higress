@@ -1,0 +1,21 @@
+   Compiling ai-data-masking v0.1.0 (/src/extensions/ai-data-masking)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7m 38s
+     Running unittests src/lib.rs (/src/target/ci-rust180-20261110/debug/deps/ai_data_masking-ac9f7a8254604e7a)
+
+running 1 test
+test ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation ... FAILED
+
+failures:
+
+---- ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation stdout ----
+thread 'ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation' panicked at src/ai_data_masking.rs:4282:13:
+raw deny allocated 36 bytes for a 22 byte frame limit
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    ai_data_masking::tests::raw_deny_batched_frames_do_not_retain_the_callback_allocation
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 92 filtered out; finished in 10.71s
+
+error: test failed, to rerun pass `--lib`

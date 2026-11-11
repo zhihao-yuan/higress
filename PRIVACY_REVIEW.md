@@ -11,3 +11,12 @@ Run-local `public-copy.json` files, where present, identify the original checksu
 The package is scanned for personal host paths, the private registry hostname, credential-shaped strings and private network addresses, including decompressed gzip payloads. Private-address matches in public source or synthetic fixtures are reviewed separately from actual transport addresses. Package verification also recomputes request/response body hashes, which detects accidental edits to preserved case bodies.
 
 The root `SHA256SUMS` covers every package file except itself and Git's worktree control file. The offline checker disables bytecode generation and verifies that checking the package does not add files to it. `.git` and generated Python caches are never part of the published package.
+
+
+## 2026-11-11 follow-up review
+
+The new round uses synthetic strings, one approved health generation and 14 formal model generations; no tools were executed. Personal administrative paths and Docker peer addresses in logs are redacted in this public copy. Case data, fixtures, captured upstream/client bodies, script snapshots and Wasm bytes are preserved and checked against their private originals. Unrelated model-list entries, ownership fields and creation metadata are omitted; the selected model and the private original listing hash remain in public-copy.json.
+
+The full scan covered text, binary files and decompressed gzip payloads. No credential-shaped or personal-path matches were found. The eight private-address review hits are the upstream repository's existing README configuration examples, repeated in source snapshots and the two source archives. They are public source examples, not test endpoints. Real SSH credentials, transport endpoints and raw system power logs are excluded. The sleep diagnosis includes only relevant event times, reason category and temporary power-assertion state.
+
+The failed first capacity round is separate from the clean full round. Its timeout, body, logs and cleanup are retained; it is not counted as a successful capacity result. No case payload or refusal body was changed during privacy review. The model connection was closed after the 15 approved calls, and its localhost forwarding port was verified absent.

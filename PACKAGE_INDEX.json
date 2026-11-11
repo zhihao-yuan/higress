@@ -1,20 +1,19 @@
 {
-  "prepared_date": "2026-11-10",
+  "prepared_date": "2026-11-11",
   "pull_request": "https://github.com/higress-group/higress/pull/5299",
-  "code_head": "7d9223a61c1dd88a827945d8aabc8afc70e119ce",
+  "code_head": "9efa167c17346817ad7487e752ede06d20276b72",
   "upstream_merged": "1fef633553462434ccafad94a6ef35d2b367450f",
   "runtime_artifact": {
     "rust": "1.80.0",
-    "sha256": "3b1c7e8f1f1a69824b0435d0b4302b00d064027744d49817ea7023c34f7eb6d1",
-    "manifest": "builds/ci-rust180-merged-20261110/manifest.json",
-    "source": "source-head",
-    "gateway_runs_original_source": "35c50060f6c935e76101a3460bc044141396e3b7",
-    "merged_binary_is_identical": true
+    "sha256": "59b25818e30da43aa32b071e34ce22e4ccfccdfebac94cb86da7bc08c878af6b",
+    "manifest": "followup-20261111/builds/candidate/manifest.json",
+    "source": "followup-20261111/source"
   },
   "rust182_current_native_build": {
-    "sha256": "5e8ad8fe1989047094726b293a1a8767b94092d2343fae1c03023f10f6cc5232",
-    "manifest": "builds/head-7d9223a6-native-20261110/manifest.json",
-    "gateway_tested": false
+    "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+    "manifest": "followup-20261111/builds/rust182/manifest.json",
+    "sha256": "f986ee3267eb51e9d846aced17680a27201a18ebbb216813f00a21fcadfb6eef",
+    "runtime_tested": false
   },
   "earlier_full_functional_matrix": {
     "source": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
@@ -30,31 +29,24 @@
     "new_model_calls_for_this_package": 0
   },
   "mutations": {
-    "earlier": {
-      "source_revision": "3f7a3a3c8163e07b09e414cd5e3d0ebd405aa5d8",
-      "killed": 20,
-      "survived": 0,
-      "source_restored": true
+    "current_delta": {
+      "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+      "count": 6,
+      "result": "6 assertion failures; source restored",
+      "path": "followup-20261111/mutations"
     },
-    "head": {
-      "source_revision": "7d9223a61c1dd88a827945d8aabc8afc70e119ce",
-      "killed": 20,
-      "survived": 0,
-      "source_restored": true
-    }
+    "previous_rounds": "See PACKAGE_INDEX-20261110.json for the separate 20-mutation rounds at their actual earlier sources."
   },
   "current_defaults": {
     "max_call_bytes": 1048576,
     "max_buffer_bytes": 4194304,
     "max_calls": 128,
     "max_unparsed_bytes": "inherits max_buffer_bytes",
-    "release_approved": false
+    "status": "transitional defaults retained per maintainer review"
   },
   "release_work_remaining": [
-    "maintainer confirmation of final defaults",
-    "full V1/V2 matrix on final module/configuration",
-    "final current-source complete capacity/configuration validation",
-    "current/final-configuration live-model verification with an agreed call plan"
+    "User confirmation and publication of updated TASK/PR/comment records",
+    "Maintainer incremental review"
   ],
   "runs": [
     {
@@ -198,7 +190,117 @@
       "checksum_manifest_sha256": "39fcedda6e805ee91ea7bb7024a58478bd625d2b5ee5180ceff24cce4059f23e"
     }
   ],
-  "ci": "ci/ci-github-green-20261110.json",
+  "ci": {
+    "source_revision": "9efa167c17346817ad7487e752ede06d20276b72",
+    "checks_successful": 21,
+    "path": "followup-20261111/ci-checks.json"
+  },
   "privacy": "PRIVACY_REVIEW.md",
-  "offline_verification": "python3 -B verify_package.py"
+  "offline_verification": "python3 -B verify_package.py",
+  "followup": {
+    "path": "followup-20261111",
+    "summaries": {
+      "unparsed": {
+        "passed": 160,
+        "failed": 0,
+        "baseline_scope_failures": 48,
+        "model_requests": 0
+      },
+      "red-green": {
+        "expected_baseline_assertion_failures": 8,
+        "candidate_assertions_passed": 8,
+        "models": 0,
+        "full_plan_complete": false
+      },
+      "runtime": {
+        "passed": 1568,
+        "failed": 0,
+        "models": 0,
+        "full_plan_complete": false
+      },
+      "content": {
+        "passed": 70,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "flags": {
+        "passed": 448,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "legacy": {
+        "passed": 96,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "disabled": {
+        "passed": 80,
+        "failed": 0,
+        "model_requests": 0
+      },
+      "limits": {
+        "passed": 520,
+        "failed": 0,
+        "full_t5_complete": false,
+        "models": 0
+      },
+      "defaults": {
+        "passed": 192,
+        "failed": 0,
+        "models": 0,
+        "defaults": {
+          "max_call_bytes": 1048576,
+          "max_buffer_bytes": 4194304,
+          "max_calls": 128
+        },
+        "sizes_are_decoded_utf8_bytes": true,
+        "restore_does_not_shorten_the_equal_boundary": true
+      },
+      "configuration": {
+        "dynamic_bad_update_rejected": true,
+        "last_good_retained": true,
+        "in_flight_config_retained": true,
+        "rejected_resource_config_dump_versions": [
+          "bad-2"
+        ],
+        "accepted_version_after_rejection": "good-1",
+        "new_good_applied": true,
+        "static_bad_cases": 5,
+        "models": 0,
+        "full_t5_complete": false
+      },
+      "host-failure": {
+        "before_failure_upstream_received": true,
+        "failed_vm_returns_503": true,
+        "later_requests_closed": true,
+        "intentional_crash_observed": true,
+        "fail_open_skip": 0,
+        "candidate_runtime_crash_claim": false,
+        "models": 0,
+        "full_t5_complete": false
+      },
+      "capacity": {
+        "groups": 36,
+        "formal_requests": 1152,
+        "passed": 1152,
+        "failed": 0,
+        "full_t5_complete": false,
+        "production_capacity_established": false,
+        "models": 0
+      },
+      "live": {
+        "formal_cases": 14,
+        "covered": 14,
+        "uncovered": 0,
+        "real_model_generations_dispatched": 15,
+        "health_calls": 1,
+        "tools_executed": 0,
+        "full_t6_complete": false
+      }
+    },
+    "delta_mutations": 6,
+    "ci_checks_successful": 21
+  },
+  "historical_package_index": "PACKAGE_INDEX-20261110.json",
+  "selected_lock_corrections": "followup-20261111/lock-provenance-corrections.json"
 }

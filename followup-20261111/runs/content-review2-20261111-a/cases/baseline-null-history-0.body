@@ -1,0 +1,1 @@
+{"choices":[{"finish_reason":"tool_calls","index":0,"message":{"content":"checking DEMO_SECRET","role":"assistant","tool_calls":[{"function":{"arguments":"{\"email\":\"MASKED_TOKEN\",\"other\":\"MASKED_TOKEN\"}","name":"lookup"},"id":"call-0","type":"function"}]}}],"usage":{"total_tokens":20}}
