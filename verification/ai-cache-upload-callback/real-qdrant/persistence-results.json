@@ -1,0 +1,23 @@
+{
+  "restart_completed_before_read": true,
+  "container_started_at": "2026-11-11T08:31:49.235081186Z",
+  "restart_persistence_verified": true,
+  "collection": "higress_smoke_1794385700851946000",
+  "point_id": 1,
+  "response": {
+    "result": {
+      "id": 1,
+      "payload": {
+        "question": "vector A",
+        "answer": "answer A",
+        "consumer": "fixture-consumer"
+      },
+      "vector": [
+        1.0,
+        0.0
+      ]
+    },
+    "status": "ok",
+    "time": 0.000865163
+  }
+}

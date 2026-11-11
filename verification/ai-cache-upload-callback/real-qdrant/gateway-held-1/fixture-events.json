@@ -1,0 +1,173 @@
+[
+  {
+    "path": "/api/v1/services/embeddings/text-embedding/text-embedding",
+    "body": "{\"model\":\"text-embedding-v2\",\"input\":{\"texts\":[\"question\"]},\"parameters\":{\"text_type\":\"query\"}}",
+    "headers": [
+      [
+        "host",
+        "dashscope.aliyuncs.com"
+      ],
+      [
+        "authorization",
+        "Bearer fixture-key"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "95"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "10000"
+      ],
+      [
+        "req-start-time",
+        "1794385853187"
+      ]
+    ],
+    "time_ns": 1231584450866684
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": "{\"messages\":[{\"role\":\"user\",\"content\":\"question\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:59010"
+      ],
+      [
+        "content-length",
+        "66"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-mse-consumer",
+        "fixture-consumer"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:59010"
+      ],
+      [
+        "x-request-id",
+        "1ecfe096-4ca5-4563-b7cf-4f0417f13d9b"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794385853184"
+      ]
+    ],
+    "time_ns": 1231584466898297
+  },
+  {
+    "path": "/hold",
+    "body": "",
+    "headers": [
+      [
+        "host",
+        "fixture"
+      ],
+      [
+        "content-length",
+        "0"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-forwarded-for",
+        "172.19.0.4"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "20000"
+      ],
+      [
+        "req-start-time",
+        "1794385853213"
+      ]
+    ],
+    "time_ns": 1231584473619648
+  },
+  {
+    "path": "/hold",
+    "body": "",
+    "headers": [
+      [
+        "host",
+        "fixture"
+      ],
+      [
+        "content-length",
+        "0"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-forwarded-for",
+        "172.19.0.4"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "20000"
+      ],
+      [
+        "req-start-time",
+        "1794385853424"
+      ]
+    ],
+    "time_ns": 1231584684435387
+  },
+  {
+    "path": "/hold",
+    "body": "",
+    "headers": [
+      [
+        "host",
+        "fixture"
+      ],
+      [
+        "content-length",
+        "0"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-forwarded-for",
+        "172.19.0.4"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "20000"
+      ],
+      [
+        "req-start-time",
+        "1794385853453"
+      ]
+    ],
+    "time_ns": 1231584713857227
+  }
+]

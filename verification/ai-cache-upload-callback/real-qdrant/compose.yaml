@@ -1,0 +1,22 @@
+name: higress-vector-lab
+services:
+  qdrant:
+    image: ghcr.io/qdrant/qdrant/qdrant@sha256:3a80102f9b2855184d74b6d79e3351320314298c4be1f88ecaf832f147ef7a02
+    container_name: higress-pr-qdrant
+    ports:
+      - "127.0.0.1:16333:6333"
+    volumes:
+      - qdrant-data:/qdrant/storage
+    environment:
+      QDRANT__TELEMETRY_DISABLED: "true"
+    mem_limit: 768m
+    cpus: 1.0
+    restart: "no"
+    networks:
+      - vector-lab
+volumes:
+  qdrant-data:
+    name: higress-pr-qdrant-data
+networks:
+  vector-lab:
+    name: higress-pr-vector-lab

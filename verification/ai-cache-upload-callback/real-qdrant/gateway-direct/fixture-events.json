@@ -1,0 +1,150 @@
+[
+  {
+    "path": "/api/v1/services/embeddings/text-embedding/text-embedding",
+    "body": "{\"model\":\"text-embedding-v2\",\"input\":{\"texts\":[\"question\"]},\"parameters\":{\"text_type\":\"query\"}}",
+    "headers": [
+      [
+        "host",
+        "dashscope.aliyuncs.com"
+      ],
+      [
+        "authorization",
+        "Bearer fixture-key"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "95"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "10000"
+      ],
+      [
+        "req-start-time",
+        "1794385747013"
+      ]
+    ],
+    "time_ns": 1231478282904955
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": "{\"messages\":[{\"role\":\"user\",\"content\":\"question\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:58922"
+      ],
+      [
+        "content-length",
+        "66"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-mse-consumer",
+        "fixture-consumer"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:58922"
+      ],
+      [
+        "x-request-id",
+        "2df2773b-456c-43c8-9ec3-b7bb4df87b7b"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794385746995"
+      ]
+    ],
+    "time_ns": 1231478306482649
+  },
+  {
+    "path": "/api/v1/services/embeddings/text-embedding/text-embedding",
+    "body": "{\"model\":\"text-embedding-v2\",\"input\":{\"texts\":[\"question\"]},\"parameters\":{\"text_type\":\"query\"}}",
+    "headers": [
+      [
+        "host",
+        "dashscope.aliyuncs.com"
+      ],
+      [
+        "authorization",
+        "Bearer fixture-key"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "95"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "10000"
+      ],
+      [
+        "req-start-time",
+        "1794385747072"
+      ]
+    ],
+    "time_ns": 1231478332760212
+  },
+  {
+    "path": "/api/v1/services/embeddings/text-embedding/text-embedding",
+    "body": "{\"model\":\"text-embedding-v2\",\"input\":{\"texts\":[\"question\"]},\"parameters\":{\"text_type\":\"query\"}}",
+    "headers": [
+      [
+        "host",
+        "dashscope.aliyuncs.com"
+      ],
+      [
+        "authorization",
+        "Bearer fixture-key"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "95"
+      ],
+      [
+        "x-envoy-internal",
+        "true"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "10000"
+      ],
+      [
+        "req-start-time",
+        "1794385747098"
+      ]
+    ],
+    "time_ns": 1231478359117199
+  }
+]

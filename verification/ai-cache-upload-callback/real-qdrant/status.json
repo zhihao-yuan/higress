@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-11",
+  "real_database": true,
+  "database": {
+    "title": "qdrant - vector search engine",
+    "version": "1.20.0",
+    "commit": "222b2e44ab1c3f17e8246396ead6558e45041df7"
+  },
+  "endpoint": "http://127.0.0.1:16333",
+  "dashboard": "http://127.0.0.1:16333/dashboard/",
+  "container": "higress-pr-qdrant",
+  "volume": "higress-pr-qdrant-data",
+  "image": "ghcr.io/qdrant/qdrant/qdrant@sha256:3a80102f9b2855184d74b6d79e3351320314298c4be1f88ecaf832f147ef7a02",
+  "database_left_running": true,
+  "embedding_fixture": true,
+  "chat_fixture": true,
+  "real_model_tested": false,
+  "runtime_rounds": [
+    {
+      "case": "gateway-direct",
+      "collection": "higress_ai_cache_1794385737436528000",
+      "statuses": [
+        200,
+        200,
+        200
+      ],
+      "wasm_crash_total": 0,
+      "real_point_read_and_searched": true,
+      "transient_cleanup_verified": true
+    },
+    {
+      "case": "gateway-held-1",
+      "collection": "higress_ai_cache_1794385817231249000",
+      "statuses": [
+        200,
+        503,
+        503
+      ],
+      "wasm_crash_total": 1,
+      "real_point_read_and_searched": true,
+      "transient_cleanup_verified": true
+    },
+    {
+      "case": "gateway-held-2",
+      "collection": "higress_ai_cache_1794385817231836000",
+      "statuses": [
+        200,
+        503,
+        503
+      ],
+      "wasm_crash_total": 1,
+      "real_point_read_and_searched": true,
+      "transient_cleanup_verified": true
+    },
+    {
+      "case": "gateway-held-3",
+      "collection": "higress_ai_cache_1794385817259615000",
+      "statuses": [
+        200,
+        503,
+        503
+      ],
+      "wasm_crash_total": 1,
+      "real_point_read_and_searched": true,
+      "transient_cleanup_verified": true
+    }
+  ],
+  "persistent_after_restart": true,
+  "source_revision": "d388d06a92dd125bbe99330888690fd6deeb352f",
+  "baseline_wasm_sha256": "29c741c7a825be082cca663fb93b07b90b76eb60055638f2da938e3a61b7914e",
+  "product_code_changed": false,
+  "public_issue_created": false
+}

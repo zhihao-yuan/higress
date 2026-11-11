@@ -1,0 +1,131 @@
+{
+  "real_database": true,
+  "version": {
+    "title": "qdrant - vector search engine",
+    "version": "1.20.0",
+    "commit": "222b2e44ab1c3f17e8246396ead6558e45041df7"
+  },
+  "collection": "higress_smoke_1794385700851946000",
+  "records": [
+    {
+      "method": "GET",
+      "path": "/",
+      "request": null,
+      "status": 200,
+      "response": {
+        "title": "qdrant - vector search engine",
+        "version": "1.20.0",
+        "commit": "222b2e44ab1c3f17e8246396ead6558e45041df7"
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/collections/higress_smoke_1794385700851946000",
+      "request": {
+        "vectors": {
+          "size": 2,
+          "distance": "Cosine"
+        }
+      },
+      "status": 200,
+      "response": {
+        "result": true,
+        "status": "ok",
+        "time": 0.115133451
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/collections/higress_smoke_1794385700851946000/points?wait=true",
+      "request": {
+        "points": [
+          {
+            "id": 1,
+            "vector": [
+              1.0,
+              0.0
+            ],
+            "payload": {
+              "question": "vector A",
+              "answer": "answer A",
+              "consumer": "fixture-consumer"
+            }
+          },
+          {
+            "id": 2,
+            "vector": [
+              0.0,
+              1.0
+            ],
+            "payload": {
+              "question": "vector B",
+              "answer": "answer B",
+              "consumer": "fixture-consumer"
+            }
+          }
+        ]
+      },
+      "status": 200,
+      "response": {
+        "result": {
+          "operation_id": 1,
+          "status": "completed"
+        },
+        "status": "ok",
+        "time": 0.004430304
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/collections/higress_smoke_1794385700851946000/points/search",
+      "request": {
+        "vector": [
+          1.0,
+          0.0
+        ],
+        "limit": 1,
+        "with_payload": true
+      },
+      "status": 200,
+      "response": {
+        "result": [
+          {
+            "id": 1,
+            "version": 1,
+            "score": 1.0,
+            "payload": {
+              "question": "vector A",
+              "answer": "answer A",
+              "consumer": "fixture-consumer"
+            }
+          }
+        ],
+        "status": "ok",
+        "time": 0.00352954
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/collections/higress_smoke_1794385700851946000/points/1",
+      "request": null,
+      "status": 200,
+      "response": {
+        "result": {
+          "id": 1,
+          "payload": {
+            "question": "vector A",
+            "answer": "answer A",
+            "consumer": "fixture-consumer"
+          },
+          "vector": [
+            1.0,
+            0.0
+          ]
+        },
+        "status": "ok",
+        "time": 0.000397445
+      }
+    }
+  ],
+  "write_read_search_passed": true
+}
