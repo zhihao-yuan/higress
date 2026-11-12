@@ -1,0 +1,22 @@
+{
+  "method": "POST",
+  "path": "/v1/chat/completions",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": {
+    "model": "fixture",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hello"
+      }
+    ],
+    "stream": false
+  },
+  "health_probe": {
+    "method": "GET",
+    "path": "/health",
+    "listener": "separate listener without Wasm, same worker"
+  }
+}

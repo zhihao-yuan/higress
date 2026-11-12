@@ -1,0 +1,15 @@
+{
+  "source": "dedd5ed720b6aedd0f719860379e043764c820c9",
+  "wasm_sha256": "62312c73ad7ac7d870a7d2fc379f592911c6975f489b01f240ee5b7150af6e31",
+  "product_worktree_clean": true,
+  "host": "macOS-15.6.1-x86_64-i386-64bit-Mach-O",
+  "go": "go version go1.27.3 darwin/amd64",
+  "sources": {
+    "plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy.go": "72e6d1cf3b4efaf0fcf1fda114982194a4bd97198cfafeef44be9e18a31d123e",
+    "plugins/wasm-go/extensions/ai-load-balancer/go.mod": "c55940889ab1e6b94b1a87abd56908311ea7a05b8f697f9c647e4f0e7c23017c",
+    "plugins/wasm-go/extensions/ai-load-balancer/go.sum": "78e00421b3d315d0db351d1b5c6545b5bc45a8cfc990bac56d43e85791f67b5f",
+    "plugins/wasm-go/pkg/jsonbody/go.mod": "7663a28405e3aef20a6dc930406e4e3ebdb203fcd096c9fc8238606df7c7b504"
+  },
+  "command": "GOTOOLCHAIN=local GOWORK=off GOOS=wasip1 GOARCH=wasm go build -mod=readonly -buildvcs=false -buildmode=c-shared -o baseline.wasm .",
+  "build_exit_code": 0
+}

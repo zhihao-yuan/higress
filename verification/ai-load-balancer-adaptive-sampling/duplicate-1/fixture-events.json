@@ -1,0 +1,41 @@
+[
+  {
+    "path": "/health",
+    "body": "",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:50560"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:50560"
+      ],
+      [
+        "x-request-id",
+        "0faf8ecc-5dc5-43b7-ab2e-27e62d86b852"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794465526866"
+      ]
+    ],
+    "time_ns": 16284422837315
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "queries": [
+    {
+      "query": "repo:higress-group/higress \"p2c_choices\"",
+      "total_count": 1
+    },
+    {
+      "query": "repo:higress-group/higress \"AdaptiveScore\"",
+      "total_count": 10
+    },
+    {
+      "query": "repo:higress-group/higress \"ai-load-balancer\" duplicate",
+      "total_count": 18
+    },
+    {
+      "query": "repo:higress-group/higress \"service_list\"",
+      "total_count": 6
+    },
+    {
+      "query": "repo:higress-group/higress \"ai-load-balancer\" is:pr state:open",
+      "total_count": 8
+    }
+  ],
+  "conclusion": "No same-root sampling fix found in inspected results; not an exhaustive absence guarantee"
+}

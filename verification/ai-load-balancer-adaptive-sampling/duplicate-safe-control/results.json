@@ -1,0 +1,217 @@
+{
+  "case": "duplicate-safe",
+  "services": [
+    "a",
+    "a",
+    "b",
+    "b"
+  ],
+  "p2c_choices": 2,
+  "configuration_accepted": true,
+  "health_before": {
+    "status": 200,
+    "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+    "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Thu, 12 Nov 2026 06:37:57 GMT"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "73"
+      ],
+      [
+        "req-cost-time",
+        "4"
+      ],
+      [
+        "req-arrive-time",
+        "1794465477019"
+      ],
+      [
+        "resp-start-time",
+        "1794465477023"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ]
+    ],
+    "seconds": 0.00828408499910438
+  },
+  "trigger": [
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Thu, 12 Nov 2026 06:37:57 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "5"
+        ],
+        [
+          "req-arrive-time",
+          "1794465477030"
+        ],
+        [
+          "resp-start-time",
+          "1794465477035"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "3"
+        ]
+      ],
+      "seconds": 0.008366742000362137
+    },
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Thu, 12 Nov 2026 06:37:57 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "3"
+        ],
+        [
+          "req-arrive-time",
+          "1794465477039"
+        ],
+        [
+          "resp-start-time",
+          "1794465477042"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "2"
+        ]
+      ],
+      "seconds": 0.006218156000613817
+    },
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Thu, 12 Nov 2026 06:37:57 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "1"
+        ],
+        [
+          "req-arrive-time",
+          "1794465477045"
+        ],
+        [
+          "resp-start-time",
+          "1794465477047"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "0"
+        ]
+      ],
+      "seconds": 0.004553941000267514
+    }
+  ],
+  "health_after": {
+    "status": 200,
+    "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+    "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Thu, 12 Nov 2026 06:37:57 GMT"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "73"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1794465477050"
+      ],
+      [
+        "resp-start-time",
+        "1794465477051"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "0"
+      ]
+    ],
+    "seconds": 0.0042018320000352105
+  },
+  "model_calls": 3,
+  "assertions_passed": true,
+  "wasm_sha256": "62312c73ad7ac7d870a7d2fc379f592911c6975f489b01f240ee5b7150af6e31",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299"
+}

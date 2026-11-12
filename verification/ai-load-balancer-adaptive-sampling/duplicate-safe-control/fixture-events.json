@@ -1,0 +1,221 @@
+[
+  {
+    "path": "/health",
+    "body": "",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:50421"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:50421"
+      ],
+      [
+        "x-request-id",
+        "6f8a0dda-dc97-47b8-b013-ecc8c3d76d49"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794465477019"
+      ]
+    ],
+    "time_ns": 16234557437232
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:50419"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-length",
+        "81"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:50419"
+      ],
+      [
+        "x-request-id",
+        "a2efdfd9-581b-43ba-bc65-a6facabc7a49"
+      ],
+      [
+        "x-higress-target-cluster",
+        "a"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794465477030"
+      ]
+    ],
+    "time_ns": 16234570145355
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:50419"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-length",
+        "81"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:50419"
+      ],
+      [
+        "x-request-id",
+        "e02bd122-29ec-420b-94af-d6a96c6037d9"
+      ],
+      [
+        "x-higress-target-cluster",
+        "b"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794465477039"
+      ]
+    ],
+    "time_ns": 16234577062148
+  },
+  {
+    "path": "/v1/chat/completions",
+    "body": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:50419"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-length",
+        "81"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:50419"
+      ],
+      [
+        "x-request-id",
+        "766d7a16-7938-481b-9711-ebe4e30869b2"
+      ],
+      [
+        "x-higress-target-cluster",
+        "b"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794465477045"
+      ]
+    ],
+    "time_ns": 16234581845447
+  },
+  {
+    "path": "/health",
+    "body": "",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:50421"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:50421"
+      ],
+      [
+        "x-request-id",
+        "ee41d084-d64c-496a-aa7a-937c6f86db35"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794465477050"
+      ]
+    ],
+    "time_ns": 16234586357257
+  }
+]

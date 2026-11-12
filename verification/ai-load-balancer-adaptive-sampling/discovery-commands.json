@@ -1,0 +1,90 @@
+[
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "unique",
+      "--label",
+      "unique-control-final"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "duplicate-safe",
+      "--label",
+      "duplicate-safe-control"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "duplicate",
+      "--label",
+      "duplicate-1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "duplicate",
+      "--label",
+      "duplicate-2"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "duplicate",
+      "--label",
+      "duplicate-3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "identical",
+      "--label",
+      "identical-1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "identical",
+      "--label",
+      "identical-2"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "discover_gateway.py",
+      "--case",
+      "identical",
+      "--label",
+      "identical-3"
+    ],
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "status": 200,
+  "body": "wasm.ai-load-balancer.vm_reload: 0\nwasm.ai-load-balancer.vm_reload_backoff: 0\nwasm.ai-load-balancer.vm_reload_failure: 0\nwasm.ai-load-balancer.vm_reload_success: 0\nwasm.envoy.wasm.runtime.v8.active: 3\nwasm.envoy.wasm.runtime.v8.created: 4\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.crash: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.crash_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.main_thread.memory_size: 8912896\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.rebuild_explicit_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.rebuild_memory_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.rebuild_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.recover_error: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.recover_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_0.memory_size: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_fail_open_skip_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_init_recovered_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_init_retry_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_init_retryable_failure_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_init_terminal_failure_total: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.worker_uninitialized: 0\nwasm.remote_load_cache_entries: 0\nwasm.remote_load_cache_hits: 0\nwasm.remote_load_cache_misses: 0\nwasm.remote_load_cache_negative_hits: 0\nwasm.remote_load_fetch_failures: 0\nwasm.remote_load_fetch_successes: 0\nwasm.envoy.wasm.runtime.v8.plugin.ai-load-balancer.reclaim_latency: No recorded values\n",
+  "body_sha256": "29d1440549c4c7f4cbe1abd5ce4fa8e859e430829a486b9720731dc603f9dcb0",
+  "headers": [
+    [
+      "content-type",
+      "text/plain; charset=UTF-8"
+    ],
+    [
+      "cache-control",
+      "no-cache, max-age=0"
+    ],
+    [
+      "x-content-type-options",
+      "nosniff"
+    ],
+    [
+      "date",
+      "Thu, 12 Nov 2026 06:40:44 GMT"
+    ],
+    [
+      "server",
+      "envoy"
+    ],
+    [
+      "transfer-encoding",
+      "chunked"
+    ]
+  ],
+  "seconds": 0.004153416000917787
+}

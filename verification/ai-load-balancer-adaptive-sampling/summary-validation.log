@@ -1,0 +1,136 @@
+{
+  "groups": 8,
+  "affected_groups": 6,
+  "healthy_controls": 2,
+  "wasm_sha256": "62312c73ad7ac7d870a7d2fc379f592911c6975f489b01f240ee5b7150af6e31",
+  "all_assertions_passed": true,
+  "real_gateway": true,
+  "real_model": false,
+  "source_modified": false,
+  "cases": [
+    {
+      "label": "unique-control-final",
+      "case": "unique",
+      "trigger": [
+        200,
+        200,
+        200
+      ],
+      "health_after": 200,
+      "model_calls": 3,
+      "cpu": "0.38%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "duplicate-safe-control",
+      "case": "duplicate-safe",
+      "trigger": [
+        200,
+        200,
+        200
+      ],
+      "health_after": 200,
+      "model_calls": 3,
+      "cpu": "0.50%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "duplicate-1",
+      "case": "duplicate",
+      "trigger": [
+        "TimeoutError"
+      ],
+      "health_after": "TimeoutError",
+      "model_calls": 0,
+      "cpu": "100.40%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "duplicate-2",
+      "case": "duplicate",
+      "trigger": [
+        "TimeoutError"
+      ],
+      "health_after": "TimeoutError",
+      "model_calls": 0,
+      "cpu": "98.35%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "duplicate-3",
+      "case": "duplicate",
+      "trigger": [
+        "TimeoutError"
+      ],
+      "health_after": "TimeoutError",
+      "model_calls": 0,
+      "cpu": "100.13%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "identical-1",
+      "case": "identical",
+      "trigger": [
+        "TimeoutError"
+      ],
+      "health_after": "TimeoutError",
+      "model_calls": 0,
+      "cpu": "101.22%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "identical-2",
+      "case": "identical",
+      "trigger": [
+        "TimeoutError"
+      ],
+      "health_after": "TimeoutError",
+      "model_calls": 0,
+      "cpu": "100.22%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    },
+    {
+      "label": "identical-3",
+      "case": "identical",
+      "trigger": [
+        "TimeoutError"
+      ],
+      "health_after": "TimeoutError",
+      "model_calls": 0,
+      "cpu": "100.17%",
+      "configuration_accepted": true,
+      "process_running": true,
+      "oom": false,
+      "cleanup_verified": true,
+      "assertions_passed": true
+    }
+  ]
+}
