@@ -1,0 +1,320 @@
+{
+  "client_requests": 36,
+  "cases": [
+    {
+      "variant": "baseline",
+      "held": false,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794450958679949000",
+      "assertions_passed": true,
+      "case": "baseline-direct-1",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "baseline",
+      "held": false,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794450989879282000",
+      "assertions_passed": true,
+      "case": "baseline-direct-2",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "baseline",
+      "held": false,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451018796903000",
+      "assertions_passed": true,
+      "case": "baseline-direct-3",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "baseline",
+      "held": true,
+      "expected": [
+        200,
+        503,
+        503
+      ],
+      "actual": [
+        200,
+        503,
+        503
+      ],
+      "model_calls": 1,
+      "crash_total": 1,
+      "collection": "higress_ai_cache_1794450890885465000",
+      "assertions_passed": true,
+      "case": "baseline-held-1",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      ]
+    },
+    {
+      "variant": "baseline",
+      "held": true,
+      "expected": [
+        200,
+        503,
+        503
+      ],
+      "actual": [
+        200,
+        503,
+        503
+      ],
+      "model_calls": 1,
+      "crash_total": 1,
+      "collection": "higress_ai_cache_1794451050384270000",
+      "assertions_passed": true,
+      "case": "baseline-held-2",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      ]
+    },
+    {
+      "variant": "baseline",
+      "held": true,
+      "expected": [
+        200,
+        503,
+        503
+      ],
+      "actual": [
+        200,
+        503,
+        503
+      ],
+      "model_calls": 1,
+      "crash_total": 1,
+      "collection": "higress_ai_cache_1794451079876323000",
+      "assertions_passed": true,
+      "case": "baseline-held-3",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      ]
+    },
+    {
+      "variant": "candidate",
+      "held": false,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451107726553000",
+      "assertions_passed": true,
+      "case": "candidate-direct-1",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "candidate",
+      "held": false,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451138399686000",
+      "assertions_passed": true,
+      "case": "candidate-direct-2",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "candidate",
+      "held": false,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451179645580000",
+      "assertions_passed": true,
+      "case": "candidate-direct-3",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "candidate",
+      "held": true,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451213430294000",
+      "assertions_passed": true,
+      "case": "candidate-held-1",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "candidate",
+      "held": true,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451247169810000",
+      "assertions_passed": true,
+      "case": "candidate-held-2",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    },
+    {
+      "variant": "candidate",
+      "held": true,
+      "expected": [
+        200,
+        200,
+        200
+      ],
+      "actual": [
+        200,
+        200,
+        200
+      ],
+      "model_calls": 1,
+      "crash_total": 0,
+      "collection": "higress_ai_cache_1794451279332706000",
+      "assertions_passed": true,
+      "case": "candidate-held-3",
+      "cleanup_verified": true,
+      "database_read_and_search_verified": true,
+      "body_hashes": [
+        "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+        "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f"
+      ]
+    }
+  ],
+  "all_assertions_passed": true,
+  "real_vector_database": true,
+  "real_model": false
+}

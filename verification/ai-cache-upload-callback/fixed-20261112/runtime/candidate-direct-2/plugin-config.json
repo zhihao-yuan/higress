@@ -1,0 +1,19 @@
+{
+  "embedding": {
+    "type": "dashscope",
+    "apiKey": "fixture-key",
+    "serviceName": "embedding.static",
+    "servicePort": 8080
+  },
+  "vector": {
+    "type": "qdrant",
+    "collectionID": "higress_ai_cache_1794451138399686000",
+    "serviceName": "qdrant.static",
+    "serviceHost": "higress-pr-qdrant",
+    "servicePort": 6333,
+    "threshold": 0.8,
+    "thresholdRelation": "gt"
+  },
+  "enableSemanticCache": true,
+  "cacheKeyStrategy": "lastQuestion"
+}

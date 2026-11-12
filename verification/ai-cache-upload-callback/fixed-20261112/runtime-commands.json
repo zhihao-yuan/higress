@@ -1,0 +1,117 @@
+[
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=baseline",
+      "--label=baseline-direct-1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=baseline",
+      "--label=baseline-direct-2"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=baseline",
+      "--label=baseline-direct-3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=baseline",
+      "--hold-response",
+      "--label=baseline-held-1"
+    ],
+    "exit_code": 0,
+    "already_executed": true
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=baseline",
+      "--label=baseline-held-2",
+      "--hold-response"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=baseline",
+      "--label=baseline-held-3",
+      "--hold-response"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=candidate",
+      "--label=candidate-direct-1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=candidate",
+      "--label=candidate-direct-2"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=candidate",
+      "--label=candidate-direct-3"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=candidate",
+      "--label=candidate-held-1",
+      "--hold-response"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=candidate",
+      "--label=candidate-held-2",
+      "--hold-response"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python3",
+      "verify_gateway.py",
+      "--variant=candidate",
+      "--label=candidate-held-3",
+      "--hold-response"
+    ],
+    "exit_code": 0
+  }
+]

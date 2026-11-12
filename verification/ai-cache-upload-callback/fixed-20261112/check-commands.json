@@ -1,0 +1,52 @@
+{
+  "go": "<GOROOT>/bin/go",
+  "common_env": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off"
+  },
+  "cwd": "SOURCE/plugins/wasm-go/extensions/ai-cache",
+  "commands": [
+    {
+      "command": "go build -mod=readonly -buildvcs=false -buildmode=c-shared -overlay baseline-overlay.json -o baseline-rebuilt.wasm .",
+      "env": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off",
+        "GOOS": "wasip1",
+        "GOARCH": "wasm"
+      },
+      "exit_code": 0,
+      "result": "byte-identical to runtime baseline.wasm"
+    },
+    {
+      "command": "go build -mod=readonly -buildvcs=false -buildmode=c-shared -o candidate-rebuilt.wasm .",
+      "env": {
+        "GOTOOLCHAIN": "local",
+        "GOWORK": "off",
+        "GOOS": "wasip1",
+        "GOARCH": "wasm"
+      },
+      "exit_code": 0,
+      "result": "byte-identical to runtime candidate.wasm"
+    },
+    {
+      "command": "WASM_FILE_PATH=$ARTIFACTS/baseline.wasm go test -mod=readonly . -run ^TestUploadEmbeddingAndAnswer -count=1 -timeout=3m -v",
+      "exit_code": 1,
+      "log": "baseline-regression.log",
+      "expected_failure": "nil completion callback; all seven providers, fallback interface, async error, and Go/Wasm request path"
+    },
+    {
+      "command": "WASM_FILE_PATH=$ARTIFACTS/candidate.wasm go test -mod=readonly ./... -count=1 -timeout=30m -v",
+      "exit_code": 0,
+      "log": "candidate-full-test.log"
+    },
+    {
+      "command": "go vet -mod=readonly ./...",
+      "exit_code": 0,
+      "log": "candidate-vet.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ]
+}

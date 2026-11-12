@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "/Users/yuanzhihao/Documents/ChatGPT/PR/work/higress-ai-cache-upload-callback-20261111": "<LOCAL_WORK>",
+    "/Users/yuanzhihao/Desktop/kingsoft/OtherProject/zhihao-yuan/higress": "<LOCAL_REPO>",
+    "/Users/yuanzhihao/go": "<GOPATH>",
+    "/usr/local/Cellar/go/1.27.3/libexec": "<GOROOT>"
+  },
+  "files": [
+    "check-commands.json",
+    "baseline-regression.log",
+    "candidate-full-test.log",
+    "baseline-overlay.json",
+    "runtime/baseline-held-1/envoy.log",
+    "runtime/baseline-held-2/envoy.log",
+    "runtime/baseline-held-3/envoy.log"
+  ],
+  "scope": "only local path prefixes replaced; fixture requests/responses, log ordering, metrics and Wasm hashes preserved"
+}

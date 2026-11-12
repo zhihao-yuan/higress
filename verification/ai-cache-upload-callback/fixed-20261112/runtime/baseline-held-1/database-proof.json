@@ -1,0 +1,40 @@
+{
+  "collection": "higress_ai_cache_1794450890885465000",
+  "scroll": {
+    "result": {
+      "points": [
+        {
+          "id": "232112d2-1cc5-48ee-81bc-09694d6ec81c",
+          "payload": {
+            "question": "question",
+            "answer": "answer",
+            "consumer": "fixture-consumer"
+          },
+          "vector": [
+            0.4472136,
+            0.8944272
+          ]
+        }
+      ],
+      "next_page_offset": null
+    },
+    "status": "ok",
+    "time": 0.002056846
+  },
+  "search": {
+    "result": [
+      {
+        "id": "232112d2-1cc5-48ee-81bc-09694d6ec81c",
+        "version": 1,
+        "score": 0.99999994,
+        "payload": {
+          "question": "question",
+          "answer": "answer",
+          "consumer": "fixture-consumer"
+        }
+      }
+    ],
+    "status": "ok",
+    "time": 0.00337491
+  }
+}

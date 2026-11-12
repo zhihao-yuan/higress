@@ -1,0 +1,96 @@
+[
+  {
+    "index": 0,
+    "status": 200,
+    "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"answer\"}}]}",
+    "body_sha256": "58b91962077dc2b373589daa8deb508bb6223689e8440ecb455cc65f64e7889d",
+    "time_ns": 2067562868638,
+    "upstream_bytes_preserved": true,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Thu, 12 Nov 2026 02:41:49 GMT"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "content-length",
+        "65"
+      ],
+      [
+        "req-cost-time",
+        "18"
+      ],
+      [
+        "req-arrive-time",
+        "1794451309629"
+      ],
+      [
+        "resp-start-time",
+        "1794451309648"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "4"
+      ]
+    ]
+  },
+  {
+    "index": 1,
+    "status": 200,
+    "body": "{\"id\":\"from-cache\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"answer\"},\"finish_reason\":\"stop\"}],\"model\":\"from-cache\",\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}",
+    "body_sha256": "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+    "time_ns": 2067581497141,
+    "upstream_bytes_preserved": false,
+    "headers": [
+      [
+        "content-type",
+        "application/json; charset=utf-8"
+      ],
+      [
+        "content-length",
+        "231"
+      ],
+      [
+        "date",
+        "Thu, 12 Nov 2026 02:41:49 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ]
+  },
+  {
+    "index": 2,
+    "status": 200,
+    "body": "{\"id\":\"from-cache\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"answer\"},\"finish_reason\":\"stop\"}],\"model\":\"from-cache\",\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}",
+    "body_sha256": "8f3b788366bfd4fc163444820d6904cb374da3915a713fafd38075d242d70b8f",
+    "time_ns": 2067597917689,
+    "upstream_bytes_preserved": false,
+    "headers": [
+      [
+        "content-type",
+        "application/json; charset=utf-8"
+      ],
+      [
+        "content-length",
+        "231"
+      ],
+      [
+        "date",
+        "Thu, 12 Nov 2026 02:41:49 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ]
+  }
+]

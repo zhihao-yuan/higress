@@ -1,0 +1,112 @@
+{
+  "docker": {
+    "command": [
+      "docker",
+      "version",
+      "--format",
+      "{{json .Server}}"
+    ],
+    "exit_code": 0,
+    "result": {
+      "Platform": {
+        "Name": "Docker Desktop 4.44.2 (202017)"
+      },
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "28.3.2",
+          "Details": {
+            "ApiVersion": "1.51",
+            "Arch": "amd64",
+            "BuildTime": "Wed Jul  9 16:13:55 2025",
+            "Experimental": "false",
+            "GitCommit": "e77ff99",
+            "GoVersion": "go1.24.5",
+            "KernelVersion": "6.10.14-linuxkit",
+            "MinAPIVersion": "1.24",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "1.7.27",
+          "Details": {
+            "GitCommit": "05044ec0a9a75232cad458027ca83437aae3f4da"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.2.5",
+          "Details": {
+            "GitCommit": "v1.2.5-0-g59923ef"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "Version": "28.3.2",
+      "ApiVersion": "1.51",
+      "MinAPIVersion": "1.24",
+      "GitCommit": "e77ff99",
+      "GoVersion": "go1.24.5",
+      "Os": "linux",
+      "Arch": "amd64",
+      "KernelVersion": "6.10.14-linuxkit",
+      "BuildTime": "2025-07-09T16:13:55.000000000+00:00"
+    }
+  },
+  "qdrant_resources": {
+    "command": [
+      "docker",
+      "inspect",
+      "higress-pr-qdrant",
+      "--format",
+      "{{json .HostConfig}}"
+    ],
+    "exit_code": 0,
+    "result": {
+      "Memory": 805306368,
+      "NanoCpus": 1000000000,
+      "PortBindings": {
+        "6333/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "16333"
+          }
+        ]
+      },
+      "RestartPolicy": {
+        "Name": "no",
+        "MaximumRetryCount": 0
+      },
+      "NetworkMode": "higress-pr-vector-lab"
+    }
+  },
+  "gateway_image": {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "--format",
+      "{{json .RepoDigests}}"
+    ],
+    "exit_code": 0,
+    "result": [
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299"
+    ]
+  },
+  "qdrant_version": {
+    "status": 200,
+    "body": {
+      "title": "qdrant - vector search engine",
+      "version": "1.20.0",
+      "commit": "222b2e44ab1c3f17e8246396ead6558e45041df7"
+    }
+  }
+}

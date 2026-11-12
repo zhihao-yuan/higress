@@ -1,0 +1,1014 @@
+=== RUN   TestUploadEmbeddingAndAnswerProviders
+=== RUN   TestUploadEmbeddingAndAnswerProviders/dashvector
+=== RUN   TestUploadEmbeddingAndAnswerProviders/dashvector/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to dashvector
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/docs] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"private-answer","consumer":"fixture-consumer","query":"question"}}]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 9a28c561-cc8e-41cc-8403-bdd295fff3fc, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/docs, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/docs"}, [2]string{":authority", "vector.fixture"}}, body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"private-answer","consumer":"fixture-consumer","query":"question"}}]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 9a28c561-cc8e-41cc-8403-bdd295fff3fc, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 9 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*DvProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af7a9010, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/dashvector.go:268 +0x1d8
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x28?, 0x3d8feb0?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af8668c0, 0x0, {0xfd1af80aac0?, 0x1, 0x5ea7800?}, {0x0, 0x0, 0x0}, {0xfd1af7a9010, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af914750, {0xfd1af80aac0, 0x1, 0x1}, {0xfd1af7a9010, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af874fc8}, 0xfd1af7a6678, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af874fc8}, 0xfd1af7a6678, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af874fc8)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af874fc8?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af874fc8, 0xfd1af7c2da0)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 8
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/dashvector/go
+=== RUN   TestUploadEmbeddingAndAnswerProviders/chroma
+=== RUN   TestUploadEmbeddingAndAnswerProviders/chroma/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to chroma
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [:method POST] [:path /api/v1/collections/fixture/add] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"embeddings":[[0.1,0.2]],"metadatas":[{"consumer":"fixture-consumer","question":"question"}],"documents":["private-answer"],"ids":["f3e7d774-6549-4265-9660-48d81e0cc6f7"]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 72bb2ef9-61c4-48c1-a45e-47769a66f624, cluster: outbound|8081||vector.static, method: POST, url: /api/v1/collections/fixture/add, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{":method", "POST"}, [2]string{":path", "/api/v1/collections/fixture/add"}, [2]string{":authority", "vector.fixture"}}, body: {"embeddings":[[0.1,0.2]],"metadatas":[{"consumer":"fixture-consumer","question":"question"}],"documents":["private-answer"],"ids":["f3e7d774-6549-4265-9660-48d81e0cc6f7"]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 72bb2ef9-61c4-48c1-a45e-47769a66f624, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 11 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*ChromaProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af7a94a0, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/chroma.go:157 +0x123
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x35d571d?, 0xfd1af9279a8?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af866a00, 0x0, {0xfd1af80aea0?, 0x1, 0x5ea7800?}, {0x0, 0x0, 0x0}, {0xfd1af7a94a0, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af9154a0, {0xfd1af80aea0, 0x1, 0x1}, {0xfd1af7a94a0, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af875448}, 0xfd1af7a6c90, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af875448}, 0xfd1af7a6c90, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af875448)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af875448?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af875448, 0xfd1af7c3780)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 10
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/chroma/go
+=== RUN   TestUploadEmbeddingAndAnswerProviders/elasticsearch
+=== RUN   TestUploadEmbeddingAndAnswerProviders/elasticsearch/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to elasticsearch
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [Authorization ApiKey fixture-key] [:method POST] [:path /fixture/_doc] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"embedding":[0.1,0.2],"question":"question","answer":"private-answer","consumer":"fixture-consumer"}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 84558781-f5a1-4a59-a5a6-0f513ae9abdb, cluster: outbound|8081||vector.static, method: POST, url: /fixture/_doc, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"Authorization", "ApiKey fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/fixture/_doc"}, [2]string{":authority", "vector.fixture"}}, body: {"embedding":[0.1,0.2],"question":"question","answer":"private-answer","consumer":"fixture-consumer"}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 84558781-f5a1-4a59-a5a6-0f513ae9abdb, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 13 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*ESProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af7a9900, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/elasticsearch.go:145 +0x12f
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0xfd1af7b0f50?, 0x65?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af866b40, 0x0, {0xfd1af80b220?, 0x1, 0x5ea7800?}, {0x0, 0x0, 0x0}, {0xfd1af7a9900, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af980270, {0xfd1af80b220, 0x1, 0x1}, {0xfd1af7a9900, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af875b08}, 0xfd1af7a71b8, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af875b08}, 0xfd1af7a71b8, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af875b08)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af875b08?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af875b08, 0xfd1af964240)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 12
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/elasticsearch/go
+=== RUN   TestUploadEmbeddingAndAnswerProviders/milvus
+=== RUN   TestUploadEmbeddingAndAnswerProviders/milvus/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to milvus
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [Authorization Bearer fixture-key] [:method POST] [:path /v2/vectordb/entities/insert] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"collectionName":"fixture","data":[{"vector":[0.1,0.2],"question":"question","answer":"private-answer","consumer":"fixture-consumer"}]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: aef4f5cd-1bd9-4fcc-812a-4041b9422d6f, cluster: outbound|8081||vector.static, method: POST, url: /v2/vectordb/entities/insert, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"Authorization", "Bearer fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v2/vectordb/entities/insert"}, [2]string{":authority", "vector.fixture"}}, body: {"collectionName":"fixture","data":[{"vector":[0.1,0.2],"question":"question","answer":"private-answer","consumer":"fixture-consumer"}]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: aef4f5cd-1bd9-4fcc-812a-4041b9422d6f, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 15 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*milvusProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af7a9d80, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/milvus.go:113 +0x12f
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0xfd1af7cd8c0?, 0xfd1af99e000?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af866c80, 0x0, {0xfd1af80b5c0?, 0x1, 0x5ea7800?}, {0x0, 0x0, 0x0}, {0xfd1af7a9d80, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af980c90, {0xfd1af80b5c0, 0x1, 0x1}, {0xfd1af7a9d80, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af994248}, 0xfd1af7a7728, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af994248}, 0xfd1af7a7728, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af994248)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af994248?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af994248, 0xfd1af964be0)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 14
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/milvus/go
+=== RUN   TestUploadEmbeddingAndAnswerProviders/pinecone
+=== RUN   TestUploadEmbeddingAndAnswerProviders/pinecone/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to pinecone
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [Api-Key fixture-key] [:method POST] [:path /vectors/upsert] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"vectors":[{"id":"0f18aac2-2e50-4475-9e2c-51f8876ddebe","values":[0.1,0.2],"metadata":{"question":"question","answer":"private-answer","consumer":"fixture-consumer"}}],"namespace":"fixture"}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 333120b3-ac86-4869-ba96-e37d3f15e3f7, cluster: outbound|8081||vector.static, method: POST, url: /vectors/upsert, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"Api-Key", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/vectors/upsert"}, [2]string{":authority", "vector.fixture"}}, body: {"vectors":[{"id":"0f18aac2-2e50-4475-9e2c-51f8876ddebe","values":[0.1,0.2],"metadata":{"question":"question","answer":"private-answer","consumer":"fixture-consumer"}}],"namespace":"fixture"}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 333120b3-ac86-4869-ba96-e37d3f15e3f7, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 17 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*pineconeProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af9be300, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/pinecone.go:114 +0x12f
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0xfd1af7cdcc0?, 0xfd1af9be298?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af866dc0, 0x0, {0xfd1af80b980?, 0x1, 0x5ea7800?}, {0x0, 0x0, 0x0}, {0xfd1af9be300, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af981860, {0xfd1af80b980, 0x1, 0x1}, {0xfd1af9be300, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af994908}, 0xfd1af7a7cb0, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af994908}, 0xfd1af7a7cb0, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af994908)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af994908?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af994908, 0xfd1af965570)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 16
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/pinecone/go
+=== RUN   TestUploadEmbeddingAndAnswerProviders/qdrant
+=== RUN   TestUploadEmbeddingAndAnswerProviders/qdrant/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [api-key fixture-key] [:method PUT] [:path /collections/fixture/points] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"points":[{"id":"08f7a9a5-2cb3-45da-8baf-1079a4b30f70","vector":[0.1,0.2],"payload":{"question":"question","answer":"private-answer","consumer":"fixture-consumer"}}]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: a53e73ab-fae7-454a-bb02-73576469ae9a, cluster: outbound|8081||vector.static, method: PUT, url: /collections/fixture/points, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"api-key", "fixture-key"}, [2]string{":method", "PUT"}, [2]string{":path", "/collections/fixture/points"}, [2]string{":authority", "vector.fixture"}}, body: {"points":[{"id":"08f7a9a5-2cb3-45da-8baf-1079a4b30f70","vector":[0.1,0.2],"payload":{"question":"question","answer":"private-answer","consumer":"fixture-consumer"}}]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: a53e73ab-fae7-454a-bb02-73576469ae9a, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 19 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*qdrantProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af9be7b0, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/qdrant.go:116 +0x12f
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0xb0?, 0xfd1af9d6180?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af866f00, 0x0, {0xfd1af80bd20?, 0x1, 0x5ea7800?}, {0x0, 0x0, 0x0}, {0xfd1af9be7b0, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af9d2600, {0xfd1af80bd20, 0x1, 0x1}, {0xfd1af9be7b0, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af995208}, 0xfd1af9d0378, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af995208}, 0xfd1af9d0378, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af995208)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af995208?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af995208, 0xfd1af965ef0)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 18
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/qdrant/go
+=== RUN   TestUploadEmbeddingAndAnswerProviders/weaviate
+=== RUN   TestUploadEmbeddingAndAnswerProviders/weaviate/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to weaviate
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [Authorization Bearer fixture-key] [:method POST] [:path /v1/objects] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"class":"fixture","vector":[0.1,0.2],"properties":{"question":"question","answer":"private-answer","consumer":"fixture-consumer"}}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: f7d6c346-e05b-449b-93b0-61c54cef5410, cluster: outbound|8081||vector.static, method: POST, url: /v1/objects, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"Authorization", "Bearer fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/objects"}, [2]string{":authority", "vector.fixture"}}, body: {"class":"fixture","vector":[0.1,0.2],"properties":{"question":"question","answer":"private-answer","consumer":"fixture-consumer"}}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: f7d6c346-e05b-449b-93b0-61c54cef5410, code: 200, normal: true, body: {"status":"ok"}
+    core_upload_test.go:30: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x392eac0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 21 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*WeaviateProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af9bec30, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/weaviate.go:156 +0x12f
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0xfd1af7bfdd0?, 0x83?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af867040, 0x0, {0xfd1af9fa1a0?, 0x1, 0x4c9465c0?}, {0x0, 0x0, 0x0}, {0xfd1af9bec30, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af9d3230, {0xfd1af9fa1a0, 0x1, 0x1}, {0xfd1af9bec30, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:31 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af995b08}, 0xfd1af9d08b8, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af995b08}, 0xfd1af9d08b8, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerProviders.func1.1(0xfd1af995b08)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:30 +0x436
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af995b08?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af995b08, 0xfd1af9d4980)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 20
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerProviders/weaviate/go
+--- FAIL: TestUploadEmbeddingAndAnswerProviders (0.01s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/dashvector (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/dashvector/go (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/chroma (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/chroma/go (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/elasticsearch (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/elasticsearch/go (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/milvus (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/milvus/go (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/pinecone (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/pinecone/go (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/qdrant (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/qdrant/go (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerProviders/weaviate (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerProviders/weaviate/go (0.00s)
+=== RUN   TestUploadEmbeddingAndAnswerAsyncError
+=== RUN   TestUploadEmbeddingAndAnswerAsyncError/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to dashvector
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/docs] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"private-answer","consumer":"fixture-consumer","query":"question"}}]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: d42d2b7b-b312-4776-8314-d462c3fed050, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/docs, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/docs"}, [2]string{":authority", "vector.fixture"}}, body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"private-answer","consumer":"fixture-consumer","query":"question"}}]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: d42d2b7b-b312-4776-8314-d462c3fed050, code: 503, normal: true, body: {"error":"unavailable"}
+    core_upload_test.go:46: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:46
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x3939260) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 23 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*DvProvider).UploadAnswerAndEmbedding.func1(0x1f7, 0x17?, {0xfd1af7ba918, 0x17, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/dashvector.go:268 +0x1d8
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x28?, 0x3d8feb0?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0x17, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af867180, 0x0, {0xfd1af9fa540?, 0x1, 0x4c9465c0?}, {0x0, 0x0, 0x0}, {0xfd1af7ba918, 0x17, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1af9d3ce0, {0xfd1af9fa540, 0x1, 0x1}, {0xfd1af7ba918, 0x17, 0x17})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerAsyncError.func1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:47 +0xbb
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af9fc488}, 0xfd1af9d0de0, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af9fc488}, 0xfd1af9d0de0, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerAsyncError.func1(0xfd1af9fc488)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:46 +0x3cc
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af9fc488?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af9fc488, 0xfd1af9d5340)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 22
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerAsyncError/go
+--- FAIL: TestUploadEmbeddingAndAnswerAsyncError (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerAsyncError/go (0.00s)
+=== RUN   TestUploadEmbeddingAndAnswerSyncFallback
+=== RUN   TestUploadEmbeddingAndAnswerSyncFallback/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to dashvector
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/docs] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"","consumer":"fixture-consumer","query":"question"}}]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: ffb6c378-f11d-410e-8429-c6f86e30357a, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/docs, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/docs"}, [2]string{":authority", "vector.fixture"}}, body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"","consumer":"fixture-consumer","query":"question"}}]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: ffb6c378-f11d-410e-8429-c6f86e30357a, code: 200, normal: true, body: {"code":0}
+    core_upload_test.go:72: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:72
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124
+        	Error:      	func (assert.PanicTestFunc)(0x3938bc0) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 25 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*DvProvider).UploadEmbedding.func1(0xc8, 0xa?, {0xfd1af9bf290, 0xa, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/dashvector.go:244 +0x1d8
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0xfd1afa3a720?, 0x3ccf840?, 0x0?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x0, 0x1, 0xa, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af8672c0, 0x0, {0xfd1af9fa920?, 0x1, 0x4c9465c0?}, {0x0, 0x0, 0x0}, {0xfd1af9bf290, 0xa, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1afa22750, {0xfd1af9fa920, 0x1, 0x1}, {0xfd1af9bf290, 0xa, 0xa})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerSyncFallback.func1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:73 +0xb5
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af9fc908}, 0xfd1af9d1308, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af9fc908}, 0xfd1af9d1308, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerSyncFallback.func1(0xfd1af9fc908)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:72 +0x692
+        	            	github.com/higress-group/wasm-go/pkg/test.RunGoTest.func1(0xfd1af9fc908?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:124 +0xc3
+        	            	testing.tRunner(0xfd1af9fc908, 0xfd1af9d5d30)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 24
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerSyncFallback/go
+--- FAIL: TestUploadEmbeddingAndAnswerSyncFallback (0.00s)
+    --- FAIL: TestUploadEmbeddingAndAnswerSyncFallback/go (0.00s)
+=== RUN   TestUploadEmbeddingAndAnswerSyncErrors
+=== RUN   TestUploadEmbeddingAndAnswerSyncErrors/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to dashvector
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 proxy_critical_log: invalid rawURL:/v1/collections/bad%zz/docs
+2026/11/12 10:33:06 proxy_critical_log: invalid rawURL:/v1/collections/bad%zz/docs
+--- PASS: TestUploadEmbeddingAndAnswerSyncErrors (0.00s)
+    --- PASS: TestUploadEmbeddingAndAnswerSyncErrors/go (0.00s)
+=== RUN   TestUploadEmbeddingAndAnswerSkips
+=== RUN   TestUploadEmbeddingAndAnswerSkips/no_consumer
+=== RUN   TestUploadEmbeddingAndAnswerSkips/no_consumer/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestUploadEmbeddingAndAnswerSkips/no_embedding
+=== RUN   TestUploadEmbeddingAndAnswerSkips/no_embedding/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestUploadEmbeddingAndAnswerSkips/wrong_embedding_type
+=== RUN   TestUploadEmbeddingAndAnswerSkips/wrong_embedding_type/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+=== RUN   TestUploadEmbeddingAndAnswerSkips/no_vector_provider
+=== RUN   TestUploadEmbeddingAndAnswerSkips/no_vector_provider/go
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+--- PASS: TestUploadEmbeddingAndAnswerSkips (0.00s)
+    --- PASS: TestUploadEmbeddingAndAnswerSkips/no_consumer (0.00s)
+        --- PASS: TestUploadEmbeddingAndAnswerSkips/no_consumer/go (0.00s)
+    --- PASS: TestUploadEmbeddingAndAnswerSkips/no_embedding (0.00s)
+        --- PASS: TestUploadEmbeddingAndAnswerSkips/no_embedding/go (0.00s)
+    --- PASS: TestUploadEmbeddingAndAnswerSkips/wrong_embedding_type (0.00s)
+        --- PASS: TestUploadEmbeddingAndAnswerSkips/wrong_embedding_type/go (0.00s)
+    --- PASS: TestUploadEmbeddingAndAnswerSkips/no_vector_provider (0.00s)
+        --- PASS: TestUploadEmbeddingAndAnswerSkips/no_vector_provider/go (0.00s)
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath/dashvector
+[WASM_PATH] Using environment variable WASM_FILE_PATH: <LOCAL_WORK>/implementation-20261112/baseline.wasm
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath/dashvector/go
+    test.go:158: go mode test start
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to dashvector
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] cache key strategy is last question, cache key from: messages.@reverse.0.content
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] key: question
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [CheckCacheForKey] no cache provider configured, performing similarity search
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performSimilaritySearch] active vector provider implements EmbeddingQuerier interface, performing embedding query
+2026/11/12 10:33:06 [http callout to outbound|8080||embedding.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8080||embedding.static] headers: [[Authorization Bearer fixture-key] [Content-Type application/json] [:method POST] [:path /api/v1/services/embeddings/text-embedding/text-embedding] [:authority dashscope.aliyuncs.com]]
+2026/11/12 10:33:06 [http callout to outbound|8080||embedding.static] body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}
+2026/11/12 10:33:06 [http callout to outbound|8080||embedding.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 12f71659-f25e-4373-9114-d22e931d8818, cluster: outbound|8080||embedding.static, method: POST, url: /api/v1/services/embeddings/text-embedding/text-embedding, headers: [][2]string{[2]string{"Authorization", "Bearer fixture-key"}, [2]string{"Content-Type", "application/json"}, [2]string{":method", "POST"}, [2]string{":path", "/api/v1/services/embeddings/text-embedding/text-embedding"}, [2]string{":authority", "dashscope.aliyuncs.com"}}, body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 12f71659-f25e-4373-9114-d22e931d8818, code: 200, normal: true, body: {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] get embedding response: 200, {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performEmbeddingQuery] GetEmbedding success, length of embedding: 2, error: <nil>
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] url:/v1/collections/fixture/query, body:{"vector":[0.1,0.2],"topk":1,"include_vector":false,"filter":"consumer = 'fixture-consumer'"}, headers:[[Content-Type application/json] [dashvector-auth-token fixture-key]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/query] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"vector":[0.1,0.2],"topk":1,"include_vector":false,"filter":"consumer = 'fixture-consumer'"}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 3211e331-e6dc-498a-a40e-ba6264d02e2c, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/query, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/query"}, [2]string{":authority", "vector.fixture"}}, body: {"vector":[0.1,0.2],"topk":1,"include_vector":false,"filter":"consumer = 'fixture-consumer'"}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 3211e331-e6dc-498a-a40e-ba6264d02e2c, code: 200, normal: true, body: {"code":0,"output":[]}
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] query embedding response: 200, {"code":0,"output":[]}
+2026/11/12 10:33:06 proxy_error_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [handleInternalError] [ai-cache] [handleQueryResults] error querying vector database for key: question: failed to parse query response: no query results found in response
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetResponseBodyBufferLimit: 104857600
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] is last chunk: true
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] chunk: {"choices":[{"message":{"role":"assistant","content":"answer"}}]}
+2026/11/12 10:33:06 proxy_info_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] uploading answer embedding for key: question
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/docs] [:authority vector.fixture]]
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"answer","consumer":"fixture-consumer","query":"question"}}]}
+2026/11/12 10:33:06 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:06 proxy_debug_log: http call start, id: 9bcf7ed4-72ee-4702-a3c9-a3c8895fa966, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/docs, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/docs"}, [2]string{":authority", "vector.fixture"}}, body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"answer","consumer":"fixture-consumer","query":"question"}}]}, timeout: 10000
+2026/11/12 10:33:06 proxy_debug_log: http call end, id: 9bcf7ed4-72ee-4702-a3c9-a3c8895fa966, code: 200, normal: true, body: {"status":"ok"}
+2026/11/12 10:33:06 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] statusCode:200, responseBody:{"status":"ok"}
+    core_upload_test.go:145: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:161
+        	Error:      	func (assert.PanicTestFunc)(0x392fb00) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 39 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*DvProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1afa70840, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/dashvector.go:268 +0x1d8
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x39c6120?, 0x39c14c8?, 0x2?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x2, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1af867a40, 0x2, {0xfd1af9fb620?, 0x1, 0x4c9465c0?}, {0x0, 0x0, 0x0}, {0xfd1afa70840, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1afa5dc80, {0xfd1af9fb620, 0x1, 0x1}, {0xfd1afa70840, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:146 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1afa68908}, 0xfd1afa7a060, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1afa68908}, 0xfd1afa7a060, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1(0xfd1afa68908)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145 +0x68f
+        	            	github.com/higress-group/wasm-go/pkg/test.RunTestWithPath.func1(0xfd1afa68908)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:161 +0xeb
+        	            	testing.tRunner(0xfd1afa68908, 0xfd1afa5ed00)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 38
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerRequestPath/dashvector/go
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath/dashvector/wasm
+    test.go:166: wasm mode test start
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:12 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to dashvector
+2026/11/12 10:33:12 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] cache key strategy is last question, cache key from: messages.@reverse.0.content
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] key: question
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [CheckCacheForKey] no cache provider configured, performing similarity search
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performSimilaritySearch] active vector provider implements EmbeddingQuerier interface, performing embedding query
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] timeout: 10000
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] headers: [[Authorization Bearer fixture-key] [Content-Type application/json] [:method POST] [:path /api/v1/services/embeddings/text-embedding/text-embedding] [:authority dashscope.aliyuncs.com]]
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] trailers: []
+2026/11/12 10:33:12 proxy_debug_log: http call start, id: 0cc0d614-4c88-4535-841a-cbe0709b0758, cluster: outbound|8080||embedding.static, method: POST, url: /api/v1/services/embeddings/text-embedding/text-embedding, headers: [][2]string{[2]string{"Authorization", "Bearer fixture-key"}, [2]string{"Content-Type", "application/json"}, [2]string{":method", "POST"}, [2]string{":path", "/api/v1/services/embeddings/text-embedding/text-embedding"}, [2]string{":authority", "dashscope.aliyuncs.com"}}, body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}, timeout: 10000
+2026/11/12 10:33:12 proxy_debug_log: http call end, id: 0cc0d614-4c88-4535-841a-cbe0709b0758, code: 200, normal: true, body: {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] get embedding response: 200, {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performEmbeddingQuery] GetEmbedding success, length of embedding: 2, error: <nil>
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] url:/v1/collections/fixture/query, body:{"vector":[0.1,0.2],"topk":1,"include_vector":false,"filter":"consumer = 'fixture-consumer'"}, headers:[[Content-Type application/json] [dashvector-auth-token fixture-key]]
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/query] [:authority vector.fixture]]
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] body: {"vector":[0.1,0.2],"topk":1,"include_vector":false,"filter":"consumer = 'fixture-consumer'"}
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:12 proxy_debug_log: http call start, id: 083f61d3-75bc-42b4-9df4-f91929e18fda, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/query, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/query"}, [2]string{":authority", "vector.fixture"}}, body: {"vector":[0.1,0.2],"topk":1,"include_vector":false,"filter":"consumer = 'fixture-consumer'"}, timeout: 10000
+2026/11/12 10:33:12 proxy_debug_log: http call end, id: 083f61d3-75bc-42b4-9df4-f91929e18fda, code: 200, normal: true, body: {"code":0,"output":[]}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] query embedding response: 200, {"code":0,"output":[]}
+2026/11/12 10:33:12 proxy_error_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [handleInternalError] [ai-cache] [handleQueryResults] error querying vector database for key: question: failed to parse query response: no query results found in response
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetResponseBodyBufferLimit: 104857600
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] is last chunk: true
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] chunk: {"choices":[{"message":{"role":"assistant","content":"answer"}}]}
+2026/11/12 10:33:12 proxy_info_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] uploading answer embedding for key: question
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [dashvector-auth-token fixture-key] [:method POST] [:path /v1/collections/fixture/docs] [:authority vector.fixture]]
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"answer","consumer":"fixture-consumer","query":"question"}}]}
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:12 proxy_debug_log: http call start, id: 9e6f82e5-4e74-4e81-a79e-4bbd6fe34cdc, cluster: outbound|8081||vector.static, method: POST, url: /v1/collections/fixture/docs, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"dashvector-auth-token", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/v1/collections/fixture/docs"}, [2]string{":authority", "vector.fixture"}}, body: {"docs":[{"vector":[0.1,0.2],"fields":{"answer":"answer","consumer":"fixture-consumer","query":"question"}}]}, timeout: 10000
+2026/11/12 10:33:12 proxy_debug_log: http call end, id: 9e6f82e5-4e74-4e81-a79e-4bbd6fe34cdc, code: 200, normal: true, body: {"status":"ok"}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] statusCode:200, responseBody:{"status":"ok"}
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x0 addr=0x0 pc=0x0]
+
+goroutine 1 [running]:
+github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*DvProvider).UploadAnswerAndEmbedding.func1(0xc8, 0x532330, {0x40eab0, 0xf, 0xf})
+	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/dashvector.go:268 +0x1d
+github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x1, 0xf, 0x0)
+	<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x4a
+github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x1, 0x2, 0x1, 0xf, 0x0)
+	<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x18
+    core_upload_test.go:145: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:176
+        	Error:      	func (assert.PanicTestFunc)(0x392fb00) should not panic
+        	            		Panic value:	wasm error: unreachable
+        	            	wasm stack trace:
+        	            		.runtime.abort(i32) i32
+        	            		.runtime.fatalpanic(i32) i32
+        	            		.runtime.gopanic(i32) i32
+        	            		.runtime.sigpanic(i32) i32
+        	            		.github.com_alibaba_higress_plugins_wasm_go_extensions_ai_cache_vector.__DvProvider_.UploadAnswerAndEmbedding.func1(i32) i32
+        	            		.github.com_higress_group_wasm_go_pkg_wrapper.HttpCall.func1(i32) i32
+        	            		.github.com_higress_group_proxy_wasm_go_sdk_proxywasm_internal.proxyOnHttpCallResponse(i32) i32
+        	            		.proxy_on_http_call_response(i32,i32,i32,i32,i32)
+        	            		Panic stack:	goroutine 40 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3cef0f0?, 0xfd1b5bd8440?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.exportHostABI.func21.1(0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/wasmwrapper.go:614 +0x11a
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x2, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1b5bd6140, 0x2, {0xfd1b5bd83c0?, 0x1, 0x4ccd7d40?}, {0x0, 0x0, 0x0}, {0xfd1b0ecb1c0, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1b5bd2690, {0xfd1b5bd83c0, 0x1, 0x1}, {0xfd1b0ecb1c0, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:146 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1afa69448}, 0xfd1b5bda930, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1afa69448}, 0xfd1b5bda930, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1(0xfd1afa69448)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145 +0x68f
+        	            	github.com/higress-group/wasm-go/pkg/test.RunTestWithPath.func2(0xfd1afa69448)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:176 +0x219
+        	            	testing.tRunner(0xfd1afa69448, 0xfd1af9fb720)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 38
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerRequestPath/dashvector/wasm
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath/qdrant
+[WASM_PATH] Using environment variable WASM_FILE_PATH: <LOCAL_WORK>/implementation-20261112/baseline.wasm
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath/qdrant/go
+    test.go:158: go mode test start
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:12 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:12 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] cache key strategy is last question, cache key from: messages.@reverse.0.content
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] key: question
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [CheckCacheForKey] no cache provider configured, performing similarity search
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performSimilaritySearch] active vector provider implements EmbeddingQuerier interface, performing embedding query
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] timeout: 10000
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] headers: [[Authorization Bearer fixture-key] [Content-Type application/json] [:method POST] [:path /api/v1/services/embeddings/text-embedding/text-embedding] [:authority dashscope.aliyuncs.com]]
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}
+2026/11/12 10:33:12 [http callout to outbound|8080||embedding.static] trailers: []
+2026/11/12 10:33:12 proxy_debug_log: http call start, id: c90e4783-ae94-4b69-861a-d600d39b3c4b, cluster: outbound|8080||embedding.static, method: POST, url: /api/v1/services/embeddings/text-embedding/text-embedding, headers: [][2]string{[2]string{"Authorization", "Bearer fixture-key"}, [2]string{"Content-Type", "application/json"}, [2]string{":method", "POST"}, [2]string{":path", "/api/v1/services/embeddings/text-embedding/text-embedding"}, [2]string{":authority", "dashscope.aliyuncs.com"}}, body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}, timeout: 10000
+2026/11/12 10:33:12 proxy_debug_log: http call end, id: c90e4783-ae94-4b69-861a-d600d39b3c4b, code: 200, normal: true, body: {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] get embedding response: 200, {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performEmbeddingQuery] GetEmbedding success, length of embedding: 2, error: <nil>
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [api-key fixture-key] [:method POST] [:path /collections/fixture/points/search] [:authority vector.fixture]]
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] body: {"vector":[0.1,0.2],"limit":1,"with_payload":true,"filter":{"must":[{"key":"consumer","match":{"value":"fixture-consumer"}}]}}
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:12 proxy_debug_log: http call start, id: 4a11c996-e744-47c3-af99-3e3469ea56f0, cluster: outbound|8081||vector.static, method: POST, url: /collections/fixture/points/search, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"api-key", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/collections/fixture/points/search"}, [2]string{":authority", "vector.fixture"}}, body: {"vector":[0.1,0.2],"limit":1,"with_payload":true,"filter":{"must":[{"key":"consumer","match":{"value":"fixture-consumer"}}]}}, timeout: 10000
+2026/11/12 10:33:12 proxy_debug_log: http call end, id: 4a11c996-e744-47c3-af99-3e3469ea56f0, code: 200, normal: true, body: {"status":"ok","result":[]}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [Qdrant] Query embedding response: 200, {"status":"ok","result":[]}
+2026/11/12 10:33:12 proxy_error_log: [ai-cache] [nil] [test-request-id-default] [Qdrant] No distance found in response body: {"status":"ok","result":[]}
+2026/11/12 10:33:12 proxy_error_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [handleInternalError] [ai-cache] [handleQueryResults] error querying vector database for key: question: [Qdrant] Failed to parse query response: [Qdrant] No distance found in response body
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetResponseBodyBufferLimit: 104857600
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] is last chunk: true
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] chunk: {"choices":[{"message":{"role":"assistant","content":"answer"}}]}
+2026/11/12 10:33:12 proxy_info_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] uploading answer embedding for key: question
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [api-key fixture-key] [:method PUT] [:path /collections/fixture/points] [:authority vector.fixture]]
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] body: {"points":[{"id":"6c21e563-690d-4a1a-8192-8cade9a38c9b","vector":[0.1,0.2],"payload":{"question":"question","answer":"answer","consumer":"fixture-consumer"}}]}
+2026/11/12 10:33:12 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:12 proxy_debug_log: http call start, id: fa4075bf-6867-4a1a-9876-3a6c5daa20ff, cluster: outbound|8081||vector.static, method: PUT, url: /collections/fixture/points, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"api-key", "fixture-key"}, [2]string{":method", "PUT"}, [2]string{":path", "/collections/fixture/points"}, [2]string{":authority", "vector.fixture"}}, body: {"points":[{"id":"6c21e563-690d-4a1a-8192-8cade9a38c9b","vector":[0.1,0.2],"payload":{"question":"question","answer":"answer","consumer":"fixture-consumer"}}]}, timeout: 10000
+2026/11/12 10:33:12 proxy_debug_log: http call end, id: fa4075bf-6867-4a1a-9876-3a6c5daa20ff, code: 200, normal: true, body: {"status":"ok"}
+2026/11/12 10:33:12 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [Qdrant] statusCode:200, responseBody:{"status":"ok"}
+    core_upload_test.go:145: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:161
+        	Error:      	func (assert.PanicTestFunc)(0x392fb00) should not panic
+        	            		Panic value:	runtime error: invalid memory address or nil pointer dereference
+        	            		Panic stack:	goroutine 50 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3d5e190?, 0x3e03e20?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*qdrantProvider).UploadAnswerAndEmbedding.func1(0xc8, 0xf?, {0xfd1af8f57e0, 0xf, 0x3997683?})
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/qdrant.go:116 +0x12f
+        	            	github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x39c6120?, 0x39c14c8?, 0x2?)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x455
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x2, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1b5bd6280, 0x2, {0xfd1b5bd8bc0?, 0x1, 0x4ccd7d40?}, {0x0, 0x0, 0x0}, {0xfd1af8f57e0, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1b5bd3080, {0xfd1b5bd8bc0, 0x1, 0x1}, {0xfd1af8f57e0, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:146 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af874d88}, 0xfd1b5bdb170, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af874d88}, 0xfd1b5bdb170, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1(0xfd1af874d88)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145 +0x68f
+        	            	github.com/higress-group/wasm-go/pkg/test.RunTestWithPath.func1(0xfd1af874d88)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:161 +0xeb
+        	            	testing.tRunner(0xfd1af874d88, 0xfd1b5b97410)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 49
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerRequestPath/qdrant/go
+=== RUN   TestUploadEmbeddingAndAnswerRequestPath/qdrant/wasm
+    test.go:166: wasm mode test start
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheStreamValueFrom.requestBody not exists
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnResponseTemplate not exists
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] returnStreamResponseTemplate not exists
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheKeyFrom.requestBody not exists
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] [convertLegacyMapFields] cacheValueFrom.requestBody not exists
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] embedding provider is set to dashscope
+2026/11/12 10:33:18 proxy_info_log: [ai-cache] [nil] [nil] cache provider is not configured
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [nil] vector provider is set to qdrant
+2026/11/12 10:33:18 proxy_info_log: [ai-cache] [nil] [nil] plugin start successfully
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetRequestBodyBufferLimit: 104857600
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] cache key strategy is last question, cache key from: messages.@reverse.0.content
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpRequestBody] key: question
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [CheckCacheForKey] no cache provider configured, performing similarity search
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performSimilaritySearch] active vector provider implements EmbeddingQuerier interface, performing embedding query
+2026/11/12 10:33:18 [http callout to outbound|8080||embedding.static] timeout: 10000
+2026/11/12 10:33:18 [http callout to outbound|8080||embedding.static] headers: [[Authorization Bearer fixture-key] [Content-Type application/json] [:method POST] [:path /api/v1/services/embeddings/text-embedding/text-embedding] [:authority dashscope.aliyuncs.com]]
+2026/11/12 10:33:18 [http callout to outbound|8080||embedding.static] body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}
+2026/11/12 10:33:18 [http callout to outbound|8080||embedding.static] trailers: []
+2026/11/12 10:33:18 proxy_debug_log: http call start, id: 0cc0d614-4c88-4535-841a-cbe0709b0758, cluster: outbound|8080||embedding.static, method: POST, url: /api/v1/services/embeddings/text-embedding/text-embedding, headers: [][2]string{[2]string{"Authorization", "Bearer fixture-key"}, [2]string{"Content-Type", "application/json"}, [2]string{":method", "POST"}, [2]string{":path", "/api/v1/services/embeddings/text-embedding/text-embedding"}, [2]string{":authority", "dashscope.aliyuncs.com"}}, body: {"model":"text-embedding-v2","input":{"texts":["question"]},"parameters":{"text_type":"query"}}, timeout: 10000
+2026/11/12 10:33:18 proxy_debug_log: http call end, id: 0cc0d614-4c88-4535-841a-cbe0709b0758, code: 200, normal: true, body: {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] get embedding response: 200, {"output":{"embeddings":[{"embedding":[0.1,0.2]}]}}
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [performEmbeddingQuery] GetEmbedding success, length of embedding: 2, error: <nil>
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [api-key fixture-key] [:method POST] [:path /collections/fixture/points/search] [:authority vector.fixture]]
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] body: {"vector":[0.1,0.2],"limit":1,"with_payload":true,"filter":{"must":[{"key":"consumer","match":{"value":"fixture-consumer"}}]}}
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:18 proxy_debug_log: http call start, id: 083f61d3-75bc-42b4-9df4-f91929e18fda, cluster: outbound|8081||vector.static, method: POST, url: /collections/fixture/points/search, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"api-key", "fixture-key"}, [2]string{":method", "POST"}, [2]string{":path", "/collections/fixture/points/search"}, [2]string{":authority", "vector.fixture"}}, body: {"vector":[0.1,0.2],"limit":1,"with_payload":true,"filter":{"must":[{"key":"consumer","match":{"value":"fixture-consumer"}}]}}, timeout: 10000
+2026/11/12 10:33:18 proxy_debug_log: http call end, id: 083f61d3-75bc-42b4-9df4-f91929e18fda, code: 200, normal: true, body: {"status":"ok","result":[]}
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [Qdrant] Query embedding response: 200, {"status":"ok","result":[]}
+2026/11/12 10:33:18 proxy_error_log: [ai-cache] [nil] [test-request-id-default] [Qdrant] No distance found in response body: {"status":"ok","result":[]}
+2026/11/12 10:33:18 proxy_error_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] [handleInternalError] [ai-cache] [handleQueryResults] error querying vector database for key: question: [Qdrant] Failed to parse query response: [Qdrant] No distance found in response body
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] SetResponseBodyBufferLimit: 104857600
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] is last chunk: true
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [onHttpResponseBody] chunk: {"choices":[{"message":{"role":"assistant","content":"answer"}}]}
+2026/11/12 10:33:18 proxy_info_log: [ai-cache] [nil] [test-request-id-default] [ai-cache] uploading answer embedding for key: question
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] timeout: 10000
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] headers: [[Content-Type application/json] [api-key fixture-key] [:method PUT] [:path /collections/fixture/points] [:authority vector.fixture]]
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] body: {"points":[{"id":"9e6f82e5-4e74-4e81-a79e-4bbd6fe34cdc","vector":[0.1,0.2],"payload":{"question":"question","answer":"answer","consumer":"fixture-consumer"}}]}
+2026/11/12 10:33:18 [http callout to outbound|8081||vector.static] trailers: []
+2026/11/12 10:33:18 proxy_debug_log: http call start, id: ba843ee8-d63e-4c4f-be1c-ebea546d8fac, cluster: outbound|8081||vector.static, method: PUT, url: /collections/fixture/points, headers: [][2]string{[2]string{"Content-Type", "application/json"}, [2]string{"api-key", "fixture-key"}, [2]string{":method", "PUT"}, [2]string{":path", "/collections/fixture/points"}, [2]string{":authority", "vector.fixture"}}, body: {"points":[{"id":"9e6f82e5-4e74-4e81-a79e-4bbd6fe34cdc","vector":[0.1,0.2],"payload":{"question":"question","answer":"answer","consumer":"fixture-consumer"}}]}, timeout: 10000
+2026/11/12 10:33:18 proxy_debug_log: http call end, id: ba843ee8-d63e-4c4f-be1c-ebea546d8fac, code: 200, normal: true, body: {"status":"ok"}
+2026/11/12 10:33:18 proxy_debug_log: [ai-cache] [nil] [test-request-id-default] [Qdrant] statusCode:200, responseBody:{"status":"ok"}
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal 0xb code=0x0 addr=0x0 pc=0x0]
+
+goroutine 1 [running]:
+github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache/vector.(*qdrantProvider).UploadAnswerAndEmbedding.func1(0xc8, 0x532480, {0x40eba0, 0xf, 0xf})
+	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/vector/qdrant.go:116 +0xd
+github.com/higress-group/wasm-go/pkg/wrapper.HttpCall.func1(0x1, 0xf, 0x0)
+	<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/wrapper/http_wrapper.go:142 +0x4a
+github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x1, 0x2, 0x1, 0xf, 0x0)
+	<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x18
+    core_upload_test.go:145: 
+        	Error Trace:	<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145
+        	            				<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:176
+        	Error:      	func (assert.PanicTestFunc)(0x392fb00) should not panic
+        	            		Panic value:	wasm error: unreachable
+        	            	wasm stack trace:
+        	            		.runtime.abort(i32) i32
+        	            		.runtime.fatalpanic(i32) i32
+        	            		.runtime.gopanic(i32) i32
+        	            		.runtime.sigpanic(i32) i32
+        	            		.github.com_alibaba_higress_plugins_wasm_go_extensions_ai_cache_vector.__qdrantProvider_.UploadAnswerAndEmbedding.func1(i32) i32
+        	            		.github.com_higress_group_wasm_go_pkg_wrapper.HttpCall.func1(i32) i32
+        	            		.github.com_higress_group_proxy_wasm_go_sdk_proxywasm_internal.proxyOnHttpCallResponse(i32) i32
+        	            		.proxy_on_http_call_response(i32,i32,i32,i32,i32)
+        	            		Panic stack:	goroutine 51 [running]:
+        	            	runtime/debug.Stack()
+        	            		<GOROOT>/src/runtime/debug/stack.go:26 +0x5e
+        	            	github.com/stretchr/testify/assert.didPanic.func1()
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1196 +0x67
+        	            	panic({0x3cef0f0?, 0xfd1b0927dc0?})
+        	            		<GOROOT>/src/runtime/panic.go:859 +0x125
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.exportHostABI.func21.1(0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/wasmwrapper.go:614 +0x11a
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.proxyOnHttpCallResponse(0x3d2bc10?, 0x2, 0x1, 0xf, 0x0)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_l7.go:129 +0x128
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/internal.ProxyOnHttpCallResponse(...)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/internal/abi_callback_test_export.go:76
+        	            	github.com/higress-group/proxy-wasm-go-sdk/proxywasm/proxytest.(*rootHostEmulator).CallOnHttpCallResponse(0xfd1b5bd7040, 0x2, {0xfd1b0927d40?, 0x1, 0x4cce1560?}, {0x0, 0x0, 0x0}, {0xfd1b2d56e60, 0xf, ...})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/proxy-wasm-go-sdk@v0.0.0-20250822030947-8345453fddd0/proxywasm/proxytest/root.go:550 +0x1da
+        	            	github.com/higress-group/wasm-go/pkg/test.(*testHost).CallOnHttpCall(0xfd1b29e2030, {0xfd1b0927d40, 0x1, 0x1}, {0xfd1b2d56e60, 0xf, 0xf})
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/host.go:203 +0xb1
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1.1()
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:146 +0xbd
+        	            	github.com/stretchr/testify/assert.didPanic(0x3e06c00?)
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1201 +0x70
+        	            	github.com/stretchr/testify/assert.NotPanics({0x4c941880, 0xfd1af875208}, 0xfd1b298cb88, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/assert/assertions.go:1272 +0x7e
+        	            	github.com/stretchr/testify/require.NotPanics({0x3db2000, 0xfd1af875208}, 0xfd1b298cb88, {0x0, 0x0, 0x0})
+        	            		<GOPATH>/pkg/mod/github.com/stretchr/testify@v1.9.0/require/require.go:1605 +0xa5
+        	            	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache.TestUploadEmbeddingAndAnswerRequestPath.func1.1(0xfd1af875208)
+        	            		<LOCAL_REPO>/plugins/wasm-go/extensions/ai-cache/core_upload_test.go:145 +0x68f
+        	            	github.com/higress-group/wasm-go/pkg/test.RunTestWithPath.func2(0xfd1af875208)
+        	            		<GOPATH>/pkg/mod/github.com/higress-group/wasm-go@v1.0.3-0.20251011083635-792cb1547bac/pkg/test/test.go:176 +0x219
+        	            	testing.tRunner(0xfd1af875208, 0xfd1b5bd8cc0)
+        	            		<GOROOT>/src/testing/testing.go:2195 +0xea
+        	            	created by testing.(*T).Run in goroutine 49
+        	            		<GOROOT>/src/testing/testing.go:2260 +0x4d4
+        	Test:       	TestUploadEmbeddingAndAnswerRequestPath/qdrant/wasm
+--- FAIL: TestUploadEmbeddingAndAnswerRequestPath (12.25s)
+    --- FAIL: TestUploadEmbeddingAndAnswerRequestPath/dashvector (6.15s)
+        --- FAIL: TestUploadEmbeddingAndAnswerRequestPath/dashvector/go (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerRequestPath/dashvector/wasm (6.15s)
+    --- FAIL: TestUploadEmbeddingAndAnswerRequestPath/qdrant (6.10s)
+        --- FAIL: TestUploadEmbeddingAndAnswerRequestPath/qdrant/go (0.00s)
+        --- FAIL: TestUploadEmbeddingAndAnswerRequestPath/qdrant/wasm (6.10s)
+FAIL
+FAIL	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-cache	12.294s
+FAIL

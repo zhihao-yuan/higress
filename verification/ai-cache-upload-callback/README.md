@@ -57,3 +57,8 @@ python3 real-qdrant/verify_gateway_real.py --hold-response --label=rerun-held
 上述命令需要先有构建出的 baseline.wasm。API 只绑定本机 http://127.0.0.1:16333，数据库容器名为 higress-pr-qdrant。停止数据库并保留数据可执行 docker stop higress-pr-qdrant；再次启动用 docker start higress-pr-qdrant。
 
 当前证据只覆盖基线缺陷发现。正式修复和验证按维护者批准的 Design/TASK 开展。
+
+
+## 批准后的修复与验证（2026-11-12）
+
+维护者已批准 Proposal #5340、Design #5341 并授权实施。[修复验证记录](fixed-20261112/README.md) 包含七种 provider 的回归、完整 Go/Wasm 测试及36次真实 Qdrant 网关对照。下文旧记录继续保留为修复前发现材料。
