@@ -1,0 +1,52 @@
+{
+  "harness_sha256": "04b7cf0ba48fb38ce6a078e7d47299c9105ce4f495db1c32953c95def57ca71a",
+  "variant": "baseline",
+  "case": "identical",
+  "iteration": 3,
+  "broken_baseline_expected": true,
+  "configuration_accepted": true,
+  "health_before": {
+    "status": 200,
+    "body": "healthy",
+    "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+    "headers": [
+      [
+        "content-length",
+        "7"
+      ],
+      [
+        "content-type",
+        "text/plain"
+      ],
+      [
+        "date",
+        "Tue, 17 Nov 2026 02:30:55 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ],
+    "start_ns": 196718126592586,
+    "end_ns": 196718129456381
+  },
+  "matrix": [
+    {
+      "error": "TimeoutError",
+      "detail": "timed out",
+      "start_ns": 196718133435245,
+      "end_ns": 196721134090105
+    }
+  ],
+  "health_after": {
+    "error": "TimeoutError",
+    "detail": "timed out",
+    "start_ns": 196721134203812,
+    "end_ns": 196723142927069
+  },
+  "concurrency": null,
+  "upstream_requests": 0,
+  "wasm_sha256": "ac3ddf87258783b45a80815d1f17bf0a026f5f914017764afa4d97d5ad74778c",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "assertions_passed": true
+}

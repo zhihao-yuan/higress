@@ -1,0 +1,161 @@
+[
+  {
+    "path": "/v1/chat/completions",
+    "observation": "candidate-unique-1-matrix-0",
+    "body": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:53483"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-length",
+        "81"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-observation-id",
+        "candidate-unique-1-matrix-0"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:53483"
+      ],
+      [
+        "x-request-id",
+        "1116f45d-00aa-46f7-a044-42993bc1c67c"
+      ],
+      [
+        "x-higress-target-cluster",
+        "b"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794882699948"
+      ]
+    ],
+    "arrived_ns": 196762613537422,
+    "finished_ns": 196762613956488
+  },
+  {
+    "path": "/v1/chat/completions",
+    "observation": "candidate-unique-1-matrix-1",
+    "body": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:53483"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-length",
+        "81"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-observation-id",
+        "candidate-unique-1-matrix-1"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:53483"
+      ],
+      [
+        "x-request-id",
+        "942303be-a298-4bdc-8812-8c3ee7a2e607"
+      ],
+      [
+        "x-higress-target-cluster",
+        "a"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794882699960"
+      ]
+    ],
+    "arrived_ns": 196762622688699,
+    "finished_ns": 196762622775638
+  },
+  {
+    "path": "/v1/chat/completions",
+    "observation": "candidate-unique-1-matrix-2",
+    "body": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":false}",
+    "headers": [
+      [
+        "host",
+        "127.0.0.1:53483"
+      ],
+      [
+        "accept-encoding",
+        "identity"
+      ],
+      [
+        "content-length",
+        "81"
+      ],
+      [
+        "content-type",
+        "application/json"
+      ],
+      [
+        "x-observation-id",
+        "candidate-unique-1-matrix-2"
+      ],
+      [
+        "x-forwarded-proto",
+        "http"
+      ],
+      [
+        "x-envoy-original-host",
+        "127.0.0.1:53483"
+      ],
+      [
+        "x-request-id",
+        "4a88ccc7-8356-40fa-9e37-2307dc328424"
+      ],
+      [
+        "x-higress-target-cluster",
+        "d"
+      ],
+      [
+        "x-envoy-expected-rq-timeout-ms",
+        "120000"
+      ],
+      [
+        "req-start-time",
+        "1794882699971"
+      ]
+    ],
+    "arrived_ns": 196762632579693,
+    "finished_ns": 196762632679551
+  }
+]

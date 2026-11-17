@@ -1,0 +1,312 @@
+diff --git a/changes/ai-load-balancer-adaptive-sampling.md b/changes/ai-load-balancer-adaptive-sampling.md
+new file mode 100644
+index 000000000..758b8ea68
+--- /dev/null
++++ b/changes/ai-load-balancer-adaptive-sampling.md
+@@ -0,0 +1,33 @@
++<!--
++Copyright 2026 alibaba
++
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
++
++http://www.apache.org/licenses/LICENSE-2.0
++
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
++-->
++
++# Bound AdaptiveScore sampling with duplicate service names
++
++Deduplicate filtered `ai-load-balancer` AdaptiveScore candidates by exact service
++name before sampling without replacement. Repeated names no longer leave local
++selection or global in-flight Lua argument construction in an endless sampling
++loop that also blocks other requests on the same Envoy worker. Comparing all
++candidates preserves their first-occurrence order without modifying configuration
++slices.
++
++Repeated `service_list` entries could previously produce undocumented implicit
++weighting or random tie behavior. Deduplication intentionally removes those side
++effects in AdaptiveScore. Identical names remain one candidate even when they
++refer to different clusters. Other scheduling modes, scoring, counters and Redis
++scripts are unchanged. Explicit weighting requires a separate Proposal.
++
++Fixes [#5345](https://github.com/higress-group/higress/issues/5345).
++Design: [#5346](https://github.com/higress-group/higress/issues/5346).
+diff --git a/plugins/wasm-go/extensions/ai-load-balancer/README.md b/plugins/wasm-go/extensions/ai-load-balancer/README.md
+index 7228ae191..eaf57d317 100644
+--- a/plugins/wasm-go/extensions/ai-load-balancer/README.md
++++ b/plugins/wasm-go/extensions/ai-load-balancer/README.md
+@@ -220,7 +220,7 @@ lb_config:
+ | `cluster_header` | string | 选填 | `x-higress-target-cluster` | 通过取该header的值得知需要路由到哪个后端服务 |
+ | `queue_size`      | int | 选填 | 100 | 根据最近的多少个请求进行观测指标的计算 |
+ | `ewma_beta` | float | 选填 | 0.5 | `AdaptiveScore` 中历史 EWMA 值的权重，取值范围 0~1 |
+-| `p2c_choices` | int | 选填 | 2 | `AdaptiveScore` 每次随机采样并比较的候选服务数，配置值不小于服务数时比较全部服务 |
++| `p2c_choices` | int | 选填 | 2 | `AdaptiveScore` 每次随机采样并比较的唯一候选服务数，配置值不小于唯一候选数时比较全部候选 |
+ | `ttft_weight` | float | 选填 | 0.7 | `AdaptiveScore` 首包延迟权重 |
+ | `total_latency_weight` | float | 选填 | 0.3 | `AdaptiveScore` 总响应延迟权重 |
+ | `error_penalty` | float | 选填 | 3.0 | `AdaptiveScore` 对插件实例启动以来累计错误率的惩罚系数 |
+@@ -244,6 +244,10 @@ lb_config:
+ 
+ `AdaptiveScore` 的失败率基于当前插件实例生命周期内累计的成功和失败次数计算，目前不使用时间窗口或衰减。
+ 
++`AdaptiveScore` 在请求占比和冷却过滤后，按服务名的精确字符串合并重复候选，再进行有界的不放回抽样。比较全部候选时保留首次出现的顺序，局部选择和全局 in-flight 使用相同规则。同名服务即使对应不同 cluster，也视为同一个候选；现有指标和计数同样以服务名为键。
++
++兼容性说明：`service_list` 的重复项过去可能形成未文档化的隐含权重或并列随机行为，本次去重会移除这些副作用。其他调度模式不受影响；需要显式权重的场景需另行提出 Proposal。
++
+ `AdaptiveScore` 开启 `global_inflight_enabled` 后，会使用 Redis Lua 原子完成“按本地分数和全局 in-flight 修正后的分数选择服务，并将选中服务计数 +1”。请求结束时插件会将该服务计数 -1。Redis 初始化、请求或返回异常时会降级到本地 `AdaptiveScore`，不阻断请求。
+ 
+ ## 配置示例
+diff --git a/plugins/wasm-go/extensions/ai-load-balancer/README_EN.md b/plugins/wasm-go/extensions/ai-load-balancer/README_EN.md
+index 6b630954c..b1417d326 100644
+--- a/plugins/wasm-go/extensions/ai-load-balancer/README_EN.md
++++ b/plugins/wasm-go/extensions/ai-load-balancer/README_EN.md
+@@ -222,7 +222,7 @@ lb_config:
+ | `cluster_header` | string | optional | `x-higress-target-cluster` | By retrieving the value of this header, we can determine which backend service to route to |
+ | `queue_size`      | int | optional | 100 | The metrics is calculated based on the number of most recent requests. |
+ | `ewma_beta` | float | optional | 0.5 | Historical EWMA weight used by `AdaptiveScore`, value of 0~1 |
+-| `p2c_choices` | int | optional | 2 | Number of sampled services compared by `AdaptiveScore`; compares all services when the value is not less than the service count |
++| `p2c_choices` | int | optional | 2 | Number of unique candidate services sampled by `AdaptiveScore`; compares all candidates when the value is not less than the unique candidate count |
+ | `ttft_weight` | float | optional | 0.7 | First-token latency weight used by `AdaptiveScore` |
+ | `total_latency_weight` | float | optional | 0.3 | Total response latency weight used by `AdaptiveScore` |
+ | `error_penalty` | float | optional | 3.0 | Cumulative error-rate penalty since the plugin instance started, used by `AdaptiveScore` |
+@@ -247,6 +247,10 @@ The meanings of the values ​​for `mode` are as follows:
+ 
+ `AdaptiveScore` computes its error rate from cumulative success and failure counts over the lifetime of the current plugin instance; it does not currently use a time window or decay.
+ 
++After request-share and cooldown filtering, `AdaptiveScore` deduplicates candidates by the exact service-name string and samples without replacement in bounded steps. Comparing all candidates preserves their first-occurrence order. Local selection and global in-flight use the same rule. Identical service names remain one candidate even when they refer to different clusters, since existing metrics and counters are also keyed by service name.
++
++Compatibility note: repeated entries in `service_list` could previously produce undocumented implicit weighting or random tie behavior. Deduplication removes those side effects. Other scheduling modes are unchanged; explicit weighting requires a separate Proposal.
++
+ When `global_inflight_enabled` is enabled, `AdaptiveScore` uses Redis Lua to atomically select the service with the lowest score after applying global in-flight pressure, then increments the selected service counter by 1. The counter is decremented when the request stream completes. If Redis initialization, dispatch, or response handling fails, the plugin falls back to local `AdaptiveScore` without blocking the request.
+ 
+ ## Configuration Example
+diff --git a/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy.go b/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy.go
+index 1a82c1b19..3d9a21c9c 100644
+--- a/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy.go
++++ b/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy.go
+@@ -383,21 +383,24 @@ func (lb ClusterEndpointLoadBalancer) adaptiveCandidateServices(nowUnixMs int64)
+ }
+ 
+ func (lb ClusterEndpointLoadBalancer) sampleAdaptiveCandidates(nowUnixMs int64) []string {
+-	candidateServices := lb.adaptiveCandidateServices(nowUnixMs)
+-	if len(candidateServices) <= 1 || lb.P2CChoices >= len(candidateServices) {
+-		return candidateServices
+-	}
+-	choices := make([]string, 0, lb.P2CChoices)
+-	seen := make(map[string]struct{}, lb.P2CChoices)
+-	for len(choices) < lb.P2CChoices {
+-		svc := candidateServices[rand.Int()%len(candidateServices)]
++	filteredServices := lb.adaptiveCandidateServices(nowUnixMs)
++	candidateServices := make([]string, 0, len(filteredServices))
++	seen := make(map[string]struct{}, len(filteredServices))
++	for _, svc := range filteredServices {
+ 		if _, ok := seen[svc]; ok {
+ 			continue
+ 		}
+ 		seen[svc] = struct{}{}
+-		choices = append(choices, svc)
++		candidateServices = append(candidateServices, svc)
++	}
++	if len(candidateServices) <= 1 || lb.P2CChoices >= len(candidateServices) {
++		return candidateServices
++	}
++	for i := 0; i < lb.P2CChoices; i++ {
++		j := i + rand.Intn(len(candidateServices)-i)
++		candidateServices[i], candidateServices[j] = candidateServices[j], candidateServices[i]
+ 	}
+-	return choices
++	return candidateServices[:lb.P2CChoices]
+ }
+ 
+ func (lb ClusterEndpointLoadBalancer) selectLowestScore(candidates []string, nowUnixMs int64) string {
+diff --git a/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy_test.go b/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy_test.go
+index be962c0cf..cd14b3f58 100644
+--- a/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy_test.go
++++ b/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics/lb_policy_test.go
+@@ -1,6 +1,11 @@
+ package cluster_metrics
+ 
+ import (
++	"context"
++	"encoding/json"
++	"os"
++	"os/exec"
++	"reflect"
+ 	"testing"
+ 	"time"
+ 
+@@ -14,6 +19,169 @@ func init() {
+ 	log.SetPluginLog(noopLog{})
+ }
+ 
++// Keep a broken sampler inside a child process so regressions cannot hang the suite.
++func TestAdaptiveScoreDuplicateCandidatesReturn(t *testing.T) {
++	if child := os.Getenv("HIGRESS_ADAPTIVE_SAMPLING_CASE"); child != "" {
++		services := []string{"svc-a", "svc-a", "svc-a", "svc-b"}
++		config := map[string]interface{}{"mode": ModeAdaptiveScore, "service_list": services, "p2c_choices": 3}
++		if child == "local-identical" || child == "global-identical" {
++			services = []string{"svc-a", "svc-a", "svc-a"}
++			config["service_list"] = services
++			delete(config, "p2c_choices")
++		}
++		data, err := json.Marshal(config)
++		if err != nil {
++			t.Fatal(err)
++		}
++		lb, err := NewClusterEndpointLoadBalancer(gjson.ParseBytes(data))
++		if err != nil {
++			t.Fatal(err)
++		}
++		original := append([]string(nil), lb.ServiceList...)
++		switch child {
++		case "local-duplicate", "local-identical":
++			if selected := lb.selectAdaptiveScore(1000); selected != "svc-a" && selected != "svc-b" {
++				t.Fatalf("unexpected selected service: %q", selected)
++			}
++		case "global-duplicate", "global-identical":
++			keys := lb.buildGlobalInflightLuaKeys(1000, "route-a")
++			want := []string{"svc-a", "svc-b"}
++			if len(services) == 3 {
++				want = want[:1]
++			}
++			if keys[2] != len(want) || len(keys) != 4+2*len(want) {
++				t.Fatalf("unexpected Lua candidate count: %v", keys)
++			}
++			for i, service := range want {
++				if keys[4+2*i] != service {
++					t.Fatalf("unexpected Lua service order: %v", keys)
++				}
++			}
++		default:
++			t.Fatalf("unknown child case: %s", child)
++		}
++		if !reflect.DeepEqual(lb.ServiceList, original) {
++			t.Fatalf("service_list changed: got %v, want %v", lb.ServiceList, original)
++		}
++		return
++	}
++	for _, name := range []string{"local-duplicate", "local-identical", "global-duplicate", "global-identical"} {
++		t.Run(name, func(t *testing.T) {
++			ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
++			defer cancel()
++			cmd := exec.CommandContext(ctx, os.Args[0], "-test.run=^TestAdaptiveScoreDuplicateCandidatesReturn$", "-test.timeout=1s")
++			cmd.Env = append(os.Environ(), "HIGRESS_ADAPTIVE_SAMPLING_CASE="+name)
++			if output, err := cmd.CombinedOutput(); err != nil {
++				t.Fatalf("candidate selection did not complete successfully: %v (context: %v)\n%s", err, ctx.Err(), output)
++			}
++		})
++	}
++}
++
++func TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig(t *testing.T) {
++	tests := []struct {
++		name     string
++		services []string
++		choices  int
++		want     []string
++		count    int
++	}{
++		{name: "unique subset", services: []string{"a", "b", "c", "d"}, choices: 2, count: 2},
++		{name: "unique all", services: []string{"a", "b", "c", "d"}, choices: 4, want: []string{"a", "b", "c", "d"}, count: 4},
++		{name: "duplicate subset", services: []string{"a", "a", "b", "c", "d"}, choices: 2, count: 2},
++		{name: "duplicate default", services: []string{"a", "a", "b", "b"}, want: []string{"a", "b"}, count: 2},
++		{name: "fewer unique than choices", services: []string{"a", "a", "a", "b"}, choices: 3, want: []string{"a", "b"}, count: 2},
++		{name: "identical default", services: []string{"a", "a", "a"}, want: []string{"a"}, count: 1},
++		{name: "identical explicit one", services: []string{"a", "a", "a"}, choices: 1, want: []string{"a"}, count: 1},
++		{name: "larger than list", services: []string{"a", "a", "b"}, choices: 7, want: []string{"a", "b"}, count: 2},
++		{name: "single service", services: []string{"a"}, choices: 3, want: []string{"a"}, count: 1},
++		{name: "exact string identity", services: []string{"a", "a", "A"}, choices: 3, want: []string{"a", "A"}, count: 2},
++	}
++	for _, tt := range tests {
++		t.Run(tt.name, func(t *testing.T) {
++			config := map[string]interface{}{"mode": ModeAdaptiveScore, "service_list": tt.services}
++			if tt.choices != 0 {
++				config["p2c_choices"] = tt.choices
++			}
++			data, err := json.Marshal(config)
++			if err != nil {
++				t.Fatal(err)
++			}
++			lb, err := NewClusterEndpointLoadBalancer(gjson.ParseBytes(data))
++			if err != nil {
++				t.Fatal(err)
++			}
++			original := append([]string(nil), lb.ServiceList...)
++			for range 20 {
++				got := lb.sampleAdaptiveCandidates(1000)
++				if len(got) != tt.count {
++					t.Fatalf("got %v, want %d candidates", got, tt.count)
++				}
++				seen := make(map[string]bool)
++				for _, service := range got {
++					if seen[service] || !lb.hasService(service) {
++						t.Fatalf("duplicate or unknown candidate in %v", got)
++					}
++					seen[service] = true
++				}
++				if tt.want != nil && !reflect.DeepEqual(got, tt.want) {
++					t.Fatalf("all-candidate order changed: got %v, want %v", got, tt.want)
++				}
++				if !reflect.DeepEqual(lb.ServiceList, original) {
++					t.Fatalf("service_list changed: got %v, want %v", lb.ServiceList, original)
++				}
++			}
++		})
++	}
++}
++
++func TestAdaptiveScoreSamplingPreservesFilteringAndFallback(t *testing.T) {
++	for _, name := range []string{"rate and cooldown", "all rate limited", "all cooling", "filtered all cooling"} {
++		t.Run(name, func(t *testing.T) {
++			lb, err := NewClusterEndpointLoadBalancer(gjson.Parse(`{"mode":"AdaptiveScore","service_list":["a","b","c","d"],"p2c_choices":8,"rate_limit":0.5}`))
++			if err != nil {
++				t.Fatal(err)
++			}
++			want := []string{"a", "b", "c", "d"}
++			switch name {
++			case "rate and cooldown", "filtered all cooling":
++				lb.ServiceRequestCount["a"] = 7
++				lb.ServiceRequestCount["b"] = 1
++				lb.ServiceRequestCount["c"] = 1
++				lb.ServiceRequestCount["d"] = 1
++				lb.ServiceAdaptiveMetrics["b"].CooldownUntilUnixMs = 2000
++				want = []string{"c", "d"}
++				if name == "filtered all cooling" {
++					lb.ServiceAdaptiveMetrics["c"].CooldownUntilUnixMs = 2000
++					lb.ServiceAdaptiveMetrics["d"].CooldownUntilUnixMs = 2000
++					want = []string{"b", "c", "d"}
++				}
++			case "all rate limited":
++				lb.RateLimit = 0.2
++				for _, service := range lb.ServiceList {
++					lb.ServiceRequestCount[service] = 1
++				}
++			case "all cooling":
++				for _, service := range lb.ServiceList {
++					lb.ServiceAdaptiveMetrics[service].CooldownUntilUnixMs = 2000
++				}
++			}
++			if got := lb.sampleAdaptiveCandidates(1000); !reflect.DeepEqual(got, want) {
++				t.Fatalf("filtered candidates: got %v, want %v", got, want)
++			}
++			keys := lb.buildGlobalInflightLuaKeys(1000, "route-a")
++			if keys[2] != len(want) || len(keys) != 4+2*len(want) {
++				t.Fatalf("unexpected Lua candidate count: %v", keys)
++			}
++			for i, service := range want {
++				if keys[4+2*i] != service {
++					t.Fatalf("unexpected filtered Lua candidates: %v", keys)
++				}
++			}
++		})
++	}
++}
++
+ func TestAdaptiveScoreConfigDefaults(t *testing.T) {
+ 	lb, err := NewClusterEndpointLoadBalancer(gjson.Parse(`{
+ 		"mode": "AdaptiveScore",

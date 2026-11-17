@@ -1,0 +1,167 @@
+[
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "build",
+      "-mod=readonly",
+      "-buildvcs=false",
+      "-trimpath",
+      "-buildmode=c-shared",
+      "-o",
+      "<verification-dir>/baseline.wasm",
+      "."
+    ],
+    "cwd": "<verification-dir>/baseline/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOOS": "wasip1",
+      "GOARCH": "wasm"
+    },
+    "exit_code": 0,
+    "log": "baseline-build.log"
+  },
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "test",
+      "-mod=readonly",
+      "./...",
+      "-count=1",
+      "-timeout=30m",
+      "-v"
+    ],
+    "cwd": "<verification-dir>/baseline/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "WASM_FILE_PATH": "<verification-dir>/baseline.wasm"
+    },
+    "exit_code": 0,
+    "log": "baseline-full-tests.log"
+  },
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "vet",
+      "-mod=readonly",
+      "./..."
+    ],
+    "cwd": "<verification-dir>/baseline/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off"
+    },
+    "exit_code": 0,
+    "log": "baseline-vet.log"
+  },
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "build",
+      "-mod=readonly",
+      "-buildvcs=false",
+      "-trimpath",
+      "-buildmode=c-shared",
+      "-o",
+      "<verification-dir>/candidate.wasm",
+      "."
+    ],
+    "cwd": "<higress-repo>/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOOS": "wasip1",
+      "GOARCH": "wasm"
+    },
+    "exit_code": 0,
+    "log": "candidate-build.log"
+  },
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "test",
+      "-mod=readonly",
+      "./...",
+      "-count=1",
+      "-timeout=30m",
+      "-v"
+    ],
+    "cwd": "<higress-repo>/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "WASM_FILE_PATH": "<verification-dir>/candidate.wasm"
+    },
+    "exit_code": 0,
+    "log": "candidate-full-tests.log"
+  },
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "vet",
+      "-mod=readonly",
+      "./..."
+    ],
+    "cwd": "<higress-repo>/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off"
+    },
+    "exit_code": 0,
+    "log": "candidate-vet.log"
+  },
+  {
+    "argv": [
+      "<go1.24.4-bin>/go",
+      "test",
+      "-mod=readonly",
+      "./cluster_metrics",
+      "-run",
+      "TestAdaptiveScore(DuplicateCandidatesReturn|SamplingPreservesFilteringAndFallback|ConfigDefaults|PrefersLowerLatencyAndInflight|AvoidsCooldownWhenAlternativeExists|RespectsRateLimitWhenAlternativeExists)$",
+      "-count=1",
+      "-timeout=30s",
+      "-v"
+    ],
+    "cwd": "<higress-repo>/plugins/wasm-go/extensions/ai-load-balancer",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off"
+    },
+    "exit_code": 1,
+    "expected": "All four duplicate-case children time out at sampler; compatibility cases pass",
+    "log": "baseline-red-and-compat.log",
+    "tree": "baseline production source plus candidate regression test, before production fix"
+  },
+  {
+    "argv": [
+      "python3",
+      "verify_gateway.py",
+      "--all",
+      "--jobs",
+      "2"
+    ],
+    "cwd": "<verification-dir>",
+    "exit_code": 0,
+    "log": "runtime-progress.log"
+  },
+  {
+    "argv": [
+      "python3",
+      "summarize.py"
+    ],
+    "cwd": "<verification-dir>",
+    "exit_code": 0,
+    "log": "summarize.log"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check",
+      "7059b8d28cce435a91569feb6288760585287460..d80e31ac5bc742e3209a33c7ee1379070393279f"
+    ],
+    "cwd": "<higress-repo>",
+    "exit_code": 0
+  }
+]

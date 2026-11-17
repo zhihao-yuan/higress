@@ -1,0 +1,122 @@
+[
+  {
+    "args": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "adaptive-verify-candidate-identical-3-1794882897611350000",
+      "--cpus",
+      "1",
+      "--memory",
+      "768m",
+      "-p",
+      "127.0.0.1::10000",
+      "-p",
+      "127.0.0.1::10001",
+      "-p",
+      "127.0.0.1::15000",
+      "-p",
+      "127.0.0.1::10002",
+      "-v",
+      "<verification-dir>/runtime/candidate-identical-3:/lab:ro",
+      "-v",
+      "<verification-dir>:/modules:ro",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/envoy.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info",
+      "--file-flush-interval-msec",
+      "100"
+    ],
+    "exit": 0,
+    "stdout": "86195a9fdc1ef91db3740a7d466e9bc814fb0b3a9998be8e9a3c8029bff67c43\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-identical-3-1794882897611350000",
+      "10000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54829\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-identical-3-1794882897611350000",
+      "10001/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54828\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-identical-3-1794882897611350000",
+      "15000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54830\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-identical-3-1794882897611350000",
+      "10002/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54831\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "inspect",
+      "adaptive-verify-candidate-identical-3-1794882897611350000",
+      "--format",
+      "{{json .State}}"
+    ],
+    "exit": 0,
+    "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":33237,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-17T02:34:58.154201356Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "rm",
+      "-f",
+      "adaptive-verify-candidate-identical-3-1794882897611350000"
+    ],
+    "exit": 0,
+    "stdout": "adaptive-verify-candidate-identical-3-1794882897611350000\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/adaptive-verify-candidate-identical-3-1794882897611350000$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

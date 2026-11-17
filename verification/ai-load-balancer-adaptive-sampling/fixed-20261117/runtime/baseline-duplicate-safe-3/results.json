@@ -1,0 +1,188 @@
+{
+  "harness_sha256": "04b7cf0ba48fb38ce6a078e7d47299c9105ce4f495db1c32953c95def57ca71a",
+  "variant": "baseline",
+  "case": "duplicate-safe",
+  "iteration": 3,
+  "broken_baseline_expected": false,
+  "configuration_accepted": true,
+  "health_before": {
+    "status": 200,
+    "body": "healthy",
+    "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+    "headers": [
+      [
+        "content-length",
+        "7"
+      ],
+      [
+        "content-type",
+        "text/plain"
+      ],
+      [
+        "date",
+        "Tue, 17 Nov 2026 02:28:58 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ],
+    "start_ns": 196601290487960,
+    "end_ns": 196601295868176
+  },
+  "matrix": [
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:28:58 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "4"
+        ],
+        [
+          "req-arrive-time",
+          "1794882538638"
+        ],
+        [
+          "resp-start-time",
+          "1794882538643"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "2"
+        ]
+      ],
+      "start_ns": 196601301498966,
+      "end_ns": 196601310702422
+    },
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:28:58 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "4"
+        ],
+        [
+          "req-arrive-time",
+          "1794882538648"
+        ],
+        [
+          "resp-start-time",
+          "1794882538652"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "3"
+        ]
+      ],
+      "start_ns": 196601310736057,
+      "end_ns": 196601319630999
+    },
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:28:58 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "1"
+        ],
+        [
+          "req-arrive-time",
+          "1794882538655"
+        ],
+        [
+          "resp-start-time",
+          "1794882538657"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "1"
+        ]
+      ],
+      "start_ns": 196601319666083,
+      "end_ns": 196601323908315
+    }
+  ],
+  "health_after": {
+    "status": 200,
+    "body": "healthy",
+    "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+    "headers": [
+      [
+        "content-length",
+        "7"
+      ],
+      [
+        "content-type",
+        "text/plain"
+      ],
+      [
+        "date",
+        "Tue, 17 Nov 2026 02:28:58 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ],
+    "start_ns": 196601323948127,
+    "end_ns": 196601327733113
+  },
+  "concurrency": null,
+  "upstream_requests": 3,
+  "wasm_sha256": "ac3ddf87258783b45a80815d1f17bf0a026f5f914017764afa4d97d5ad74778c",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "assertions_passed": true
+}

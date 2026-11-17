@@ -1,0 +1,109 @@
+[
+  {
+    "args": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "adaptive-verify-candidate-unique-2-1794882664205166000",
+      "--cpus",
+      "1",
+      "--memory",
+      "768m",
+      "-p",
+      "127.0.0.1::10000",
+      "-p",
+      "127.0.0.1::10001",
+      "-p",
+      "127.0.0.1::15000",
+      "-v",
+      "<verification-dir>/runtime/candidate-unique-2:/lab:ro",
+      "-v",
+      "<verification-dir>:/modules:ro",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/envoy.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info",
+      "--file-flush-interval-msec",
+      "100"
+    ],
+    "exit": 0,
+    "stdout": "a9f7255eee7170f4dde05ca7008226384cbaccaced113e046bd79b3d40485560\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-unique-2-1794882664205166000",
+      "10000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53503\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-unique-2-1794882664205166000",
+      "10001/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53504\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-unique-2-1794882664205166000",
+      "15000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53505\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "inspect",
+      "adaptive-verify-candidate-unique-2-1794882664205166000",
+      "--format",
+      "{{json .State}}"
+    ],
+    "exit": 0,
+    "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":31447,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-17T02:31:04.837820469Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "rm",
+      "-f",
+      "adaptive-verify-candidate-unique-2-1794882664205166000"
+    ],
+    "exit": 0,
+    "stdout": "adaptive-verify-candidate-unique-2-1794882664205166000\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/adaptive-verify-candidate-unique-2-1794882664205166000$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

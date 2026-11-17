@@ -1,0 +1,26 @@
+{
+  "baseline_sha": "7059b8d28cce435a91569feb6288760585287460",
+  "branch": "fix/ai-load-balancer-adaptive-sampling",
+  "approval": "https://github.com/higress-group/higress/issues/5345#issuecomment-6918763401",
+  "implementation_task": "TASK-5346001",
+  "verification_task": "TASK-5346002",
+  "spec": "SPEC-5345001",
+  "candidate_sha": "d80e31ac5bc742e3209a33c7ee1379070393279f",
+  "go_version": "go version go1.24.4 darwin/amd64",
+  "system": "macOS-15.6.1-x86_64-i386-64bit-Mach-O",
+  "module_sha256": {
+    "baseline": "ac3ddf87258783b45a80815d1f17bf0a026f5f914017764afa4d97d5ad74778c",
+    "candidate": "2eed1c4cbfdac0a507910355983b4b5e22506be21860a972512bdad6261447a7"
+  },
+  "sources": {
+    "baseline/cluster_metrics/lb_policy.go": "72e6d1cf3b4efaf0fcf1fda114982194a4bd97198cfafeef44be9e18a31d123e",
+    "baseline/cluster_metrics/lb_policy_test.go": "a12ddf81320f77e234f693dd322a9121acc5f56a1568de61ee3639ee186f5995",
+    "baseline/go.mod": "c55940889ab1e6b94b1a87abd56908311ea7a05b8f697f9c647e4f0e7c23017c",
+    "baseline/go.sum": "78e00421b3d315d0db351d1b5c6545b5bc45a8cfc990bac56d43e85791f67b5f",
+    "candidate/cluster_metrics/lb_policy.go": "8dc0c9cef9fde6b6ea1f352a2f4a225386b0869d0ccf965e9d8a3930069794fc",
+    "candidate/cluster_metrics/lb_policy_test.go": "b63f24558e246eb71a28db798b685af5d6be3d376b6455a000154f6c5951c616",
+    "candidate/go.mod": "c55940889ab1e6b94b1a87abd56908311ea7a05b8f697f9c647e4f0e7c23017c",
+    "candidate/go.sum": "78e00421b3d315d0db351d1b5c6545b5bc45a8cfc990bac56d43e85791f67b5f"
+  },
+  "native_testing": "go test ./... is native module testing; WASM_FILE_PATH supplied per Design, but this module has no top-level Wasm-host test. Actual Wasm executes in Gateway matrix."
+}

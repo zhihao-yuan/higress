@@ -1,0 +1,109 @@
+[
+  {
+    "args": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000",
+      "--cpus",
+      "1",
+      "--memory",
+      "768m",
+      "-p",
+      "127.0.0.1::10000",
+      "-p",
+      "127.0.0.1::10001",
+      "-p",
+      "127.0.0.1::15000",
+      "-v",
+      "<verification-dir>/runtime/candidate-duplicate-safe-1:/lab:ro",
+      "-v",
+      "<verification-dir>:/modules:ro",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/envoy.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info",
+      "--file-flush-interval-msec",
+      "100"
+    ],
+    "exit": 0,
+    "stdout": "518649893d99ccedb1f482f627f06372c43f2b1f7eaa2939aa71a3ae2120232d\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000",
+      "10000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53704\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000",
+      "10001/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53703\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000",
+      "15000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53702\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "inspect",
+      "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000",
+      "--format",
+      "{{json .State}}"
+    ],
+    "exit": 0,
+    "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":31782,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-17T02:31:44.025075625Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "rm",
+      "-f",
+      "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000"
+    ],
+    "exit": 0,
+    "stdout": "adaptive-verify-candidate-duplicate-safe-1-1794882703679055000\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/adaptive-verify-candidate-duplicate-safe-1-1794882703679055000$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

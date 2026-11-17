@@ -1,0 +1,744 @@
+{
+  "harness_sha256": "04b7cf0ba48fb38ce6a078e7d47299c9105ce4f495db1c32953c95def57ca71a",
+  "variant": "candidate",
+  "case": "identical",
+  "iteration": 1,
+  "broken_baseline_expected": false,
+  "configuration_accepted": true,
+  "health_before": {
+    "status": 200,
+    "body": "healthy",
+    "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+    "headers": [
+      [
+        "content-length",
+        "7"
+      ],
+      [
+        "content-type",
+        "text/plain"
+      ],
+      [
+        "date",
+        "Tue, 17 Nov 2026 02:34:55 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ],
+    "start_ns": 196957979167017,
+    "end_ns": 196957985472783
+  },
+  "matrix": [
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:34:55 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "10"
+        ],
+        [
+          "req-arrive-time",
+          "1794882895342"
+        ],
+        [
+          "resp-start-time",
+          "1794882895352"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "4"
+        ]
+      ],
+      "start_ns": 196957992232056,
+      "end_ns": 196958036033499
+    },
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:34:55 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "2"
+        ],
+        [
+          "req-arrive-time",
+          "1794882895386"
+        ],
+        [
+          "resp-start-time",
+          "1794882895388"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "1"
+        ]
+      ],
+      "start_ns": 196958036134397,
+      "end_ns": 196958043392848
+    },
+    {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:34:55 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "4"
+        ],
+        [
+          "req-arrive-time",
+          "1794882895396"
+        ],
+        [
+          "resp-start-time",
+          "1794882895400"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "3"
+        ]
+      ],
+      "start_ns": 196958043447871,
+      "end_ns": 196958055562522
+    }
+  ],
+  "health_after": {
+    "status": 200,
+    "body": "healthy",
+    "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+    "headers": [
+      [
+        "content-length",
+        "7"
+      ],
+      [
+        "content-type",
+        "text/plain"
+      ],
+      [
+        "date",
+        "Tue, 17 Nov 2026 02:34:55 GMT"
+      ],
+      [
+        "server",
+        "envoy"
+      ]
+    ],
+    "start_ns": 196958055785756,
+    "end_ns": 196958118782699
+  },
+  "concurrency": {
+    "trigger": {
+      "status": 200,
+      "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+      "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+      "headers": [
+        [
+          "server",
+          "envoy"
+        ],
+        [
+          "date",
+          "Tue, 17 Nov 2026 02:34:55 GMT"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "content-length",
+          "73"
+        ],
+        [
+          "req-cost-time",
+          "88"
+        ],
+        [
+          "req-arrive-time",
+          "1794882895472"
+        ],
+        [
+          "resp-start-time",
+          "1794882895560"
+        ],
+        [
+          "x-envoy-upstream-service-time",
+          "85"
+        ]
+      ],
+      "start_ns": 196958119635424,
+      "end_ns": 196958215866359
+    },
+    "normal": [
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "22"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895497"
+          ],
+          [
+            "resp-start-time",
+            "1794882895520"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "20"
+          ]
+        ],
+        "start_ns": 196958133382242,
+        "end_ns": 196958178289579
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "19"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895502"
+          ],
+          [
+            "resp-start-time",
+            "1794882895521"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "18"
+          ]
+        ],
+        "start_ns": 196958133473032,
+        "end_ns": 196958180237797
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "17"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895504"
+          ],
+          [
+            "resp-start-time",
+            "1794882895521"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "14"
+          ]
+        ],
+        "start_ns": 196958134153536,
+        "end_ns": 196958179728391
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "18"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895503"
+          ],
+          [
+            "resp-start-time",
+            "1794882895521"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "17"
+          ]
+        ],
+        "start_ns": 196958133697983,
+        "end_ns": 196958179276770
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "14"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895507"
+          ],
+          [
+            "resp-start-time",
+            "1794882895522"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "11"
+          ]
+        ],
+        "start_ns": 196958133608015,
+        "end_ns": 196958180870422
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "20"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895499"
+          ],
+          [
+            "resp-start-time",
+            "1794882895519"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "19"
+          ]
+        ],
+        "start_ns": 196958134560432,
+        "end_ns": 196958179011379
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "25"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895492"
+          ],
+          [
+            "resp-start-time",
+            "1794882895518"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "15"
+          ]
+        ],
+        "start_ns": 196958133839058,
+        "end_ns": 196958177883135
+      },
+      {
+        "status": 200,
+        "body": "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"fixture-answer\"}}]}",
+        "body_sha256": "924ec095661968ff603c7a5dc6a3bb6639129d93aad1c1b3cc7492b50206cb03",
+        "headers": [
+          [
+            "server",
+            "envoy"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json"
+          ],
+          [
+            "content-length",
+            "73"
+          ],
+          [
+            "req-cost-time",
+            "19"
+          ],
+          [
+            "req-arrive-time",
+            "1794882895500"
+          ],
+          [
+            "resp-start-time",
+            "1794882895520"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "18"
+          ]
+        ],
+        "start_ns": 196958133196936,
+        "end_ns": 196958178604514
+      }
+    ],
+    "health_during": [
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958119089296,
+        "end_ns": 196958131250905
+      },
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958155426012,
+        "end_ns": 196958180450674
+      },
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958203563997,
+        "end_ns": 196958209153964
+      },
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958233160573,
+        "end_ns": 196958239640945
+      }
+    ],
+    "health_after": [
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958216502805,
+        "end_ns": 196958220333310
+      },
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958220383406,
+        "end_ns": 196958229590436
+      },
+      {
+        "status": 200,
+        "body": "healthy",
+        "body_sha256": "87695fdac81728b9d7f2d4a1335c2632bb5e6ba1bed21d2dff0254fba31c7d5b",
+        "headers": [
+          [
+            "content-length",
+            "7"
+          ],
+          [
+            "content-type",
+            "text/plain"
+          ],
+          [
+            "date",
+            "Tue, 17 Nov 2026 02:34:55 GMT"
+          ],
+          [
+            "server",
+            "envoy"
+          ]
+        ],
+        "start_ns": 196958229652064,
+        "end_ns": 196958236591979
+      }
+    ],
+    "start_ns": 196958118892402,
+    "release_trigger_ns": 196958212607123,
+    "upstream_arrivals": 9,
+    "normal_completed_while_trigger_held": true,
+    "prober_stopped": true
+  },
+  "upstream_requests": 12,
+  "wasm_sha256": "2eed1c4cbfdac0a507910355983b4b5e22506be21860a972512bdad6261447a7",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "assertions_passed": true
+}

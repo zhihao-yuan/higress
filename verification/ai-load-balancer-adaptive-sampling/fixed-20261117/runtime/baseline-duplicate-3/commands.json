@@ -1,0 +1,122 @@
+[
+  {
+    "args": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000",
+      "--cpus",
+      "1",
+      "--memory",
+      "768m",
+      "-p",
+      "127.0.0.1::10000",
+      "-p",
+      "127.0.0.1::10001",
+      "-p",
+      "127.0.0.1::15000",
+      "-v",
+      "<verification-dir>/runtime/baseline-duplicate-3:/lab:ro",
+      "-v",
+      "<verification-dir>:/modules:ro",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/envoy.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info",
+      "--file-flush-interval-msec",
+      "100"
+    ],
+    "exit": 0,
+    "stdout": "2d8f8ad3cc43401fc4b1a97219b20c643485d265ed4420d22ead6ae9c3f58706\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000",
+      "10000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53031\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000",
+      "10001/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53029\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "port",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000",
+      "15000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:53030\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "inspect",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000",
+      "--format",
+      "{{json .State}}"
+    ],
+    "exit": 0,
+    "stdout": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":30574,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-11-17T02:29:37.621960869Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "stats",
+      "--no-stream",
+      "--format",
+      "{{json .}}",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000"
+    ],
+    "exit": 0,
+    "stdout": "{\"BlockIO\":\"0B / 0B\",\"CPUPerc\":\"102.10%\",\"Container\":\"adaptive-verify-baseline-duplicate-3-1794882577370495000\",\"ID\":\"2d8f8ad3cc43\",\"MemPerc\":\"33.96%\",\"MemUsage\":\"260.8MiB / 768MiB\",\"Name\":\"adaptive-verify-baseline-duplicate-3-1794882577370495000\",\"NetIO\":\"33.4kB / 24.5kB\",\"PIDs\":\"18\"}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "rm",
+      "-f",
+      "adaptive-verify-baseline-duplicate-3-1794882577370495000"
+    ],
+    "exit": 0,
+    "stdout": "adaptive-verify-baseline-duplicate-3-1794882577370495000\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/adaptive-verify-baseline-duplicate-3-1794882577370495000$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

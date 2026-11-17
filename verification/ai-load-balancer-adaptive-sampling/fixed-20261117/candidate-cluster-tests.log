@@ -1,0 +1,118 @@
+=== RUN   TestAdaptiveScoreDuplicateCandidatesReturn
+=== RUN   TestAdaptiveScoreDuplicateCandidatesReturn/local-duplicate
+=== RUN   TestAdaptiveScoreDuplicateCandidatesReturn/local-identical
+=== RUN   TestAdaptiveScoreDuplicateCandidatesReturn/global-duplicate
+=== RUN   TestAdaptiveScoreDuplicateCandidatesReturn/global-identical
+--- PASS: TestAdaptiveScoreDuplicateCandidatesReturn (0.06s)
+    --- PASS: TestAdaptiveScoreDuplicateCandidatesReturn/local-duplicate (0.02s)
+    --- PASS: TestAdaptiveScoreDuplicateCandidatesReturn/local-identical (0.02s)
+    --- PASS: TestAdaptiveScoreDuplicateCandidatesReturn/global-duplicate (0.01s)
+    --- PASS: TestAdaptiveScoreDuplicateCandidatesReturn/global-identical (0.01s)
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/unique_subset
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/unique_all
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/duplicate_subset
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/duplicate_default
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/fewer_unique_than_choices
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/identical_default
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/identical_explicit_one
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/larger_than_list
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/single_service
+=== RUN   TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/exact_string_identity
+--- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/unique_subset (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/unique_all (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/duplicate_subset (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/duplicate_default (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/fewer_unique_than_choices (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/identical_default (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/identical_explicit_one (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/larger_than_list (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/single_service (0.00s)
+    --- PASS: TestAdaptiveScoreSamplesUniqueServicesWithoutChangingConfig/exact_string_identity (0.00s)
+=== RUN   TestAdaptiveScoreSamplingPreservesFilteringAndFallback
+=== RUN   TestAdaptiveScoreSamplingPreservesFilteringAndFallback/rate_and_cooldown
+=== RUN   TestAdaptiveScoreSamplingPreservesFilteringAndFallback/all_rate_limited
+=== RUN   TestAdaptiveScoreSamplingPreservesFilteringAndFallback/all_cooling
+=== RUN   TestAdaptiveScoreSamplingPreservesFilteringAndFallback/filtered_all_cooling
+--- PASS: TestAdaptiveScoreSamplingPreservesFilteringAndFallback (0.00s)
+    --- PASS: TestAdaptiveScoreSamplingPreservesFilteringAndFallback/rate_and_cooldown (0.00s)
+    --- PASS: TestAdaptiveScoreSamplingPreservesFilteringAndFallback/all_rate_limited (0.00s)
+    --- PASS: TestAdaptiveScoreSamplingPreservesFilteringAndFallback/all_cooling (0.00s)
+    --- PASS: TestAdaptiveScoreSamplingPreservesFilteringAndFallback/filtered_all_cooling (0.00s)
+=== RUN   TestAdaptiveScoreConfigDefaults
+--- PASS: TestAdaptiveScoreConfigDefaults (0.00s)
+=== RUN   TestAdaptiveScoreNormalizesUnknownMetricsMissingPolicy
+--- PASS: TestAdaptiveScoreNormalizesUnknownMetricsMissingPolicy (0.00s)
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/invalid_ewma_beta
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/zero_latency_weights
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/negative_error_penalty
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/negative_cooldown
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/empty_service_list
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/negative_global_inflight_timeout
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/negative_global_inflight_key_ttl
+=== RUN   TestAdaptiveScoreRejectsInvalidConfig/missing_redis_service_when_global_inflight_is_enabled
+--- PASS: TestAdaptiveScoreRejectsInvalidConfig (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/invalid_ewma_beta (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/zero_latency_weights (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/negative_error_penalty (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/negative_cooldown (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/empty_service_list (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/negative_global_inflight_timeout (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/negative_global_inflight_key_ttl (0.00s)
+    --- PASS: TestAdaptiveScoreRejectsInvalidConfig/missing_redis_service_when_global_inflight_is_enabled (0.00s)
+=== RUN   TestAdaptiveScoreEWMAAndFailureState
+--- PASS: TestAdaptiveScoreEWMAAndFailureState (0.00s)
+=== RUN   TestAdaptiveScorePrefersLowerLatencyAndInflight
+--- PASS: TestAdaptiveScorePrefersLowerLatencyAndInflight (0.00s)
+=== RUN   TestAdaptiveScoreAvoidsCooldownWhenAlternativeExists
+--- PASS: TestAdaptiveScoreAvoidsCooldownWhenAlternativeExists (0.00s)
+=== RUN   TestAdaptiveScoreUsesLeastBusyForMissingMetrics
+--- PASS: TestAdaptiveScoreUsesLeastBusyForMissingMetrics (0.00s)
+=== RUN   TestAdaptiveScoreRespectsRateLimitWhenAlternativeExists
+--- PASS: TestAdaptiveScoreRespectsRateLimitWhenAlternativeExists (0.00s)
+=== RUN   TestAdaptiveScoreGlobalInflightConfigDefaults
+--- PASS: TestAdaptiveScoreGlobalInflightConfigDefaults (0.00s)
+=== RUN   TestAdaptiveScoreZeroConfigUsesDefaults
+--- PASS: TestAdaptiveScoreZeroConfigUsesDefaults (0.00s)
+=== RUN   TestAdaptiveScoreBuildsGlobalInflightLuaKeys
+--- PASS: TestAdaptiveScoreBuildsGlobalInflightLuaKeys (0.00s)
+=== RUN   TestAdaptiveScoreGlobalInflightKeysUseFilteredCandidates
+--- PASS: TestAdaptiveScoreGlobalInflightKeysUseFilteredCandidates (0.00s)
+=== RUN   TestAdaptiveScoreGlobalInflightKeysUseP2CSample
+--- PASS: TestAdaptiveScoreGlobalInflightKeysUseP2CSample (0.00s)
+=== RUN   TestAdaptiveScoreRejectsUnknownGlobalInflightCandidate
+--- PASS: TestAdaptiveScoreRejectsUnknownGlobalInflightCandidate (0.00s)
+=== RUN   TestAdaptiveScoreStreamDoneDecrementsGlobalInflight
+--- PASS: TestAdaptiveScoreStreamDoneDecrementsGlobalInflight (0.00s)
+=== RUN   TestAdaptiveScoreStreamingResponseSkipsMissingCandidate
+--- PASS: TestAdaptiveScoreStreamingResponseSkipsMissingCandidate (0.00s)
+=== RUN   TestClusterMetricsStreamingResponseTreatsMissingStatusAsFailure
+--- PASS: TestClusterMetricsStreamingResponseTreatsMissingStatusAsFailure (0.00s)
+=== RUN   TestAdaptiveScoreStreamDoneSkipsMissingCandidate
+--- PASS: TestAdaptiveScoreStreamDoneSkipsMissingCandidate (0.00s)
+=== RUN   TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure
+=== RUN   TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/LeastBusy
+=== RUN   TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/LeastTotalLatency
+=== RUN   TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/LeastFirstTokenLatency
+=== RUN   TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/AdaptiveScore
+--- PASS: TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure (0.00s)
+    --- PASS: TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/LeastBusy (0.00s)
+    --- PASS: TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/LeastTotalLatency (0.00s)
+    --- PASS: TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/LeastFirstTokenLatency (0.00s)
+    --- PASS: TestClusterMetricsStreamDoneTreatsMissingStatusAsFailure/AdaptiveScore (0.00s)
+=== RUN   TestAdaptiveScoreStreamDoneRecordsMetricsWhenGlobalInflightKeyMissing
+--- PASS: TestAdaptiveScoreStreamDoneRecordsMetricsWhenGlobalInflightKeyMissing (0.00s)
+=== RUN   TestClusterMetricsRejectsInvalidMode
+=== RUN   TestClusterMetricsRejectsInvalidMode/missing_mode
+=== RUN   TestClusterMetricsRejectsInvalidMode/wrong_case_mode
+=== RUN   TestClusterMetricsRejectsInvalidMode/unknown_mode
+=== RUN   TestClusterMetricsRejectsInvalidMode/misspelled_mode_with_trailing_space
+--- PASS: TestClusterMetricsRejectsInvalidMode (0.00s)
+    --- PASS: TestClusterMetricsRejectsInvalidMode/missing_mode (0.00s)
+    --- PASS: TestClusterMetricsRejectsInvalidMode/wrong_case_mode (0.00s)
+    --- PASS: TestClusterMetricsRejectsInvalidMode/unknown_mode (0.00s)
+    --- PASS: TestClusterMetricsRejectsInvalidMode/misspelled_mode_with_trailing_space (0.00s)
+PASS
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/ai-load-balancer/cluster_metrics	0.092s

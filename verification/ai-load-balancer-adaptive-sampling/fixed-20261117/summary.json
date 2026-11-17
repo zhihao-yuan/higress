@@ -1,0 +1,175 @@
+{
+  "formal_groups": 24,
+  "concurrent_groups": 6,
+  "counts": {
+    "baseline_matrix_success": 18,
+    "baseline_trigger_timeout": 6,
+    "baseline_health_timeout": 6,
+    "candidate_matrix_success": 36,
+    "concurrent_trigger_success": 6,
+    "concurrent_normal_success": 48,
+    "concurrent_health_success": 40,
+    "upstream_requests": 108
+  },
+  "groups": [
+    {
+      "label": "baseline-unique-1",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-unique-2",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-unique-3",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-duplicate-safe-1",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-duplicate-safe-2",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-duplicate-safe-3",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-duplicate-1",
+      "worker_ids": [],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-duplicate-2",
+      "worker_ids": [],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-duplicate-3",
+      "worker_ids": [],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-identical-1",
+      "worker_ids": [],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-identical-2",
+      "worker_ids": [],
+      "cleanup_passed": true
+    },
+    {
+      "label": "baseline-identical-3",
+      "worker_ids": [],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-unique-1",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-unique-2",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-unique-3",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-duplicate-safe-1",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-duplicate-safe-2",
+      "worker_ids": [
+        "19"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-duplicate-safe-3",
+      "worker_ids": [
+        "19"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-duplicate-1",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-duplicate-2",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-duplicate-3",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-identical-1",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-identical-2",
+      "worker_ids": [
+        "21"
+      ],
+      "cleanup_passed": true
+    },
+    {
+      "label": "candidate-identical-3",
+      "worker_ids": [
+        "20"
+      ],
+      "cleanup_passed": true
+    }
+  ],
+  "all_assertions_passed": true,
+  "baseline_assertions_mean": "Expected defect observed, not repair acceptance",
+  "preflight_excluded": "candidate-duplicate-0"
+}

@@ -1,0 +1,12 @@
+{
+  "lb_type": "cluster",
+  "lb_policy": "cluster_metrics",
+  "lb_config": {
+    "mode": "AdaptiveScore",
+    "service_list": [
+      "a",
+      "a",
+      "a"
+    ]
+  }
+}
