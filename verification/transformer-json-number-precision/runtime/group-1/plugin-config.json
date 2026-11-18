@@ -1,0 +1,23 @@
+{
+  "reqRules": [
+    {
+      "operate": "rename",
+      "body": [
+        {
+          "oldKey": "identifier",
+          "newKey": "renamed"
+        }
+      ]
+    },
+    {
+      "operate": "map",
+      "mapSource": "body",
+      "body": [
+        {
+          "fromKey": "identifier",
+          "toKey": "copied"
+        }
+      ]
+    }
+  ]
+}
