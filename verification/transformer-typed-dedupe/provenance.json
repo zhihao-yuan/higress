@@ -1,0 +1,31 @@
+{
+  "source_sha": "392b64e8cce43e63d3207f00ba5c8fe2ff8921d9",
+  "date": "2026-11-18",
+  "scope": "Original upstream transformer RETAIN_UNIQUE JSON type collision",
+  "mode": "Baseline discovery, no implementation or fixed-version acceptance",
+  "go_version": "go version go1.24.4 darwin/amd64",
+  "modules": {
+    "transformer": {
+      "wasm_sha256": "185db2f1f157d917c1e6959a208bb8bea78d0ecba9be25e4a624357ad53b1f6e",
+      "source_files_sha256": {
+        "docker-compose.yaml": "5e492abd4b0c6047443b13b25fa5beda6aba9f4fbd6e9851c0ff9f5139d2ad43",
+        "utils_test.go": "29698f411d6aa1c16a772fe622d5972a6d620b8031540b49ce73b98b9358ee05",
+        "go.mod": "7a191b2c545aad6f308613dcbbe914d0b9bd54bdbcd8beb60d160f642f2eef48",
+        "envoy.yaml": "0e879db59877c232865d48d076c90356257086f9b65a758137cbbc811c98db76",
+        "go.sum": "9a51678721444980d2e0fc2373f8dc6eb015b65bd7860e31e041b52394ade17d",
+        "README.md": "1f93e2919dbd7a79f1f55099ff2d9dea9e27c0028ae68e58b409f33e60721f8f",
+        "VERSION": "be695fc8092ad3706d7d7d3b5104e1eaf8fe69666e5958e375c9952a06fa9514",
+        "README_EN.md": "9a7c2a3c9e585175d06c84d89dfdfeca4a6d5c564ab52d9033be7bfe06d8cfd3",
+        "utils.go": "3a8e1cf3399aa5492ced29ba5999840f9e61084c87227ffd3dccf20ab32f4187",
+        "main.go": "ec712a2b5bb01e286b826cd2dbf633d295c45d8657b8a26b7658c43f6cb655ad",
+        "main_test.go": "0049d5f0b2b8fbe8cc5516dd6659846f1f12aaab6cb4f3e91f2b9a064ee92422"
+      },
+      "command": "GOTOOLCHAIN=local GOWORK=off GOOS=wasip1 GOARCH=wasm <Go 1.24.4>/bin/go build -mod=readonly -buildvcs=false -trimpath -buildmode=c-shared -o <lab>/transformer.wasm ."
+    }
+  },
+  "build_exit_codes": {
+    "transformer": 0
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "main_checkout_status": ""
+}
