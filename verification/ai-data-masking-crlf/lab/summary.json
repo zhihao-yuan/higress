@@ -1,0 +1,24 @@
+{
+  "runs": [
+    {
+      "run": "gateway-1",
+      "requests": 42,
+      "plugin_requests": 21,
+      "defect_requests": 9,
+      "crashes": 0,
+      "cleanup_passed": true
+    },
+    {
+      "run": "gateway-2",
+      "requests": 42,
+      "plugin_requests": 21,
+      "defect_requests": 9,
+      "crashes": 0,
+      "cleanup_passed": true
+    }
+  ],
+  "formal_requests": 84,
+  "defect_requests": 18,
+  "real_gateway": true,
+  "upstream": "fixed local SSE fixture; no model inference"
+}

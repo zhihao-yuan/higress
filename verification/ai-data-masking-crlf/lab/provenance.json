@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-13",
+  "upstream_sha": "0316bc904789ab25a9cd42db58eafca11f6a2205",
+  "wasm_sha256": "bc3e43c3465c70d978d6b69ed307bbc7f50d28409bd926bb56a058bcfeef984c",
+  "builder_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder@sha256:31758209b0ab11bb81db4c07789d1b93072c46f63ecb10f1ee88863baf659d90",
+  "rust_version": "1.82.0",
+  "target": "wasm32-wasi (WASI preview1)",
+  "build": "docker run --rm --name masking-crlf-builder-20261113 -v <lab>:/lab -v higress5213-cargo:/usr/local/cargo -e CARGO_TARGET_DIR=/lab/target -w /lab/baseline/plugins/wasm-rust/extensions/ai-data-masking --entrypoint cargo higress-registry.cn-hangzhou.cr.aliyuncs.com/plugins/wasm-rust-builder:rust1.82-oras1.0.0 build --locked --offline --release --target wasm32-wasi",
+  "initial_build_exit": 101,
+  "initial_build_reason": "wasm32-wasip1 target not installed in cached Rust builder; installed target wasm32-wasi used without dependency or source changes",
+  "successful_build_exit": 0,
+  "repo_status": "",
+  "sources": {
+    "src/event_stream.rs": "7fa965b1f3088dc723e4a987cf738efc03c497391a201d83ba054b7249d7afc8",
+    "extensions/ai-data-masking/src/msg_win_openai.rs": "5e24f7d0c12249b0f9fac55c2e4d806bdbecaf989261766f23fcbd4ec307d7b3",
+    "extensions/ai-data-masking/src/ai_data_masking.rs": "f4cc14d34860b57e3248113cb906ae2f207ca4f12b1bd58dfd14101370d1455b",
+    "extensions/ai-data-masking/Cargo.lock": "267ee4b1873ea76e260d416e20bdf0335c9e63df3fe3098854254b7aa848f99c"
+  }
+}

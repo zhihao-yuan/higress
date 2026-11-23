@@ -1,0 +1,254 @@
+[
+  {
+    "id": "gateway-2-named-lf-bypass-0",
+    "case": "named-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b"
+  },
+  {
+    "id": "gateway-2-named-lf-bypass-1",
+    "case": "named-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b"
+  },
+  {
+    "id": "gateway-2-named-lf-bypass-2",
+    "case": "named-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b"
+  },
+  {
+    "id": "gateway-2-named-lf-plugin-0",
+    "case": "named-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b"
+  },
+  {
+    "id": "gateway-2-named-lf-plugin-1",
+    "case": "named-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b"
+  },
+  {
+    "id": "gateway-2-named-lf-plugin-2",
+    "case": "named-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b"
+  },
+  {
+    "id": "gateway-2-named-crlf-bypass-0",
+    "case": "named-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-bypass-1",
+    "case": "named-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-bypass-2",
+    "case": "named-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-plugin-0",
+    "case": "named-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-plugin-1",
+    "case": "named-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-plugin-2",
+    "case": "named-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-fragmented-bypass-0",
+    "case": "named-crlf-fragmented",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-fragmented-bypass-1",
+    "case": "named-crlf-fragmented",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-fragmented-bypass-2",
+    "case": "named-crlf-fragmented",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-fragmented-plugin-0",
+    "case": "named-crlf-fragmented",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-fragmented-plugin-1",
+    "case": "named-crlf-fragmented",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-named-crlf-fragmented-plugin-2",
+    "case": "named-crlf-fragmented",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d"
+  },
+  {
+    "id": "gateway-2-multiline-lf-bypass-0",
+    "case": "multiline-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb"
+  },
+  {
+    "id": "gateway-2-multiline-lf-bypass-1",
+    "case": "multiline-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb"
+  },
+  {
+    "id": "gateway-2-multiline-lf-bypass-2",
+    "case": "multiline-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb"
+  },
+  {
+    "id": "gateway-2-multiline-lf-plugin-0",
+    "case": "multiline-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb"
+  },
+  {
+    "id": "gateway-2-multiline-lf-plugin-1",
+    "case": "multiline-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb"
+  },
+  {
+    "id": "gateway-2-multiline-lf-plugin-2",
+    "case": "multiline-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb"
+  },
+  {
+    "id": "gateway-2-multiline-crlf-bypass-0",
+    "case": "multiline-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3"
+  },
+  {
+    "id": "gateway-2-multiline-crlf-bypass-1",
+    "case": "multiline-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3"
+  },
+  {
+    "id": "gateway-2-multiline-crlf-bypass-2",
+    "case": "multiline-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3"
+  },
+  {
+    "id": "gateway-2-multiline-crlf-plugin-0",
+    "case": "multiline-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3"
+  },
+  {
+    "id": "gateway-2-multiline-crlf-plugin-1",
+    "case": "multiline-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3"
+  },
+  {
+    "id": "gateway-2-multiline-crlf-plugin-2",
+    "case": "multiline-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3"
+  },
+  {
+    "id": "gateway-2-dataonly-lf-bypass-0",
+    "case": "dataonly-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a"
+  },
+  {
+    "id": "gateway-2-dataonly-lf-bypass-1",
+    "case": "dataonly-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a"
+  },
+  {
+    "id": "gateway-2-dataonly-lf-bypass-2",
+    "case": "dataonly-lf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a"
+  },
+  {
+    "id": "gateway-2-dataonly-lf-plugin-0",
+    "case": "dataonly-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a"
+  },
+  {
+    "id": "gateway-2-dataonly-lf-plugin-1",
+    "case": "dataonly-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a"
+  },
+  {
+    "id": "gateway-2-dataonly-lf-plugin-2",
+    "case": "dataonly-lf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a"
+  },
+  {
+    "id": "gateway-2-dataonly-crlf-bypass-0",
+    "case": "dataonly-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb"
+  },
+  {
+    "id": "gateway-2-dataonly-crlf-bypass-1",
+    "case": "dataonly-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb"
+  },
+  {
+    "id": "gateway-2-dataonly-crlf-bypass-2",
+    "case": "dataonly-crlf",
+    "request": "{\"model\":\"fixture\",\"messages\":[{\"role\":\"user\",\"content\":\"hello\"}],\"stream\":true}",
+    "response_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb"
+  },
+  {
+    "id": "gateway-2-dataonly-crlf-plugin-0",
+    "case": "dataonly-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb"
+  },
+  {
+    "id": "gateway-2-dataonly-crlf-plugin-1",
+    "case": "dataonly-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb"
+  },
+  {
+    "id": "gateway-2-dataonly-crlf-plugin-2",
+    "case": "dataonly-crlf",
+    "request": "{\"messages\":[{\"content\":\"hello\",\"role\":\"user\"}],\"model\":\"fixture\",\"stream\":true}",
+    "response_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb"
+  }
+]
