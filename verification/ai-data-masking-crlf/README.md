@@ -72,3 +72,5 @@ The recorded build used the existing populated higress5213-cargo volume. A fresh
 The executed lab/verify.py is unchanged and its recorded SHA-256 matches. It expects a sibling historical template path; that exact template is included under higress-adaptive-sampling-20261112/. This directory name is retained solely for reproducibility. New run labels prevent overwriting recorded results. The harness removes only its own test container, stops the fixture and checks port closure in finally. Wasm binaries and Cargo outputs are not committed.
 
 Public records replace local home/lab prefixes with <home>/<lab> bytewise. Payloads, CRLF/LF bytes, hashes, timestamps, counters and results are unchanged. SHA256SUMS covers published artifacts after redaction; identity files retain executed module/harness hashes.
+
+.gitattributes marks raw .body files as -text to preserve original CRLF bytes in Git.
