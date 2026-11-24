@@ -1,0 +1,140 @@
+{
+  "formal_requests": 48,
+  "plugin_requests": 24,
+  "bypass_requests": 24,
+  "all_http_200": true,
+  "response_bytes_preserved": true,
+  "tool_count": 1,
+  "tool_parameters_preserved": true,
+  "cleanup_passed": true,
+  "medians": [
+    {
+      "run": "gateway-1",
+      "index": 0,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 5.184,
+      "access_median_ms": 2
+    },
+    {
+      "run": "gateway-1",
+      "index": 0,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 7.901,
+      "access_median_ms": 5
+    },
+    {
+      "run": "gateway-1",
+      "index": 100000,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 6.533,
+      "access_median_ms": 2
+    },
+    {
+      "run": "gateway-1",
+      "index": 100000,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 11.434,
+      "access_median_ms": 7
+    },
+    {
+      "run": "gateway-1",
+      "index": 1000000,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 4.673,
+      "access_median_ms": 2
+    },
+    {
+      "run": "gateway-1",
+      "index": 1000000,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 45.243,
+      "access_median_ms": 40
+    },
+    {
+      "run": "gateway-1",
+      "index": 10000000,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 5.507,
+      "access_median_ms": 2
+    },
+    {
+      "run": "gateway-1",
+      "index": 10000000,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 896.661,
+      "access_median_ms": 874
+    },
+    {
+      "run": "gateway-3",
+      "index": 0,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 3.851,
+      "access_median_ms": 1
+    },
+    {
+      "run": "gateway-3",
+      "index": 0,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 5.057,
+      "access_median_ms": 2
+    },
+    {
+      "run": "gateway-3",
+      "index": 100000,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 4.693,
+      "access_median_ms": 1
+    },
+    {
+      "run": "gateway-3",
+      "index": 100000,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 7.495,
+      "access_median_ms": 5
+    },
+    {
+      "run": "gateway-3",
+      "index": 1000000,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 5.751,
+      "access_median_ms": 3
+    },
+    {
+      "run": "gateway-3",
+      "index": 1000000,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 23.356,
+      "access_median_ms": 20
+    },
+    {
+      "run": "gateway-3",
+      "index": 10000000,
+      "route": "bypass",
+      "requests": 3,
+      "client_median_ms": 3.351,
+      "access_median_ms": 1
+    },
+    {
+      "run": "gateway-3",
+      "index": 10000000,
+      "route": "plugin",
+      "requests": 3,
+      "client_median_ms": 191.291,
+      "access_median_ms": 189
+    }
+  ]
+}

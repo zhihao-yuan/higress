@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "<lab>/verify.py", line 71, in run
+    command('docker','run','-d','--name',name,'--cpus','1','--memory','768m','-p','127.0.0.1::10000','-p','127.0.0.1::10001','-p','127.0.0.1::15000','-v',str(folder)+':/lab:ro','--entrypoint','/usr/local/bin/envoy',IMAGE,'-c','/lab/envoy.json','--concurrency','1','--log-level','info','--file-flush-interval-msec','100');created=True
+  File "<lab>/verify.py", line 11, in command
+    p = subprocess.run(args, capture_output=True, text=True, timeout=60)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'docker'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<lab>/verify.py", line 138, in <module>
+    run('statistics','baseline',sys.argv[1])
+  File "<lab>/verify.py", line 127, in run
+    absent=not command('docker','ps','-a','--filter','name=^/'+name+'$','--format','{{.Names}}')
+  File "<lab>/verify.py", line 11, in command
+    p = subprocess.run(args, capture_output=True, text=True, timeout=60)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'docker'

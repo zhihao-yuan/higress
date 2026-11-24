@@ -1,0 +1,26 @@
+{
+  "source_sha": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "date": "2026-11-24",
+  "mode": "Unmodified community ai-statistics baseline; synthetic sparse-index hardening discovery; no fix",
+  "go_version": "go1.24.4 darwin/amd64",
+  "build": "GOTOOLCHAIN=local GOWORK=off GOOS=wasip1 GOARCH=wasm go build -mod=readonly -buildvcs=false -trimpath -buildmode=c-shared -o <lab>/statistics.wasm .",
+  "build_exit_code": 0,
+  "wasm_sha256": "01badfcda1f2de445f593484f4a1a689629e94cb4a6883a4d4280badba4246e4",
+  "source_files_sha256": {
+    "plugins/wasm-go/extensions/ai-statistics/main_extra_test.go": "9ee2c0ef40cb85b44b38016a80b7f19b3d9647571317bfb497a442051ee733b1",
+    "plugins/wasm-go/extensions/ai-statistics/go.mod": "cc226cb5d638881f0c18b9d9c04d04c094d74531fba717b7f77c0fa8f0f35c74",
+    "plugins/wasm-go/extensions/ai-statistics/sse_framer.go": "cf1bd7e8e4cdac2a41e0fb7a1222931e007fdb52b3d1cfd11eead84fc79f3d01",
+    "plugins/wasm-go/extensions/ai-statistics/go.sum": "3ac28f82270f81c4b8f07da89cadd06ed3c44afde0e35ba8cd32c2ae70df0409",
+    "plugins/wasm-go/extensions/ai-statistics/README.md": "50ba58686186a1667820e58aee447c2709bc3ccb7c8ca89318b9ca794f00fdbc",
+    "plugins/wasm-go/extensions/ai-statistics/.gitignore": "bf37ae800df0e4f5ca90d1525e568c6bd4cd1932c5c241b641dc7b66e0702b00",
+    "plugins/wasm-go/extensions/ai-statistics/VERSION": "be695fc8092ad3706d7d7d3b5104e1eaf8fe69666e5958e375c9952a06fa9514",
+    "plugins/wasm-go/extensions/ai-statistics/README_EN.md": "f6bc58d41d3d8cc4463a793613a958d49453c5c9f61b736a13b03c5d5fbd6322",
+    "plugins/wasm-go/extensions/ai-statistics/main.go": "fbd18c947a53232431317dce83077643c3837a65c1fd92ab421de429d76faa1b",
+    "plugins/wasm-go/extensions/ai-statistics/fix_tool_calls.patch": "d951d9b2abdfd2f7e64723c720fc6c0ff7557c53ffb608701ea40a42565ed8d3",
+    "plugins/wasm-go/extensions/ai-statistics/sse_framer_test.go": "62625b27d9267d07b0b8fb66ab577e4a8f442c9ffde258f9bbcd8876e511e3fd",
+    "plugins/wasm-go/extensions/ai-statistics/main_test.go": "db1660d2d44c31a1cc13d53da77e407a59703a08397447086bd3e3da12da5e7f"
+  },
+  "excluded_attempts": [
+    "gateway-2: non-login shell lacked docker on PATH; failed before creating any container or sending gateway requests. gateway-1 and gateway-3 are formal evidence."
+  ]
+}
