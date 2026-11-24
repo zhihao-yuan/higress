@@ -1,0 +1,19 @@
+{
+  "upstream_sha": "0316bc904789ab25a9cd42db58eafca11f6a2205",
+  "date": "2026-11-13",
+  "scope": "Existing isolated string-encoding experiment; native helper costs and full Wasm output parity only",
+  "go_version": "go version go1.24.4 darwin/amd64",
+  "build_command": "GOTOOLCHAIN=go1.24.4 GOWORK=off GOOS=wasip1 GOARCH=wasm /usr/local/Cellar/go/1.27.3/libexec/bin/go build -trimpath -buildmode=c-shared -o <module.wasm> .",
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "modules": {
+    "logging-prototype.wasm": "d3228b3b09c2347f0aebbe1f11bbf529c2e441be9d27b8fa85c98bdbdb20d54d",
+    "logging-baseline.wasm": "722106cfc50eed2b37a5f69a929e6212b24a08497c9e69439317c3fe8d436ff0"
+  },
+  "preflight_excluded": [
+    "logging-baseline-1: initial log key omitted wasm. prefix; excluded from formal evidence"
+  ],
+  "upstream": "Deterministic local HTTP SSE fixture, not model inference",
+  "repo_status": "",
+  "latest_main_checked_2026_11_24": "22915ae3d048fdfbc66da0a9635d6e7b6142fc26",
+  "latest_source_note": "main.go identical; go.mod/go.sum SDK versions changed since runtime baseline. No runtime claim for latest dependencies."
+}

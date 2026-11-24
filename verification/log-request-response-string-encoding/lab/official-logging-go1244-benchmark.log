@@ -1,0 +1,42 @@
+goos: darwin
+goarch: amd64
+pkg: analysis/officiallogging
+cpu: Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz
+BenchmarkProperty/ASCII/256/original-8         	   50438	      2108 ns/op	    1264 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/256/original-8         	   51771	      1987 ns/op	    1264 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/256/original-8         	   48279	      4009 ns/op	    1264 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/256/direct-8           	  156216	       714.9 ns/op	     320 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/256/direct-8           	  226350	       715.8 ns/op	     320 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/256/direct-8           	  194493	       715.7 ns/op	     320 B/op	       3 allocs/op
+BenchmarkProperty/SSE/256/original-8           	   23248	      4770 ns/op	    2257 B/op	      12 allocs/op
+BenchmarkProperty/SSE/256/original-8           	   19228	      6482 ns/op	    2257 B/op	      12 allocs/op
+BenchmarkProperty/SSE/256/original-8           	   32253	      4641 ns/op	    2257 B/op	      12 allocs/op
+BenchmarkProperty/SSE/256/direct-8             	   76736	      1375 ns/op	     352 B/op	       3 allocs/op
+BenchmarkProperty/SSE/256/direct-8             	   74952	      1377 ns/op	     352 B/op	       3 allocs/op
+BenchmarkProperty/SSE/256/direct-8             	   98607	      1446 ns/op	     352 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/4096/original-8        	    8968	     20040 ns/op	   14277 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/4096/original-8        	    8084	     30236 ns/op	   14278 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/4096/original-8        	    6476	     26109 ns/op	   14279 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/4096/direct-8          	   15254	      8730 ns/op	    4898 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/4096/direct-8          	   16876	      7388 ns/op	    4899 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/4096/direct-8          	   16028	      7482 ns/op	    4900 B/op	       3 allocs/op
+BenchmarkProperty/SSE/4096/original-8          	    2798	     43259 ns/op	   30265 B/op	      12 allocs/op
+BenchmarkProperty/SSE/4096/original-8          	    2427	     46241 ns/op	   30220 B/op	      12 allocs/op
+BenchmarkProperty/SSE/4096/original-8          	    3716	     35167 ns/op	   30233 B/op	      12 allocs/op
+BenchmarkProperty/SSE/4096/direct-8            	    6000	     16836 ns/op	    5413 B/op	       3 allocs/op
+BenchmarkProperty/SSE/4096/direct-8            	    6690	     19208 ns/op	    5416 B/op	       3 allocs/op
+BenchmarkProperty/SSE/4096/direct-8            	    5958	     17359 ns/op	    5421 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/65536/original-8       	     454	    235528 ns/op	  218383 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/65536/original-8       	     463	    224820 ns/op	  217331 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/65536/original-8       	     520	    225061 ns/op	  216626 B/op	       9 allocs/op
+BenchmarkProperty/ASCII/65536/direct-8         	     861	    122037 ns/op	   74128 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/65536/direct-8         	     751	    174399 ns/op	   74179 B/op	       3 allocs/op
+BenchmarkProperty/ASCII/65536/direct-8         	     804	    159303 ns/op	   73969 B/op	       3 allocs/op
+BenchmarkProperty/SSE/65536/original-8         	     154	    757108 ns/op	  498597 B/op	      14 allocs/op
+BenchmarkProperty/SSE/65536/original-8         	     162	   1032872 ns/op	  505286 B/op	      14 allocs/op
+BenchmarkProperty/SSE/65536/original-8         	     164	    708303 ns/op	  510381 B/op	      14 allocs/op
+BenchmarkProperty/SSE/65536/direct-8           	     428	    332902 ns/op	   85249 B/op	       3 allocs/op
+BenchmarkProperty/SSE/65536/direct-8           	     391	    294138 ns/op	   81981 B/op	       3 allocs/op
+BenchmarkProperty/SSE/65536/direct-8           	     408	    349190 ns/op	   85408 B/op	       3 allocs/op
+PASS
+ok  	analysis/officiallogging	6.222s

@@ -1,0 +1,110 @@
+[
+  {
+    "kind": "ASCII",
+    "bytes": 256,
+    "variant": "direct",
+    "repetitions": 3,
+    "median_ns": 715.7,
+    "median_bytes": 320,
+    "median_allocs": 3
+  },
+  {
+    "kind": "ASCII",
+    "bytes": 256,
+    "variant": "original",
+    "repetitions": 3,
+    "median_ns": 2108.0,
+    "median_bytes": 1264,
+    "median_allocs": 9
+  },
+  {
+    "kind": "ASCII",
+    "bytes": 4096,
+    "variant": "direct",
+    "repetitions": 3,
+    "median_ns": 7482.0,
+    "median_bytes": 4899,
+    "median_allocs": 3
+  },
+  {
+    "kind": "ASCII",
+    "bytes": 4096,
+    "variant": "original",
+    "repetitions": 3,
+    "median_ns": 26109.0,
+    "median_bytes": 14278,
+    "median_allocs": 9
+  },
+  {
+    "kind": "ASCII",
+    "bytes": 65536,
+    "variant": "direct",
+    "repetitions": 3,
+    "median_ns": 159303.0,
+    "median_bytes": 74128,
+    "median_allocs": 3
+  },
+  {
+    "kind": "ASCII",
+    "bytes": 65536,
+    "variant": "original",
+    "repetitions": 3,
+    "median_ns": 225061.0,
+    "median_bytes": 217331,
+    "median_allocs": 9
+  },
+  {
+    "kind": "SSE",
+    "bytes": 256,
+    "variant": "direct",
+    "repetitions": 3,
+    "median_ns": 1377.0,
+    "median_bytes": 352,
+    "median_allocs": 3
+  },
+  {
+    "kind": "SSE",
+    "bytes": 256,
+    "variant": "original",
+    "repetitions": 3,
+    "median_ns": 4770.0,
+    "median_bytes": 2257,
+    "median_allocs": 12
+  },
+  {
+    "kind": "SSE",
+    "bytes": 4096,
+    "variant": "direct",
+    "repetitions": 3,
+    "median_ns": 17359.0,
+    "median_bytes": 5416,
+    "median_allocs": 3
+  },
+  {
+    "kind": "SSE",
+    "bytes": 4096,
+    "variant": "original",
+    "repetitions": 3,
+    "median_ns": 43259.0,
+    "median_bytes": 30233,
+    "median_allocs": 12
+  },
+  {
+    "kind": "SSE",
+    "bytes": 65536,
+    "variant": "direct",
+    "repetitions": 3,
+    "median_ns": 332902.0,
+    "median_bytes": 85249,
+    "median_allocs": 3
+  },
+  {
+    "kind": "SSE",
+    "bytes": 65536,
+    "variant": "original",
+    "repetitions": 3,
+    "median_ns": 757108.0,
+    "median_bytes": 505286,
+    "median_allocs": 14
+  }
+]
