@@ -1,19 +1,9 @@
-commit cdcc6067e7dd54a3ef4c610c3845307150944cac
-Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-AuthorDate: Wed Nov 25 17:07:30 2026 +0800
-Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-CommitDate: Wed Nov 25 17:07:30 2026 +0800
-
-    fix(transformer): preserve JSON values when renaming and mapping
-    
-    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-
 diff --git a/plugins/wasm-go/extensions/transformer/json_number_test.go b/plugins/wasm-go/extensions/transformer/json_number_test.go
 new file mode 100644
-index 000000000..e71cf28b5
+index 000000000..fcb7bdcd2
 --- /dev/null
 +++ b/plugins/wasm-go/extensions/transformer/json_number_test.go
-@@ -0,0 +1,44 @@
+@@ -0,0 +1,45 @@
 +// Copyright (c) 2022 Alibaba Group Holding Ltd.
 +//
 +// Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +22,10 @@ index 000000000..e71cf28b5
 +
 +import (
 +	"encoding/json"
++	"testing"
++
 +	"github.com/higress-group/wasm-go/pkg/test"
 +	"github.com/stretchr/testify/require"
-+	"testing"
 +)
 +
 +func TestJSONRenameMapPreserveValue(t *testing.T) {

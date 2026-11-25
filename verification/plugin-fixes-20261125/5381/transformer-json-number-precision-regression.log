@@ -1,66 +1,66 @@
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: 9007199254740993
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: -9007199254740993
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: 1.2345678901234567
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: {"items":[9007199254740993]}
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: [9007199254740993,null,true,"x"]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: quoted"value
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: 
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
-2026/11/25 16:47:22 [foreign call] funcname: get_log_level
-2026/11/25 16:47:22 [foreign call] param: 
-2026/11/25 16:47:22 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
-2026/11/25 16:47:22 proxy_debug_log: search key:old in source:body
-2026/11/25 16:47:22 proxy_debug_log: map key:old to key:new success, value is: false
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: 9007199254740993
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: -9007199254740993
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: 1.2345678901234567
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: {"items":[9007199254740993]}
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: [9007199254740993,null,true,"x"]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: quoted"value
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: 
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 17:23:50 [foreign call] funcname: get_log_level
+2026/11/25 17:23:50 [foreign call] param: 
+2026/11/25 17:23:50 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 17:23:50 proxy_debug_log: search key:old in source:body
+2026/11/25 17:23:50 proxy_debug_log: map key:old to key:new success, value is: false
 PASS
-ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/transformer	0.074s
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/transformer	0.202s

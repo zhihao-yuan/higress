@@ -1,6 +1,6 @@
 # Issue #5386: fixed verification
 
-Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `33aaa0e36409c1346734b8ae8c7df12776bd43e6` on `fix/transformer-self-rename`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
+Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `1e8b2ecbb4f69f84f12f285ccc2efe984c6164e4` on `fix/transformer-self-rename`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
 
 ## Results
 

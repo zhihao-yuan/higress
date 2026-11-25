@@ -2,16 +2,16 @@
   "issue": 5418,
   "name": "log-request-response-string-encoding",
   "scope": "plugins/wasm-go/extensions/log-request-response",
-  "head": "1f2d6f76638138333f7112ebcec7fad3150ef15c",
+  "head": "808a4e57a04a48dd8d61836969bcf0228e0e334f",
   "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
   "title": "perf(log-request-response): marshal log strings directly",
   "branch": "fix/log-request-response-string-encoding",
   "source_sha256": {
     "plugins/wasm-go/extensions/log-request-response/main.go": "e0f0ec4f6d72bfdba80f9fa3c18b105815e31318dacfc9587110444d304e6364",
-    "plugins/wasm-go/extensions/log-request-response/property_encoding_test.go": "0a25ec90f893eb5c9bfeffac7083da97404a959ca2439bb67154d4a080e21147"
+    "plugins/wasm-go/extensions/log-request-response/property_encoding_test.go": "64cd8887d3ce4e013eaf29ea3ada3d2978f32702485716959e0ba3e73ef873ac"
   },
   "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
-  "tested_fixed_head": "1f2d6f76638138333f7112ebcec7fad3150ef15c",
+  "tested_fixed_head": "808a4e57a04a48dd8d61836969bcf0228e0e334f",
   "wasm_sha256": {
     "baseline": "6889dab64d5d4849babcfa0842188ed32eba84105ba37dcb67a992bda442e9ea",
     "fixed": "16ed8f26d9b17c2dbc13f013b184fea75b663c86541437a1c412276040d2b53c"

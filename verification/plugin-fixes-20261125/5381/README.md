@@ -1,6 +1,6 @@
 # Issue #5381: fixed verification
 
-Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `cdcc6067e7dd54a3ef4c610c3845307150944cac` on `fix/transformer-json-number-precision`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
+Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `3c0c536915f0d16706939936fc901cc52ca180dc` on `fix/transformer-json-number-precision`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
 
 ## Results
 

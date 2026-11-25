@@ -1,19 +1,9 @@
-commit 3bf6e4dca40457b39a2d934df10f673f74fa04aa
-Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-AuthorDate: Wed Nov 25 17:07:31 2026 +0800
-Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-CommitDate: Wed Nov 25 17:07:31 2026 +0800
-
-    fix(transformer): distinguish JSON types during deduplication
-    
-    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-
 diff --git a/plugins/wasm-go/extensions/transformer/dedupe_types_test.go b/plugins/wasm-go/extensions/transformer/dedupe_types_test.go
 new file mode 100644
-index 000000000..363b19536
+index 000000000..eb8356bfd
 --- /dev/null
 +++ b/plugins/wasm-go/extensions/transformer/dedupe_types_test.go
-@@ -0,0 +1,47 @@
+@@ -0,0 +1,48 @@
 +// Copyright (c) 2022 Alibaba Group Holding Ltd.
 +//
 +// Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +22,10 @@ index 000000000..363b19536
 +
 +import (
 +	"encoding/json"
++	"testing"
++
 +	"github.com/higress-group/wasm-go/pkg/test"
 +	"github.com/stretchr/testify/require"
-+	"testing"
 +)
 +
 +func TestJSONDedupeKeepsDistinctTypes(t *testing.T) {

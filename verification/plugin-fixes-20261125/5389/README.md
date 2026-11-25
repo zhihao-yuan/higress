@@ -1,6 +1,6 @@
 # Issue #5389: fixed verification
 
-Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `3bf6e4dca40457b39a2d934df10f673f74fa04aa` on `fix/transformer-json-dedupe-types`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
+Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `24333eba48e1d3d00c0ba79af0de67f6af3aaeaf` on `fix/transformer-json-dedupe-types`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
 
 ## Results
 

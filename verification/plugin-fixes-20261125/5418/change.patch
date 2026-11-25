@@ -1,13 +1,3 @@
-commit 1f2d6f76638138333f7112ebcec7fad3150ef15c
-Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-AuthorDate: Wed Nov 25 17:07:32 2026 +0800
-Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-CommitDate: Wed Nov 25 17:07:32 2026 +0800
-
-    perf(log-request-response): marshal log strings directly
-    
-    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-
 diff --git a/plugins/wasm-go/extensions/log-request-response/main.go b/plugins/wasm-go/extensions/log-request-response/main.go
 index 140d1613e..3b64e285b 100644
 --- a/plugins/wasm-go/extensions/log-request-response/main.go
@@ -45,10 +35,10 @@ index 140d1613e..3b64e285b 100644
  }
 diff --git a/plugins/wasm-go/extensions/log-request-response/property_encoding_test.go b/plugins/wasm-go/extensions/log-request-response/property_encoding_test.go
 new file mode 100644
-index 000000000..4ba8a1a33
+index 000000000..8b4fb1774
 --- /dev/null
 +++ b/plugins/wasm-go/extensions/log-request-response/property_encoding_test.go
-@@ -0,0 +1,48 @@
+@@ -0,0 +1,49 @@
 +// Copyright (c) 2023 Alibaba Group Holding Ltd.
 +//
 +// Licensed under the Apache License, Version 2.0 (the "License");
@@ -67,9 +57,10 @@ index 000000000..4ba8a1a33
 +
 +import (
 +	"encoding/json"
++	"testing"
++
 +	"github.com/higress-group/wasm-go/pkg/test"
 +	"github.com/stretchr/testify/require"
-+	"testing"
 +)
 +
 +func TestPropertyStringEncoding(t *testing.T) {

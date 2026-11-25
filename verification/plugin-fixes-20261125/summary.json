@@ -4,21 +4,21 @@
     {
       "issue": 5381,
       "name": "transformer-json-number-precision",
-      "head": "cdcc6067e7dd54a3ef4c610c3845307150944cac",
+      "head": "3c0c536915f0d16706939936fc901cc52ca180dc",
       "requests": 72,
       "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
     },
     {
       "issue": 5386,
       "name": "transformer-self-rename",
-      "head": "33aaa0e36409c1346734b8ae8c7df12776bd43e6",
+      "head": "1e8b2ecbb4f69f84f12f285ccc2efe984c6164e4",
       "requests": 54,
       "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
     },
     {
       "issue": 5389,
       "name": "transformer-json-dedupe-types",
-      "head": "3bf6e4dca40457b39a2d934df10f673f74fa04aa",
+      "head": "24333eba48e1d3d00c0ba79af0de67f6af3aaeaf",
       "requests": 72,
       "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
     },
@@ -32,7 +32,7 @@
     {
       "issue": 5418,
       "name": "log-request-response-string-encoding",
-      "head": "1f2d6f76638138333f7112ebcec7fad3150ef15c",
+      "head": "808a4e57a04a48dd8d61836969bcf0228e0e334f",
       "requests": 360,
       "limits": "Go tests and explicit byte-escaping regression passed. Current formal fixtures use 4 KiB Unicode and 64 KiB ASCII. An initial 64 KiB Unicode fixture showed replacement characters in the unchanged baseline log, with client bytes intact; it failed the assertion and is excluded/retained. Its cause is unresolved and no extra production fix is included. Runtime checks establish compatibility, not gateway QPS/CPU/cost gains."
     },

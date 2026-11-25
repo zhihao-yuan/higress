@@ -1,6 +1,6 @@
 # Issue #5418: fixed verification
 
-Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `1f2d6f76638138333f7112ebcec7fad3150ef15c` on `fix/log-request-response-string-encoding`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
+Base: `c4c537f37175befc375e65ba059e8df477dc52a4`. Fixed source: `808a4e57a04a48dd8d61836969bcf0228e0e334f` on `fix/log-request-response-string-encoding`. This is the exact source commit proposed in the PR. The rebuilt committed-head Wasm equals the tested module. Hashes and changed-source hashes are in provenance.json.
 
 ## Results
 

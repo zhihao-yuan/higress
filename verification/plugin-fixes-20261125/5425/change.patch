@@ -1,13 +1,3 @@
-commit 43415cdf54dfcc0f1f91e5e20bfcc5f2c25c8928
-Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-AuthorDate: Wed Nov 25 17:07:33 2026 +0800
-Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-CommitDate: Wed Nov 25 17:07:33 2026 +0800
-
-    perf(ai-statistics): sort existing tool call indexes
-    
-    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
-
 diff --git a/plugins/wasm-go/extensions/ai-statistics/main.go b/plugins/wasm-go/extensions/ai-statistics/main.go
 index e46d4637b..55506291a 100644
 --- a/plugins/wasm-go/extensions/ai-statistics/main.go
