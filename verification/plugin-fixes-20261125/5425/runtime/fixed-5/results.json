@@ -1,0 +1,1367 @@
+[
+  {
+    "id": "fixed-5-index-0-bypass-0",
+    "case": "index-0",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 332,
+    "sha256": "d007d0d28e8eb3950ac23eec522bca9ec9eacba381c4884911bde3657056cfd5",
+    "elapsed_ns": 18408356,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "332"
+      ],
+      [
+        "req-cost-time",
+        "10"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689385"
+      ],
+      [
+        "resp-start-time",
+        "1795597689395"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "9"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "10",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-0-bypass-1",
+    "case": "index-0",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 332,
+    "sha256": "d007d0d28e8eb3950ac23eec522bca9ec9eacba381c4884911bde3657056cfd5",
+    "elapsed_ns": 4025124,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "332"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689400"
+      ],
+      [
+        "resp-start-time",
+        "1795597689402"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "1",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-0-bypass-2",
+    "case": "index-0",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 332,
+    "sha256": "d007d0d28e8eb3950ac23eec522bca9ec9eacba381c4884911bde3657056cfd5",
+    "elapsed_ns": 3204070,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "332"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689404"
+      ],
+      [
+        "resp-start-time",
+        "1795597689405"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "1",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-0-plugin-0",
+    "case": "index-0",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 332,
+    "sha256": "d007d0d28e8eb3950ac23eec522bca9ec9eacba381c4884911bde3657056cfd5",
+    "elapsed_ns": 9187918,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "332"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689410"
+      ],
+      [
+        "resp-start-time",
+        "1795597689412"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "4",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 3,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-0-plugin-1",
+    "case": "index-0",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 332,
+    "sha256": "d007d0d28e8eb3950ac23eec522bca9ec9eacba381c4884911bde3657056cfd5",
+    "elapsed_ns": 3751475,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "332"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689417"
+      ],
+      [
+        "resp-start-time",
+        "1795597689418"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "0"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 1,
+        "llm_service_duration": 1,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-0-plugin-2",
+    "case": "index-0",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 332,
+    "sha256": "d007d0d28e8eb3950ac23eec522bca9ec9eacba381c4884911bde3657056cfd5",
+    "elapsed_ns": 4371632,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "332"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689420"
+      ],
+      [
+        "resp-start-time",
+        "1795597689422"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 1,
+        "llm_service_duration": 1,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-100000-bypass-0",
+    "case": "index-100000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 337,
+    "sha256": "3c04f3314aaea1e84b5661def3446a1dcd6e4871274e79ae2f29883ef95a8e18",
+    "elapsed_ns": 6877716,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "337"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689427"
+      ],
+      [
+        "resp-start-time",
+        "1795597689429"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-100000-bypass-1",
+    "case": "index-100000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 337,
+    "sha256": "3c04f3314aaea1e84b5661def3446a1dcd6e4871274e79ae2f29883ef95a8e18",
+    "elapsed_ns": 6557934,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "337"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689434"
+      ],
+      [
+        "resp-start-time",
+        "1795597689436"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-100000-bypass-2",
+    "case": "index-100000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 337,
+    "sha256": "3c04f3314aaea1e84b5661def3446a1dcd6e4871274e79ae2f29883ef95a8e18",
+    "elapsed_ns": 5551873,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "337"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689441"
+      ],
+      [
+        "resp-start-time",
+        "1795597689444"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-100000-plugin-0",
+    "case": "index-100000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 337,
+    "sha256": "3c04f3314aaea1e84b5661def3446a1dcd6e4871274e79ae2f29883ef95a8e18",
+    "elapsed_ns": 8245173,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "337"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689447"
+      ],
+      [
+        "resp-start-time",
+        "1795597689450"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "4",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 3,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 100000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-100000-plugin-1",
+    "case": "index-100000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 337,
+    "sha256": "3c04f3314aaea1e84b5661def3446a1dcd6e4871274e79ae2f29883ef95a8e18",
+    "elapsed_ns": 8527207,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "337"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689460"
+      ],
+      [
+        "resp-start-time",
+        "1795597689462"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 2,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 100000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-100000-plugin-2",
+    "case": "index-100000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 337,
+    "sha256": "3c04f3314aaea1e84b5661def3446a1dcd6e4871274e79ae2f29883ef95a8e18",
+    "elapsed_ns": 5054460,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "337"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689464"
+      ],
+      [
+        "resp-start-time",
+        "1795597689467"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 3,
+        "llm_service_duration": 3,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 100000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-1000000-bypass-0",
+    "case": "index-1000000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 338,
+    "sha256": "970ffc6015edd2096eb80463b4939a79a8698f78350a5a4faba730e110f3a3a6",
+    "elapsed_ns": 10424903,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "338"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689476"
+      ],
+      [
+        "resp-start-time",
+        "1795597689479"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-1000000-bypass-1",
+    "case": "index-1000000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 338,
+    "sha256": "970ffc6015edd2096eb80463b4939a79a8698f78350a5a4faba730e110f3a3a6",
+    "elapsed_ns": 5633945,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "338"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689482"
+      ],
+      [
+        "resp-start-time",
+        "1795597689485"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-1000000-bypass-2",
+    "case": "index-1000000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 338,
+    "sha256": "970ffc6015edd2096eb80463b4939a79a8698f78350a5a4faba730e110f3a3a6",
+    "elapsed_ns": 4613199,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "338"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689488"
+      ],
+      [
+        "resp-start-time",
+        "1795597689490"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "1",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-1000000-plugin-0",
+    "case": "index-1000000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 338,
+    "sha256": "970ffc6015edd2096eb80463b4939a79a8698f78350a5a4faba730e110f3a3a6",
+    "elapsed_ns": 7394213,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "338"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689495"
+      ],
+      [
+        "resp-start-time",
+        "1795597689497"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 2,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 1000000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-1000000-plugin-1",
+    "case": "index-1000000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 338,
+    "sha256": "970ffc6015edd2096eb80463b4939a79a8698f78350a5a4faba730e110f3a3a6",
+    "elapsed_ns": 5603404,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "338"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689501"
+      ],
+      [
+        "resp-start-time",
+        "1795597689503"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 2,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 1000000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-1000000-plugin-2",
+    "case": "index-1000000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 338,
+    "sha256": "970ffc6015edd2096eb80463b4939a79a8698f78350a5a4faba730e110f3a3a6",
+    "elapsed_ns": 5359223,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "338"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689506"
+      ],
+      [
+        "resp-start-time",
+        "1795597689509"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 2,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 1000000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-10000000-bypass-0",
+    "case": "index-10000000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "6c3cb384abf4753ad3ae54542a9f31665bee95c3bffa0d3c46bea1ead936a974",
+    "elapsed_ns": 7038770,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "339"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689514"
+      ],
+      [
+        "resp-start-time",
+        "1795597689517"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "2",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-10000000-bypass-1",
+    "case": "index-10000000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "6c3cb384abf4753ad3ae54542a9f31665bee95c3bffa0d3c46bea1ead936a974",
+    "elapsed_ns": 3485314,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "339"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689520"
+      ],
+      [
+        "resp-start-time",
+        "1795597689522"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "1",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-10000000-bypass-2",
+    "case": "index-10000000",
+    "route": "bypass",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "6c3cb384abf4753ad3ae54542a9f31665bee95c3bffa0d3c46bea1ead936a974",
+    "elapsed_ns": 3021766,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "339"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689524"
+      ],
+      [
+        "resp-start-time",
+        "1795597689525"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "1",
+      "value": null
+    }
+  },
+  {
+    "id": "fixed-5-index-10000000-plugin-0",
+    "case": "index-10000000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "6c3cb384abf4753ad3ae54542a9f31665bee95c3bffa0d3c46bea1ead936a974",
+    "elapsed_ns": 7517231,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "339"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689528"
+      ],
+      [
+        "resp-start-time",
+        "1795597689531"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 2,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 10000000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-10000000-plugin-1",
+    "case": "index-10000000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "6c3cb384abf4753ad3ae54542a9f31665bee95c3bffa0d3c46bea1ead936a974",
+    "elapsed_ns": 5873459,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "339"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689535"
+      ],
+      [
+        "resp-start-time",
+        "1795597689537"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 2,
+        "llm_service_duration": 3,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 10000000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "fixed-5-index-10000000-plugin-2",
+    "case": "index-10000000",
+    "route": "plugin",
+    "status": 200,
+    "bytes": 339,
+    "sha256": "6c3cb384abf4753ad3ae54542a9f31665bee95c3bffa0d3c46bea1ead936a974",
+    "elapsed_ns": 5961587,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:08:09 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "339"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597689541"
+      ],
+      [
+        "resp-start-time",
+        "1795597689543"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "log": {
+      "status": 200,
+      "duration": "3",
+      "value": {
+        "api": "-",
+        "chat_id": "chat-sparse-fixture",
+        "chat_round": 1,
+        "llm_first_token_duration": 3,
+        "llm_service_duration": 3,
+        "response_type": "stream",
+        "tool_calls": [
+          {
+            "index": 10000000,
+            "id": "call-fixed",
+            "type": "function",
+            "function": {
+              "name": "weather",
+              "arguments": "{\"city\":\"Beijing\"}"
+            }
+          }
+        ]
+      }
+    }
+  }
+]

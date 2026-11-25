@@ -1,0 +1,47 @@
+{
+  "total_requests": 756,
+  "items": [
+    {
+      "issue": 5381,
+      "name": "transformer-json-number-precision",
+      "head": "cdcc6067e7dd54a3ef4c610c3845307150944cac",
+      "requests": 72,
+      "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
+    },
+    {
+      "issue": 5386,
+      "name": "transformer-self-rename",
+      "head": "33aaa0e36409c1346734b8ae8c7df12776bd43e6",
+      "requests": 54,
+      "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
+    },
+    {
+      "issue": 5389,
+      "name": "transformer-json-dedupe-types",
+      "head": "3bf6e4dca40457b39a2d934df10f673f74fa04aa",
+      "requests": 72,
+      "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
+    },
+    {
+      "issue": 5407,
+      "name": "ai-data-masking-sse-crlf",
+      "head": "bec6f469546c17dcc9a8e80305f94e880080423c",
+      "requests": 126,
+      "limits": "Shared Rust library tests: 14 passed; masking plugin tests: 93 passed; direct parser tests: 8 passed, covering every split point and bytewise inputs. cargo test including doctests still fails six pre-existing log.rs examples; baseline cargo test --doc fails those same six plus the removed invalid EventStream example (7 failures). No unrelated log.rs change is included. The parser is shared; consumer library/plugin suites are included."
+    },
+    {
+      "issue": 5418,
+      "name": "log-request-response-string-encoding",
+      "head": "1f2d6f76638138333f7112ebcec7fad3150ef15c",
+      "requests": 360,
+      "limits": "Go tests and explicit byte-escaping regression passed. Current formal fixtures use 4 KiB Unicode and 64 KiB ASCII. An initial 64 KiB Unicode fixture showed replacement characters in the unchanged baseline log, with client bytes intact; it failed the assertion and is excluded/retained. Its cause is unresolved and no extra production fix is included. Runtime checks establish compatibility, not gateway QPS/CPU/cost gains."
+    },
+    {
+      "issue": 5425,
+      "name": "ai-statistics-sparse-index",
+      "head": "43415cdf54dfcc0f1f91e5e20bfcc5f2c25c8928",
+      "requests": 72,
+      "limits": "Go mock/native suite and the new regression passed. The SDK full suite including Wazero mode timed out at the recorded 5/10-minute limit; this is not reported as passed. Real Envoy/V8 Wasm runs passed."
+    }
+  ]
+}

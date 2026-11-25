@@ -1,0 +1,97 @@
+[
+  {
+    "argv": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "higress-new-discovery-fixed-3-1795596681261530000",
+      "--cpus",
+      "1",
+      "--memory",
+      "768m",
+      "-p",
+      "127.0.0.1::10000",
+      "-p",
+      "127.0.0.1::10001",
+      "-p",
+      "127.0.0.1::15000",
+      "-v",
+      "<workspace>/runtime-transformer-self-rename/runtime/fixed-3:/lab:ro",
+      "-v",
+      "<workspace>/runtime-transformer-self-rename:/modules:ro",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/envoy.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info",
+      "--file-flush-interval-msec",
+      "100"
+    ],
+    "exit": 0,
+    "stdout": "1c59fdd33a8e12832169320dfab3bcfce15cbf7e5218819dfc9889ed94bb3fd2\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "port",
+      "higress-new-discovery-fixed-3-1795596681261530000",
+      "10000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:55597\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "port",
+      "higress-new-discovery-fixed-3-1795596681261530000",
+      "10001/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:55598\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "port",
+      "higress-new-discovery-fixed-3-1795596681261530000",
+      "15000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:55599\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "rm",
+      "-f",
+      "higress-new-discovery-fixed-3-1795596681261530000"
+    ],
+    "exit": 0,
+    "stdout": "higress-new-discovery-fixed-3-1795596681261530000\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/higress-new-discovery-fixed-3-1795596681261530000$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

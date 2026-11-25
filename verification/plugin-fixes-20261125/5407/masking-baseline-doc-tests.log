@@ -1,0 +1,203 @@
+   Compiling serde v1.0.217
+   Compiling ahash v0.8.11
+   Compiling serde_json v1.0.138
+   Compiling hashbrown v0.14.5
+   Compiling proxy-wasm v0.2.2 (https://github.com/higress-group/proxy-wasm-rust-sdk?branch=main#8c902102)
+   Compiling multimap v0.10.0
+   Compiling higress-wasm-rust v0.1.0 (/baseline/plugins/wasm-rust)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 22.36s
+   Doc-tests higress_wasm_rust
+
+running 7 tests
+test src/log.rs - log::Log::tracef (line 80) ... FAILED
+test src/log.rs - log::Log::debugf (line 89) ... FAILED
+test src/log.rs - log::Log::infof (line 98) ... FAILED
+test src/log.rs - log::Log::criticalf (line 125) ... FAILED
+test src/log.rs - log::Log::errorf (line 116) ... FAILED
+test src/log.rs - log::Log::warnf (line 107) ... FAILED
+test src/event_stream.rs - event_stream::EventStream::next (line 46) ... FAILED
+
+failures:
+
+---- src/log.rs - log::Log::tracef (line 80) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:83:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::debugf (line 89) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:92:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::infof (line 98) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:101:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::criticalf (line 125) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:128:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::errorf (line 116) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:119:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::warnf (line 107) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:110:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/event_stream.rs - event_stream::EventStream::next (line 46) stdout ----
+error: unexpected token: `...`
+ --> src/event_stream.rs:48:15
+  |
+4 | parser.update(...);
+  |               ^^^
+  |
+help: use `..` for an exclusive range
+  |
+4 | parser.update(..);
+  |               ~~
+help: or `..=` for an inclusive range
+  |
+4 | parser.update(..=);
+  |               ~~~
+
+error[E0586]: inclusive range with no end
+ --> src/event_stream.rs:48:15
+  |
+4 | parser.update(...);
+  |               ^^^
+  |
+  = note: inclusive ranges must be bounded at the end (`..=b` or `a..=b`)
+help: use `..` instead
+  |
+4 - parser.update(...);
+4 + parser.update(..);
+  |
+
+error: unexpected token: `...`
+  --> src/event_stream.rs:54:17
+   |
+10 |                 ...
+   |                 ^^^
+   |
+help: use `..` for an exclusive range
+   |
+10 |                 ..
+   |
+help: or `..=` for an inclusive range
+   |
+10 |                 ..=
+   |
+
+error[E0586]: inclusive range with no end
+  --> src/event_stream.rs:54:17
+   |
+10 |                 ...
+   |                 ^^^
+   |
+   = note: inclusive ranges must be bounded at the end (`..=b` or `a..=b`)
+help: use `..` instead
+   |
+10 -                 ...
+10 +                 ..
+   |
+
+error[E0433]: failed to resolve: use of undeclared type `EventStream`
+ --> src/event_stream.rs:47:18
+  |
+3 | let mut parser = EventStream::new();
+  |                  ^^^^^^^^^^^ use of undeclared type `EventStream`
+  |
+help: consider importing this struct
+  |
+2 + use higress_wasm_rust::event_stream::EventStream;
+  |
+
+error: aborting due to 5 previous errors
+
+Some errors have detailed explanations: E0433, E0586.
+For more information about an error, try `rustc --explain E0433`.
+Couldn't compile the test.
+
+failures:
+    src/event_stream.rs - event_stream::EventStream::next (line 46)
+    src/log.rs - log::Log::criticalf (line 125)
+    src/log.rs - log::Log::debugf (line 89)
+    src/log.rs - log::Log::errorf (line 116)
+    src/log.rs - log::Log::infof (line 98)
+    src/log.rs - log::Log::tracef (line 80)
+    src/log.rs - log::Log::warnf (line 107)
+
+test result: FAILED. 0 passed; 7 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.24s
+
+error: doctest failed, to rerun pass `--doc`

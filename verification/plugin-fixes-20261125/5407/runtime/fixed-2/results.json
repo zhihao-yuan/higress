@@ -1,0 +1,2312 @@
+[
+  {
+    "id": "fixed-2-named-lf-bypass-0",
+    "case": "named-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "33"
+      ],
+      [
+        "req-cost-time",
+        "13"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386028"
+      ],
+      [
+        "resp-start-time",
+        "1795597386041"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "11"
+      ]
+    ],
+    "original_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body": "event: custom\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-lf-bypass-1",
+    "case": "named-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "33"
+      ],
+      [
+        "req-cost-time",
+        "4"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386051"
+      ],
+      [
+        "resp-start-time",
+        "1795597386056"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "4"
+      ]
+    ],
+    "original_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body": "event: custom\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-lf-bypass-2",
+    "case": "named-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "33"
+      ],
+      [
+        "req-cost-time",
+        "4"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386071"
+      ],
+      [
+        "resp-start-time",
+        "1795597386077"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "original_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body": "event: custom\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-lf-plugin-0",
+    "case": "named-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "4"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386083"
+      ],
+      [
+        "resp-start-time",
+        "1795597386088"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body": "event: custom\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-lf-plugin-1",
+    "case": "named-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386099"
+      ],
+      [
+        "resp-start-time",
+        "1795597386102"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body": "event: custom\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-lf-plugin-2",
+    "case": "named-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386109"
+      ],
+      [
+        "resp-start-time",
+        "1795597386112"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body_sha256": "fd47fad2cc12d175c3de70675d118f5afb46ba90f1f669b697bbdeeb3c886d7b",
+    "body": "event: custom\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-bypass-0",
+    "case": "named-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "36"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386123"
+      ],
+      [
+        "resp-start-time",
+        "1795597386125"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body": "event: custom\r\ndata: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-bypass-1",
+    "case": "named-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "36"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386131"
+      ],
+      [
+        "resp-start-time",
+        "1795597386133"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body": "event: custom\r\ndata: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-bypass-2",
+    "case": "named-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "36"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386143"
+      ],
+      [
+        "resp-start-time",
+        "1795597386145"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body": "event: custom\r\ndata: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-plugin-0",
+    "case": "named-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386157"
+      ],
+      [
+        "resp-start-time",
+        "1795597386159"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "90e2643020090ffac7f4d16ed8480789e05881fb4d3c36fefb045fba313ca63c",
+    "body": "event: custom\r\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-plugin-1",
+    "case": "named-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386175"
+      ],
+      [
+        "resp-start-time",
+        "1795597386177"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "90e2643020090ffac7f4d16ed8480789e05881fb4d3c36fefb045fba313ca63c",
+    "body": "event: custom\r\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-plugin-2",
+    "case": "named-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386208"
+      ],
+      [
+        "resp-start-time",
+        "1795597386212"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "90e2643020090ffac7f4d16ed8480789e05881fb4d3c36fefb045fba313ca63c",
+    "body": "event: custom\r\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-fragmented-bypass-0",
+    "case": "named-crlf-fragmented",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "36"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386220"
+      ],
+      [
+        "resp-start-time",
+        "1795597386223"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body": "event: custom\r\ndata: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-fragmented-bypass-1",
+    "case": "named-crlf-fragmented",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "36"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386348"
+      ],
+      [
+        "resp-start-time",
+        "1795597386351"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body": "event: custom\r\ndata: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-fragmented-bypass-2",
+    "case": "named-crlf-fragmented",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "36"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386476"
+      ],
+      [
+        "resp-start-time",
+        "1795597386478"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body": "event: custom\r\ndata: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-fragmented-plugin-0",
+    "case": "named-crlf-fragmented",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386609"
+      ],
+      [
+        "resp-start-time",
+        "1795597386612"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "90e2643020090ffac7f4d16ed8480789e05881fb4d3c36fefb045fba313ca63c",
+    "body": "event: custom\r\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-fragmented-plugin-1",
+    "case": "named-crlf-fragmented",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386734"
+      ],
+      [
+        "resp-start-time",
+        "1795597386736"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "90e2643020090ffac7f4d16ed8480789e05881fb4d3c36fefb045fba313ca63c",
+    "body": "event: custom\r\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-named-crlf-fragmented-plugin-2",
+    "case": "named-crlf-fragmented",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386858"
+      ],
+      [
+        "resp-start-time",
+        "1795597386861"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "80c343cf87342010aa0be83ecec2dc70872258f06a6706d14eadf22fde60283d",
+    "body_sha256": "90e2643020090ffac7f4d16ed8480789e05881fb4d3c36fefb045fba313ca63c",
+    "body": "event: custom\r\ndata: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "custom",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-lf-bypass-0",
+    "case": "multiline-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "26"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386984"
+      ],
+      [
+        "resp-start-time",
+        "1795597386988"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ]
+    ],
+    "original_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body": "data: {\"value\":\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-lf-bypass-1",
+    "case": "multiline-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:06 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "26"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597386995"
+      ],
+      [
+        "resp-start-time",
+        "1795597386998"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ]
+    ],
+    "original_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body": "data: {\"value\":\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-lf-bypass-2",
+    "case": "multiline-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "26"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387004"
+      ],
+      [
+        "resp-start-time",
+        "1795597387006"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body": "data: {\"value\":\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-lf-plugin-0",
+    "case": "multiline-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387010"
+      ],
+      [
+        "resp-start-time",
+        "1795597387013"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body": "data: {\"value\":\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-lf-plugin-1",
+    "case": "multiline-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387021"
+      ],
+      [
+        "resp-start-time",
+        "1795597387023"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body": "data: {\"value\":\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-lf-plugin-2",
+    "case": "multiline-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387031"
+      ],
+      [
+        "resp-start-time",
+        "1795597387034"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body_sha256": "e674420895a03df792472b81dc7f74965c1d8a67d1605ef5f65d48a9ec6295bb",
+    "body": "data: {\"value\":\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-crlf-bypass-0",
+    "case": "multiline-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "29"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387041"
+      ],
+      [
+        "resp-start-time",
+        "1795597387043"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "original_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body": "data: {\"value\":\r\ndata: 1}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-crlf-bypass-1",
+    "case": "multiline-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "29"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387060"
+      ],
+      [
+        "resp-start-time",
+        "1795597387062"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body": "data: {\"value\":\r\ndata: 1}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-crlf-bypass-2",
+    "case": "multiline-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "29"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387066"
+      ],
+      [
+        "resp-start-time",
+        "1795597387069"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ]
+    ],
+    "original_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body": "data: {\"value\":\r\ndata: 1}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-crlf-plugin-0",
+    "case": "multiline-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387073"
+      ],
+      [
+        "resp-start-time",
+        "1795597387076"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body_sha256": "0f40ddea346657f559cc1df90d2b34641a838d7079d07f6e695d66f3532c1452",
+    "body": "data: {\"value\":\r\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-crlf-plugin-1",
+    "case": "multiline-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "9"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387082"
+      ],
+      [
+        "resp-start-time",
+        "1795597387092"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "9"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body_sha256": "0f40ddea346657f559cc1df90d2b34641a838d7079d07f6e695d66f3532c1452",
+    "body": "data: {\"value\":\r\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-multiline-crlf-plugin-2",
+    "case": "multiline-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387099"
+      ],
+      [
+        "resp-start-time",
+        "1795597387102"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "4d84ce51892ca5a477863053fc166985a827d0debd40eb2a96095a40c246fab3",
+    "body_sha256": "0f40ddea346657f559cc1df90d2b34641a838d7079d07f6e695d66f3532c1452",
+    "body": "data: {\"value\":\r\ndata: 1}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"value\":\n1}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-lf-bypass-0",
+    "case": "dataonly-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "19"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387112"
+      ],
+      [
+        "resp-start-time",
+        "1795597387114"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-lf-bypass-1",
+    "case": "dataonly-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "19"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387124"
+      ],
+      [
+        "resp-start-time",
+        "1795597387126"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-lf-bypass-2",
+    "case": "dataonly-lf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "19"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387133"
+      ],
+      [
+        "resp-start-time",
+        "1795597387135"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ]
+    ],
+    "original_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-lf-plugin-0",
+    "case": "dataonly-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387141"
+      ],
+      [
+        "resp-start-time",
+        "1795597387145"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-lf-plugin-1",
+    "case": "dataonly-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387152"
+      ],
+      [
+        "resp-start-time",
+        "1795597387155"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-lf-plugin-2",
+    "case": "dataonly-lf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387161"
+      ],
+      [
+        "resp-start-time",
+        "1795597387164"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-crlf-bypass-0",
+    "case": "dataonly-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "21"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387169"
+      ],
+      [
+        "resp-start-time",
+        "1795597387172"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body": "data: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-crlf-bypass-1",
+    "case": "dataonly-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "21"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387176"
+      ],
+      [
+        "resp-start-time",
+        "1795597387178"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body": "data: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-crlf-bypass-2",
+    "case": "dataonly-crlf",
+    "route": "bypass",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "content-length",
+        "21"
+      ],
+      [
+        "req-cost-time",
+        "1"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387184"
+      ],
+      [
+        "resp-start-time",
+        "1795597387186"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "1"
+      ]
+    ],
+    "original_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body": "data: {\"ok\":true}\r\n\r\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-crlf-plugin-0",
+    "case": "dataonly-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387190"
+      ],
+      [
+        "resp-start-time",
+        "1795597387193"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-crlf-plugin-1",
+    "case": "dataonly-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "3"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387200"
+      ],
+      [
+        "resp-start-time",
+        "1795597387204"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "3"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  },
+  {
+    "id": "fixed-2-dataonly-crlf-plugin-2",
+    "case": "dataonly-crlf",
+    "route": "plugin",
+    "status": 200,
+    "headers": [
+      [
+        "server",
+        "envoy"
+      ],
+      [
+        "date",
+        "Wed, 25 Nov 2026 09:03:07 GMT"
+      ],
+      [
+        "content-type",
+        "text/event-stream"
+      ],
+      [
+        "req-cost-time",
+        "2"
+      ],
+      [
+        "req-arrive-time",
+        "1795597387209"
+      ],
+      [
+        "resp-start-time",
+        "1795597387211"
+      ],
+      [
+        "x-envoy-upstream-service-time",
+        "2"
+      ],
+      [
+        "transfer-encoding",
+        "chunked"
+      ]
+    ],
+    "original_sha256": "2f55d990ba3c24280485da9c0f192633e242d6160d12102c3fe6553408d1b8eb",
+    "body_sha256": "2e97feb8ff93ce3dd0828c22deb627ae0ccf3c5620119a043cc116fcde1fac4a",
+    "body": "data: {\"ok\":true}\n\n",
+    "expected_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ],
+    "actual_events": [
+      {
+        "type": "message",
+        "data": "{\"ok\":true}"
+      }
+    ]
+  }
+]

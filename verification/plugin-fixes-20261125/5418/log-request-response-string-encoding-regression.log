@@ -1,0 +1,8 @@
+2026/11/25 17:04:24 [foreign call] funcname: get_log_level
+2026/11/25 17:04:24 [foreign call] param: 
+2026/11/25 17:04:24 proxy_info_log: [log-request-response] [nil] [nil] plugin start successfully
+2026/11/25 17:04:24 [foreign call] funcname: get_log_level
+2026/11/25 17:04:24 [foreign call] param: 
+2026/11/25 17:04:24 proxy_error_log: [log-request-response] [nil] [test-request-id-default] failed to set encoding-test in filter state, err: data must not be empty, raw:
+PASS
+ok  	github.com/alibaba/higress/plugins/wasm-go/extensions/log-request-response	0.052s

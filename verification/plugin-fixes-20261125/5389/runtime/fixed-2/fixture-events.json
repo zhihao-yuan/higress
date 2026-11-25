@@ -1,0 +1,656 @@
+[
+  {
+    "type": "backend",
+    "observation": "fixed-2-mixed-bypass-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "30",
+      "content-type": "application/json",
+      "x-fixture-case": "mixed",
+      "x-observation-id": "fixed-2-mixed-bypass-0",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "82dbf93c-c886-41fd-99b8-177edf8f3ebb",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810100"
+    },
+    "body": {
+      "values": [
+        1,
+        "1",
+        true,
+        "true"
+      ]
+    },
+    "raw_body": "{\"values\":[1,\"1\",true,\"true\"]}",
+    "time_ns": 21255138188
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-mixed-bypass-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "30",
+      "content-type": "application/json",
+      "x-fixture-case": "mixed",
+      "x-observation-id": "fixed-2-mixed-bypass-1",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "5b862e4e-4ceb-4469-9a26-e60c2a4b0fd9",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810110"
+    },
+    "body": {
+      "values": [
+        1,
+        "1",
+        true,
+        "true"
+      ]
+    },
+    "raw_body": "{\"values\":[1,\"1\",true,\"true\"]}",
+    "time_ns": 21261839984
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-mixed-bypass-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "30",
+      "content-type": "application/json",
+      "x-fixture-case": "mixed",
+      "x-observation-id": "fixed-2-mixed-bypass-2",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "9e3773ae-1cf3-4e61-ad80-421508df65dc",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810115"
+    },
+    "body": {
+      "values": [
+        1,
+        "1",
+        true,
+        "true"
+      ]
+    },
+    "raw_body": "{\"values\":[1,\"1\",true,\"true\"]}",
+    "time_ns": 21267160949
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-mixed-plugin-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "mixed",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-mixed-plugin-0",
+      "x-request-id": "bd39f947-37f8-4fb0-8a1b-df25e3afd589",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810121",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        1,
+        "1",
+        true,
+        "true"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [1, \"1\", true, \"true\"]\n}\n",
+    "time_ns": 21275097477
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-mixed-plugin-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "mixed",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-mixed-plugin-1",
+      "x-request-id": "e9051ddd-a829-470b-9501-63b33a6bc5bd",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810130",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        1,
+        "1",
+        true,
+        "true"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [1, \"1\", true, \"true\"]\n}\n",
+    "time_ns": 21283226470
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-mixed-plugin-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "mixed",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-mixed-plugin-2",
+      "x-request-id": "452244cb-8077-4b0e-85e5-673ed8f965d4",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810137",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        1,
+        "1",
+        true,
+        "true"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [1, \"1\", true, \"true\"]\n}\n",
+    "time_ns": 21289796420
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-object-string-bypass-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "32",
+      "content-type": "application/json",
+      "x-fixture-case": "object-string",
+      "x-observation-id": "fixed-2-object-string-bypass-0",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "510703b9-0ba8-4281-8781-e84744e6a025",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810143"
+    },
+    "body": {
+      "values": [
+        {
+          "a": 1
+        },
+        "{\"a\":1}"
+      ]
+    },
+    "raw_body": "{\"values\":[{\"a\":1},\"{\\\"a\\\":1}\"]}",
+    "time_ns": 21295161106
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-object-string-bypass-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "32",
+      "content-type": "application/json",
+      "x-fixture-case": "object-string",
+      "x-observation-id": "fixed-2-object-string-bypass-1",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "93ce0bed-7d76-47fd-b56a-9800eddf1e4c",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810148"
+    },
+    "body": {
+      "values": [
+        {
+          "a": 1
+        },
+        "{\"a\":1}"
+      ]
+    },
+    "raw_body": "{\"values\":[{\"a\":1},\"{\\\"a\\\":1}\"]}",
+    "time_ns": 21300414460
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-object-string-bypass-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "32",
+      "content-type": "application/json",
+      "x-fixture-case": "object-string",
+      "x-observation-id": "fixed-2-object-string-bypass-2",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "8dafac1c-c051-413f-87b7-8b9e4afa781e",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810153"
+    },
+    "body": {
+      "values": [
+        {
+          "a": 1
+        },
+        "{\"a\":1}"
+      ]
+    },
+    "raw_body": "{\"values\":[{\"a\":1},\"{\\\"a\\\":1}\"]}",
+    "time_ns": 21305493960
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-object-string-plugin-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "object-string",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-object-string-plugin-0",
+      "x-request-id": "335df919-55f9-452c-81c6-4722fed7bddc",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810158",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        {
+          "a": 1
+        },
+        "{\"a\":1}"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [\n    {\n      \"a\": 1\n    },\n    \"{\\\"a\\\":1}\"\n  ]\n}\n",
+    "time_ns": 21310653748
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-object-string-plugin-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "object-string",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-object-string-plugin-1",
+      "x-request-id": "e1d0a49a-bf3e-425b-93a9-a8c1b7be6f09",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810164",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        {
+          "a": 1
+        },
+        "{\"a\":1}"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [\n    {\n      \"a\": 1\n    },\n    \"{\\\"a\\\":1}\"\n  ]\n}\n",
+    "time_ns": 21316672417
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-object-string-plugin-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "object-string",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-object-string-plugin-2",
+      "x-request-id": "17348e70-1385-4e9c-8ed1-35562fc89ed4",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810174",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        {
+          "a": 1
+        },
+        "{\"a\":1}"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [\n    {\n      \"a\": 1\n    },\n    \"{\\\"a\\\":1}\"\n  ]\n}\n",
+    "time_ns": 21326881464
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-strings-bypass-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "24",
+      "content-type": "application/json",
+      "x-fixture-case": "strings",
+      "x-observation-id": "fixed-2-strings-bypass-0",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "8b2676d8-daf9-4396-b31f-10894f5c7f6f",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810181"
+    },
+    "body": {
+      "values": [
+        "a",
+        "a",
+        "b"
+      ]
+    },
+    "raw_body": "{\"values\":[\"a\",\"a\",\"b\"]}",
+    "time_ns": 21333861200
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-strings-bypass-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "24",
+      "content-type": "application/json",
+      "x-fixture-case": "strings",
+      "x-observation-id": "fixed-2-strings-bypass-1",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "61ced7b6-7c34-4b58-834f-c77404b3497b",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810189"
+    },
+    "body": {
+      "values": [
+        "a",
+        "a",
+        "b"
+      ]
+    },
+    "raw_body": "{\"values\":[\"a\",\"a\",\"b\"]}",
+    "time_ns": 21341020064
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-strings-bypass-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "24",
+      "content-type": "application/json",
+      "x-fixture-case": "strings",
+      "x-observation-id": "fixed-2-strings-bypass-2",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "51fa0b92-ad38-4cc1-b2e9-933f47027e5b",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810195"
+    },
+    "body": {
+      "values": [
+        "a",
+        "a",
+        "b"
+      ]
+    },
+    "raw_body": "{\"values\":[\"a\",\"a\",\"b\"]}",
+    "time_ns": 21347299516
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-strings-plugin-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "strings",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-strings-plugin-0",
+      "x-request-id": "bb4681cf-874d-4e7d-ab03-47859dc78609",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810201",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        "a",
+        "b"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [\"a\", \"b\"]\n}\n",
+    "time_ns": 21353420794
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-strings-plugin-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "strings",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-strings-plugin-1",
+      "x-request-id": "607c84ea-5ee8-48a7-a41c-895e2522dc1d",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810206",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        "a",
+        "b"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [\"a\", \"b\"]\n}\n",
+    "time_ns": 21358193966
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-strings-plugin-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "strings",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-strings-plugin-2",
+      "x-request-id": "a1be134a-8f16-4f4c-9803-b8f2c7ab148c",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810211",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        "a",
+        "b"
+      ]
+    },
+    "raw_body": "{\n  \"values\": [\"a\", \"b\"]\n}\n",
+    "time_ns": 21362944376
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-numbers-bypass-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "18",
+      "content-type": "application/json",
+      "x-fixture-case": "numbers",
+      "x-observation-id": "fixed-2-numbers-bypass-0",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "4bcef6fc-58f0-4090-a6e2-f2d47882d8c1",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810215"
+    },
+    "body": {
+      "values": [
+        1,
+        1,
+        2
+      ]
+    },
+    "raw_body": "{\"values\":[1,1,2]}",
+    "time_ns": 21367119076
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-numbers-bypass-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "18",
+      "content-type": "application/json",
+      "x-fixture-case": "numbers",
+      "x-observation-id": "fixed-2-numbers-bypass-1",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "6b566322-697c-481a-a69a-313f6295d127",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810221"
+    },
+    "body": {
+      "values": [
+        1,
+        1,
+        2
+      ]
+    },
+    "raw_body": "{\"values\":[1,1,2]}",
+    "time_ns": 21373618479
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-numbers-bypass-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55943",
+      "accept-encoding": "identity",
+      "content-length": "18",
+      "content-type": "application/json",
+      "x-fixture-case": "numbers",
+      "x-observation-id": "fixed-2-numbers-bypass-2",
+      "x-forwarded-proto": "http",
+      "x-envoy-original-host": "127.0.0.1:55943",
+      "x-request-id": "931455b3-51d9-42da-95f2-78ffeba1a8b1",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810228"
+    },
+    "body": {
+      "values": [
+        1,
+        1,
+        2
+      ]
+    },
+    "raw_body": "{\"values\":[1,1,2]}",
+    "time_ns": 21380895939
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-numbers-plugin-0",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "numbers",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-numbers-plugin-0",
+      "x-request-id": "ba0f7c49-ee68-41e7-a062-5cbb675aa3e3",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810236",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        1,
+        2
+      ]
+    },
+    "raw_body": "{\n  \"values\": [1, 2]\n}\n",
+    "time_ns": 21388968328
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-numbers-plugin-1",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "numbers",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-numbers-plugin-1",
+      "x-request-id": "4b88634c-8a7c-4dc2-8d6c-23a4cb195a71",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810242",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        1,
+        2
+      ]
+    },
+    "raw_body": "{\n  \"values\": [1, 2]\n}\n",
+    "time_ns": 21393975856
+  },
+  {
+    "type": "backend",
+    "observation": "fixed-2-numbers-plugin-2",
+    "path": "/v1/chat/completions",
+    "headers": {
+      "host": "127.0.0.1:55942",
+      "accept-encoding": "identity",
+      "content-type": "application/json",
+      "x-envoy-original-host": "127.0.0.1:55942",
+      "x-fixture-case": "numbers",
+      "x-forwarded-proto": "http",
+      "x-observation-id": "fixed-2-numbers-plugin-2",
+      "x-request-id": "41016f2e-10b1-4fe2-bbb8-1c2c849001f0",
+      "x-envoy-expected-rq-timeout-ms": "120000",
+      "req-start-time": "1795596810247",
+      "transfer-encoding": "chunked"
+    },
+    "body": {
+      "values": [
+        1,
+        2
+      ]
+    },
+    "raw_body": "{\n  \"values\": [1, 2]\n}\n",
+    "time_ns": 21399495741
+  }
+]

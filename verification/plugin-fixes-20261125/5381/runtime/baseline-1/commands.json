@@ -1,0 +1,97 @@
+[
+  {
+    "argv": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "higress-new-discovery-baseline-1-1795596467247653000",
+      "--cpus",
+      "1",
+      "--memory",
+      "768m",
+      "-p",
+      "127.0.0.1::10000",
+      "-p",
+      "127.0.0.1::10001",
+      "-p",
+      "127.0.0.1::15000",
+      "-v",
+      "<workspace>/runtime-transformer-json-number-precision/runtime/baseline-1:/lab:ro",
+      "-v",
+      "<workspace>/runtime-transformer-json-number-precision:/modules:ro",
+      "--entrypoint",
+      "/usr/local/bin/envoy",
+      "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+      "-c",
+      "/lab/envoy.json",
+      "--concurrency",
+      "1",
+      "--log-level",
+      "info",
+      "--file-flush-interval-msec",
+      "100"
+    ],
+    "exit": 0,
+    "stdout": "cae677f3825e3077b500ff8a1f74fb2bbae9526a8a6911dcd3e0c7c704bcb59c\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "port",
+      "higress-new-discovery-baseline-1-1795596467247653000",
+      "10000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54849\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "port",
+      "higress-new-discovery-baseline-1-1795596467247653000",
+      "10001/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54850\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "port",
+      "higress-new-discovery-baseline-1-1795596467247653000",
+      "15000/tcp"
+    ],
+    "exit": 0,
+    "stdout": "127.0.0.1:54851\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "rm",
+      "-f",
+      "higress-new-discovery-baseline-1-1795596467247653000"
+    ],
+    "exit": 0,
+    "stdout": "higress-new-discovery-baseline-1-1795596467247653000\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "docker",
+      "ps",
+      "-a",
+      "--filter",
+      "name=^/higress-new-discovery-baseline-1-1795596467247653000$",
+      "--format",
+      "{{.Names}}"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

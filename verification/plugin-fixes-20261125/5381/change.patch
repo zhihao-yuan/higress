@@ -1,0 +1,82 @@
+commit cdcc6067e7dd54a3ef4c610c3845307150944cac
+Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+AuthorDate: Wed Nov 25 17:07:30 2026 +0800
+Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+CommitDate: Wed Nov 25 17:07:30 2026 +0800
+
+    fix(transformer): preserve JSON values when renaming and mapping
+    
+    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+
+diff --git a/plugins/wasm-go/extensions/transformer/json_number_test.go b/plugins/wasm-go/extensions/transformer/json_number_test.go
+new file mode 100644
+index 000000000..e71cf28b5
+--- /dev/null
++++ b/plugins/wasm-go/extensions/transformer/json_number_test.go
+@@ -0,0 +1,44 @@
++// Copyright (c) 2022 Alibaba Group Holding Ltd.
++//
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//      http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++package main
++
++import (
++	"encoding/json"
++	"github.com/higress-group/wasm-go/pkg/test"
++	"github.com/stretchr/testify/require"
++	"testing"
++)
++
++func TestJSONRenameMapPreserveValue(t *testing.T) {
++	for _, value := range []string{`9007199254740993`, `-9007199254740993`, `1.234567890123456789`, `{"items":[9007199254740993]}`, `[9007199254740993,null,true,"x"]`, `"quoted\"value"`, `null`, `false`} {
++		t.Run(value, func(t *testing.T) {
++			test.RunGoTest(t, func(t *testing.T) {
++				host, _ := test.NewTestHost(json.RawMessage(`{"reqRules":[{"operate":"remove","body":[{"key":"missing"}]}]}`))
++				defer host.Reset()
++				input := []byte(`{"old":` + value + `}`)
++				for _, operation := range []kvtOperation{
++					{kvtOpType: RenameK, renameKvtGroup: []renameKvt{{oldKey: "old", newKey: "new"}}},
++					{kvtOpType: MapK, mapSource: "body", mapKvtGroup: []mapKvt{{fromKey: "old", toKey: "new"}}},
++				} {
++					got, err := (jsonHandler{kvtOps: []kvtOperation{operation}}).handle("example.com", "/", input, map[string]MapSourceData{"body": {mapSourceType: "bodyJson", json: input}})
++					require.NoError(t, err)
++					var fields map[string]json.RawMessage
++					require.NoError(t, json.Unmarshal(got, &fields))
++					require.Equal(t, value, string(fields["new"]))
++				}
++			})
++		})
++	}
++}
+diff --git a/plugins/wasm-go/extensions/transformer/main.go b/plugins/wasm-go/extensions/transformer/main.go
+index 07163cd7d..c09c6a072 100644
+--- a/plugins/wasm-go/extensions/transformer/main.go
++++ b/plugins/wasm-go/extensions/transformer/main.go
+@@ -1071,7 +1071,7 @@ func (h jsonHandler) handle(host, path string, oriData []byte, mapSourceData map
+ 				if !value.Exists() {
+ 					continue
+ 				}
+-				if data, err = sjson.SetBytes(data, newKey, value.Value()); err != nil {
++				if data, err = sjson.SetRawBytes(data, newKey, []byte(value.Raw)); err != nil {
+ 					return nil, errors.Wrap(err, errRename.Error())
+ 				}
+ 				if data, err = sjson.DeleteBytes(data, oldKey); err != nil {
+@@ -1191,7 +1191,7 @@ func (h jsonHandler) handle(host, path string, oriData []byte, mapSourceData map
+ 						proxywasm.LogDebugf("map key:%s to key:%s success, value is: %v", fromKey, toKey, fromValue)
+ 					case "bodyJson":
+ 						if valueJson, ok := fromValue.(gjson.Result); ok {
+-							if data, err = sjson.SetBytes(data, toKey, valueJson.Value()); err != nil {
++							if data, err = sjson.SetRawBytes(data, toKey, []byte(valueJson.Raw)); err != nil {
+ 								return nil, errors.Wrap(err, errMap.Error())
+ 							}
+ 							proxywasm.LogDebugf("map key:%s to key:%s success, value is: %v", fromKey, toKey, fromValue)

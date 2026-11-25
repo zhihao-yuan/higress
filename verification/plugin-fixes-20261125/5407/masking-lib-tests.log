@@ -1,0 +1,22 @@
+   Compiling higress-wasm-rust v0.1.0 (/batch/ai-data-masking-sse-crlf/plugins/wasm-rust)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 22.86s
+     Running unittests src/lib.rs (/batch/rust-target/debug/deps/higress_wasm_rust-6e0a6d5e5577601f)
+
+running 14 tests
+test event_stream::tests::test_lf_events ... ok
+test event_stream::tests::test_no_event ... ok
+test event_stream::tests::test_crlf_events ... ok
+test event_stream::tests::test_mixed2_eol_events ... ok
+test event_stream::tests::test_crlf_is_one_line_ending ... ok
+test event_stream::tests::test_mixed_eol_events ... ok
+test event_stream::tests::test_partial_event ... ok
+test rule_matcher::tests::test_host_match ... ok
+test rule_matcher::tests::test_match_route1_config ... ok
+test rule_matcher::tests::test_parse_override_config ... ok
+test rule_matcher::tests::test_service_match ... ok
+test rule_matcher::tests::test_match_route_config ... ok
+test rule_matcher::tests::test_parse_rule_config ... ok
+test event_stream::tests::test_line_endings_across_all_splits ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

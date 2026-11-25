@@ -1,0 +1,99 @@
+   Compiling proc-macro2 v1.0.93
+   Compiling ahash v0.8.11
+   Compiling generic-array v0.14.7
+   Compiling typenum v1.17.0
+   Compiling serde v1.0.217
+   Compiling num-traits v0.2.19
+warning: the `wasm32-wasi` target is being renamed to `wasm32-wasip1` and the `wasm32-wasi` target will be removed from nightly in October 2024 and removed from stable Rust in January 2025
+
+   Compiling proxy-wasm v0.2.2 (https://github.com/higress-group/proxy-wasm-rust-sdk?branch=main#8c902102)
+   Compiling hashbrown v0.14.5
+warning: `ahash` (lib) generated 1 warning (1 duplicate)
+   Compiling quote v1.0.38
+warning: `typenum` (lib) generated 1 warning
+   Compiling syn v2.0.98
+   Compiling libflate_lz77 v2.1.0
+   Compiling libflate v2.1.0
+   Compiling num-integer v0.1.46
+warning: `hashbrown` (lib) generated 1 warning (1 duplicate)
+warning: `num-traits` (lib) generated 1 warning (1 duplicate)
+warning: `libflate_lz77` (lib) generated 1 warning (1 duplicate)
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+warning: `generic-array` (lib) generated 1 warning (1 duplicate)
+   Compiling digest v0.10.7
+warning: `block-buffer` (lib) generated 1 warning (1 duplicate)
+   Compiling num-bigint v0.4.6
+warning: `crypto-common` (lib) generated 1 warning (1 duplicate)
+warning: `num-integer` (lib) generated 1 warning (1 duplicate)
+   Compiling sha2 v0.10.8
+warning: `digest` (lib) generated 1 warning (1 duplicate)
+   Compiling rust-embed-utils v8.5.0
+warning: `rust-embed-utils` (lib) generated 1 warning (1 duplicate)
+warning: `proxy-wasm` (lib) generated 1 warning (1 duplicate)
+warning: `libflate` (lib) generated 1 warning (1 duplicate)
+warning: `sha2` (lib) generated 1 warning (1 duplicate)
+warning: `num-bigint` (lib) generated 1 warning (1 duplicate)
+   Compiling synstructure v0.13.1
+   Compiling zerofrom-derive v0.1.5
+   Compiling yoke-derive v0.7.5
+   Compiling zerovec-derive v0.10.3
+   Compiling displaydoc v0.2.5
+   Compiling icu_provider_macros v1.5.0
+   Compiling thiserror-impl v2.0.11
+   Compiling serde_derive v1.0.217
+   Compiling include-flate-codegen v0.2.0
+   Compiling include-flate v0.3.0
+warning: `include-flate` (lib) generated 1 warning (1 duplicate)
+   Compiling rust-embed-impl v8.5.0
+   Compiling jieba-rs v0.7.2
+   Compiling thiserror v2.0.11
+   Compiling pest v2.7.15
+warning: `thiserror` (lib) generated 1 warning (1 duplicate)
+   Compiling zerofrom v0.1.5
+   Compiling yoke v0.7.5
+warning: `zerofrom` (lib) generated 1 warning (1 duplicate)
+   Compiling zerovec v0.10.4
+warning: `yoke` (lib) generated 1 warning (1 duplicate)
+   Compiling rust-embed v8.5.0
+warning: `rust-embed` (lib) generated 1 warning (1 duplicate)
+   Compiling pest_meta v2.7.15
+warning: `pest` (lib) generated 1 warning (1 duplicate)
+   Compiling pest_generator v2.7.15
+   Compiling tinystr v0.7.6
+   Compiling icu_collections v1.5.0
+warning: `tinystr` (lib) generated 1 warning (1 duplicate)
+   Compiling icu_locid v1.5.0
+warning: `zerovec` (lib) generated 1 warning (1 duplicate)
+   Compiling icu_provider v1.5.0
+warning: `icu_collections` (lib) generated 1 warning (1 duplicate)
+   Compiling pest_derive v2.7.15
+warning: `jieba-rs` (lib) generated 1 warning (1 duplicate)
+   Compiling icu_locid_transform v1.5.0
+warning: `icu_provider` (lib) generated 1 warning (1 duplicate)
+warning: `icu_locid` (lib) generated 1 warning (1 duplicate)
+   Compiling icu_properties v1.5.1
+warning: `icu_locid_transform` (lib) generated 1 warning (1 duplicate)
+   Compiling serde_json v1.0.138
+   Compiling multimap v0.10.0
+warning: `serde` (lib) generated 1 warning (1 duplicate)
+warning: `multimap` (lib) generated 1 warning (1 duplicate)
+   Compiling icu_normalizer v1.5.0
+   Compiling idna_adapter v1.2.0
+warning: `serde_json` (lib) generated 1 warning (1 duplicate)
+warning: `icu_properties` (lib) generated 1 warning (1 duplicate)
+   Compiling idna v1.0.3
+warning: `idna_adapter` (lib) generated 1 warning (1 duplicate)
+   Compiling url v2.5.4
+   Compiling redis v0.28.2
+warning: `idna` (lib) generated 1 warning (1 duplicate)
+warning: `icu_normalizer` (lib) generated 1 warning (1 duplicate)
+warning: `url` (lib) generated 1 warning (1 duplicate)
+   Compiling jsonpath-rust v0.7.5
+warning: `jsonpath-rust` (lib) generated 1 warning (1 duplicate)
+   Compiling higress-wasm-rust v0.1.0 (/batch/ai-data-masking-sse-crlf/plugins/wasm-rust)
+warning: `higress-wasm-rust` (lib) generated 1 warning (1 duplicate)
+warning: `redis` (lib) generated 1 warning (1 duplicate)
+   Compiling ai-data-masking v0.1.0 (/batch/ai-data-masking-sse-crlf/plugins/wasm-rust/extensions/ai-data-masking)
+warning: `ai-data-masking` (lib) generated 1 warning (1 duplicate)
+    Finished `release` profile [optimized] target(s) in 2m 36s

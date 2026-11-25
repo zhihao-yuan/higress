@@ -1,0 +1,25 @@
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+--- FAIL: TestRenameSameKeyPreservesValue (0.00s)
+    --- FAIL: TestRenameSameKeyPreservesValue/go (0.00s)
+        rename_same_key_test.go:28: 
+            	Error Trace:	<workspace>/transformer-self-rename/plugins/wasm-go/extensions/transformer/rename_same_key_test.go:28
+            	            				<home>/go/pkg/mod/github.com/higress-group/wasm-go@v1.2.1/pkg/test/test.go:124
+            	Error:      	Not equal: 
+            	            	expected: "{\"label\":{\"items\":[9007199254740993]},\"untouched\":1}"
+            	            	actual  : "{\"untouched\":1}"
+            	            	
+            	            	Diff:
+            	            	--- Expected
+            	            	+++ Actual
+            	            	@@ -1 +1 @@
+            	            	-{"label":{"items":[9007199254740993]},"untouched":1}
+            	            	+{"untouched":1}
+            	Test:       	TestRenameSameKeyPreservesValue/go
+FAIL
+exit status 1
+FAIL	github.com/alibaba/higress/plugins/wasm-go/extensions/transformer	0.206s

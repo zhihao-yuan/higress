@@ -1,0 +1,27 @@
+{
+  "reqRules": [
+    {
+      "operate": "rename",
+      "headers": [
+        {
+          "oldKey": "X-Client-Id",
+          "newKey": "x-client-id"
+        },
+        {
+          "oldKey": "x-old",
+          "newKey": "x-new"
+        }
+      ],
+      "body": [
+        {
+          "oldKey": "label",
+          "newKey": "label"
+        },
+        {
+          "oldKey": "old",
+          "newKey": "new"
+        }
+      ]
+    }
+  ]
+}

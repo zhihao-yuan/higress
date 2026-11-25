@@ -1,0 +1,35 @@
+{
+  "issue": 5389,
+  "name": "transformer-json-dedupe-types",
+  "scope": "plugins/wasm-go/extensions/transformer",
+  "head": "3bf6e4dca40457b39a2d934df10f673f74fa04aa",
+  "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "title": "fix(transformer): distinguish JSON types during deduplication",
+  "branch": "fix/transformer-json-dedupe-types",
+  "source_sha256": {
+    "plugins/wasm-go/extensions/transformer/dedupe_types_test.go": "46efbcb2b3968b4919b4d3606c5f7abfac54e9339cb448f4053ae58db58a8de1",
+    "plugins/wasm-go/extensions/transformer/main.go": "b7a947a10d95e38cdd7a930d7d6d3b2e5fd2d0eb549be290204690a5b4e4c8c1"
+  },
+  "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "tested_fixed_head": "3bf6e4dca40457b39a2d934df10f673f74fa04aa",
+  "wasm_sha256": {
+    "baseline": "185db2f1f157d917c1e6959a208bb8bea78d0ecba9be25e4a624357ad53b1f6e",
+    "fixed": "2812ae21117370a31f56ba474d039295526e902edf99783458ae11ce59e7b6bb"
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "runtime_labels": [
+    "baseline-1",
+    "fixed-2",
+    "fixed-3"
+  ],
+  "formal_requests": 72,
+  "all_http_200": true,
+  "cleanup_passed": true,
+  "exact_head_wasm_rebuild": "byte-identical; Go via cmp, Rust via Cargo rebuild and cmp",
+  "check_logs": [
+    "transformer-json-dedupe-types-red.log",
+    "transformer-json-dedupe-types-green.log",
+    "transformer-json-dedupe-types-regression.log",
+    "transformer-json-dedupe-types-go-suite.log"
+  ]
+}

@@ -1,0 +1,127 @@
+commit 43415cdf54dfcc0f1f91e5e20bfcc5f2c25c8928
+Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+AuthorDate: Wed Nov 25 17:07:33 2026 +0800
+Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+CommitDate: Wed Nov 25 17:07:33 2026 +0800
+
+    perf(ai-statistics): sort existing tool call indexes
+    
+    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+
+diff --git a/plugins/wasm-go/extensions/ai-statistics/main.go b/plugins/wasm-go/extensions/ai-statistics/main.go
+index e46d4637b..55506291a 100644
+--- a/plugins/wasm-go/extensions/ai-statistics/main.go
++++ b/plugins/wasm-go/extensions/ai-statistics/main.go
+@@ -7,6 +7,7 @@ import (
+ 	"errors"
+ 	"fmt"
+ 	"regexp"
++	"sort"
+ 	"strconv"
+ 	"strings"
+ 	"time"
+@@ -423,19 +424,17 @@ func getToolCallsFromBuffer(buffer *StreamingToolCallsBuffer) []ToolCall {
+ 		return nil
+ 	}
+ 
+-	// Find max index to create properly sized slice
+-	maxIndex := 0
+-	for idx := range buffer.ToolCalls {
+-		if idx > maxIndex {
+-			maxIndex = idx
++	indexes := make([]int, 0, len(buffer.ToolCalls))
++	for index := range buffer.ToolCalls {
++		if index >= 0 {
++			indexes = append(indexes, index)
+ 		}
+ 	}
++	sort.Ints(indexes)
+ 
+-	result := make([]ToolCall, 0, len(buffer.ToolCalls))
+-	for i := 0; i <= maxIndex; i++ {
+-		if tc, exists := buffer.ToolCalls[i]; exists {
+-			result = append(result, *tc)
+-		}
++	result := make([]ToolCall, 0, len(indexes))
++	for _, index := range indexes {
++		result = append(result, *buffer.ToolCalls[index])
+ 	}
+ 	return result
+ }
+@@ -1508,10 +1507,10 @@ func setSpanAttribute(key string, value interface{}) {
+ 
+ // isErrorResponse checks whether the LLM response indicates an error.
+ // Detects errors by:
+-// 1. Response body contains non-null "error" field at root level (OpenAI/Anthropic format).
+-//    Handles both raw JSON and SSE "data: " prefixed chunks, including multi-event
+-//    streaming buffers.
+-// 2. HTTP status code >= 400 as fallback when body is empty.
++//  1. Response body contains non-null "error" field at root level (OpenAI/Anthropic format).
++//     Handles both raw JSON and SSE "data: " prefixed chunks, including multi-event
++//     streaming buffers.
++//  2. HTTP status code >= 400 as fallback when body is empty.
+ //
+ // Note: some providers (e.g. Anthropic streaming responses) emit {"error":""}
+ // even on success; an empty-string error is treated as not-an-error to avoid
+diff --git a/plugins/wasm-go/extensions/ai-statistics/tool_call_order_test.go b/plugins/wasm-go/extensions/ai-statistics/tool_call_order_test.go
+new file mode 100644
+index 000000000..671132800
+--- /dev/null
++++ b/plugins/wasm-go/extensions/ai-statistics/tool_call_order_test.go
+@@ -0,0 +1,56 @@
++// Copyright (c) 2024 Alibaba Group Holding Ltd.
++//
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//      http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++package main
++
++import (
++	"reflect"
++	"testing"
++)
++
++func TestToolCallSparseOrder(t *testing.T) {
++	buffer := &StreamingToolCallsBuffer{ToolCalls: map[int]*ToolCall{10000000: {Index: 10000000}, 2: {Index: 2}, 0: {Index: 0}, -1: {Index: -1}}}
++	got := getToolCallsFromBuffer(buffer)
++	indexes := make([]int, len(got))
++	for i, tc := range got {
++		indexes[i] = tc.Index
++	}
++	if !reflect.DeepEqual(indexes, []int{0, 2, 10000000}) {
++		t.Fatal(indexes)
++	}
++	if getToolCallsFromBuffer(nil) != nil || getToolCallsFromBuffer(&StreamingToolCallsBuffer{}) != nil {
++		t.Fatal("empty buffer changed")
++	}
++}
++
++var benchmarkToolCalls []ToolCall
++
++func BenchmarkToolCallSparseOrder(b *testing.B) {
++	for _, index := range []int{0, 10000000} {
++		buffer := &StreamingToolCallsBuffer{ToolCalls: map[int]*ToolCall{index: {Index: index}}}
++		b.Run(map[bool]string{true: "sparse", false: "dense"}[index > 0], func(b *testing.B) {
++			for i := 0; i < b.N; i++ {
++				benchmarkToolCalls = getToolCallsFromBuffer(buffer)
++			}
++		})
++	}
++}
++
++func TestToolCallMaxIndex(t *testing.T) {
++	index := int(^uint(0) >> 1)
++	got := getToolCallsFromBuffer(&StreamingToolCallsBuffer{ToolCalls: map[int]*ToolCall{index: {Index: index}}})
++	if len(got) != 1 || got[0].Index != index {
++		t.Fatal(got)
++	}
++}

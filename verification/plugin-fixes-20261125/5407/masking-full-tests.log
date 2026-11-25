@@ -1,0 +1,205 @@
+   Compiling proc-macro2 v1.0.93
+   Compiling unicode-ident v1.0.16
+   Compiling stable_deref_trait v1.2.0
+   Compiling writeable v0.5.5
+   Compiling litemap v0.7.4
+   Compiling icu_locid_transform_data v1.5.0
+   Compiling autocfg v1.4.0
+   Compiling icu_properties_data v1.5.0
+   Compiling write16 v1.0.0
+   Compiling utf16_iter v1.0.5
+   Compiling icu_normalizer_data v1.5.0
+   Compiling utf8_iter v1.0.4
+   Compiling version_check v0.9.5
+   Compiling smallvec v1.13.2
+   Compiling serde v1.0.217
+   Compiling cfg-if v1.0.0
+   Compiling percent-encoding v2.3.1
+   Compiling itoa v1.0.14
+   Compiling once_cell v1.20.2
+   Compiling bytes v1.10.0
+   Compiling zerocopy v0.7.35
+   Compiling memchr v2.7.4
+   Compiling form_urlencoded v1.2.1
+   Compiling ahash v0.8.11
+   Compiling num-traits v0.2.19
+   Compiling proxy-wasm v0.2.2 (https://github.com/higress-group/proxy-wasm-rust-sdk?branch=main#8c902102)
+   Compiling allocator-api2 v0.2.21
+   Compiling ryu v1.0.19
+   Compiling serde_json v1.0.138
+   Compiling combine v4.6.7
+   Compiling fnv v1.0.7
+   Compiling log v0.4.25
+   Compiling arc-swap v1.7.1
+   Compiling downcast-rs v1.2.1
+   Compiling quote v1.0.38
+   Compiling http v1.2.0
+   Compiling hashbrown v0.14.5
+   Compiling syn v2.0.98
+   Compiling lazy_static v1.5.0
+   Compiling num-integer v0.1.46
+   Compiling num-bigint v0.4.6
+   Compiling synstructure v0.13.1
+   Compiling zerofrom-derive v0.1.5
+   Compiling yoke-derive v0.7.5
+   Compiling zerovec-derive v0.10.3
+   Compiling displaydoc v0.2.5
+   Compiling icu_provider_macros v1.5.0
+   Compiling serde_derive v1.0.217
+   Compiling zerofrom v0.1.5
+   Compiling yoke v0.7.5
+   Compiling zerovec v0.10.4
+   Compiling tinystr v0.7.6
+   Compiling icu_collections v1.5.0
+   Compiling icu_locid v1.5.0
+   Compiling icu_provider v1.5.0
+   Compiling icu_locid_transform v1.5.0
+   Compiling icu_properties v1.5.1
+   Compiling icu_normalizer v1.5.0
+   Compiling idna_adapter v1.2.0
+   Compiling multimap v0.10.0
+   Compiling idna v1.0.3
+   Compiling url v2.5.4
+   Compiling redis v0.28.2
+   Compiling higress-wasm-rust v0.1.0 (/batch/ai-data-masking-sse-crlf/plugins/wasm-rust)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 37s
+     Running unittests src/lib.rs (/batch/rust-target/debug/deps/higress_wasm_rust-6e0a6d5e5577601f)
+
+running 14 tests
+test event_stream::tests::test_mixed2_eol_events ... ok
+test event_stream::tests::test_crlf_is_one_line_ending ... ok
+test event_stream::tests::test_lf_events ... ok
+test event_stream::tests::test_mixed_eol_events ... ok
+test event_stream::tests::test_no_event ... ok
+test event_stream::tests::test_partial_event ... ok
+test event_stream::tests::test_crlf_events ... ok
+test rule_matcher::tests::test_match_route1_config ... ok
+test rule_matcher::tests::test_host_match ... ok
+test rule_matcher::tests::test_match_route_config ... ok
+test rule_matcher::tests::test_service_match ... ok
+test event_stream::tests::test_line_endings_across_all_splits ... ok
+test rule_matcher::tests::test_parse_rule_config ... ok
+test rule_matcher::tests::test_parse_override_config ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+   Doc-tests higress_wasm_rust
+
+running 6 tests
+test src/log.rs - log::Log::warnf (line 107) ... FAILED
+test src/log.rs - log::Log::errorf (line 116) ... FAILED
+test src/log.rs - log::Log::infof (line 98) ... FAILED
+test src/log.rs - log::Log::tracef (line 80) ... FAILED
+test src/log.rs - log::Log::criticalf (line 125) ... FAILED
+test src/log.rs - log::Log::debugf (line 89) ... FAILED
+
+failures:
+
+---- src/log.rs - log::Log::warnf (line 107) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:110:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::errorf (line 116) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:119:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::infof (line 98) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:101:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::tracef (line 80) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:83:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::criticalf (line 125) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:128:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+---- src/log.rs - log::Log::debugf (line 89) stdout ----
+error[E0599]: no method named `into_string` found for reference `&'static str` in the current scope
+ --> src/log.rs:92:29
+  |
+6 | let log = Log::new("foobar".into_string());
+  |                             ^^^^^^^^^^^
+  |
+help: there is a method `to_string` with a similar name
+  |
+6 | let log = Log::new("foobar".to_string());
+  |                             ~~~~~~~~~
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0599`.
+Couldn't compile the test.
+
+failures:
+    src/log.rs - log::Log::criticalf (line 125)
+    src/log.rs - log::Log::debugf (line 89)
+    src/log.rs - log::Log::errorf (line 116)
+    src/log.rs - log::Log::infof (line 98)
+    src/log.rs - log::Log::tracef (line 80)
+    src/log.rs - log::Log::warnf (line 107)
+
+test result: FAILED. 0 passed; 6 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.03s
+
+error: doctest failed, to rerun pass `--doc`

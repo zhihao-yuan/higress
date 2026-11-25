@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<workspace>/runtime-log-request-response-string-encoding/verify.py", line 152, in <module>
+    run(*sys.argv[1:])
+  File "<workspace>/runtime-log-request-response-string-encoding/verify.py", line 129, in run
+    want=payload(row['case'])[0].decode(errors='replace');assert row['log']['value']==want,('log bytes mismatch',row['id'])
+AssertionError: ('log bytes mismatch', 'baseline-1-log-65536-plugin-0')

@@ -1,0 +1,99 @@
+commit 1f2d6f76638138333f7112ebcec7fad3150ef15c
+Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+AuthorDate: Wed Nov 25 17:07:32 2026 +0800
+Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+CommitDate: Wed Nov 25 17:07:32 2026 +0800
+
+    perf(log-request-response): marshal log strings directly
+    
+    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+
+diff --git a/plugins/wasm-go/extensions/log-request-response/main.go b/plugins/wasm-go/extensions/log-request-response/main.go
+index 140d1613e..3b64e285b 100644
+--- a/plugins/wasm-go/extensions/log-request-response/main.go
++++ b/plugins/wasm-go/extensions/log-request-response/main.go
+@@ -223,28 +223,8 @@ func processStreamingBody(
+ // and sets it as a property in the Envoy filter state with the specified key.
+ // This ensures proper escaping of special characters when the value is included in JSON.
+ func setPropertyWithMarshal(key string, value string) {
+-	// Create a helper map to properly escape the string using JSON marshaling
+-	helper := map[string]string{
+-		"placeholder": value,
+-	}
+-
+-	// Marshal the helper map to JSON
+-	marshalledHelper, _ := json.Marshal(helper)
+-
+-	// Extract the properly escaped value using gjson
+-	marshalledRaw := gjson.GetBytes(marshalledHelper, "placeholder").Raw
+-
+-	var marshalledStr string
+-	if len(marshalledRaw) >= 2 {
+-		// Remove the surrounding quotes from the JSON string
+-		marshalledStr = marshalledRaw[1 : len(marshalledRaw)-1]
+-	} else {
+-		log.Errorf("failed to marshal json string, raw string is: %s", value)
+-		marshalledStr = ""
+-	}
+-
+-	// Set the property with the marshaled string
+-	if err := proxywasm.SetProperty([]string{key}, []byte(marshalledStr)); err != nil {
++	marshalled, _ := json.Marshal(value)
++	if err := proxywasm.SetProperty([]string{key}, marshalled[1:len(marshalled)-1]); err != nil {
+ 		log.Errorf("failed to set %s in filter state, err: %v, raw:\n%s", key, err, value)
+ 	}
+ }
+diff --git a/plugins/wasm-go/extensions/log-request-response/property_encoding_test.go b/plugins/wasm-go/extensions/log-request-response/property_encoding_test.go
+new file mode 100644
+index 000000000..4ba8a1a33
+--- /dev/null
++++ b/plugins/wasm-go/extensions/log-request-response/property_encoding_test.go
+@@ -0,0 +1,48 @@
++// Copyright (c) 2023 Alibaba Group Holding Ltd.
++//
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//      http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++package main
++
++import (
++	"encoding/json"
++	"github.com/higress-group/wasm-go/pkg/test"
++	"github.com/stretchr/testify/require"
++	"testing"
++)
++
++func TestPropertyStringEncoding(t *testing.T) {
++	test.RunGoTest(t, func(t *testing.T) {
++		host, _ := test.NewTestHost(json.RawMessage(`{}`))
++		defer host.Reset()
++		cases := []struct{ value, want string }{
++			{"", ""},
++			{"plain", "plain"},
++			{"引号\"与\\反斜杠\n\r\t", `引号\"与\\反斜杠\n\r\t`},
++			{"<script>&", `\u003cscript\u003e\u0026`},
++			{string([]byte{0, 1, 31, 255}), `\u0000\u0001\u001f\ufffd`},
++			{"\u2028\u2029", `\u2028\u2029`},
++		}
++		for _, tc := range cases {
++			setPropertyWithMarshal("encoding-test", tc.value)
++			got, err := host.GetProperty([]string{"encoding-test"})
++			if tc.value == "" {
++				// SetProperty rejects an empty value; preserve the existing behavior.
++				require.Error(t, err)
++				continue
++			}
++			require.NoError(t, err)
++			require.Equal(t, tc.want, string(got))
++		}
++	})
++}

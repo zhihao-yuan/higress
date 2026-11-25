@@ -1,0 +1,34 @@
+{
+  "issue": 5418,
+  "name": "log-request-response-string-encoding",
+  "scope": "plugins/wasm-go/extensions/log-request-response",
+  "head": "1f2d6f76638138333f7112ebcec7fad3150ef15c",
+  "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "title": "perf(log-request-response): marshal log strings directly",
+  "branch": "fix/log-request-response-string-encoding",
+  "source_sha256": {
+    "plugins/wasm-go/extensions/log-request-response/main.go": "e0f0ec4f6d72bfdba80f9fa3c18b105815e31318dacfc9587110444d304e6364",
+    "plugins/wasm-go/extensions/log-request-response/property_encoding_test.go": "0a25ec90f893eb5c9bfeffac7083da97404a959ca2439bb67154d4a080e21147"
+  },
+  "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "tested_fixed_head": "1f2d6f76638138333f7112ebcec7fad3150ef15c",
+  "wasm_sha256": {
+    "baseline": "6889dab64d5d4849babcfa0842188ed32eba84105ba37dcb67a992bda442e9ea",
+    "fixed": "16ed8f26d9b17c2dbc13f013b184fea75b663c86541437a1c412276040d2b53c"
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "runtime_labels": [
+    "baseline-4",
+    "fixed-5",
+    "fixed-6"
+  ],
+  "formal_requests": 360,
+  "all_http_200": true,
+  "cleanup_passed": true,
+  "exact_head_wasm_rebuild": "byte-identical; Go via cmp, Rust via Cargo rebuild and cmp",
+  "check_logs": [
+    "log-request-response-string-encoding-green.log",
+    "log-request-response-string-encoding-regression.log",
+    "log-request-response-string-encoding-go-suite.log"
+  ]
+}

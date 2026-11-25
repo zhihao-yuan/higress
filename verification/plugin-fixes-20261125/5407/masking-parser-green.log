@@ -1,0 +1,13 @@
+
+running 8 tests
+test tests::test_crlf_events ... ok
+test tests::test_mixed_eol_events ... ok
+test tests::test_no_event ... ok
+test tests::test_lf_events ... ok
+test tests::test_crlf_is_one_line_ending ... ok
+test tests::test_mixed2_eol_events ... ok
+test tests::test_line_endings_across_all_splits ... ok
+test tests::test_partial_event ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

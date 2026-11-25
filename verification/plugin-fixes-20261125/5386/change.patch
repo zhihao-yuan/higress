@@ -1,0 +1,80 @@
+commit 33aaa0e36409c1346734b8ae8c7df12776bd43e6
+Author:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+AuthorDate: Wed Nov 25 17:07:31 2026 +0800
+Commit:     zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+CommitDate: Wed Nov 25 17:07:31 2026 +0800
+
+    fix(transformer): keep values when renaming a key to itself
+    
+    Signed-off-by: zhihao-yuan <341868981+zhihao-yuan@users.noreply.github.com>
+
+diff --git a/plugins/wasm-go/extensions/transformer/main.go b/plugins/wasm-go/extensions/transformer/main.go
+index 07163cd7d..1ec9edae5 100644
+--- a/plugins/wasm-go/extensions/transformer/main.go
++++ b/plugins/wasm-go/extensions/transformer/main.go
+@@ -924,6 +924,9 @@ func (h kvHandler) handle(host, path string, kvs map[string][]string, mapSourceD
+ 			// rename: 若指定 oldKey 不存在则无操作；否则将 oldKey 的值追加给 newKey，并删除 oldKey:value
+ 			for _, rename := range kvtOp.renameKvtGroup {
+ 				oldKey, newKey := rename.oldKey, rename.newKey
++				if oldKey == newKey {
++					continue
++				}
+ 				if ovs, ok := kvs[oldKey]; ok {
+ 					kvs[newKey] = append(kvs[newKey], ovs...)
+ 					delete(kvs, oldKey)
+@@ -1067,6 +1070,9 @@ func (h jsonHandler) handle(host, path string, oriData []byte, mapSourceData map
+ 			// rename: 若指定 oldKey 不存在则无操作；否则将 oldKey 的值追加给 newKey，并删除 oldKey:value
+ 			for _, rename := range kvtOp.renameKvtGroup {
+ 				oldKey, newKey := rename.oldKey, rename.newKey
++				if oldKey == newKey {
++					continue
++				}
+ 				value := gjson.GetBytes(data, oldKey)
+ 				if !value.Exists() {
+ 					continue
+diff --git a/plugins/wasm-go/extensions/transformer/rename_same_key_test.go b/plugins/wasm-go/extensions/transformer/rename_same_key_test.go
+new file mode 100644
+index 000000000..ab079b9db
+--- /dev/null
++++ b/plugins/wasm-go/extensions/transformer/rename_same_key_test.go
+@@ -0,0 +1,40 @@
++// Copyright (c) 2022 Alibaba Group Holding Ltd.
++//
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//      http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
++package main
++
++import (
++	"encoding/json"
++	"github.com/higress-group/wasm-go/pkg/test"
++	"github.com/stretchr/testify/require"
++	"testing"
++)
++
++func TestRenameSameKeyPreservesValue(t *testing.T) {
++	test.RunGoTest(t, func(t *testing.T) {
++		host, _ := test.NewTestHost(json.RawMessage(`{"reqRules":[{"operate":"remove","body":[{"key":"missing"}]}]}`))
++		defer host.Reset()
++		input := []byte(`{"label":{"items":[9007199254740993]},"untouched":1}`)
++		got, err := (jsonHandler{kvtOps: []kvtOperation{{kvtOpType: RenameK, renameKvtGroup: []renameKvt{{oldKey: "label", newKey: "label"}}}}}).handle("example.com", "/", input, nil)
++		require.NoError(t, err)
++		require.Equal(t, string(input), string(got))
++		for _, values := range [][]string{{"one"}, {"one", "two"}} {
++			kvs := map[string][]string{"x-client-id": values, "untouched": {"keep"}}
++			err := (kvHandler{kvtOps: []kvtOperation{{kvtOpType: RenameK, renameKvtGroup: []renameKvt{{oldKey: "x-client-id", newKey: "x-client-id"}}}}}).handle("example.com", "/", kvs, nil)
++			require.NoError(t, err)
++			require.Equal(t, values, kvs["x-client-id"])
++			require.Equal(t, []string{"keep"}, kvs["untouched"])
++		}
++	})
++}

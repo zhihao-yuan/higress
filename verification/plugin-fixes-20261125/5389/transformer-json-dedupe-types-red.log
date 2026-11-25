@@ -1,0 +1,97 @@
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] transform config is: reqRules:[{operate:remove mapSource: headers:[] querys:[] body:[{removeParam:{key:missing} renameParam:{oldKey: newKey:} replaceParam:{key: newValue:} addParam:{key: value:} appendParam:{key: appendValue:} mapParam:{fromKey: toKey:} dedupeParam:{key: strategy:} valueType:string hostPattern: pathPattern:}]}], respRules:[]
+2026/11/25 16:37:03 [foreign call] funcname: get_log_level
+2026/11/25 16:37:03 [foreign call] param: 
+2026/11/25 16:37:03 proxy_info_log: [transformer] [nil] [nil] plugin start successfully
+--- FAIL: TestJSONDedupeKeepsDistinctTypes (0.01s)
+    --- FAIL: TestJSONDedupeKeepsDistinctTypes/[1,"1",true,"true",null,""] (0.00s)
+        --- FAIL: TestJSONDedupeKeepsDistinctTypes/[1,"1",true,"true",null,""]/go (0.00s)
+            dedupe_types_test.go:37: 
+                	Error Trace:	<workspace>/transformer-json-dedupe-types/plugins/wasm-go/extensions/transformer/dedupe_types_test.go:37
+                	            				<home>/go/pkg/mod/github.com/higress-group/wasm-go@v1.2.1/pkg/test/test.go:124
+                	Error:      	Not equal: 
+                	            	expected: []interface {}{1, "1", true, "true", interface {}(nil), ""}
+                	            	actual  : []interface {}{1, true, interface {}(nil)}
+                	            	
+                	            	Diff:
+                	            	--- Expected
+                	            	+++ Actual
+                	            	@@ -1,8 +1,5 @@
+                	            	-([]interface {}) (len=6) {
+                	            	+([]interface {}) (len=3) {
+                	            	  (float64) 1,
+                	            	- (string) (len=1) "1",
+                	            	  (bool) true,
+                	            	- (string) (len=4) "true",
+                	            	- (interface {}) <nil>,
+                	            	- (string) ""
+                	            	+ (interface {}) <nil>
+                	            	 }
+                	Test:       	TestJSONDedupeKeepsDistinctTypes/[1,"1",true,"true",null,""]/go
+    --- FAIL: TestJSONDedupeKeepsDistinctTypes/[{"a":1},"{\"a\":1}"] (0.00s)
+        --- FAIL: TestJSONDedupeKeepsDistinctTypes/[{"a":1},"{\"a\":1}"]/go (0.00s)
+            dedupe_types_test.go:37: 
+                	Error Trace:	<workspace>/transformer-json-dedupe-types/plugins/wasm-go/extensions/transformer/dedupe_types_test.go:37
+                	            				<home>/go/pkg/mod/github.com/higress-group/wasm-go@v1.2.1/pkg/test/test.go:124
+                	Error:      	Not equal: 
+                	            	expected: []interface {}([]interface {}{map[string]interface {}{"a":1}, "{\"a\":1}"})
+                	            	actual  : map[string]interface {}(map[string]interface {}{"a":1})
+                	Test:       	TestJSONDedupeKeepsDistinctTypes/[{"a":1},"{\"a\":1}"]/go
+    --- FAIL: TestJSONDedupeKeepsDistinctTypes/[1,"1",1,"1"] (0.00s)
+        --- FAIL: TestJSONDedupeKeepsDistinctTypes/[1,"1",1,"1"]/go (0.00s)
+            dedupe_types_test.go:37: 
+                	Error Trace:	<workspace>/transformer-json-dedupe-types/plugins/wasm-go/extensions/transformer/dedupe_types_test.go:37
+                	            				<home>/go/pkg/mod/github.com/higress-group/wasm-go@v1.2.1/pkg/test/test.go:124
+                	Error:      	Not equal: 
+                	            	expected: []interface {}([]interface {}{1, "1"})
+                	            	actual  : float64(1)
+                	Test:       	TestJSONDedupeKeepsDistinctTypes/[1,"1",1,"1"]/go
+    --- FAIL: TestJSONDedupeKeepsDistinctTypes/[true,"true",true,"true"] (0.00s)
+        --- FAIL: TestJSONDedupeKeepsDistinctTypes/[true,"true",true,"true"]/go (0.00s)
+            dedupe_types_test.go:37: 
+                	Error Trace:	<workspace>/transformer-json-dedupe-types/plugins/wasm-go/extensions/transformer/dedupe_types_test.go:37
+                	            				<home>/go/pkg/mod/github.com/higress-group/wasm-go@v1.2.1/pkg/test/test.go:124
+                	Error:      	Not equal: 
+                	            	expected: []interface {}([]interface {}{true, "true"})
+                	            	actual  : bool(true)
+                	Test:       	TestJSONDedupeKeepsDistinctTypes/[true,"true",true,"true"]/go
+FAIL
+exit status 1
+FAIL	github.com/alibaba/higress/plugins/wasm-go/extensions/transformer	0.305s

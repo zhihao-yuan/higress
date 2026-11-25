@@ -1,0 +1,180 @@
+{
+  "issue": 5425,
+  "name": "ai-statistics-sparse-index",
+  "scope": "plugins/wasm-go/extensions/ai-statistics",
+  "head": "43415cdf54dfcc0f1f91e5e20bfcc5f2c25c8928",
+  "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "title": "perf(ai-statistics): sort existing tool call indexes",
+  "branch": "fix/ai-statistics-sparse-index",
+  "source_sha256": {
+    "plugins/wasm-go/extensions/ai-statistics/main.go": "0e76417e47a88454ed0a535a9147d071e9705ced94c6d2fd626a851897f833a0",
+    "plugins/wasm-go/extensions/ai-statistics/tool_call_order_test.go": "7d4a1afa6729db965a464d5d733e2f54a7bd17d224978cbc1e04b1cd949f367d"
+  },
+  "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "tested_fixed_head": "43415cdf54dfcc0f1f91e5e20bfcc5f2c25c8928",
+  "wasm_sha256": {
+    "baseline": "01badfcda1f2de445f593484f4a1a689629e94cb4a6883a4d4280badba4246e4",
+    "fixed": "3b039ef058ad1f8452465176b9dbbabdcc35d26e59aa3168812d3e925a4641f8"
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "runtime_labels": [
+    "baseline-4",
+    "fixed-5",
+    "fixed-6"
+  ],
+  "formal_requests": 72,
+  "all_http_200": true,
+  "cleanup_passed": true,
+  "exact_head_wasm_rebuild": "byte-identical; Go via cmp, Rust via Cargo rebuild and cmp",
+  "check_logs": [
+    "ai-statistics-sparse-index-green.log",
+    "ai-statistics-sparse-index-regression.log",
+    "ai-statistics-sparse-index-go-suite.log"
+  ],
+  "client_time_medians": [
+    {
+      "run": "baseline-4",
+      "case": "index-0",
+      "route": "bypass",
+      "median_client_ms": 7.639
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-0",
+      "route": "plugin",
+      "median_client_ms": 8.265
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-100000",
+      "route": "bypass",
+      "median_client_ms": 7.067
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-100000",
+      "route": "plugin",
+      "median_client_ms": 11.185
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-1000000",
+      "route": "bypass",
+      "median_client_ms": 6.846
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-1000000",
+      "route": "plugin",
+      "median_client_ms": 44.237
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-10000000",
+      "route": "bypass",
+      "median_client_ms": 5.224
+    },
+    {
+      "run": "baseline-4",
+      "case": "index-10000000",
+      "route": "plugin",
+      "median_client_ms": 193.003
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-0",
+      "route": "bypass",
+      "median_client_ms": 4.025
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-0",
+      "route": "plugin",
+      "median_client_ms": 4.372
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-100000",
+      "route": "bypass",
+      "median_client_ms": 6.558
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-100000",
+      "route": "plugin",
+      "median_client_ms": 8.245
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-1000000",
+      "route": "bypass",
+      "median_client_ms": 5.634
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-1000000",
+      "route": "plugin",
+      "median_client_ms": 5.603
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-10000000",
+      "route": "bypass",
+      "median_client_ms": 3.485
+    },
+    {
+      "run": "fixed-5",
+      "case": "index-10000000",
+      "route": "plugin",
+      "median_client_ms": 5.962
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-0",
+      "route": "bypass",
+      "median_client_ms": 53.878
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-0",
+      "route": "plugin",
+      "median_client_ms": 13.158
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-100000",
+      "route": "bypass",
+      "median_client_ms": 8.21
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-100000",
+      "route": "plugin",
+      "median_client_ms": 9.104
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-1000000",
+      "route": "bypass",
+      "median_client_ms": 10.17
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-1000000",
+      "route": "plugin",
+      "median_client_ms": 8.915
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-10000000",
+      "route": "bypass",
+      "median_client_ms": 5.662
+    },
+    {
+      "run": "fixed-6",
+      "case": "index-10000000",
+      "route": "plugin",
+      "median_client_ms": 12.183
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "issue": 5386,
+  "name": "transformer-self-rename",
+  "scope": "plugins/wasm-go/extensions/transformer",
+  "head": "33aaa0e36409c1346734b8ae8c7df12776bd43e6",
+  "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "title": "fix(transformer): keep values when renaming a key to itself",
+  "branch": "fix/transformer-self-rename",
+  "source_sha256": {
+    "plugins/wasm-go/extensions/transformer/main.go": "21b61da447670797d06d5f5aa0d3427a4379622a102e0314c766389b86f13494",
+    "plugins/wasm-go/extensions/transformer/rename_same_key_test.go": "5861f9f03aa202f1797a1cdbc0aacb105a86480772493433e43fb4339453b71a"
+  },
+  "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "tested_fixed_head": "33aaa0e36409c1346734b8ae8c7df12776bd43e6",
+  "wasm_sha256": {
+    "baseline": "185db2f1f157d917c1e6959a208bb8bea78d0ecba9be25e4a624357ad53b1f6e",
+    "fixed": "860ca0cb857009935bdeb979c89b506e0795a6f7975dc179c30187c4fc52c414"
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "runtime_labels": [
+    "baseline-1",
+    "fixed-2",
+    "fixed-3"
+  ],
+  "formal_requests": 54,
+  "all_http_200": true,
+  "cleanup_passed": true,
+  "exact_head_wasm_rebuild": "byte-identical; Go via cmp, Rust via Cargo rebuild and cmp",
+  "check_logs": [
+    "transformer-self-rename-red.log",
+    "transformer-self-rename-green.log",
+    "transformer-self-rename-regression.log",
+    "transformer-self-rename-go-suite.log"
+  ]
+}

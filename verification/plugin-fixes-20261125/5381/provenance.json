@@ -1,0 +1,35 @@
+{
+  "issue": 5381,
+  "name": "transformer-json-number-precision",
+  "scope": "plugins/wasm-go/extensions/transformer",
+  "head": "cdcc6067e7dd54a3ef4c610c3845307150944cac",
+  "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "title": "fix(transformer): preserve JSON values when renaming and mapping",
+  "branch": "fix/transformer-json-number-precision",
+  "source_sha256": {
+    "plugins/wasm-go/extensions/transformer/json_number_test.go": "0ada06c09203242b124367920a85c4f5ab26529cba5b5e0b676b30706f00abef",
+    "plugins/wasm-go/extensions/transformer/main.go": "8e04bdd92020ec4aaaf8c08a20e5324fdb1f98953b66d8bbda7a4a49b1dad009"
+  },
+  "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "tested_fixed_head": "cdcc6067e7dd54a3ef4c610c3845307150944cac",
+  "wasm_sha256": {
+    "baseline": "185db2f1f157d917c1e6959a208bb8bea78d0ecba9be25e4a624357ad53b1f6e",
+    "fixed": "f59cc35721d35ebdedb1c5eae9d6f3e874a744ffbae1d9cc10981c6fe3abaf50"
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "runtime_labels": [
+    "baseline-1",
+    "fixed-2",
+    "fixed-3"
+  ],
+  "formal_requests": 72,
+  "all_http_200": true,
+  "cleanup_passed": true,
+  "exact_head_wasm_rebuild": "byte-identical; Go via cmp, Rust via Cargo rebuild and cmp",
+  "check_logs": [
+    "transformer-json-number-precision-red.log",
+    "transformer-json-number-precision-green.log",
+    "transformer-json-number-precision-regression.log",
+    "transformer-json-number-precision-go-suite.log"
+  ]
+}

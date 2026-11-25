@@ -1,0 +1,19 @@
+
+running 1 test
+test tests::test_crlf_is_one_line_ending ... FAILED
+
+failures:
+
+---- tests::test_crlf_is_one_line_ending stdout ----
+thread 'tests::test_crlf_is_one_line_ending' panicked at /batch/ai-data-masking-sse-crlf/plugins/wasm-rust/src/event_stream.rs:197:9:
+assertion `left == right` failed
+  left: Some([101, 118, 101, 110, 116, 58, 32, 99, 117, 115, 116, 111, 109])
+ right: Some([101, 118, 101, 110, 116, 58, 32, 99, 117, 115, 116, 111, 109, 13, 10, 100, 97, 116, 97, 58, 32, 123, 125])
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::test_crlf_is_one_line_ending
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 6 filtered out; finished in 0.01s
+

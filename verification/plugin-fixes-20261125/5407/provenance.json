@@ -1,0 +1,38 @@
+{
+  "issue": 5407,
+  "name": "ai-data-masking-sse-crlf",
+  "scope": "plugins/wasm-rust",
+  "head": "bec6f469546c17dcc9a8e80305f94e880080423c",
+  "base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "title": "fix(wasm-rust): preserve SSE events with CRLF line endings",
+  "branch": "fix/ai-data-masking-sse-crlf",
+  "source_sha256": {
+    "plugins/wasm-rust/src/event_stream.rs": "949af25b72204b1cb479159b073cb963f80789db83df9294e81c6b4c04438687"
+  },
+  "source_base": "c4c537f37175befc375e65ba059e8df477dc52a4",
+  "tested_fixed_head": "bec6f469546c17dcc9a8e80305f94e880080423c",
+  "wasm_sha256": {
+    "baseline": "bc3e43c3465c70d978d6b69ed307bbc7f50d28409bd926bb56a058bcfeef984c",
+    "fixed": "e8f3ba52b5f145e669956633392bb25150bbb896fe2ced4fc3cac6c7cfb48dbc"
+  },
+  "gateway_image": "higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/gateway@sha256:a82de493902012ce6b555ecb2244156f3c73824474d67549144a7efa334d0299",
+  "runtime_labels": [
+    "baseline-1",
+    "fixed-2",
+    "fixed-3"
+  ],
+  "formal_requests": 126,
+  "all_http_200": true,
+  "cleanup_passed": true,
+  "exact_head_wasm_rebuild": "byte-identical; Go via cmp, Rust via Cargo rebuild and cmp",
+  "check_logs": [
+    "masking-red.log",
+    "masking-parser-green.log",
+    "masking-lib-tests.log",
+    "masking-plugin-tests.log",
+    "masking-full-tests.log",
+    "masking-baseline-doc-tests.log",
+    "masking-wasm-build.log",
+    "masking-head-check.log"
+  ]
+}

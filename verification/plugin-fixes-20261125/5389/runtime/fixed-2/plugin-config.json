@@ -1,0 +1,13 @@
+{
+  "reqRules": [
+    {
+      "operate": "dedupe",
+      "body": [
+        {
+          "key": "values",
+          "strategy": "RETAIN_UNIQUE"
+        }
+      ]
+    }
+  ]
+}

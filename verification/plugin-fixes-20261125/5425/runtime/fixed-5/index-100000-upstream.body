@@ -1,0 +1,6 @@
+data: {"id":"chat-sparse-fixture","model":"fixture","choices":[{"index":0,"delta":{"tool_calls":[{"index":100000,"id":"call-fixed","type":"function","function":{"name":"weather","arguments":"{\"city\":\"Beijing\"}"}}]}}]}
+
+data: {"id":"chat-sparse-fixture","choices":[{"index":0,"delta":{},"finish_reason":"tool_calls"}]}
+
+data: [DONE]
+
